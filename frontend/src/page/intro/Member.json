@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "name": "廖富量",
+    "position": "系學會會長",
+    "email": "morgan119502@gmail.com",
+    "research": "AIC",
+    "image": "/members/587EB773-A7B3-45B5-90A9-70F927BC7F6F.jpeg",
+    "department": "行政部"
+  },
+  {
+    "id": 2,
+    "name": "Alex",
+    "position": "系學會副會長",
+    "email": "chen@example.com",
+    "research": "訊號處理、數位電路",
+    "image": "/members/master-signal.svg",
+    "department": "行政部"
+  },
+  {
+    "id": 3,
+    "name": "Alex",
+    "position": "系學會副會長",
+    "email": "chen@example.com",
+    "research": "訊號處理、數位電路",
+    "image": "/members/master-signal.svg",
+    "department": "行政部"
+  },
+  {
+    "id": 4,
+    "name": "李小華",
+    "position": "活器部部長",
+    "email": "li@example.com",
+    "research": "感測器系統、物聯網",
+    "image": "/members/phd.svg",
+    "department": "活器部"
+  },
+  {
+    "id": 5,
+    "name": "王小強",
+    "position": "部員",
+    "email": "wang@example.com",
+    "research": "嵌入式系統、FPGA",
+    "image": "/members/master-iot.svg",
+    "department": "活器部"
+  },
+  {
+    "id": 6,
+    "name": "王小強",
+    "position": "部員",
+    "email": "wang@example.com",
+    "research": "嵌入式系統、FPGA",
+    "image": "/members/master-iot.svg",
+    "department": "活器部"
+  },
+  {
+    "id": 7,
+    "name": "Alice",
+    "position": "行銷部部長",
+    "email": "chen@example.com",
+    "research": "訊號處理、數位電路",
+    "image": "/members/master-signal.svg",
+    "department": "行銷部"
+  },
+  {
+    "id": 8,
+    "name": "Alice",
+    "position": "部員",
+    "email": "chen@example.com",
+    "research": "訊號處理、數位電路",
+    "image": "/members/master-signal.svg",
+    "department": "行銷部"
+  },
+  {
+    "id": 9,
+    "name": "Alice",
+    "position": "部員",
+    "email": "chen@example.com",
+    "research": "訊號處理、數位電路",
+    "image": "/members/master-signal.svg",
+    "department": "行銷部"
+  },
+  {
+    "id": 10,
+    "name": "Bob",
+    "position": "學術部部長",
+    "email": "chen@example.com",
+    "research": "訊號處理、數位電路",
+    "image": "/members/master-signal.svg",
+    "department": "學術部"
+  },
+  {
+    "id": 11,
+    "name": "Bob",
+    "position": "部員",
+    "email": "chen@example.com",
+    "research": "訊號處理、數位電路",
+    "image": "/members/master-signal.svg",
+    "department": "學術部"
+  },
+  {
+    "id": 12,
+    "name": "Bob",
+    "position": "部員",
+    "email": "chen@example.com",
+    "research": "訊號處理、數位電路",
+    "image": "/members/master-signal.svg",
+    "department": "學術部"
+  },
+  {
+    "id": 13,
+    "name": "Porter",
+    "position": "人力部部長",
+    "email": "chen@example.com",
+    "research": "訊號處理、數位電路",
+    "image": "/members/master-signal.svg",
+    "department": "人力部"
+  },
+  {
+    "id": 14,
+    "name": "Porter",
+    "position": "部員",
+    "email": "chen@example.com",
+    "research": "訊號處理、數位電路",
+    "image": "/members/master-signal.svg",
+    "department": "人力部"
+  },
+  {
+    "id": 15,
+    "name": "Porter",
+    "position": "部員",
+    "email": "chen@example.com",
+    "research": "訊號處理、數位電路",
+    "image": "/members/master-signal.svg",
+    "department": "人力部"
+  }
+]

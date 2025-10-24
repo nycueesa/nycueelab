@@ -1,0 +1,291 @@
+/* Clean and Professional Event Introduction Page */
+.eventIntroPage {
+    min-height: 100vh;
+    background: #f8f9fa;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Hero Section */
+.heroSection {
+    background: linear-gradient(135deg, #132947 0%, #1e3d5f 100%);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.heroContent {
+    padding: 0 20px;
+}
+
+.heroTitle {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.heroSubtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Main Content */
+.mainContent {
+    padding: 60px 0;
+    max-width: 1200px;
+}
+
+/* Section Titles */
+.sectionTitle {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #132947;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.sectionSubtitle {
+    font-size: 1.1rem;
+    color: #6c757d;
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+/* Category Cards */
+.categoryCard {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 180px;
+    background: white;
+}
+
+.categoryCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(19, 41, 71, 0.15);
+}
+
+.categoryBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.categoryIcon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.categoryName {
+    color: #132947;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.categoryDescription {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Event Cards */
+.eventCard {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    background: white;
+    overflow: hidden;
+}
+
+.eventCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(19, 41, 71, 0.15);
+}
+
+.eventBody {
+    padding: 30px;
+}
+
+.eventHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.eventTitle {
+    color: #132947;
+    font-weight: 600;
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.statusBadge {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.eventMeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.eventCategory {
+    color: #132947;
+    font-weight: 500;
+    background: #e8f0fe;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+.eventDate {
+    color: #6c757d;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.eventDescription {
+    color: #495057;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.eventActions {
+    display: flex;
+    gap: 10px;
+}
+
+.actionButton {
+    padding: 10px 20px;
+    font-weight: 500;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.actionButton:hover {
+    transform: translateY(-1px);
+}
+
+/* Info Card */
+.infoCard {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: #f8f9fa;
+    margin-top: 40px;
+}
+
+.infoTitle {
+    color: #132947;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.infoList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.infoList li {
+    color: #495057;
+    margin-bottom: 8px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.infoList li::before {
+    content: '•';
+    color: #132947;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .heroTitle {
+        font-size: 2.2rem;
+    }
+
+    .heroSubtitle {
+        font-size: 1rem;
+    }
+
+    .sectionTitle {
+        font-size: 1.8rem;
+    }
+
+    .categoryCard {
+        height: 150px;
+    }
+
+    .categoryBody {
+        padding: 20px 15px;
+    }
+
+    .eventHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .eventMeta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .eventActions {
+        flex-direction: column;
+    }
+
+    .actionButton {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .heroSection {
+        padding: 60px 0;
+    }
+
+    .heroTitle {
+        font-size: 1.8rem;
+    }
+
+    .mainContent {
+        padding: 40px 0;
+    }
+
+    .categoryCard {
+        height: 130px;
+    }
+
+    .eventBody {
+        padding: 20px;
+    }
+}

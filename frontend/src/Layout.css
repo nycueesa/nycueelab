@@ -1,0 +1,158 @@
+.container.custom-container {
+	width:80vw;
+	max-width: 1400px; 
+	margin: 0 auto;
+}
+.ms-auto{
+	margin-left: 10vw;
+}
+.bg-body-tertiary{
+	background: #132947 !important;
+	padding: 10px;
+	width : 100vw;
+}
+
+.main-logo {
+	font-size: 3vw !important;
+	margin-left: 0vw;
+	padding: 0;
+	display: flex;
+	align-items: center;  /* 垂直置中 */
+	/* width:50vw; */
+	font-weight:500;
+}
+.main-logo .Lab-logo{
+	width:6vw;
+	height:6vw;
+	margin-right: 2vw;
+	border-radius: 100%;
+}
+
+
+.me-auto .nav-link{
+	font-size: 2vw;  
+	text-decoration: none;
+	display: inline;
+
+}
+.ms-auto *{
+	/* color: white !important; */
+	font-size: 1.7vw;  
+	font-weight: 500;
+}
+.navbar-toggler {
+	border-color: white !important; /* 邊框改白色 */
+}
+  .navbar-toggler-icon {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+  }
+
+.navbar .nav-link,
+.navbar .dropdown-toggle {
+	color : #d5dfeb !important;
+	font-weight: 600;
+  	display: flex;
+  	align-items: center; /* 讓文字、Dropdown 都垂直置中 */
+}
+
+.navbar .nav-link  :hover,
+.navbar .dropdown-toggle  :hover{
+	color : white !important;
+	font-weight: 600;
+  	display: flex;
+  	align-items: center; /* 讓文字、Dropdown 都垂直置中 */
+}
+/*導覽列下拉元素大小*/
+.navbar-nav .nav-item.dropdown {
+	padding-left: 0;
+	margin-left: 0; 
+	width:9vw;
+}
+
+/* 兩個字的下拉選單寬度 */
+.navbar-nav .nav-item.dropdown-2word {
+	padding-left: 0;
+	margin-left: 0; 
+	width:6vw;
+}
+
+/* 導覽列樣式 */
+.nav-dropdown-intro{
+	margin-right:2vw;
+}
+.nav-dropdown-event{
+	margin-right:0vw;
+}
+.nav-team-page{
+	margin-left: 0vw;
+}
+.nav-dropdown-related{
+	margin-right:5vw;
+}
+.nav-dropdown-related{
+	margin-right:5vw;
+}
+
+.dropdown-menu{
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.dropdown-item{
+	padding: 1vh !important;
+	font-size: 2.3vh;
+}
+/* footer{
+	text-align: center;
+	margin-top: 2rem;
+	padding: 1rem;
+	color: #d5dfeb;
+	background-color: #142844;
+}
+
+footer .full-name{
+	color:#d5dfeb;
+} */
+
+.navbar-footer {
+	background-color: #132947; /* 深藍色背景 */
+	color: white;
+	padding: 20px;
+	text-align: left;
+	padding-left:10vw;
+	padding-top: 40px;
+	/* padding-bottom: 40px; */
+  }
+  
+  .contactRow {
+	display: flex;
+	flex-direction: column; /* 改直排 */
+	gap: 5px; /* 行距 */
+  }
+  
+  .contactItem {
+	font-size: 1.1vw;
+  }
+  
+  .contactHr {
+	border: 0;
+	border-top: 1px solid white;
+	margin: 10px 0;
+	width: 83vw;
+  }
+  
+  .contactCopyRight {
+	font-size: 0.9vw;
+  }
+
+@media (min-width: 1200px) {
+	
+}
+
+@media screen and (min-width: 744px) and (max-width: 1999px) {
+
+}
+
+@media screen and (max-width: 743px) {
+
+}

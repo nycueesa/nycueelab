@@ -1,0 +1,45 @@
+.academicPage {
+    background: #f8f9fa;
+    min-height: 100vh;
+}
+.banner {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+.bannerImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.sidebar {
+    position: sticky;
+    top: 80px; /* 根據你的 header 高度調整 */
+    align-self: flex-start;
+    will-change: transform;
+    transition: box-shadow 0.2s;
+    z-index: 2;
+}
+.menuList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.menuList li {
+    padding: 12px 18px;
+    cursor: pointer;
+    color: #333;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+.menuList li:hover,
+.menuList .active {
+    background: #0056b3;
+    color: #fff;
+}
+.section {
+    margin-bottom: 48px;
+    padding-top: 24px;
+}

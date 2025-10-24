@@ -1,0 +1,57 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Tailscale
+        uses: tailscale/github-action@v3
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:ci
+          version: latest
+
+      - name: Deploy to server via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            echo "🚀 開始部署 Eesa-web 專案..."
+            
+            # 切換到專案目錄
+            cd /home/user/eesa-web
+            
+            # 確保從 main 分支拉取最新版本
+            echo "📦 正在從 main 分支拉取最新程式碼..."
+            git fetch origin
+            git checkout main
+            git pull origin main
+            
+            # 執行停用腳本，清理舊的部署環境
+            echo "🛑 正在停用舊的部署環境..."
+            ./stop.sh
+            
+            # 等待容器完全停止
+            echo "⏳ 等待容器完全停止..."
+            sleep 5
+            
+            # 執行部署腳本
+            echo "🚀 正在執行新的部署..."
+            ./run.sh
+            
+            # 等待服務啟動並檢查狀態
+            echo "🔍 檢查部署狀態..."
+            sleep 5
+            docker compose -f docker-compose.dev.yml ps
+            
+            echo "✅ 部署完成！"

@@ -29,7 +29,7 @@ jobs:
             echo "🚀 開始部署 Eesalab 專案..."
             
             # 切換到專案目錄
-            cd /home/user/eesalab
+            cd /home/user/nycueelab
             
             # 確保從 main 分支拉取最新版本
             echo "📦 正在從 main 分支拉取最新程式碼..."

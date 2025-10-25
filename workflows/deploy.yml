@@ -26,10 +26,10 @@ jobs:
           password: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            echo "🚀 開始部署 Eesa-web 專案..."
+            echo "🚀 開始部署 Eesalab 專案..."
             
             # 切換到專案目錄
-            cd /home/user/eesa-web
+            cd /home/user/eesalab
             
             # 確保從 main 分支拉取最新版本
             echo "📦 正在從 main 分支拉取最新程式碼..."

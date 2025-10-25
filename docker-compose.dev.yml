@@ -4,25 +4,25 @@ services:
     image: node:20-alpine
     container_name: nycueelab-frontend-dev
     ports:
-      - 5577:5173
+      - 5577:5200 #使用與其他專案錯開的Port
     working_dir: /app
     volumes:
       # 將本地 frontend 資料夾同步到容器中，實現熱修改
       - ./frontend:/app
       # 使用一個 volume 來緩存 node_modules，避免每次重啟都重新安裝
-      - frontend_web_node_modules:/app/node_modules
+      - frontend_lab_node_modules:/app/node_modules
     # 啟動時先安裝依賴，然後啟動 Vite 開發伺服器
     command: sh -c "npm install && npm run dev"
     # depends_on:
     #   backend:
     #     condition: service_healthy
     networks:
-      - web-network
+      - lab-network
 
 networks:
-  web-network:
+  lab-network:
     driver: bridge
-    name: eesa-web-dev-network
+    name: eesa-lab-dev-network
 
 volumes:
-  frontend_web_node_modules:
+  frontend_lab_node_modules:

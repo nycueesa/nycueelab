@@ -121,13 +121,9 @@ export default function Layout({ children }) {
     
 
   return (
-    <div >
-      <div >
-        <TopNavbar />
-      </div>
-      <main >
-        {children}
-      </main>
+    <div className="layout-container">
+      <TopNavbar />
+      <main className="layout-main">{children}</main>
       <Footer />
     </div>
   );

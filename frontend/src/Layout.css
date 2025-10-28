@@ -1,6 +1,15 @@
 /* ====== Navbar 基礎結構 ====== */
 /* Layout 容器 */
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
+.layout-main {
+  flex: 1;
+  display: flex;
+}
 
 /* 主要內容區域 */
 .main-content {

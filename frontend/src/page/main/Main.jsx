@@ -8,9 +8,9 @@ export default function Main() {
   
   const text = 'NYCUEE LAB';
   const fontSize = '10vw';
-  const fontWeight = '900';
+  const fontWeight = '800';
   const letterSpacing = '0.5vw';
-  const fontFamily = 'Arial, sans-serif';
+  const fontFamily = "Arial Black, sans-serif";
   
   // Text gradient colors
   const textGradientStart = '#90c6ecff';  // Light blue
@@ -43,6 +43,7 @@ export default function Main() {
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
+    transform: 'scaleY(1.3) scaleX(0.85)', 
   };
  
   return (

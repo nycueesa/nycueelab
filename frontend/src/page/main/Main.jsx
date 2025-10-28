@@ -13,7 +13,6 @@ export default function Main() {
   const textColor = '#B8D4E8';
   const fontFamily = 'Arial, sans-serif';
   
-  
   // Background gradient colors
   const bgColorTop = '#034b77ff';
   const bgColorBottom = '#034b77ff';
@@ -22,6 +21,12 @@ export default function Main() {
   
   const gradientStyle = {
     background: `linear-gradient(to bottom, ${bgColorTop}, ${bgColorBottom})`,
+    width: '100%',
+    minHeight: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '80px 20px',
   };
   
   const textStyle = {
@@ -31,17 +36,13 @@ export default function Main() {
     color: textColor,
     fontFamily: fontFamily,
     lineHeight: '1.2',
+    textAlign: 'center',
+    margin: 0,
   };
-
+ 
   return (
-    <div 
-      className="flex items-center justify-center"
-      style={gradientStyle}
-    >
-      <h1 
-        className="text-center px-8"
-        style={textStyle}
-      >
+    <div style={gradientStyle}>
+      <h1 style={textStyle}>
         {text}
       </h1>
     </div>

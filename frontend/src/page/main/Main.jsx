@@ -10,17 +10,19 @@ export default function Main() {
   const fontSize = '10vw';
   const fontWeight = '900';
   const letterSpacing = '0.5vw';
-  const textColor = '#B8D4E8';
   const fontFamily = 'Arial, sans-serif';
   
-  // Background gradient colors
-  const bgColorTop = '#034b77ff';
-  const bgColorBottom = '#034b77ff';
+  // Text gradient colors
+  const textGradientStart = '#90c6ecff';  // Light blue
+  const textGradientEnd = '#FFFFFF';    // White
+  
+  // Background color
+  const bgColor = '#034b77ff';
   
   // ============================================
   
   const gradientStyle = {
-    background: `linear-gradient(to bottom, ${bgColorTop}, ${bgColorBottom})`,
+    background: bgColor,
     width: '100%',
     minHeight: '100%',
     display: 'flex',
@@ -33,11 +35,14 @@ export default function Main() {
     fontSize: fontSize,
     fontWeight: fontWeight,
     letterSpacing: letterSpacing,
-    color: textColor,
     fontFamily: fontFamily,
     lineHeight: '1.2',
     textAlign: 'center',
     margin: 0,
+    background: `linear-gradient(to right, ${textGradientStart}, ${textGradientEnd})`,
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
   };
  
   return (

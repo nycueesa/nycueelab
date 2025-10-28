@@ -1,51 +1,112 @@
 .container.custom-container {
-	width:80vw;
-	max-width: 1400px; 
-	margin: 0 auto;
-}
-.ms-auto{
-	margin-left: 10vw;
-}
-.bg-body-tertiary{
-	background: #132947 !important;
-	padding: 10px;
-	width : 100vw;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.main-logo {
-	font-size: 3vw !important;
-	margin-left: 0vw;
-	padding: 0;
-	display: flex;
-	align-items: center;  /* 垂直置中 */
-	/* width:50vw; */
-	font-weight:500;
+.bg-body-tertiary {
+    background: #254D70 !important;
+    padding: 0;
+    width: 100%;
 }
-.main-logo .Lab-logo{
-	width:6vw;
-	height:6vw;
-	margin-right: 2vw;
-	border-radius: 100%;
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.brand-title {
+    color: #D9E7ED !important; /* 改成純白色使其更亮 */
+    font-size: 2.4rem !important;
+    font-weight: 900;
+    margin: 1rem;
+    padding: 0;
+    text-decoration: none;
+}
+
+.nav-icon {
+    display: flex;
+    align-items: center;
+}
+
+.nav-icon img {
+    width: 40px;
+    height: 40px;
+    transition: opacity 0.2s;
+    filter: invert(95%) sepia(8%) saturate(154%) hue-rotate(164deg) brightness(96%) contrast(91%); /* #D9E7ED */
+}
+
+.nav-icon:hover img {
+    opacity: 0.8;
 }
 
 
-.me-auto .nav-link{
-	font-size: 2vw;  
-	text-decoration: none;
-	display: inline;
+.nav-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
 
+.search-icon {
+    position: absolute;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+    filter: invert(95%) sepia(8%) saturate(154%) hue-rotate(164deg) brightness(96%) contrast(91%); /* #D9E7ED */
 }
-.ms-auto *{
-	/* color: white !important; */
-	font-size: 1.7vw;  
-	font-weight: 500;
+
+.search-input {
+    padding: 8px 8px 8px 40px;
+    border: 2px solid #D9E7ED;
+    border-radius: 10px;
+    background: transparent;
+    color: #D9E7ED;
+    font-size: 1.2rem;
+	
+    width: 200px;
+    transition: all 0.3s ease;
 }
-.navbar-toggler {
-	border-color: white !important; /* 邊框改白色 */
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
 }
-  .navbar-toggler-icon {
-	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
-  }
+
+.search-input:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.menu-button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.menu-button img {
+    width: 40px;
+    height: 40px;
+    transition: opacity 0.2s;
+    filter: invert(95%) sepia(8%) saturate(154%) hue-rotate(164deg) brightness(96%) contrast(91%); /* #D9E7ED */
+}
+
+.menu-button:hover img {
+    opacity: 0.8;
+}
 
 .navbar .nav-link,
 .navbar .dropdown-toggle {

@@ -12,6 +12,9 @@ import { setPositionPage } from "./redux/commonSlice.js";
 import "./Layout.css";
 
 import eesaLogo from "@/assets/icon.jpg";
+import houseIcon from "@/assets/house.svg";
+import magnifierIcon from "@/assets/megnifier.svg";
+import menuIcon from "@/assets/menu.svg";
 
 function TopNavbar() {
   const [show1, setShow1] = useState(false);
@@ -21,63 +24,24 @@ function TopNavbar() {
 
   return (
     <Navbar variant="dark" expand="lg" className="bg-body-tertiary">
-      <Container fluid className = "custom-container">
-        <Navbar.Brand as={Link} to="/" className = "main-logo">
-          {/* 這裡之後有新icon再換掉 */}
-          <img src={eesaLogo} className = "Lab-logo" alt="系學會icon"/>
-          <div>
-            NYCU-eesa        
-          </div>      
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
-            <Nav.Link className = "nav-main-page" as={Link} to="/" >首頁</Nav.Link>
-            <NavDropdown  title="系學會介紹" 
-                          id="basic-nav-dropdown"
-                          className="nav-dropdown-intro"
-                          show={show1}
-                          onMouseEnter={() => setShow1(true)}
-                          onMouseLeave={() => setShow1(false)}> 
-              <NavDropdown.Item as={Link} to="/intro/eesa-intro">關於系學會</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/intro/member"> 成員</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/intro/academic">學術部</NavDropdown.Item>
-              {/* <NavDropdown.Item as={Link} to="/intro/social">活器部</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/intro/human">人力部</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/intro/marketing">行銷部</NavDropdown.Item> */}
-              {/* ...其他部門連結待補`*/}
-            </NavDropdown>
-            <NavDropdown  title="活動" 
-                          id="basic-nav-dropdown"
-                          className="nav-dropdown-event dropdown-2word"
-                          show={show2}
-                          onMouseEnter={() => setShow2(true)}
-                          onMouseLeave={() => setShow2(false)}> 
-              <NavDropdown.Item as={Link} to="/event/event-intro">活動簡介</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/event/new-info">最新資訊</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/event/timeline">時間軸</NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link className = "nav-team-page" as={Link} to="/team">系隊資訊</Nav.Link>
-            <NavDropdown  title="學習資訊" 
-                          id="basic-nav-dropdown"
-                          className='nav-dropdown-resource'
-                          show={show3}
-                          onMouseEnter={() => setShow3(true)}
-                          onMouseLeave={() => setShow3(false)}> 
-              <NavDropdown.Item as={Link} to="/resource/prevexam">考古網</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/resource/project">專題資訊</NavDropdown.Item>
-            </NavDropdown>
-            <NavDropdown  title="系上資料" 
-                          id="basic-nav-dropdown"
-                          className='nav-dropdown-file'
-                          show={show4}
-                          onMouseEnter={() => setShow4(true)}
-                          onMouseLeave={() => setShow4(false)}> 
-              <NavDropdown.Item as={Link} to="/file/calendar">行事曆</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/file/course-tool">選課工具</NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
+      <Container fluid className="custom-container">
+        <div className="nav-left">
+          <Navbar.Brand as={Link} to="/" className="brand-title">
+            陽明交大電機專題資訊
+          </Navbar.Brand>
+        </div>
+        <div className="nav-right">
+          <Link to="/" className="nav-icon">
+            <img src={houseIcon} alt="Home" />
+          </Link>
+          <div className="nav-search">
+            <img src={magnifierIcon} alt="Search" className="search-icon" />
+            <input type="text" placeholder="搜尋" className="search-input" />
+          </div>
+          <button className="menu-button">
+            <img src={menuIcon} alt="Menu" />
+          </button>
+        </div>
       </Container>
     </Navbar>
   );

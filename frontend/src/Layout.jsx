@@ -87,9 +87,9 @@ export default function Layout({ children }) {
     }, [navigate]);  
 
   return (
-    <div>
+    <div className="layout-container">
       <TopNavbar />
-      <main>{children}</main>
+      <main className="layout-main">{children}</main>
       <Footer />
     </div>
   );

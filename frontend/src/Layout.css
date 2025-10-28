@@ -8,6 +8,17 @@
     align-items: center;
 }
 
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout-main {
+  flex: 1;
+  display: flex;
+}
+
 .bg-body-tertiary {
     background: #254D70 !important;
     padding: 0;

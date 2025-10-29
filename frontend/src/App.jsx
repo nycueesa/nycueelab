@@ -16,6 +16,7 @@ import Project from "./page/resource/Project.jsx"
 import Calendar from "./page/file/Calendar.jsx"
 import CourseTool from "./page/file/CourseTool.jsx"
 import TopicPage from "./page/topicpage/topicpage.jsx"
+import Professor from "./page/professor/Professor.jsx"
 
 function App(){		
 	return (

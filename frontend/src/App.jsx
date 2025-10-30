@@ -16,6 +16,7 @@ import Project from "./page/resource/Project.jsx"
 import Calendar from "./page/file/Calendar.jsx"
 import CourseTool from "./page/file/CourseTool.jsx"
 import TopicPage from "./page/topicpage/topicpage.jsx"
+import Professor from "./page/Professor/Professor.jsx"
 
 function App(){		
 	return (
@@ -44,6 +45,7 @@ function App(){
 			  		<Route path="/contact" element={<Contact />} />
 
 					<Route path="/topicpage" element={<TopicPage />} />
+				<Route path="/professor" element={<Professor />} />
 					
 				</Routes>
 		  	</Layout>

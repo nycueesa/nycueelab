@@ -1,6 +1,6 @@
 import React from 'react';
 import ProfessorCard from './ProfessorCard';
-import './TopicPage.css';
+import './topicpage.css';
 
 /**
  * 教授詳情頁面

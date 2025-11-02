@@ -8,12 +8,41 @@
       "location": "電控所",
       "email": "changbo.chao@nycu.edu.tw",
       "website": "https://scholar.nycu.edu.tw/zh/persons/chang-bo-chao"
+    },
+    {
+      "name": "蕭先生",
+      "lab": "十三舍",
+      "image": "https://via.placeholder.com/100",
+      "tags": ["#半導體"],
+      "location": "電控所",
+      "email": "profN@nycu.edu.tw",
+      "website": "https://profN.com"
     }
   ],
   "半導體": [
     {
       "name": "教授N",
       "lab": "教授N實驗室",
+      "image": "https://via.placeholder.com/100",
+      "tags": ["#半導體"],
+      "location": "電控所",
+      "email": "profN@nycu.edu.tw",
+      "website": "https://profN.com"
+    },
+    {
+      "name": "濮先生",
+      "lab": "八舍",
+      "image": "https://via.placeholder.com/100",
+      "tags": ["#半導體"],
+      "location": "電控所",
+      "email": "profN@nycu.edu.tw",
+      "website": "https://profN.com"
+    }
+  ],
+  "數位IC設計": [
+    {
+      "name": "古先生",
+      "lab": "八舍",
       "image": "https://via.placeholder.com/100",
       "tags": ["#半導體"],
       "location": "電控所",

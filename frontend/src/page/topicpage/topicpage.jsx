@@ -98,7 +98,7 @@ function TopicPage() {
   };
 
   return (
-    <div className="topic-page"> 
+    <div className="nycu-topic-container">
       <nav className="browse-nav">
         {TABS_CONFIG.map((label) => (
           <button

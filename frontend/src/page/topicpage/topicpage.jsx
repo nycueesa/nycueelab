@@ -8,6 +8,7 @@ import departmentTopicList from './departments.json';
 import departmentProfessorData from './departmentProfessors.json'; 
 import fieldTopicList from './fields.json';
 import fieldProfessorData from './fieldProfessors.json';
+import ProfessorInfo from './infoPage/ProfessorInfo';
 
 const TABS_CONFIG = ['依系所瀏覽', '依領域瀏覽', '依清單瀏覽'];
 const DEPARTMENT_TOPICS_CONFIG = departmentTopicList;

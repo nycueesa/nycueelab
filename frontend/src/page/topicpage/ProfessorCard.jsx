@@ -1,29 +1,22 @@
 import React from 'react';
-import './topicpage.css'; // 我們共用同一個 CSS
+import './topicpage.css'; 
 
-// ** 步驟 1：從您的 assets 資料夾匯入預設圖片 **
-// (如果您的路徑或檔名不同，請修改這一行)
+// (假設您最終決定使用 src/assets 的 import 方法)
+import defaultAvatar from '../../assets/default-prof.jpg'; 
 
 // 這些是 icon (不變)
 const LocationIcon = () => <>&#128205;</>; // 📍
 const EmailIcon = () => <>&#128231;</>; // 📧
 const WebIcon = () => <>&#128187;</>; // 💻
 
-const ProfessorCard = ({ data }) => {
-
-  const defaultAvatarPath = '/assets/default-prof.jpg';
-
+const ProfessorCard = ({ data, onClick }) => {
   return (
-    <div className="professor-card">
+    // 卡片本身是可點擊的，並觸發傳入的 onClick
+    <div 
+      className="professor-card-interactive" 
+      onClick={onClick}
+    >
       <div className="card-left">
-        {/*
-          ** 步驟 2：修改 img 標籤的 src 屬性 **
-          - data.image || defaultAvatar
-          - 這行的意思是：
-          - 1. 嘗試使用 data.image (來自 JSON 的圖片 URL)
-          - 2. 如果 data.image 是空字串、null 或 undefined (即 "falsy" 值)，
-          - 3. 則 "或者" (||) 改用我們匯入的 defaultAvatar
-        */}
         <img 
           src={data.image || defaultAvatar} 
           alt={data.name} 
@@ -41,12 +34,13 @@ const ProfessorCard = ({ data }) => {
           <LocationIcon /> {data.location}
         </div>
         <div className="card-contact-row">
-          <a href={`mailto:${data.email}`}>
+          {/* stopPropagation 防止點擊 email 時觸發卡片點擊 */}
+          <a href={`mailto:${data.email}`} onClick={(e) => e.stopPropagation()}>
             <EmailIcon /> {data.email}
           </a>
         </div>
         <div className="card-contact-row">
-          <a href={data.website} target="_blank" rel="noopener noreferrer">
+          <a href={data.website} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
             <WebIcon /> 個人網站
           </a>
         </div>

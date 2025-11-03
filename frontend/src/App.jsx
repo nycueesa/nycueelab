@@ -16,10 +16,11 @@ import Project from "./page/resource/Project.jsx"
 import Calendar from "./page/file/Calendar.jsx"
 import CourseTool from "./page/file/CourseTool.jsx"
 import TopicPage from "./page/topicpage/topicpage.jsx"
+import ProfessorInfo from './page/topicpage/infoPage/ProfessorInfo.jsx';
 
 function App(){		
 	return (
-		// <BrowserRouter basename="/nycueelab">
+		 //<BrowserRouter basename="/nycueelab">
 		  	<Layout>
 				<Routes>
 			  		<Route path="/" element={<Main />} />
@@ -44,10 +45,11 @@ function App(){
 			  		<Route path="/contact" element={<Contact />} />
 
 					<Route path="/topicpage" element={<TopicPage />} />
+					<Route path="/topicpage/prof-info/:profId" element={<ProfessorInfo />} />
 					
 				</Routes>
 		  	</Layout>
-		// </BrowserRouter>
+		//</BrowserRouter>
 	);
 };
 

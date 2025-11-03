@@ -1,0 +1,99 @@
+.full-width-page {
+    /* 複製 content-area 的背景色和最小高度 */
+    background-color: #3a536e; 
+    min-height: 100vh;
+    width: 100%;
+    
+    /* 設置 padding，這裡可以自定義 */
+    padding: 40px 20px; 
+}
+
+/* --- 1. 實驗室資訊頁容器 --- */
+.prof-info-container {
+  /* 移除所有負邊距和寬度限制 */
+  margin: 0; 
+  padding: 0; /* 內距現在由 .full-width-page 提供 */
+  width: 100%; /* 確保容器佔滿父層 */
+  color: white;
+}
+
+/* 確保進場動畫運行 */
+.prof-info-enter {
+  animation: fadeIn 0.4s ease-out; 
+}
+
+/* 2. 標題與副標題 */
+.prof-info-title {
+  color: white;
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.prof-info-subtitle {
+  color: #ccc;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #0d6efd;
+  margin-bottom: 30px;
+}
+
+/* 3. 內容網格 */
+.prof-info-grid {
+  display: grid;
+  grid-template-columns: 3fr 1fr; 
+  gap: 60px; 
+}
+
+/* 4. 資訊區塊樣式 */
+.prof-info-details {
+  padding-right: 40px; 
+}
+
+.prof-info-details h3 {
+  color: #f8f9fa;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 25px; 
+  margin-bottom: 10px;
+  border-left: 4px solid #0d6efd;
+  padding-left: 10px;
+}
+
+.prof-info-details p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.prof-info-details a {
+  color: #0d6efd;
+  text-decoration: none;
+  font-weight: 500;
+}
+.prof-info-details a:hover {
+  text-decoration: underline;
+}
+
+.prof-info-divider {
+  border: 0;
+  border-top: 1px solid #5a738e;
+  margin: 20px 0;
+}
+
+/* 5. 圖片區塊樣式 */
+.prof-info-image-wrapper {
+  text-align: center;
+}
+
+.prof-info-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 4px solid #fff;
+}

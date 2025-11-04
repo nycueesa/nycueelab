@@ -22,7 +22,22 @@ function TopNavbar() {
   const [show3, setShow3] = useState(false);
   const [show4, setShow4] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const navbarRef = useRef(null);
   const location = useLocation();
+
+  useEffect(() => {
+    const updateNavbarHeight = () => {
+      const height = navbarRef.current?.offsetHeight || 0;
+      document.documentElement.style.setProperty('--navbar-height', `${height}px`);
+    };
+
+    updateNavbarHeight();
+    window.addEventListener('resize', updateNavbarHeight);
+    
+    return () => {
+      window.removeEventListener('resize', updateNavbarHeight);
+    };
+  }, []);
 
   
   
@@ -33,7 +48,7 @@ function TopNavbar() {
   const theme = isLightVersion ? 'light' : 'dark';
   
   return (
-    <Navbar variant={theme} expand="lg" 
+    <Navbar ref={navbarRef} variant={theme} expand="lg" 
            className={`${styles.navbarCustom} ${styles[`navbar${theme.charAt(0).toUpperCase() + theme.slice(1)}`]}`}>
       <Container fluid className={styles.customContainer}>
         <Navbar.Brand as={Link} to="/" className={`${styles.brandTitle} ${styles[`brandTitle${theme.charAt(0).toUpperCase() + theme.slice(1)}`]}`}>
@@ -77,11 +92,11 @@ function Footer() {
             <div className={styles.contactRow}>
             <span className={styles.contactItem}>| TEL | +886-3-xyz-xxxx</span>
             <span className={styles.contactItem}>| Email | Imtensor@gmail.com</span>
-            <span className={styles.contactItem}>| Address | 新竹市東區大學路1001號工程五館222室</span>
+            <span className={styles.contactItem}>| Address | 新竹市東區大學路1001號工程五館219B室</span>
             </div>
             <hr className={styles.contactHr} />
             <div className={styles.contactCopyRight}>
-            Copyright © Autonomous intelligent Sensory Microsystems with Analog Reconfigurable Technologies Laboratory
+            Copyright © National Yang Ming Chiao Tung University EESA | Team NaNashi & Chang. All Rights Reserved.
             </div>
         </footer>      
     )

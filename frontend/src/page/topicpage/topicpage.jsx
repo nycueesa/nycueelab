@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import './topicpage.css'; 
+// ** 關鍵修改：導入 CSS Modules (styles 變數) **
+import styles from './TopicPage.module.css';
 import ButtonGrid from './ButtonGrid'; 
 import ProfessorDetail from './ProfessorDetail'; 
-
 // 匯入四個獨立的 JSON 檔案 (不變)
 import departmentTopicList from './departments.json'; 
 import departmentProfessorData from './departmentProfessors.json'; 
 import fieldTopicList from './fields.json';
 import fieldProfessorData from './fieldProfessors.json';
-import ProfessorInfo from './infoPage/ProfessorInfo';
+import ProfessorInfo from './infoPage/ProfessorInfo'; // 這個元件的導入不變
 
 const TABS_CONFIG = ['依系所瀏覽', '依領域瀏覽', '依清單瀏覽'];
 const DEPARTMENT_TOPICS_CONFIG = departmentTopicList;
@@ -25,36 +25,28 @@ function TopicPage() {
 
   // ** 第一次點擊：選領域 (大格子) **
   const handleTopicSelect = (topic) => {
-    
-    // ** 關鍵邏輯：第二次點擊 **
-    // 如果點擊的是 "已經選中" 的領域
     if (selectedTopic === topic) {
       // 觸發切換到詳情頁
       setDetailPageTopic(topic); 
     } else {
-      // ** 第一次點擊 **
       // 否則，只是展開/切換小格子
       setSelectedTopic(topic);
-      // 確保詳情頁是關閉的
       setDetailPageTopic(null); 
     }
   };
   
   // ** 第二次點擊 (備案)：選教授 (小格子) **
-  // 點擊小格子也會跳轉到詳情頁
   const handleProfessorSelect = (professorName) => {
-    // 確保我們知道是哪個領域的詳情頁
     if (selectedTopic) {
       setDetailPageTopic(selectedTopic);
     }
-    // (您可以選擇註解掉這行，如果您不希望點小格子有反應)
   };
 
   // 切換頁籤時，重設 "所有" 狀態
   const handleTabChange = (tab) => {
     setActiveTab(tab);
     setSelectedTopic(null); 
-    setDetailPageTopic(null); // ** 新增：重設詳情頁狀態 **
+    setDetailPageTopic(null); 
   };
 
   // 決定要渲染什麼內容 (核心邏輯)
@@ -69,7 +61,8 @@ function TopicPage() {
       currentTopics = FIELD_TOPICS_CONFIG;
       currentData = fieldProfessorData;
     } else {
-      return <div className="tab-content-placeholder">依清單瀏覽 內容</div>;
+      // ** 替換 className **
+      return <div className={styles['tab-content-placeholder']}>依清單瀏覽 內容</div>;
     }
 
     // 2. 決定渲染哪個元件
@@ -81,7 +74,6 @@ function TopicPage() {
         <ProfessorDetail
           topic={detailPageTopic} 
           professors={professorsInTopic}
-          // (onBack 功能已被移除)
         />
       );
     } 
@@ -99,12 +91,14 @@ function TopicPage() {
   };
 
   return (
-    <div className="nycu-topic-container">
-      <nav className="browse-nav">
+    // ** 關鍵修改：替換所有 className **
+    <div className={styles['nycu-topic-container']}>
+      <nav className={styles['browse-nav']}>
         {TABS_CONFIG.map((label) => (
           <button
             key={label}
-            className={`browse-nav-item ${activeTab === label ? 'active' : ''}`}
+            // 使用陣列模板字符串動態加入 class，並使用 styles.active
+            className={`${styles['browse-nav-item']} ${activeTab === label ? styles.active : ''}`}
             onClick={() => handleTabChange(label)}
           >
             {label}
@@ -112,8 +106,8 @@ function TopicPage() {
         ))}
       </nav>
       
-      <div className="content-area">
-        <div className="content-area-wrapper">
+      <div className={styles['content-area']}>
+        <div className={styles['content-area-wrapper']}>
           {renderTabContent()}
         </div>
       </div>

@@ -31,7 +31,7 @@ const ButtonGrid = ({
 
   return (
     // "grid-enter" class 用於頁面切換動畫
-    <div className="grid-wrapper grid-enter"> 
+    <div className="topic-grid-wrapper grid-enter"> 
       {buttonRows.map((row, rowIndex) => (
         <React.Fragment key={rowIndex}>
           

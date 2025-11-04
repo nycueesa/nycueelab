@@ -1,8 +1,10 @@
-/* --- 1. 整體 & 頁籤 (不變) --- */
-.topic-page {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
-    'Noto Sans', sans-serif;
+.nycu-topic-container {
+  font-family: -apple-system, /* ... */;
   background-color: #f1f3f5;
+
+  /* ** 新增：這兩行是為了強制覆蓋掉 merge 的衝突 ** */
+  width: 100%;
+  float: none; 
 }
 .browse-nav {
   display: flex;
@@ -42,7 +44,7 @@
 }
 
 /* --- 2. 領域按鈕網格 (ButtonGrid) (不變) --- */
-.grid-wrapper {
+.topic-grid-wrapper {
   max-width: 900px;
   margin: 0 auto;
 }

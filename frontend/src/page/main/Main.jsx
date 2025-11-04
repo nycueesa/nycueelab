@@ -21,34 +21,20 @@ export default function Main() {
   
   // ============================================
   
-  const gradientStyle = {
-    background: bgColor,
-    width: '100%',
-    minHeight: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: '80px 20px',
-  };
-  
-  const textStyle = {
-    fontSize: fontSize,
-    fontWeight: fontWeight,
-    letterSpacing: letterSpacing,
-    fontFamily: fontFamily,
-    lineHeight: '1.2',
-    textAlign: 'center',
-    margin: 0,
-    background: `linear-gradient(to right, ${textGradientStart}, ${textGradientEnd})`,
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    backgroundClip: 'text',
-    transform: 'scaleY(1.3) scaleX(0.85)', 
+  // Pass customizable values as CSS variables
+  const customStyles = {
+    '--bg-color': bgColor,
+    '--font-size': fontSize,
+    '--font-weight': fontWeight,
+    '--letter-spacing': letterSpacing,
+    '--font-family': fontFamily,
+    '--gradient-start': textGradientStart,
+    '--gradient-end': textGradientEnd,
   };
  
   return (
-    <div style={gradientStyle}>
-      <h1 style={textStyle}>
+    <div className={styles.main} style={customStyles}>
+      <h1 className={styles.title}>
         {text}
       </h1>
     </div>

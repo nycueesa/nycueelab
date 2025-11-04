@@ -1,4 +1,28 @@
-.mainPage{
-    width:100vw;
-    background-color: bisque;
+.main {
+  background: var(--bg-color);
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+}
+
+.title {
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  letter-spacing: var(--letter-spacing);
+  font-family: var(--font-family);
+  line-height: 1.2;
+  text-align: center;
+  margin: 0;
+  background: linear-gradient(
+    to right, 
+    var(--gradient-start), 
+    var(--gradient-end)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transform: scaleY(1.3) scaleX(0.85);
 }

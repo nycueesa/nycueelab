@@ -101,14 +101,14 @@ function Footer() {
         </footer>      
     )
 }
-
 export default function Layout({ children }) {
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const location = useLocation();
     const positions = useSelector((state) => state.positionPage);
 
-
-   
+    // Check if current page is main page
+    const isMainPage = location.pathname === '/';
 
     // 頁面一載入就紀錄位置
     useEffect(() => {
@@ -133,14 +133,11 @@ export default function Layout({ children }) {
       }
     }, [navigate]);  
 
-
-    
-
   return (
     <div className={styles.layoutContainer}>
-      <TopNavbar />
-      <main className={styles.layoutMain}>{children}</main>
-      <Footer />
+      {!isMainPage && <TopNavbar />}
+      <main className={`${styles.layoutMain} ${isMainPage ? styles.noNavbar : ''}`}>{children}</main>
+      {!isMainPage && <Footer />}
     </div>
   );
 }

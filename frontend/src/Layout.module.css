@@ -16,6 +16,9 @@
   padding-top: var(--navbar-height, 80px); /* 使用CSS變數，如果沒有設置則預設為80px */
   width: 100%;
 }
+.noNavbar {
+  padding-top: 0 !important;
+}
 
 .mainContent {
   flex: 1;

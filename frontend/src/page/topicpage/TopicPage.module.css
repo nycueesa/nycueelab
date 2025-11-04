@@ -1,8 +1,8 @@
+/* --- 1. 整體 & 頁籤 --- */
 .nycu-topic-container {
-  font-family: -apple-system, /* ... */;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    'Noto Sans', sans-serif;
   background-color: #f1f3f5;
-
-  /* ** 新增：這兩行是為了強制覆蓋掉 merge 的衝突 ** */
   width: 100%;
   float: none; 
 }
@@ -43,7 +43,7 @@
   position: relative;
 }
 
-/* --- 2. 領域按鈕網格 (ButtonGrid) (不變) --- */
+/* --- 2. 領域按鈕網格 (ButtonGrid) --- */
 .topic-grid-wrapper {
   max-width: 900px;
   margin: 0 auto;
@@ -80,7 +80,7 @@
 }
 
 
-/* --- 3. 教授 "小格子" 展開 (不變) --- */
+/* --- 3. 教授 "小格子" 展開 --- */
 .professor-reveal-panel {
   overflow: hidden; 
   max-height: 0; 
@@ -138,11 +138,6 @@
   margin: 0 auto;
   color: white;
 }
-
-/* * .back-button (樣式已被移除)
- * .back-button:hover (樣式已被移除)
- */
-
 .detail-page-title {
   color: white;
   font-size: 2.5rem;
@@ -153,21 +148,38 @@
   display: inline-block;
 }
 
-/* --- 5. 教授 "大卡片" (ProfessorCard) (不變) --- */
+/* --- 5. 教授 "大卡片" (ProfessorCard) --- */
 .professor-card-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 欄 */
   gap: 30px;
 }
-.professor-card {
+
+/* ** 替換：教授卡片的基本樣式和懸停效果 ** */
+.professor-card-interactive {
+  cursor: pointer;
+  
+  /* 基本樣式 (取代了舊的 .professor-card) */
   background-color: #fff;
   color: #212529;
-  border-radius: 20px; /* 大圓角 */
+  border-radius: 20px; 
   padding: 20px;
   display: flex;
   gap: 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  
+  /* 懸停效果的基礎屬性 */
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, border 0.3s; 
+  border: 2px solid transparent; /* 預留邊框空間 */
 }
+
+/* ** 新增：懸停效果 ** */
+.professor-card-interactive:hover {
+  transform: translateY(-8px); /* 向上浮動 */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25); /* 更強烈的陰影 */
+  border: 2px solid #0d6efd; /* 藍色邊框強調 */
+}
+
 .card-left {
   flex-shrink: 0;
 }
@@ -233,7 +245,78 @@
   padding: 50px 0;
 }
 
-/* --- 6. 切換動畫 (不變) --- */
+/* --- 6. 實驗室詳情頁 (LabDetailPage) 樣式 --- */
+.lab-page-enter {
+  animation: fadeIn 0.4s ease-out; /* 沿用既有的 fadeIn 動畫 */
+}
+
+.lab-page-title {
+  color: white;
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.lab-page-subtitle {
+  color: #ccc;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #0d6efd;
+  margin-bottom: 30px;
+}
+
+.lab-content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* 資訊佔 2/3，圖片佔 1/3 */
+  gap: 40px;
+}
+
+.lab-info-block {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #fff;
+}
+
+.lab-info-block p {
+  margin-bottom: 12px;
+}
+
+.lab-info-block a {
+  color: #0d6efd;
+  text-decoration: none;
+}
+.lab-info-block a:hover {
+  text-decoration: underline;
+}
+
+.lab-page-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 返回按鈕 (雖然您說不用，但 LabDetailPage 仍在使用) */
+.back-button {
+  background-color: #f8f9fa;
+  color: #3a536e;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.2s;
+}
+.back-button:hover {
+  background-color: #e9ecef;
+}
+
+/* --- 7. 切換動畫 --- */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -245,7 +328,7 @@
   animation: fadeIn 0.4s ease-out;
 }
 
-/* --- 7. 其他頁籤 (不變) --- */
+/* --- 8. 其他頁籤 --- */
 .tab-content-placeholder {
   color: white;
   font-size: 1.5rem;

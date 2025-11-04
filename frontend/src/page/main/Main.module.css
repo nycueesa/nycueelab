@@ -68,7 +68,7 @@
   font-size: 1.2rem;
   font-weight: 600;
   color: #D9E7ED;
-  background: transparent;
+  background: rgba(217, 231, 237, 0.1);
   border: 2px solid #D9E7ED;
   border-radius: 8px;
   cursor: pointer;

@@ -1,15 +1,28 @@
-import { useEffect } from "react";
-import { animate, onScroll } from 'animejs';
+import { useEffect, useState, useRef } from "react";
 import styles from "./Professor.module.css";
 
 function Professor() {
-  // This would typically come from props or API
+  // Animation state for each section
+  const [heroVisible, setHeroVisible] = useState(false);
+  const [researchVisible, setResearchVisible] = useState(false);
+  const [courseCardsVisible, setCourseCardsVisible] = useState([]);
+  const [qaItemsVisible, setQaItemsVisible] = useState([]);
+  const [mediaVisible, setMediaVisible] = useState(false);
+
+  // Refs to track elements
+  const researchRef = useRef(null);
+  const courseRef = useRef(null);
+  const qaRef = useRef(null);
+  const mediaRef = useRef(null);
+  const courseCardRefs = useRef([]);
+  const qaItemRefs = useRef([]);
+
   const professorData = {
     name: "Prof. 劉建男",
     labName: "Mixed-Signal Electronic Design Automation Lab",
     department: "EDA 電子所乙B組",
     email: "jimmyliu@nycu.edu.tw",
-    photo: "/placeholder-professor.jpg", // Replace with actual image path
+    photo: "/placeholder-professor.jpg",
     research: {
       mainTopic: "AI for EDA Algorithms",
       subTopic: "DNN-Assisted Analog Circuit Sizing : 透過AI輔助類比電路sizing"
@@ -26,160 +39,162 @@ function Professor() {
     ]
   };
 
+  // Trigger hero animation on mount
   useEffect(() => {
-    // ============================================
-    // GLOBAL ANIMATION CONFIGURATION
-    // ============================================
-    const ANIMATION_CONFIG = {
-      // Scroll-synced animation positions
-      // Values represent where the TARGET ELEMENT is relative to viewport:
-      // Values > 1.0 = element is below viewport (not yet visible)
-      // 1.0 = element's TOP edge is at viewport BOTTOM (just entering screen)
-      // 0.5 = element at middle of viewport
-      // 0.0 = element's TOP edge is at viewport TOP
-      scroll: {
-        enterStart: 1.15,    // When element TOP is at 115% (below screen), START animation (0%)
-        enterEnd: 1.0,       // When element TOP reaches viewport BOTTOM (entering screen), FINISH animation (100%)
-        debug: false         // Set to true to see animation zones
-      },
-
-      // Animation durations (in milliseconds)
-      duration: {
-        hero: 1500,           // Hero section initial animations
-        research: 600,        // Research section
-        courseTimeline: 800,  // Course cards total timeline
-        courseCard: 350,      // Individual course card
-        qaItem: 600,          // Individual Q&A item
-        media: 600            // Media section
-      },
-
-      // Animation delays and offsets
-      timing: {
-        heroPhotoDelay: 200,  // Delay for hero photo after text
-        courseStagger: 150,   // Time between course card animations
-        qaStagger: 20         // Offset between Q&A items
-      },
-
-      // Movement distances
-      movement: {
-        translateY: 80,       // Vertical slide distance
-        translateX: 150,      // Horizontal slide distance
-        scaleFrom: 0.9,       // Starting scale
-        scaleTo: 1,           // Ending scale
-        heroScaleFrom: 0.7,   // Hero photo starting scale
-        heroRotate: -5        // Hero photo rotation degrees
-      },
-
-      // Easing functions
-      easing: {
-        standard: 'outQuad',              // Standard easing
-        hero: 'outQuint',                 // Hero text easing
-        heroPhoto: 'outElastic(1, 0.8)'   // Hero photo easing (bouncy)
-      }
-    };
-    // ============================================
-
-    // Hero section - animate immediately on load (no scroll trigger)
-    animate(`.${styles.heroLeft}`, {
-      opacity: [0, 1],
-      translateY: [ANIMATION_CONFIG.movement.translateY, 0],
-      duration: ANIMATION_CONFIG.duration.hero,
-      easing: ANIMATION_CONFIG.easing.hero
-    });
-
-    animate(`.${styles.professorPhotoContainer}`, {
-      opacity: [0, 1],
-      scale: [ANIMATION_CONFIG.movement.heroScaleFrom, ANIMATION_CONFIG.movement.scaleTo],
-      rotate: [ANIMATION_CONFIG.movement.heroRotate, 0],
-      duration: ANIMATION_CONFIG.duration.hero,
-      delay: ANIMATION_CONFIG.timing.heroPhotoDelay,
-      easing: ANIMATION_CONFIG.easing.heroPhoto
-    });
-
-    // Research section - scroll-synced animation
-    // Note: When sync:true, animation speed is controlled by scroll distance (enterStart to enterEnd)
-    // Duration parameter is ignored in sync mode
-    animate(`.${styles.researchContent}`, {
-      opacity: [0, 1],
-      translateX: [-ANIMATION_CONFIG.movement.translateX, 0],
-      easing: 'linear',  // Linear easing for smooth scroll-sync
-      autoplay: onScroll({
-        target: `.${styles.researchSection}`,
-        debug: ANIMATION_CONFIG.scroll.debug,
-        sync: true,
-        axis: 'y',
-        enter: [ANIMATION_CONFIG.scroll.enterStart, ANIMATION_CONFIG.scroll.enterEnd]
-      })
-    });
-
-    // Course cards - scroll-synced staggered timeline
-    const courseCards = Array.from(document.querySelectorAll(`.${styles.courseCard}`));
-
-    if (courseCards.length > 0) {
-      courseCards.forEach((card, index) => {
-        animate(card, {
-          opacity: [0, 1],
-          translateY: [ANIMATION_CONFIG.movement.translateY, 0],
-          scale: [ANIMATION_CONFIG.movement.scaleFrom, ANIMATION_CONFIG.movement.scaleTo],
-          easing: 'linear',
-          autoplay: onScroll({
-            target: `.${styles.courseSection}`,
-            debug: ANIMATION_CONFIG.scroll.debug,
-            sync: true,
-            axis: 'y',
-            enter: [
-              ANIMATION_CONFIG.scroll.enterStart + (index * 0.05),  // Stagger start
-              ANIMATION_CONFIG.scroll.enterEnd + (index * 0.05)      // Stagger end
-            ]
-          })
-        });
-      });
-    }
-
-    // Q&A items - scroll-synced individual animations
-    const qaItems = Array.from(document.querySelectorAll(`.${styles.qaItem}`));
-
-    qaItems.forEach((item, index) => {
-      animate(item, {
-        opacity: [0, 1],
-        translateX: [-ANIMATION_CONFIG.movement.translateY, 0],
-        easing: 'linear',
-        autoplay: onScroll({
-          target: `.${styles.qaSection}`,
-          debug: ANIMATION_CONFIG.scroll.debug,
-          sync: true,
-          axis: 'y',
-          enter: [
-            ANIMATION_CONFIG.scroll.enterStart + (index * 0.03),  // Stagger start
-            ANIMATION_CONFIG.scroll.enterEnd + (index * 0.03)      // Stagger end
-          ]
-        })
-      });
-    });
-
-    // Media section - scroll-synced animation
-    animate(`.${styles.mediaPlaceholder}`, {
-      opacity: [0, 1],
-      scale: [ANIMATION_CONFIG.movement.scaleFrom, ANIMATION_CONFIG.movement.scaleTo],
-      rotate: [-2, 0],
-      easing: 'linear',
-      autoplay: onScroll({
-        target: `.${styles.mediaSection}`,
-        debug: ANIMATION_CONFIG.scroll.debug,
-        sync: true,
-        axis: 'y',
-        enter: [ANIMATION_CONFIG.scroll.enterStart, ANIMATION_CONFIG.scroll.enterEnd]
-      })
-    });
-
+    // Small delay to ensure DOM is ready
+    const timer = setTimeout(() => {
+      setHeroVisible(true);
+    }, 50);
+    return () => clearTimeout(timer);
   }, []);
+
+  // Intersection Observer for detecting when elements enter/exit viewport
+  useEffect(() => {
+    const observerOptions = {
+      root: null, // viewport
+      rootMargin: '0px 0px -100px 0px', // Trigger 100px before element enters viewport
+      threshold: 0.1 // Trigger when 10% of element is visible
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        // Research section
+        if (entry.target === researchRef.current) {
+          setResearchVisible(entry.isIntersecting);
+        }
+        // Media section
+        else if (entry.target === mediaRef.current) {
+          setMediaVisible(entry.isIntersecting);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe sections
+    if (researchRef.current) observer.observe(researchRef.current);
+    if (mediaRef.current) observer.observe(mediaRef.current);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  // Separate observer for course cards with stagger
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -50px 0px',
+      threshold: 0.1
+    };
+
+    const timeouts = {};
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        const index = courseCardRefs.current.indexOf(entry.target);
+        if (index !== -1) {
+          if (entry.isIntersecting) {
+            // Clear any existing timeout for this card
+            if (timeouts[index]) {
+              clearTimeout(timeouts[index]);
+            }
+            // Stagger the animation by index when entering
+            timeouts[index] = setTimeout(() => {
+              setCourseCardsVisible(prev => {
+                if (!prev.includes(index)) {
+                  return [...prev, index];
+                }
+                return prev;
+              });
+            }, index * 150); // 150ms delay between each card
+          } else {
+            // Remove immediately when leaving viewport
+            if (timeouts[index]) {
+              clearTimeout(timeouts[index]);
+            }
+            setCourseCardsVisible(prev => prev.filter(i => i !== index));
+          }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe each course card
+    courseCardRefs.current.forEach(card => {
+      if (card) observer.observe(card);
+    });
+
+    return () => {
+      // Clear all timeouts on cleanup
+      Object.values(timeouts).forEach(timeout => clearTimeout(timeout));
+      observer.disconnect();
+    };
+  }, [professorData.courses.length]);
+
+  // Separate observer for Q&A items with stagger
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -50px 0px',
+      threshold: 0.1
+    };
+
+    const timeouts = {};
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        const index = qaItemRefs.current.indexOf(entry.target);
+        if (index !== -1) {
+          if (entry.isIntersecting) {
+            // Clear any existing timeout for this item
+            if (timeouts[index]) {
+              clearTimeout(timeouts[index]);
+            }
+            // Stagger the animation by index when entering
+            timeouts[index] = setTimeout(() => {
+              setQaItemsVisible(prev => {
+                if (!prev.includes(index)) {
+                  return [...prev, index];
+                }
+                return prev;
+              });
+            }, index * 100); // 100ms delay between each item
+          } else {
+            // Remove immediately when leaving viewport
+            if (timeouts[index]) {
+              clearTimeout(timeouts[index]);
+            }
+            setQaItemsVisible(prev => prev.filter(i => i !== index));
+          }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe each Q&A item
+    qaItemRefs.current.forEach(item => {
+      if (item) observer.observe(item);
+    });
+
+    return () => {
+      // Clear all timeouts on cleanup
+      Object.values(timeouts).forEach(timeout => clearTimeout(timeout));
+      observer.disconnect();
+    };
+  }, [professorData.faqs.length]);
+
 
   return (
     <div className={styles.professorPage}>
       {/* Hero Section */}
       <section className={styles.heroSection}>
         <div className={styles.heroContent}>
-          <div className={styles.heroLeft}>
+          <div
+            className={`${styles.heroLeft} ${heroVisible ? styles.heroLeftVisible : ''}`}
+          >
             <h1 className={styles.labName}>{professorData.labName}</h1>
             <p className={styles.department}>{professorData.department}</p>
             <button className={styles.moreButton}>more about</button>
@@ -188,7 +203,9 @@ function Professor() {
             </p>
           </div>
           <div className={styles.heroRight}>
-            <div className={styles.professorPhotoContainer}>
+            <div
+              className={`${styles.professorPhotoContainer} ${heroVisible ? styles.professorPhotoVisible : ''}`}
+            >
               <img
                 src={professorData.photo}
                 alt={professorData.name}
@@ -201,26 +218,32 @@ function Professor() {
       </section>
 
       {/* Research Section */}
-      <section className={styles.researchSection}>
+      <section className={styles.researchSection} ref={researchRef}>
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>研究領域</h2>
           <p className={styles.sectionSubtitle}>What we do</p>
         </div>
-        <div className={styles.researchContent}>
+        <div
+          className={`${styles.researchContent} ${researchVisible ? styles.researchContentVisible : ''}`}
+        >
           <h3 className={styles.researchMainTopic}>{professorData.research.mainTopic}</h3>
           <p className={styles.researchSubTopic}>{professorData.research.subTopic}</p>
         </div>
       </section>
 
       {/* Course Requirements Section */}
-      <section className={styles.courseSection}>
+      <section className={styles.courseSection} ref={courseRef}>
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>修課建議與成績要求</h2>
           <p className={styles.sectionSubtitle}>Course Suggestions and Grading Policy</p>
         </div>
         <div className={styles.courseCards}>
           {professorData.courses.map((course, index) => (
-            <div key={index} className={styles.courseCard}>
+            <div
+              key={index}
+              ref={el => courseCardRefs.current[index] = el}
+              className={`${styles.courseCard} ${courseCardsVisible.includes(index) ? styles.courseCardVisible : ''}`}
+            >
               <div className={styles.courseCategory}>{course.category}</div>
               <div className={styles.courseName}>{course.name}</div>
             </div>
@@ -230,13 +253,17 @@ function Professor() {
       </section>
 
       {/* Q&A Section */}
-      <section className={styles.qaSection}>
+      <section className={styles.qaSection} ref={qaRef}>
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>同學提問 Q&A</h2>
         </div>
         <div className={styles.qaContent}>
           {professorData.faqs.map((faq, index) => (
-            <div key={index} className={styles.qaItem}>
+            <div
+              key={index}
+              ref={el => qaItemRefs.current[index] = el}
+              className={`${styles.qaItem} ${qaItemsVisible.includes(index) ? styles.qaItemVisible : ''}`}
+            >
               <span className={styles.searchIcon}>🔍</span>
               <span className={styles.qaText}>{faq}</span>
             </div>
@@ -245,14 +272,16 @@ function Professor() {
       </section>
 
       {/* Media Section */}
-      <section className={styles.mediaSection}>
+      <section className={styles.mediaSection} ref={mediaRef}>
         <div className={styles.curveTop}></div>
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>投影片與影片</h2>
           <p className={styles.sectionSubtitle}>ppt and video</p>
         </div>
         <div className={styles.mediaContent}>
-          <div className={styles.mediaPlaceholder}>
+          <div
+            className={`${styles.mediaPlaceholder} ${mediaVisible ? styles.mediaPlaceholderVisible : ''}`}
+          >
             {/* Media content will go here */}
           </div>
         </div>

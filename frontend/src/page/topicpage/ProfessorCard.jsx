@@ -1,52 +1,49 @@
 import React from 'react';
-import './topicpage.css'; // 我們共用同一個 CSS
+// import './topicpage.css'; // <-- 刪除舊的導入
 
-// ** 步驟 1：從您的 assets 資料夾匯入預設圖片 **
-// (如果您的路徑或檔名不同，請修改這一行)
+// ** 關鍵修改 1：導入 CSS Modules (styles 變數) **
+import styles from './TopicPage.module.css'; 
+
+// (假設您最終決定使用 src/assets 的 import 方法)
+import defaultAvatar from '../../assets/default-prof.jpg'; 
 
 // 這些是 icon (不變)
 const LocationIcon = () => <>&#128205;</>; // 📍
 const EmailIcon = () => <>&#128231;</>; // 📧
 const WebIcon = () => <>&#128187;</>; // 💻
 
-const ProfessorCard = ({ data }) => {
-
-  const defaultAvatarPath = '/assets/default-prof.jpg';
-
+const ProfessorCard = ({ data, onClick }) => {
   return (
-    <div className="professor-card">
-      <div className="card-left">
-        {/*
-          ** 步驟 2：修改 img 標籤的 src 屬性 **
-          - data.image || defaultAvatar
-          - 這行的意思是：
-          - 1. 嘗試使用 data.image (來自 JSON 的圖片 URL)
-          - 2. 如果 data.image 是空字串、null 或 undefined (即 "falsy" 值)，
-          - 3. 則 "或者" (||) 改用我們匯入的 defaultAvatar
-        */}
+    // ** 關鍵修改 2：替換所有 className **
+    <div 
+      className={styles['professor-card-interactive']} 
+      onClick={onClick}
+    >
+      <div className={styles['card-left']}>
         <img 
           src={data.image || defaultAvatar} 
           alt={data.name} 
-          className="card-image" 
+          className={styles['card-image']} 
         />
       </div>
-      <div className="card-right">
-        <div className="card-tags">
+      <div className={styles['card-right']}>
+        <div className={styles['card-tags']}>
           {data.tags.join(' ')}
         </div>
-        <h3 className="card-name">{data.name}</h3>
-        <p className="card-lab">{data.lab}</p>
+        <h3 className={styles['card-name']}>{data.name}</h3>
+        <p className={styles['card-lab']}>{data.lab}</p>
         
-        <div className="card-contact-row">
+        <div className={styles['card-contact-row']}>
           <LocationIcon /> {data.location}
         </div>
-        <div className="card-contact-row">
-          <a href={`mailto:${data.email}`}>
+        <div className={styles['card-contact-row']}>
+          {/* stopPropagation 防止點擊 email 時觸發卡片點擊 */}
+          <a href={`mailto:${data.email}`} onClick={(e) => e.stopPropagation()}>
             <EmailIcon /> {data.email}
           </a>
         </div>
-        <div className="card-contact-row">
-          <a href={data.website} target="_blank" rel="noopener noreferrer">
+        <div className={styles['card-contact-row']}>
+          <a href={data.website} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
             <WebIcon /> 個人網站
           </a>
         </div>

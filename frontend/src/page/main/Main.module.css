@@ -17,7 +17,6 @@
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  /* Removed max-width: 1200px */
 }
 
 .title {
@@ -38,15 +37,16 @@
 
 .subtitle {
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 600;
   color: #D9E7ED;
   margin: 0;
   animation: fadeIn 0.8s ease-out 0.2s backwards;
 }
 
 .divider {
-  width: 600px;
-  max-width: 90vw;
+  width: 50vw; /* ← Responsive: 50% of viewport width */
+  min-width: 300px; /* ← Minimum width on small screens */
+  max-width: 800px; /* ← Maximum width on large screens */
   height: 2px;
   background: #D9E7ED;
   animation: expandWidth 0.6s ease-out 0.3s backwards;
@@ -55,8 +55,9 @@
 .buttonGroup {
   display: flex;
   gap: 2rem;
-  width: 100%;
-  max-width: 700px;
+  width: 50vw; /* ← Responsive: 50% of viewport width */
+  min-width: 300px; /* ← Minimum width on small screens */
+  max-width: 800px; /* ← Maximum width on large screens */
   justify-content: center;
   animation: fadeIn 0.8s ease-out 0.3s backwards;
 }
@@ -112,7 +113,7 @@
     opacity: 0;
   }
   to {
-    width: 600px;
+    width: 50vw; /* ← Updated to match responsive divider */
     opacity: 1;
   }
 }
@@ -123,18 +124,20 @@
     font-size: 1.2rem;
   }
   
+  .divider {
+    width: 80vw; /* ← Wider on mobile */
+    min-width: 250px;
+  }
+  
   .buttonGroup {
     flex-direction: column;
     gap: 1rem;
-    width: 100%;
+    width: 80vw; /* ← Wider on mobile */
+    min-width: 250px;
     max-width: 400px;
   }
   
   .navButton {
     width: 100%;
-  }
-  
-  .divider {
-    width: 400px;
   }
 }

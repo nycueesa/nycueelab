@@ -4,6 +4,7 @@ import Layout from "./Layout.jsx"
 import Main from "./page/main/Main.jsx"
 
 import TopicPage from "./page/topicpage/topicpage.jsx"
+import Professor from "./page/Professor/Professor.jsx"
 
 function App(){		
 	return (
@@ -13,6 +14,7 @@ function App(){
 					<Route path="/" element={<Main />} />	
 
 					<Route path="/topicpage" element={<TopicPage />} />
+				<Route path="/professor" element={<Professor />} />
 					
 				</Routes>
 		  	</Layout>

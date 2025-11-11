@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Layout.jsx"
 import Main from "./page/main/Main.jsx"
-
 import TopicPage from "./page/topicpage/topicpage.jsx"
 import ProfessorInfo from './page/topicpage/infoPage/ProfessorInfo.jsx';
 

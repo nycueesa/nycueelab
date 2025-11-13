@@ -1,7 +1,31 @@
 import { useEffect, useState, useRef } from "react";
+import { useParams, useSearchParams } from "react-router-dom";
 import styles from "./Professor.module.css";
+import departmentProfessorData from "../topicpage/departmentProfessors.json";
+import fieldProfessorData from "../topicpage/fieldProfessors.json";
+
+// Combine all professor data
+const ALL_PROFESSOR_DATA = {
+  ...departmentProfessorData,
+  ...fieldProfessorData
+};
+
+// Function to find professor by ID
+const findProfessorById = (id) => {
+  for (const topicKey in ALL_PROFESSOR_DATA) {
+    const professors = ALL_PROFESSOR_DATA[topicKey];
+    const found = professors.find(p => String(p.id) === String(id));
+    if (found) return found;
+  }
+  return null;
+};
 
 function Professor() {
+  // Get professor ID from URL parameter
+  const { profId } = useParams();
+  const [searchParams] = useSearchParams();
+  const id = profId || searchParams.get('id');
+
   // Animation state for each section
   const [heroVisible, setHeroVisible] = useState(false);
   const [researchVisible, setResearchVisible] = useState(false);
@@ -17,7 +41,11 @@ function Professor() {
   const courseCardRefs = useRef([]);
   const qaItemRefs = useRef([]);
 
-  const professorData = {
+  // Load professor data based on ID
+  const professorDataFromJson = id ? findProfessorById(id) : null;
+
+  // Default data for demo/fallback
+  const defaultData = {
     name: "Prof. 劉建男",
     labName: "Mixed-Signal Electronic Design Automation Lab",
     department: "EDA 電子所乙B組",
@@ -38,6 +66,34 @@ function Professor() {
       "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?"
     ]
   };
+
+  // Use loaded data or fallback to default
+  const professorData = professorDataFromJson ? {
+    name: professorDataFromJson.name,
+    labName: professorDataFromJson.labName,
+    department: professorDataFromJson.department,
+    email: professorDataFromJson.email,
+    photo: professorDataFromJson.photo || professorDataFromJson.image || "/placeholder-professor.jpg",
+    research: professorDataFromJson.research || { mainTopic: "", subTopic: "" },
+    courses: professorDataFromJson.courses || [],
+    faqs: professorDataFromJson.faqs || []
+  } : defaultData;
+
+  // If ID provided but professor not found, show error
+  if (id && !professorDataFromJson) {
+    return (
+      <div className={styles.professorPage}>
+        <section className={styles.heroSection}>
+          <div className={styles.heroContent}>
+            <div className={styles.heroLeft}>
+              <h1 className={styles.labName}>找不到教授資料</h1>
+              <p className={styles.department}>找不到 ID 為 "{id}" 的教授資料。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
 
   // Trigger hero animation on mount
   useEffect(() => {

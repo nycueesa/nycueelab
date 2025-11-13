@@ -3,19 +3,23 @@ import { Link, useLocation } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Dropdown from 'react-bootstrap/Dropdown';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState, useRef } from "react";
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 import { setPositionPage } from "./redux/commonSlice.js";
-import "./Layout.css";
+import styles from "./Layout.module.css";
+
+import SearchBar from "./components/SearchBar.jsx";
+import SearchResults from "./components/SearchResults.jsx";
+import { searchProfessors, getFilterOptions } from "./utils/searchEngine.js";
+import departmentProfessors from "./page/topicpage/departmentProfessors.json";
 
 import eesaLogo from "@/assets/icon.jpg";
 import houseIcon from "@/assets/house.svg";
 import magnifierIcon from "@/assets/megnifier.svg";
-import menuIcon from "@/assets/menu.svg";
+
 
 function TopNavbar() {
   const [show1, setShow1] = useState(false);
@@ -23,76 +27,150 @@ function TopNavbar() {
   const [show3, setShow3] = useState(false);
   const [show4, setShow4] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchResults, setSearchResults] = useState([]);
+  const [showSearchResults, setShowSearchResults] = useState(false);
+  const [filterOptions, setFilterOptions] = useState({});
+  const navbarRef = useRef(null);
+  const searchContainerRef = useRef(null);
   const location = useLocation();
 
-  
-  
+  useEffect(() => {
+    // 初始化過濾選項
+    setFilterOptions(getFilterOptions(departmentProfessors));
+  }, []);
+
+  useEffect(() => {
+    const updateNavbarHeight = () => {
+      const height = navbarRef.current?.offsetHeight || 0;
+      document.documentElement.style.setProperty('--navbar-height', `${height}px`);
+    };
+
+    updateNavbarHeight();
+    window.addEventListener('resize', updateNavbarHeight);
+    
+    return () => {
+      window.removeEventListener('resize', updateNavbarHeight);
+    };
+  }, []);
+
+  // 點擊外面關閉搜尋結果
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (searchContainerRef.current && !searchContainerRef.current.contains(event.target)) {
+        setShowSearchResults(false);
+      }
+    };
+
+    if (showSearchResults) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showSearchResults]);
+
+  const handleSearch = (query, filters) => {
+    if (!query.trim()) {
+      setSearchResults([]);
+      setShowSearchResults(false);
+      return;
+    }
+
+    const results = searchProfessors(query, departmentProfessors, filters);
+    setSearchResults(results);
+    setShowSearchResults(true);
+  };
+
+  const handleFilterChange = (filters) => {
+    // 過濾器改變時會自動觸發 handleSearch
+  };
+
+  const handleSearchResultClick = () => {
+    setShowSearchResults(false);
+  };
 
   // 判斷是否使用淺色版本
-  const isLightVersion = location.pathname === '/intro/eesa-intro'; // 首頁使用淺色版本，可以根據需求添加其他路徑
+  const isLightVersion = location.pathname === '/topicpage'; // 首頁使用淺色版本，可以根據需求添加其他路徑
 
   const theme = isLightVersion ? 'light' : 'dark';
-  
   return (
-    <Navbar variant={theme} expand="lg" 
-           className={`navbar-custom navbar-${theme}`}>
-      <Container fluid className="custom-container">
-        <div className={`nav-left nav-left-${theme}`}>
-          <Navbar.Brand as={Link} to="/" className={`brand-title brand-title-${theme}`}>
+    <>
+      <Navbar ref={navbarRef} variant={theme} expand="lg" 
+             className={`${styles.navbarCustom} ${styles[`navbar${theme.charAt(0).toUpperCase() + theme.slice(1)}`]}`}>
+        <Container fluid className={styles.customContainer}>
+          <Navbar.Brand as={Link} to="/" className={`${styles.brandTitle} ${styles[`brandTitle${theme.charAt(0).toUpperCase() + theme.slice(1)}`]}`}>
             陽明交大電機專題資訊
           </Navbar.Brand>
-        </div>
-        <div className={`nav-right nav-right-${theme}`}>
-          <Link to="/" className={`nav-icon nav-icon-${theme}`}>
-            <img src={houseIcon} alt="Home" />
-          </Link>
-          <div className={`nav-search nav-search-${theme}`}>
-            <img src={magnifierIcon} alt="Search" className={`search-icon search-icon-${theme}`} />
-            <input type="text" placeholder="搜尋" className={`search-input search-input-${theme}`} />
-          </div>
-          <NavDropdown 
-            title={<img src={menuIcon} alt="Menu" />}
-            id="nav-dropdown-menu"
-            className={`menu-button menu-button-${theme}`}
-            show={menuOpen}
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            <NavDropdown.Item as={Link} to="/" onClick={() => setMenuOpen(false)}>首頁</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/intro/eesa-intro" onClick={() => setMenuOpen(false)}>關於系學會</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/event/event-intro" onClick={() => setMenuOpen(false)}>活動簡介</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/resource/project" onClick={() => setMenuOpen(false)}>專題資訊</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/file/calendar" onClick={() => setMenuOpen(false)}>行事曆</NavDropdown.Item>
-          </NavDropdown>
-        </div>
-      </Container>
-    </Navbar>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ms-auto">
+              {/* Desktop version */}
+              <div className={`${styles.navRight} ${styles[`navRight${theme.charAt(0).toUpperCase() + theme.slice(1)}`]} d-none d-lg-flex`}>
+                <div ref={searchContainerRef}>
+                  <SearchBar
+                    onSearch={handleSearch}
+                    onFilterChange={handleFilterChange}
+                    filterOptions={filterOptions}
+                  />
+                </div>
+                <Link to="/" className={`${styles.navIcon} ${styles[`navIcon${theme.charAt(0).toUpperCase() + theme.slice(1)}`]}`}>
+                  <img src={houseIcon} alt="Home" />
+                </Link>
+              </div>
+              {/* Mobile version */}
+              <div className="d-lg-none">
+                <div ref={searchContainerRef} style={{ marginBottom: '10px' }}>
+                  <SearchBar
+                    onSearch={handleSearch}
+                    onFilterChange={handleFilterChange}
+                    filterOptions={filterOptions}
+                  />
+                </div>
+                <Nav.Link as={Link} to="/" className={styles.mobileNavLink}>
+                  <img src={houseIcon} alt="Home" className={`${styles.mobileIcon} ${styles[`mobileIcon${theme.charAt(0).toUpperCase() + theme.slice(1)}`]}`} />
+                  首頁
+                </Nav.Link>
+              </div>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+      
+      <SearchResults
+        results={searchResults}
+        isOpen={showSearchResults}
+        onClose={() => setShowSearchResults(false)}
+        onResultClick={handleSearchResultClick}
+      />
+    </>
   );
 };
 
 function Footer() {
 
     return(
-        <footer className="navbar-footer">
-            <div className="contactRow">
-            <span className="contactItem">| TEL | +886-3-xyz-xxxx</span>
-            <span className="contactItem">| Email | AiSMARTLab@gmail.com</span>
-            <span className="contactItem">| Address | 新竹市東區大學路1001號工程五館222室</span>
+        <footer className={styles.navbarFooter}>
+            <div className={styles.contactRow}>
+            <span className={styles.contactItem}>| TEL | +886-3-xyz-xxxx</span>
+            <span className={styles.contactItem}>| Email | Imtensor@gmail.com</span>
+            <span className={styles.contactItem}>| Address | 新竹市東區大學路1001號工程五館219B室</span>
             </div>
-            <hr className="contactHr" />
-            <div className="contactCopyRight">
-            Copyright © Autonomous intelligent Sensory Microsystems with Analog Reconfigurable Technologies Laboratory
+            <hr className={styles.contactHr} />
+            <div className={styles.contactCopyRight}>
+            Copyright © National Yang Ming Chiao Tung University EESA | Team NaNashi & Chang. All Rights Reserved.
             </div>
         </footer>      
     )
 }
-
 export default function Layout({ children }) {
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const location = useLocation();
     const positions = useSelector((state) => state.positionPage);
 
-
-   
+    // Check if current page is main page
+    const isMainPage = location.pathname === '/';
 
     // 頁面一載入就紀錄位置
     useEffect(() => {
@@ -117,14 +195,11 @@ export default function Layout({ children }) {
       }
     }, [navigate]);  
 
-
-    
-
   return (
-    <div className="layout-container">
-      <TopNavbar />
-      <main className="layout-main">{children}</main>
-      <Footer />
+    <div className={styles.layoutContainer}>
+      {!isMainPage && <TopNavbar />}
+      <main className={`${styles.layoutMain} ${isMainPage ? styles.noNavbar : ''}`}>{children}</main>
+      {!isMainPage && <Footer />}
     </div>
   );
 }

@@ -1,0 +1,142 @@
+.searchResultsContainer {
+  position: fixed;
+  top: var(--navbar-height, 80px);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.searchResultsList {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 600px;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.resultItem {
+  padding: 16px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.resultItem:last-child {
+  border-bottom: none;
+}
+
+.resultItem:hover {
+  background-color: #f5f5f5;
+  transform: translateX(4px);
+}
+
+.resultHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  gap: 10px;
+}
+
+.professorsName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #254D70;
+  margin: 0;
+  flex: 1;
+}
+
+.department {
+  background-color: #254D70;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.resultDetails {
+  margin-bottom: 8px;
+}
+
+.detailItem {
+  font-size: 14px;
+  color: #666;
+  margin: 4px 0;
+  display: flex;
+  gap: 8px;
+}
+
+.label {
+  font-weight: 600;
+  color: #333;
+  min-width: 60px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.tag {
+  background-color: #e0e7ff;
+  color: #254D70;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 滾動條樣式 */
+.searchResultsList::-webkit-scrollbar {
+  width: 8px;
+}
+
+.searchResultsList::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.searchResultsList::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.searchResultsList::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .searchResultsList {
+    width: 95%;
+    max-height: 500px;
+  }
+
+  .resultHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .department {
+    align-self: flex-start;
+  }
+
+  .professorsName {
+    font-size: 15px;
+  }
+
+  .resultDetails {
+    font-size: 13px;
+  }
+}

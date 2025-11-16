@@ -1,51 +1,47 @@
 import React from 'react';
-// import './topicpage.css'; // <-- 刪除舊的導入
-
-// ** 關鍵修改 1：導入 CSS Modules (styles 變數) **
 import styles from './TopicPage.module.css'; 
 
-// (假設您最終決定使用 src/assets 的 import 方法)
 import defaultAvatar from '../../assets/default-prof.jpg'; 
 
-// 這些是 icon (不變)
-const LocationIcon = () => <>&#128205;</>; // 📍
-const EmailIcon = () => <>&#128231;</>; // 📧
-const WebIcon = () => <>&#128187;</>; // 💻
+// ** 關鍵修改：導入您的 SVG 圖標 **
+import LocationSvg from '../../assets/location-icon.svg'; // 請確保路徑正確
+import EmailSvg from '../../assets/email-icon.svg';     // 請確保路徑正確
+import WebSvg from '../../assets/web-icon.svg';         // 請確保路徑正確
 
 const ProfessorCard = ({ data, onClick }) => {
   return (
-    // ** 關鍵修改 2：替換所有 className **
     <div 
       className={styles['professor-card-interactive']} 
       onClick={onClick}
     >
-      <div className={styles['card-left']}>
+      <div className={styles['card-header-tags']}>
+        {data.tags.map(tag => `#${tag}`).join(' ')}
+      </div>
+
+      <div className={styles['card-content-wrapper']}>
         <img 
           src={data.image || defaultAvatar} 
           alt={data.name} 
           className={styles['card-image']} 
         />
-      </div>
-      <div className={styles['card-right']}>
-        <div className={styles['card-tags']}>
-          {data.tags.join(' ')}
-        </div>
-        <h3 className={styles['card-name']}>{data.name}</h3>
-        <p className={styles['card-lab']}>{data.lab}</p>
-        
-        <div className={styles['card-contact-row']}>
-          <LocationIcon /> {data.location}
-        </div>
-        <div className={styles['card-contact-row']}>
-          {/* stopPropagation 防止點擊 email 時觸發卡片點擊 */}
-          <a href={`mailto:${data.email}`} onClick={(e) => e.stopPropagation()}>
-            <EmailIcon /> {data.email}
-          </a>
-        </div>
-        <div className={styles['card-contact-row']}>
-          <a href={data.website} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
-            <WebIcon /> 個人網站
-          </a>
+        <div className={styles['card-info-right']}>
+          <h3 className={styles['card-name']}>{data.name}</h3>
+          <p className={styles['card-lab']}>{data.lab}</p>
+          
+          <div className={styles['card-contact-row']}>
+            {/* ** 使用 SVG 圖標代替文字圖標 ** */}
+            <img src={LocationSvg} alt="Location" className={styles['contact-icon']} /> 
+            <span>{data.location}</span>
+          </div>
+
+          <div className={styles['card-contact-links']}>
+            <a href={`mailto:${data.email}`} onClick={(e) => e.stopPropagation()}>
+              <img src={EmailSvg} alt="Email" className={styles['contact-icon']} />
+            </a>
+            <a href={data.website} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
+              <img src={WebSvg} alt="Website" className={styles['contact-icon']} />
+            </a>
+          </div>
         </div>
       </div>
     </div>

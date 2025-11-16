@@ -85,7 +85,6 @@ function TopicPage() {
         selectedTopic={selectedTopic}
         onTopicSelect={handleTopicSelect} // 第一次/第二次點擊 (大格子)
         professorData={currentData}
-        onProfessorSelect={handleProfessorSelect} // 第二次點擊 (小格子)
       />
     );
   };

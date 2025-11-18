@@ -1,23 +1,11 @@
 import { useEffect, useState, useRef } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import styles from "./Professor.module.css";
-import departmentProfessorData from "../topicpage/departmentProfessors.json";
-import fieldProfessorData from "../topicpage/fieldProfessors.json";
-
-// Combine all professor data
-const ALL_PROFESSOR_DATA = {
-  ...departmentProfessorData,
-  ...fieldProfessorData
-};
+import allData from "../topicpage/allData.json";
 
 // Function to find professor by ID
 const findProfessorById = (id) => {
-  for (const topicKey in ALL_PROFESSOR_DATA) {
-    const professors = ALL_PROFESSOR_DATA[topicKey];
-    const found = professors.find(p => String(p.id) === String(id));
-    if (found) return found;
-  }
-  return null;
+  return allData.professors.find(p => String(p.id) === String(id)) || null;
 };
 
 function Professor() {

@@ -10,8 +10,8 @@ const ProfessorDetail = ({ topic, professors }) => {
 
   // 點擊卡片時，導航到新的 URL
   const handleCardClick = (profId) => {
-    // 導航到您在 App.js 中定義的路徑
-    navigate(`/topicpage/prof-info/${profId}`);
+    // 導航到 Professor 頁面
+    navigate(`/professor/${profId}`);
   };
 
   return (

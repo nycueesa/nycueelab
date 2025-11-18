@@ -26,8 +26,8 @@ const ButtonGrid = ({
 
   // ** 新增：處理教授小格子點擊事件 (直接跳轉) **
   const handleProfessorClick = (profId) => {
-    // 導航到 ProfessorInfo 頁面，傳入教授的 ID
-    navigate(`/topicpage/prof-info/${profId}`);
+    // 導航到 Professor 頁面，傳入教授的 ID
+    navigate(`/professor/${profId}`);
   };
 
   return (

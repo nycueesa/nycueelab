@@ -14,7 +14,7 @@ import styles from "./Layout.module.css";
 import SearchBar from "./components/SearchBar.jsx";
 import SearchResults from "./components/SearchResults.jsx";
 import { searchProfessors, getFilterOptions } from "./utils/searchEngine.js";
-import departmentProfessors from "./page/topicpage/departmentProfessors.json";
+import allData from "./page/topicpage/allData.json";
 
 import eesaLogo from "@/assets/icon.jpg";
 import houseIcon from "@/assets/house.svg";
@@ -36,7 +36,19 @@ function TopNavbar() {
 
   useEffect(() => {
     // 初始化過濾選項
-    setFilterOptions(getFilterOptions(departmentProfessors));
+    // Convert allData.professors to department-grouped format for backward compatibility
+    const departmentGrouped = {};
+    allData.professors.forEach(prof => {
+      if (prof.departments) {
+        prof.departments.forEach(dept => {
+          if (!departmentGrouped[dept]) {
+            departmentGrouped[dept] = [];
+          }
+          departmentGrouped[dept].push(prof);
+        });
+      }
+    });
+    setFilterOptions(getFilterOptions(departmentGrouped));
   }, []);
 
   useEffect(() => {
@@ -75,7 +87,20 @@ function TopNavbar() {
       return;
     }
 
-    const results = searchProfessors(query, departmentProfessors, filters);
+    // Convert allData.professors to department-grouped format for backward compatibility
+    const departmentGrouped = {};
+    allData.professors.forEach(prof => {
+      if (prof.departments) {
+        prof.departments.forEach(dept => {
+          if (!departmentGrouped[dept]) {
+            departmentGrouped[dept] = [];
+          }
+          departmentGrouped[dept].push(prof);
+        });
+      }
+    });
+
+    const results = searchProfessors(query, departmentGrouped, filters);
     setSearchResults(results);
     setShowSearchResults(true);
   };

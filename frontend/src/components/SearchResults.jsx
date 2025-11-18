@@ -10,7 +10,7 @@ export default function SearchResults({ results, isOpen, onClose, onResultClick 
   }
 
   const handleResultClick = (professor) => {
-    navigate(`/topicpage/prof-info/${professor.id}`);
+    navigate(`/professor/${professor.id}`);
     if (onResultClick) onResultClick();
     if (onClose) onClose();
   };

@@ -1,9 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"
 import styles from "./Main.module.css";
 
 export default function Main() {
   const text = 'NYCUEE LAB';
- 
+  const navigate = useNavigate();
+  
+  const handleClick = () => {
+    navigate('/topicpage');
+  };
+
   return (
     <div className={styles.main}>
       <div className={styles.content}>
@@ -11,15 +17,7 @@ export default function Main() {
           {text}
         </h1>
         
-        <p className={styles.subtitle}>選擇瀏覽方式</p>
-        
-        <div className={styles.divider}></div>
-        
-        <div className={styles.buttonGroup}>
-          <button className={styles.navButton}>系所</button>
-          <button className={styles.navButton}>領域</button>
-          <button className={styles.navButton}>清單</button>
-        </div>
+        <button className={styles.mainButton} onClick={handleClick}>進入網站</button>
       </div>
     </div>
   );

@@ -1,8 +1,7 @@
 import React from 'react';
-// import './topicpage.css'; // <-- 刪除舊的導入
-
-// ** 關鍵修改 1：導入 CSS Modules (styles 變數) **
 import styles from './TopicPage.module.css';
+// ** 關鍵新增：導入 useNavigate Hook **
+import { useNavigate } from 'react-router-dom';
 
 // 輔助函式 (不變)
 const chunkArray = (arr, size) => {
@@ -18,13 +17,20 @@ const ButtonGrid = ({
   selectedTopic, 
   onTopicSelect,
   professorData,
-  onProfessorSelect 
+  // onProfessorSelect 屬性已從此處移除，不再需要
 }) => {
   
+  // ** 關鍵新增：取得導航函式 **
+  const navigate = useNavigate();
   const buttonRows = chunkArray(buttons, 3); 
 
+  // ** 新增：處理教授小格子點擊事件 (直接跳轉) **
+  const handleProfessorClick = (profId) => {
+    // 導航到 ProfessorInfo 頁面，傳入教授的 ID
+    navigate(`/topicpage/prof-info/${profId}`);
+  };
+
   return (
-    // ** 關鍵修改 2：替換所有 className **
     <div className={`${styles['topic-grid-wrapper']} ${styles['grid-enter']}`}> 
       {buttonRows.map((row, rowIndex) => (
         <React.Fragment key={rowIndex}>
@@ -34,9 +40,8 @@ const ButtonGrid = ({
             {row.map((topic) => (
               <button
                 key={topic}
-                // 使用陣列模板字符串動態加入 class，並使用 styles.active
-                className={`${styles['grid-button']} ${selectedTopic === topic ? styles.active : ''}`}
-                onClick={() => onTopicSelect(topic)} // 點擊領域
+                className={`${styles['grid-button']} ${selectedTopic === topic ? styles.selected : ''}`}
+                onClick={() => onTopicSelect(topic)} // 點擊領域 (第一次/第二次點擊)
               >
                 {topic}
               </button>
@@ -49,12 +54,13 @@ const ButtonGrid = ({
               <div className={styles['professor-grid-inline']}>
                 {(professorData[selectedTopic] || []).length > 0 ? (
                   
-                  // ** 關鍵修改：小格子按鈕的 className **
                   (professorData[selectedTopic] || []).map((prof) => (
                     <button 
-                      key={prof.name} 
+                      // 由於 JSON 中有 ID 欄位，這裡使用 ID 作為 key 更安全
+                      key={prof.id} 
                       className={styles['professor-button']}
-                      onClick={() => onProfessorSelect(prof.name)} 
+                      // ** 核心修改：直接呼叫跳轉函式，傳入 prof.id **
+                      onClick={() => handleProfessorClick(prof.id)} 
                     >
                       {prof.name}
                     </button>

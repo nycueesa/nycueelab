@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './SearchBar.module.css';
+import filterIcon from '@/assets/filter.svg';
 
 export default function SearchBar({
   onSearch,
@@ -14,11 +15,17 @@ export default function SearchBar({
     department: '',
   });
   const filterRef = useRef(null);
+  const filterButtonRef = useRef(null);
 
   // 點擊外面關閉過濾器
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (filterRef.current && !filterRef.current.contains(event.target)) {
+      // 排除 filter button 的點擊，只在點擊外面時關閉
+      if (
+        filterRef.current && 
+        !filterRef.current.contains(event.target) &&
+        !filterButtonRef.current.contains(event.target)
+      ) {
         setShowFilters(false);
       }
     };
@@ -74,11 +81,12 @@ export default function SearchBar({
           className={styles.searchInput}
         />
         <button
+          ref={filterButtonRef}
           className={styles.filterButton}
           onClick={() => setShowFilters(!showFilters)}
           title="打開過濾器"
         >
-          ⚙️
+          <img src={filterIcon} alt="Filter" className={styles.filterButtonIcon} />
           {hasActiveFilters && <span className={styles.filterBadge}>✓</span>}
         </button>
       </div>

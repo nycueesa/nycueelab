@@ -1,8 +1,6 @@
 import React from 'react';
 import ProfessorCard from './ProfessorCard';
-// import './topicpage.css'; // <-- 刪除舊的導入
 
-// ** 關鍵修改：導入 CSS Modules (styles 變數) **
 import styles from './TopicPage.module.css'; 
 import { useNavigate } from 'react-router-dom';
 

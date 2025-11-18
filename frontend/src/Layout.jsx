@@ -47,7 +47,6 @@ function TopNavbar() {
 
     updateNavbarHeight();
     window.addEventListener('resize', updateNavbarHeight);
-    
     return () => {
       window.removeEventListener('resize', updateNavbarHeight);
     };
@@ -64,7 +63,6 @@ function TopNavbar() {
     if (showSearchResults) {
       document.addEventListener('mousedown', handleClickOutside);
     }
-    
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
@@ -89,14 +87,12 @@ function TopNavbar() {
   const handleSearchResultClick = () => {
     setShowSearchResults(false);
   };
-
   // 判斷是否使用淺色版本
   const isLightVersion = location.pathname === '/topicpage'; // 首頁使用淺色版本，可以根據需求添加其他路徑
-
   const theme = isLightVersion ? 'light' : 'dark';
   return (
     <>
-      <Navbar ref={navbarRef} variant={theme} expand="lg" 
+      <Navbar ref={navbarRef} variant={theme} expand="lg"
              className={`${styles.navbarCustom} ${styles[`navbar${theme.charAt(0).toUpperCase() + theme.slice(1)}`]}`}>
         <Container fluid className={styles.customContainer}>
           <Navbar.Brand as={Link} to="/" className={`${styles.brandTitle} ${styles[`brandTitle${theme.charAt(0).toUpperCase() + theme.slice(1)}`]}`}>
@@ -136,7 +132,6 @@ function TopNavbar() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      
       <SearchResults
         results={searchResults}
         isOpen={showSearchResults}
@@ -176,11 +171,9 @@ export default function Layout({ children }) {
     useEffect(() => {
       const currentPath = window.location.pathname;
       console.log("Current path:", currentPath);
-      
       // Remove /nycueelab/ prefix before storing
       const pathWithoutBase = currentPath.replace('/nycueelab', '') || '/';
       console.log("Path without base:", pathWithoutBase);
-      
       dispatch(setPositionPage(pathWithoutBase));
       localStorage.setItem('lastPath', pathWithoutBase);
     }, []);
@@ -189,7 +182,6 @@ export default function Layout({ children }) {
     useEffect(() => {
       console.log(positions);
       const currentPathWithoutBase = window.location.pathname.replace('/nycueelab', '') || '/';
-      
       if (positions && positions !== currentPathWithoutBase) {
         navigate(positions, { replace: true });
       }

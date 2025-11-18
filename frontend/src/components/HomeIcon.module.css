@@ -1,0 +1,24 @@
+.homeIconWrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homeBase {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: invert(95%) sepia(8%) saturate(154%) hue-rotate(164deg) brightness(96%) contrast(91%);
+}
+
+.homeDoor {
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+  filter: invert(95%) sepia(8%) saturate(154%) hue-rotate(164deg) brightness(96%) contrast(91%);
+}

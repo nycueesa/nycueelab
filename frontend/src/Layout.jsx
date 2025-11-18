@@ -13,6 +13,7 @@ import styles from "./Layout.module.css";
 
 import SearchBar from "./components/SearchBar.jsx";
 import SearchResults from "./components/SearchResults.jsx";
+import HomeIcon from "./components/HomeIcon.jsx";
 import { searchProfessors, getFilterOptions } from "./utils/searchEngine.js";
 import allData from "./page/topicpage/allData.json";
 
@@ -36,19 +37,7 @@ function TopNavbar() {
 
   useEffect(() => {
     // 初始化過濾選項
-    // Convert allData.professors to department-grouped format for backward compatibility
-    const departmentGrouped = {};
-    allData.professors.forEach(prof => {
-      if (prof.departments) {
-        prof.departments.forEach(dept => {
-          if (!departmentGrouped[dept]) {
-            departmentGrouped[dept] = [];
-          }
-          departmentGrouped[dept].push(prof);
-        });
-      }
-    });
-    setFilterOptions(getFilterOptions(departmentGrouped));
+    setFilterOptions(getFilterOptions(allData));
   }, []);
 
   useEffect(() => {
@@ -87,20 +76,7 @@ function TopNavbar() {
       return;
     }
 
-    // Convert allData.professors to department-grouped format for backward compatibility
-    const departmentGrouped = {};
-    allData.professors.forEach(prof => {
-      if (prof.departments) {
-        prof.departments.forEach(dept => {
-          if (!departmentGrouped[dept]) {
-            departmentGrouped[dept] = [];
-          }
-          departmentGrouped[dept].push(prof);
-        });
-      }
-    });
-
-    const results = searchProfessors(query, departmentGrouped, filters);
+    const results = searchProfessors(query, allData, filters);
     setSearchResults(results);
     setShowSearchResults(true);
   };
@@ -136,7 +112,7 @@ function TopNavbar() {
                   />
                 </div>
                 <Link to="/" className={`${styles.navIcon} ${styles[`navIcon${theme.charAt(0).toUpperCase() + theme.slice(1)}`]}`}>
-                  <img src={houseIcon} alt="Home" />
+                  <HomeIcon width={28} height={28} />
                 </Link>
               </div>
               {/* Mobile version */}
@@ -149,7 +125,7 @@ function TopNavbar() {
                   />
                 </div>
                 <Nav.Link as={Link} to="/" className={styles.mobileNavLink}>
-                  <img src={houseIcon} alt="Home" className={`${styles.mobileIcon} ${styles[`mobileIcon${theme.charAt(0).toUpperCase() + theme.slice(1)}`]}`} />
+                  <HomeIcon width={24} height={24} className={styles.mobileIcon} />
                   首頁
                 </Nav.Link>
               </div>

@@ -27,7 +27,7 @@ def get_latest_professor_data():
  
     if not data_file_path.is_file():
         # If the file doesn't exist, raise a 500 Internal Server Error
-        raise HTTPException(status_code=500, detail="Professor data file not found on the server.")
+        raise HTTPException(status_code=500, detail="未在./backend/data中找到allData.json，請檢查是否存在此文件")
 
     try:
         with open(data_file_path, "r", encoding="utf-8") as f:

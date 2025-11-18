@@ -35,67 +35,80 @@ export const calculateRelevance = (query, text) => {
 /**
  * 搜尋教授
  * @param {string} query - 搜尋詞
- * @param {object} departmentProfessors - 部門教授數據
- * @param {object} filters - 過濾條件 { location: string, lab: string, department: string }
+ * @param {object} allData - 完整的教授數據 { topics: {...}, professors: [...] }
+ * @param {object} filters - 過濾條件 { location: string, lab: string, departments: string }
  * @returns {array} 搜尋結果，按相關度排序
  */
-export const searchProfessors = (query, departmentProfessors, filters = {}) => {
+export const searchProfessors = (query, allData, filters = {}) => {
   const results = [];
+  const professors = allData.professors || [];
   
-  // 遍歷所有部門
-  Object.entries(departmentProfessors).forEach(([department, professors]) => {
-    professors.forEach((professor) => {
-      // 應用過濾條件（AND 邏輯）
-      if (filters.location && professor.location !== filters.location) return;
-      if (filters.lab && professor.lab !== filters.lab) return;
-      if (filters.department && department !== filters.department) return;
-      
-      // 如果沒有搜尋詞，直接加入結果
-      if (!query) {
-        results.push({
-          ...professor,
-          department,
-          relevance: 0,
-        });
-        return;
-      }
-      
-      // 計算相關度
-      let maxRelevance = 0;
-      
-      // 檢查每個搜尋欄位
-      const searchFields = [
-        String(professor.id), // id
-        professor.name, // name
-        professor.lab, // lab
-        professor.location, // location
-      ];
-      
-      // 檢查 tags（陣列）
-      if (professor.tags && Array.isArray(professor.tags)) {
-        professor.tags.forEach(tag => {
-          const relevance = calculateRelevance(query, tag);
-          maxRelevance = Math.max(maxRelevance, relevance);
-        });
-      }
-      
-      // 檢查其他欄位
-      searchFields.forEach(field => {
-        if (field) {
-          const relevance = calculateRelevance(query, field);
-          maxRelevance = Math.max(maxRelevance, relevance);
-        }
+  // 遍歷所有教授
+  professors.forEach((professor) => {
+    // 應用過濾條件（AND 邏輯）
+    if (filters.location && professor.location !== filters.location) return;
+    if (filters.lab && professor.lab !== filters.lab) return;
+    if (filters.departments && (!professor.departments || !professor.departments.includes(filters.departments))) return;
+    
+    // 如果沒有搜尋詞，直接加入結果
+    if (!query) {
+      results.push({
+        ...professor,
+        relevance: 0,
       });
-      
-      // 只有相關度大於0才加入結果
-      if (maxRelevance > 0) {
-        results.push({
-          ...professor,
-          department,
-          relevance: maxRelevance,
-        });
+      return;
+    }
+    
+    // 計算相關度
+    let maxRelevance = 0;
+    
+    // 檢查每個搜尋欄位
+    const searchFields = [
+      String(professor.id), // id
+      professor.name, // name
+      professor.lab, // lab
+      professor.location, // location
+    ];
+    
+    // 檢查 tags（陣列）
+    if (professor.tags && Array.isArray(professor.tags)) {
+      professor.tags.forEach(tag => {
+        const relevance = calculateRelevance(query, tag);
+        maxRelevance = Math.max(maxRelevance, relevance);
+      });
+    }
+    
+    // 檢查 departments（陣列）
+    if (professor.departments && Array.isArray(professor.departments)) {
+      professor.departments.forEach(dept => {
+        const relevance = calculateRelevance(query, dept);
+        maxRelevance = Math.max(maxRelevance, relevance);
+      });
+    }
+    
+    // 檢查 fields（陣列）
+    if (professor.fields && Array.isArray(professor.fields)) {
+      professor.fields.forEach(field => {
+        const relevance = calculateRelevance(query, field);
+        maxRelevance = Math.max(maxRelevance, relevance);
+      });
+    }
+    
+    // 檢查其他欄位
+    searchFields.forEach(field => {
+      if (field) {
+        const relevance = calculateRelevance(query, field);
+        maxRelevance = Math.max(maxRelevance, relevance);
       }
     });
+    
+    // 只有相關度大於0才加入結果
+    if (maxRelevance > 0) {
+      results.push({
+        ...professor,
+        relevance: maxRelevance,
+      });
+    }
   });
   
   // 按相關度排序（降序）
@@ -106,19 +119,21 @@ export const searchProfessors = (query, departmentProfessors, filters = {}) => {
 
 /**
  * 獲取所有可用的過濾選項
- * @param {object} departmentProfessors - 部門教授數據
+ * @param {object} allData - 完整的教授數據 { topics: {...}, professors: [...] }
  * @returns {object} 包含locations, labs, departments 的對象
  */
-export const getFilterOptions = (departmentProfessors) => {
+export const getFilterOptions = (allData) => {
   const locations = new Set();
   const labs = new Set();
-  const departments = new Set(Object.keys(departmentProfessors));
+  const departments = new Set();
+  const professors = allData.professors || [];
   
-  Object.entries(departmentProfessors).forEach(([department, professors]) => {
-    professors.forEach((professor) => {
-      if (professor.location) locations.add(professor.location);
-      if (professor.lab) labs.add(professor.lab);
-    });
+  professors.forEach((professor) => {
+    if (professor.location) locations.add(professor.location);
+    if (professor.lab) labs.add(professor.lab);
+    if (professor.departments && Array.isArray(professor.departments)) {
+      professor.departments.forEach(dept => departments.add(dept));
+    }
   });
   
   return {

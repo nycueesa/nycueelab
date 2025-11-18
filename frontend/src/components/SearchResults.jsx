@@ -26,7 +26,9 @@ export default function SearchResults({ results, isOpen, onClose, onResultClick 
           >
             <div className={styles.resultHeader}>
               <h4 className={styles.professorsName}>{professor.name}</h4>
-              <span className={styles.department}>{professor.department}</span>
+              {professor.departments && professor.departments.length > 0 && (
+                <span className={styles.department}>{professor.departments[0]}</span>
+              )}
             </div>
             <div className={styles.resultDetails}>
               <p className={styles.detailItem}>

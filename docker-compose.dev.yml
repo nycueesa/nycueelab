@@ -14,6 +14,19 @@ services:
     # 啟動時先安裝依賴，然後啟動 Vite 開發伺服器
     command: sh -c "npm install && npm run dev"
     # depends_on:
+    #   nycueelab-backend:
+    #     condition: service_healthy
+    networks:
+      - lab-network
+  nycueelab-backend:
+    build: ./backend
+    container_name: nycueelab-backend
+    ports:
+      - 11451:11451 #使用與其他專案錯開的Port
+    volumes:
+      # 將本地 backend 資料夾同步到容器中
+      - ./backend:/code
+    # depends_on:
     #   backend:
     #     condition: service_healthy
     networks:
@@ -22,7 +35,7 @@ services:
 networks:
   lab-network:
     driver: bridge
-    name: eesa-lab-dev-network
+    name: nycueelab-network
 
 volumes:
   frontend_lab_node_modules:

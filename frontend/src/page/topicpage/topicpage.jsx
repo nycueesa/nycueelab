@@ -1,24 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './TopicPage.module.css';
 import ButtonGrid from './ButtonGrid'; 
 import ProfessorDetail from './ProfessorDetail'; 
 import ProfessorInfo from './infoPage/ProfessorInfo';
 
-// ** 步驟 1：只匯入一個 JSON 檔案 **
-import allData from '../../assets/allData.json'; 
-
 const TABS_CONFIG = ['依系所瀏覽', '依領域瀏覽', '依清單瀏覽'];
-// 步驟 2：從新的 JSON 結構中讀取按鈕列表
-const DEPARTMENT_TOPICS_CONFIG = allData.topics.departments;
-const FIELD_TOPICS_CONFIG = allData.topics.fields;
-// 步驟 3：讀取所有教授的主列表
-const ALL_PROFESSORS_LIST = allData.professors;
 
 
 function TopicPage() {
+  const [apiData, setApiData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   const [activeTab, setActiveTab] = useState(TABS_CONFIG[0]);
   const [selectedTopic, setSelectedTopic] = useState(null); 
   const [detailPageTopic, setDetailPageTopic] = useState(null); 
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // ${import.meta.env.VITE_API_URL}是frontend中.env文件定義的變數
+        // 需要在frontend中創建".env"文件，並填入以下環境變數
+        // VITE_API_URL=http://localhost:11451
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/professors`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        setApiData(data);
+        console.log('Successfully fetched data from API:', data); // For testing
+      } catch (e) {
+        setError(e.message);
+        console.error('Failed to fetch data:', e);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []); // Empty dependency array ensures this runs only once on mount
+
+  // Derive constants from apiData state
+  const DEPARTMENT_TOPICS_CONFIG = apiData?.topics?.departments || [];
+  const FIELD_TOPICS_CONFIG = apiData?.topics?.fields || [];
+  const ALL_PROFESSORS_LIST = apiData?.professors || [];
 
   // ... (handleTopicSelect 函式不變) ...
   const handleTopicSelect = (topic) => {
@@ -97,6 +122,18 @@ function TopicPage() {
       />
     );
   };
+
+  if (isLoading) {
+    return <div className={styles['nycu-topic-container']}>Loading professor data...</div>;
+  }
+
+  if (error) {
+    return <div className={styles['nycu-topic-container']}>Error fetching data: {error}</div>;
+  }
+
+  if (!apiData) {
+    return <div className={styles['nycu-topic-container']}>No data available.</div>;
+  }
 
   // ... (return JSX 保持不變) ...
   return (

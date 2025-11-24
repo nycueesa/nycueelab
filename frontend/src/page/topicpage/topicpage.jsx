@@ -4,7 +4,15 @@ import ButtonGrid from './ButtonGrid';
 import ProfessorDetail from './ProfessorDetail'; 
 import ProfessorInfo from './infoPage/ProfessorInfo';
 
-const TABS_CONFIG = ['依系所瀏覽', '依領域瀏覽', '依清單瀏覽'];
+// ** 步驟 1：只匯入一個 JSON 檔案 **
+import allData from './allData.json'; 
+
+const TABS_CONFIG = ['依系所瀏覽', '依領域瀏覽'];
+// 步驟 2：從新的 JSON 結構中讀取按鈕列表
+const DEPARTMENT_TOPICS_CONFIG = allData.topics.departments;
+const FIELD_TOPICS_CONFIG = allData.topics.fields;
+// 步驟 3：讀取所有教授的主列表
+const ALL_PROFESSORS_LIST = allData.professors;
 
 
 function TopicPage() {

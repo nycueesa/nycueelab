@@ -6,8 +6,7 @@ local/
 # Python 相關
 __pycache__/
 *.pyc
-.env
-.env.production
+.env*
 venv/
 *.egg-info/
 
@@ -20,6 +19,9 @@ dist/
 
 # Docker 相關
 .docker/
+
+# Database
+data/
 
 # 執行期間產生的資料 (絕不納入版本控制)
 logs/

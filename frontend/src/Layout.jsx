@@ -15,7 +15,7 @@ import SearchBar from "./components/SearchBar.jsx";
 import SearchResults from "./components/SearchResults.jsx";
 import HomeIcon from "./components/HomeIcon.jsx";
 import { searchProfessors, getFilterOptions } from "./utils/searchEngine.js";
-import allData from "./page/topicpage/allData.json";
+import allData from "./assets/allData.json";
 
 import eesaLogo from "@/assets/icon.jpg";
 import houseIcon from "@/assets/house.svg";

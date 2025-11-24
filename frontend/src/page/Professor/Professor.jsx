@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import styles from "./Professor.module.css";
-import allData from "../topicpage/allData.json";
+import allData from "../../assets/allData.json";
 
 // Function to find professor by ID
 const findProfessorById = (id) => {

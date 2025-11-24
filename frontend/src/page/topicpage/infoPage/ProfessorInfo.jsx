@@ -3,7 +3,7 @@ import styles from './ProfessorInfo.module.css';
 import { useParams } from 'react-router-dom'; 
 
 // 導入 JSON (路徑是 ../allData.json)
-import allData from '../allData.json';
+import allData from '../../../assets/allData.json';
 
 // ** 關鍵修正 1：修正圖片路徑 (往上跳三層) **
 import defaultAvatar from '../../../assets/default-prof.jpg'; 

@@ -7,7 +7,7 @@ import ProfessorInfo from './infoPage/ProfessorInfo';
 // ** 步驟 1：只匯入一個 JSON 檔案 **
 import allData from './allData.json'; 
 
-const TABS_CONFIG = ['依系所瀏覽', '依領域瀏覽', '依清單瀏覽'];
+const TABS_CONFIG = ['依系所瀏覽', '依領域瀏覽'];
 // 步驟 2：從新的 JSON 結構中讀取按鈕列表
 const DEPARTMENT_TOPICS_CONFIG = allData.topics.departments;
 const FIELD_TOPICS_CONFIG = allData.topics.fields;

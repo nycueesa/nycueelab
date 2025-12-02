@@ -26,6 +26,81 @@
   },
   "professors": [
     {
+      "id": 0,
+      "name": "Prof. ",
+      "LabName": "",
+      "department": [""],
+      "OfficeLocation": "",
+      "email": "@nycu.edu.tw",
+      "photo": null,
+      "LabWebsite": "",
+      "tags": ["#", "#", "#", "#"],
+      "research": [
+        
+            {
+            "title": "",
+            "subtitle": [ 
+            "",
+            "",
+            ""]
+            },
+            {
+            "title": "",
+            "subtitle":[
+            "",
+            ""]
+            }
+      ],
+        
+      "RecomendedCourses": [
+        ""
+      ],
+      "faqs": [
+            {
+            "Question": "",
+            "Answer": ""
+            },
+            {
+            "Question": "",
+            "Answer":""
+            },
+            {
+            "Question": "",
+            "Answer": ""
+            }, 
+            {
+            "Question": "",
+            "Answer": ""
+            },
+            {
+            "Question": "",
+            "Answer":""
+            },
+            {
+            "Question": "",
+            "Answer": ""
+            },
+            {
+            "Question": "",
+            "Answer": ""
+            },
+            {
+            "Question": "",
+            "Answer":""
+            },
+            {
+            "Question": "",
+            "Answer": ""
+            }
+      ],
+      "link":[
+        { "LinkName": "投影片", "link": "" },
+        { "LinkName": "介紹影片", "link": "" },
+        { "LinkName": "教授QA", "link": "" }
+       
+      ]
+    },
+    {
       "id": 2,
       "name": "Prof. 趙昌博",
       "LabName": "System Integration & Silicon Implementation Group",
@@ -71,6 +146,502 @@
         { "LinkName": "投影片", "link": "https://drive.google.com/file/d/18iOUQxWn8ff4B6pUyJGJMtbG9Ll5F5im/view?usp=sharing" },
         { "LinkName": "介紹影片", "link": "https://www.youtube.com/watch?v=4BVJv9DnNIA" },
         { "LinkName": "教授QA", "link": "https://youtu.be/NRjlbgD7Wyc" }
+       
+      ]
+    }, 
+    {
+      "id": 2,
+      "name": "Prof. 李鎮宜",
+      "LabName": "System Integration & Silicon Implementation Group",
+      "department": ["電子所乙B組"],
+      "OfficeLocation": "",
+      "email": "cylee@nycu.edu.tw",
+      "photo": null,
+      "LabWebsite": "http://www.si2lab.org/",
+      "tags": ["#數位IC設計", "#生醫"],
+      "research": [
+        
+            {
+            "title": "IC design for Sensor",
+            "subtitle": [ 
+            "Fast Medical Tests: 生物醫學檢測(健康診斷)，已有10年以上研究，開始商業化",
+            "細胞治療: 使用半導體sensor檢測體細胞到幹細胞的過程、掌握細胞品質及功能",
+            "超高速攝影: 與Stanford合作開發可達10Mfps的影像感測元件，捕捉瞬間行為"]
+            },
+            {
+            "title": "IC design for AI",
+            "subtitle":[
+            "Edge AI: 優化大型語言模型的演算法及硬體架構，使其能在如手機等edge devices上本地運算，保障使用者隱私。",
+            "Mobile Healthcare: 取出心電訊號並透過AI模型分析，檢測心臟疾病發生與否"]
+            }
+      ],
+        
+      "RecomendedCourses": [
+        "大二修完基本科目已具備專題所需能力"
+      ],
+      "faqs": [
+            {
+            "Question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
+            "Answer": "從實驗室進行的項目進行挑選，具體的內容可依自身興趣和教授以及學長姐討論"
+            },
+            {
+            "Question": "教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
+            "Answer":"以培養團隊合作研究能力為主，也要具備獨立研究發想的技能，具體內容依照興趣和學長姐討論而定"
+            },
+            {
+            "Question": "專題是否有先修科目要求?",
+            "Answer": "大二修完基本科目已具備專題所需能力"
+            },
+            {
+            "Question": "修習教授專題是否有成績要求?",
+            "Answer": "Nope"
+            },
+            {
+            "Question": "實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
+            "Answer":"聯發科等IC design house、台積電、新創、自行創業，工作內容不一"
+            },
+            {
+            "Question": "研究所畢業條件為何?",
+            "Answer": "下線晶片，並進行量測。發paper不必要"
+            },
+            {
+            "Question": "請問教授能不能分享一些求學歷程的故事以及夢想?",
+            "Answer": "請觀賞 影片"
+            },
+            {
+            "Question": "請問教授如何挑選實驗室的研究主題? 這個領域在全球的現況及未來發展如何?",
+            "Answer":"請觀賞 影片"
+            },
+            {
+            "Question": "請問教授會如何激發學生對於教授研究領域的興趣?",
+            "Answer": "請觀賞 影片"
+            },
+            {
+            "Question": "請問教授會如何拓展學生的國際視野?",
+            "Answer": "請觀賞 影片"
+            }
+      ],
+      "link":[
+        { "LinkName": "投影片", "link": "https://drive.google.com/file/d/18iOUQxWn8ff4B6pUyJGJMtbG9Ll5F5im/view?usp=sharing" },
+        { "LinkName": "介紹影片", "link": "https://www.youtube.com/watch?v=4BVJv9DnNIA" },
+        { "LinkName": "教授QA", "link": "https://youtu.be/NRjlbgD7Wyc" }
+       
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Prof. 賴青沂",
+      "LabName": "Quantum Information and Computation Lab",
+      "department": ["電信所"],
+      "OfficeLocation": "",
+      "email": "cylai@nycu.edu.tw",
+      "photo": null,
+      "LabWebsite": "http://qic.lab.nycu.edu.tw/",
+      "tags": ["#量子計算", "#訊息理論"],
+      "research": [
+        
+            {
+            "title": "Quantum Coding Theory",
+            "subtitle": [ 
+            "Error-correcting codes for quantum information",
+            "Construction and decoding algorithms for quantum codes"
+            ]
+            },
+            {
+            "title": "Fault-Tolerant Quantum Computation",
+            "subtitle":[
+            "Development of theories for computing on encoded quantum states without the need for decoding"
+          ]
+            },
+            {
+            "title": "Decoding algorithms for quantum LDPC codes",
+            "subtitle":[
+            "Belief Propagation, Ordered Statistics Decoding, Union Find, Perfect Matching, Neural Network Decoding"
+            ]
+            },
+            {
+            "title": "Quantum Cryptography",
+            "subtitle":[
+            "Quantum mechanics principles for secure private information distribution"
+            ]
+            },
+            {
+            "title": "Machine learning of quantum objects",
+            "subtitle":[null]
+            },
+            {
+            "title": "Quantum communication with photonic particles",
+            "subtitle":[null]
+            }
+      ],
+        
+      "RecomendedCourses": [
+        "無，必修如線性代數、機率等即可。如果有興趣提早去修編碼理論、演算法、information theory等等研究所的課程會更好。"
+      ],
+      "faqs": [
+            {
+            "Question": " 教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
+            "Answer": "我歡迎學生自己找自己有興趣的題目，然後你跟我說你想做什麼。這種情況我會判斷給你建議。同時也有不知道做什麼東西來找我的學生。這也可以，通常我會跟你說哪個東西比較是最近熱門的topic，我會找一些相關的文獻，然後讓你去讀paper，而我們可以試著去重置那些文獻裡面的結果。"
+            },
+            {
+            "Question": "教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
+            "Answer":"專題生第一年一開始可能會做這種文獻的回顧，然後或是reproduce paper的結果，慢慢的我可能就會讓涉入正在進行的研究中的一些事情，然後就有可能會把研究結果做成論文發表。不要覺得發論文是很難的一件事，我有個專題生，他就有因此發一篇paper，然後現在在國外讀PHD。"
+            },
+            {
+            "Question": "專題是否有先修科目要求?",
+            "Answer": "我這邊沒有，就是必修如線性代數、機率等就可以。如果有興趣提早去修編碼理論、演算法、或是information theory等等研究所的課程當然會更好。"
+            },
+            {
+            "Question": "修教授的專題能培養什麼能力?",
+            "Answer": "訓練上是在培樣你的數學邏輯思考以及推理能力。"
+            },
+            {
+            "Question": "修習教授專題是否有成績要求?",
+            "Answer":"沒有，因為大二可塑性都還很高，我希望不要有為了升學來找我做的人，希望是真的對量子計算相關領域有興趣的人來找我。"
+            },
+            {
+            "Question": "實驗室的畢業生通常會去哪幾家企業?",
+            "Answer": "你想到的都有。應該這麼說，你想找到什麼樣的工作是看你的能力，我有一個學生甚至是碩一就跟聯發科簽訂合約的，企業基本上都是看中你的能力，向他去那邊的產品部門寫演算法可能都是比我們這邊量子的演算法相對更簡單的事情。"
+            },
+            {
+            "Question": "研究所畢業條件為何?",
+            "Answer": "只要你完成我對於你要求的其中一項任務，我就可以讓你畢業了。這說難很難，說簡單也很簡單。我畢業的學生有3 4個都有發paper，我是以發paper為基準去給你任務的。我不會強留學生，平均畢業年限是2.5年最多，也有一年的，是我的專題生(五年碩)。"
+            },
+            {
+            "Question": "為什麼教授會選擇進入這個在台灣較少人做的領域?",
+            "Answer":"在大學的時候學校的老師辦了一個workshop，找了一些大師來講，因為這比較接近fundamental science，能夠應用以前學到的理論，並且鑽研一些更加有趣的事情。因為我大學修的第一個專題是無線通訊，我覺得這個傳統的通訊已經很成熟了，所以再做一些改善好像沒那麼有趣，我比較想追求的是fundamental的東西。"
+            },
+            {
+            "Question": "請問教授如何挑選實驗室的研究主題? 這個領域在全球的現況及未來發展如何?",
+            "Answer": "自己選的，是我有興趣的理論為主，因為是以理論為主，所以會找一些合作，想要去實現這些理論，像是中研院等等。這是很新的領域，但現在國外也越來越多人在做了，將會是一個趨勢。"
+            },
+            {
+            "Question": "請問教授會如何拓展學生的國際視野?",
+            "Answer": "我希望大家都能在學生階段去不同的地方看一下，在世界上各處跑可以開眼界，接觸不同文化的衝擊，是很值得的一件事。如果直接去園區工作，那你會直到畢業三十幾年一直做一樣的事，那何不在這之前去外頭多看看。"
+            }
+            
+
+      ],
+      "link":[
+        { "LinkName": "投影片", "link": "https://drive.google.com/file/d/1bn9OTYvngf659DGAFkiJcHPhqERN1NPj/view?usp=sharing" },
+        { "LinkName": "介紹影片", "link": "https://www.youtube.com/watch?v=9sDZY8v2cnA" },
+        { "LinkName": "教授QA", "link": "https://www.youtube.com/watch?v=ehd3C8SqOUQ&t=1606s" }
+       
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Prof. 李佩雯",
+      "LabName": "先進元件技術實驗室",
+      "department": ["電子所甲組"],
+      "OfficeLocation": "",
+      "email": "pwli@nycu.edu.tw",
+      "photo": null,
+      "LabWebsite": "https://sites.google.com/nycu.edu.tw/pwli/",
+      "tags": ["#固態", "#量子計算"],
+      "research": [
+        
+            {
+            "title": "Ge Quantum-Dot Qubits for Quantum Computing",
+            "subtitle": [ 
+            "Measurement Facility: 低溫Qubit測試環境",
+            "Charge Qubit (Si-based Qubits): 電荷量子位元", 
+            "Cryogenic CMOS Controller/Readout: 低溫CMOS控制電路、讀取電路"
+          ]
+            },
+            {
+            "title": "Ge Quantum-Dot PICs (Photonic ICs)",
+            "subtitle":[
+            "Optically pumped microdisk: 鍺量子點光源",
+            "SiN Waveguide: 氮化矽波導光傳輸",
+            "Photodiode: 鍺量子點單光子偵測器"]
+            }
+      ],
+        
+      "RecomendedCourses": [
+        "普通物理學", "電子學", "電路學", "電磁學近代物理", "半導體元件物理"
+      ],
+      "faqs": [
+            {
+            "Question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
+            "Answer": "教授先提供實驗室的資源，再根據同學興趣選擇題目"
+            },
+            {
+            "Question": "教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
+            "Answer":"主要培養學生對於做研究的態度、自我學習的能力，具體內容視主題而定"
+            },
+            {
+            "Question": "專題是否有先修科目要求?",
+            "Answer": "到大二時已具備基礎能力(普物、電子學、電路學、電磁學)，研究內容電基於基礎科學上。大二以後可選相關核心課程(近代物理、半導體元件物理等)更合適"
+            }, 
+            {
+            "Question": "修習教授專題是否有成績要求?",
+            "Answer": "沒有，教授看重學生態度"
+            },
+            {
+            "Question": "實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
+            "Answer":"主要為台積電R&D，發展部門為近期熱門選擇之一，聯發科其他公司也有學長姐，還有人自行創業"
+            },
+            {
+            "Question": "研究所畢業條件為何?",
+            "Answer": "無特別要求，當研究生認為研究進行到一個段落即可，教授看重自行決策能力"
+            },
+            {
+            "Question": "請問教授能不能分享一些求學歷程的故事以及夢想?",
+            "Answer": "見 影片"
+            },
+            {
+            "Question": "請問教授如何挑選實驗室的研究主題? 這個領域在全球的現況及未來發展如何?",
+            "Answer":"見 影片"
+            },
+            {
+            "Question": "請問教授會如何激發學生對於教授研究領域的興趣?",
+            "Answer": "見 影片"
+            },
+            {
+            "Question": "請問教授會如何拓展學生的國際視野?",
+            "Answer": "見 影片"
+            }
+      ],
+      "link":[
+        { "LinkName": "投影片", "link": "https://drive.google.com/file/d/1B8O2rRZWKUopCJ9G87T3tRXmXkO6DDvM/view?usp=sharing" },
+        { "LinkName": "介紹影片", "link": "https://youtu.be/LuXsf-pWFeI" },
+        { "LinkName": "教授QA", "link": "https://youtu.be/8vnmsPP3f44" }
+       
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Prof. 洪浩喬",
+      "LabName": "前瞻混合訊號電路暨可測試設計實驗室",
+      "department": ["電控所", "電機所"],
+      "OfficeLocation": "",
+      "email": "hchong@nycu.edu.tw",
+      "photo": null,
+      "LabWebsite": "https://amsdft.web.nycu.edu.tw/",
+      "tags": ["#類比IC設計", "#數位IC設計", "#AI"],
+      "research": [
+        
+            {
+            "title": "AI",
+            "subtitle": [ 
+            "Software: Spiking neural network (SNN) models and training algorithms",
+            "Analog computing in memory (CIM) circuit designs for SNN and CNN (SRAM/NAND flash based)"
+            ]
+            },
+            {
+            "title": "Design for testability",
+            "subtitle":[
+            "Built-in self-test, design for testability, and calibration techniques for mixed-signal IC"
+            ]
+            },
+            {
+            "title": "Ultra low-power, all-digital, high-speed wireline transceiver",
+            "subtitle": [ null]
+            },
+            {
+            "title": "SAR/Continuous-time D-S ADC designs",
+            "subtitle": [ null]
+            }
+
+      ],
+        
+      "RecomendedCourses": [
+        "電子學一", "電子學二", "超大型積體電路導論", "類比積體電路導論", "VLSI Lab"
+      ],
+      "faqs": [
+            {
+            "Question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定? ",
+            "Answer": "同學可以拿有興趣的主題和教授討論，教授也能提供實驗室研究領域的題目給同學"
+            },
+            {
+            "Question": "教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
+            "Answer":"視同學育進行專題時間而定，主要有閱讀paper、進行類比電路設計、佈局設計以及EDA tool熟悉"
+            },
+            {
+            "Question": "專題是否有先修科目要求?",
+            "Answer": "電子學、AIC、VLSI、VLSI Lab皆能在專題中協助研究"
+            }, 
+            {
+            "Question": "修習教授專題是否有成績要求?",
+            "Answer": "沒有！有興趣即可"
+            },
+            {
+            "Question": "實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
+            "Answer":"Analog Devices、輝達、聯詠、聯發、M31、台積電、瑞昱、達發、群聯，多數從事類比IC設計領域的工作"
+            },
+            {
+            "Question": "請問教授能不能分享一些求學歷程的故事以及夢想?",
+            "Answer": "教授大學時修了各種不同的課，找到了自己的興趣，建議同學多多探尋自己的興趣"
+            },
+            {
+            "Question": "請問教授如何挑選實驗室的研究主題? 這個領域在全球的現況及未來發展如何?",
+            "Answer": "從自身原本研究出發，並從其他教授的領域尋找靈感，加上大量閱讀，來找到自己有興趣的題目"
+            },
+            {
+            "Question": "請問教授為何會採用類比電路方式實現SNN的計算?",
+            "Answer":"SNN的訊號原本就是類比訊號(timing information)，直接用類比電路處理有更加省電及即時反應的特性(latency低)。若使用數位電路處理需先經ADC/DAC轉換，硬體utilization較低。"
+            }
+      ],
+      "link":[
+        { "LinkName": "投影片", "link": "https://drive.google.com/file/d/1wNE2hK6mEmQNjjQ3m0BrqHAX7vunvEIk/view?usp=sharing" },
+        { "LinkName": "介紹影片", "link": "https://youtu.be/aW9Q7hsm2uQ?si=kT72kFPQOzyEv9z-" },
+        { "LinkName": "教授QA", "link": "https://youtu.be/0HdWEed_t9E?si=y_uDWJi3OXZvdKN1" }
+       
+      ]
+    },
+    {
+      "id": 54,
+      "name": "Prof. 陳巍仁",
+      "LabName": "奈米電子與晶片系統實驗室",
+      "department": ["電子所乙A組"],
+      "OfficeLocation": "",
+      "email": "wzchen@nycu.edu.tw",
+      "photo": null,
+      "LabWebsite": "http://www.alab.iee.nycu.edu.tw/wpmu/wzchen/",
+      "tags": ["#類比IC設計"],
+      "research": [
+        
+            {
+            "title": "混合信號積體電路設計",
+            "subtitle": [null]
+            },
+            {
+            "title": "高頻電路設計",
+            "subtitle": [null]
+            },
+            {
+            "title": "通訊系統",
+            "subtitle": [null]
+            }
+      ],
+        
+      "RecomendedCourses": [
+        "必修(電子、電路學)", "超大型積體電路設計", "類比積體電路導論"
+      ],
+      "faqs": [
+            {
+            "Question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
+            "Answer": "會根據學生的興趣，給小的電路去實作"
+            },
+            {
+            "Question": "教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
+            "Answer":"大二：涉獵不同的領域，挖掘喜歡的學科；大三：由研究生會針對學生的興趣，給小的電路去實作設計"
+            },
+            {
+            "Question": "專題是否有先修科目要求?",
+            "Answer": "見上方修課建議"
+            }, 
+            {
+            "Question": "修習教授專題是否有成績要求?",
+            "Answer": "通常不會有成績要求"
+            },
+            {
+            "Question": "實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
+            "Answer":"工作型態大致與研究所的所做類似、會有設計、下晶片、到回來量測的整套流程的訓練"
+            },
+            {
+            "Question": "請問教授如何挑選實驗室的研究主題? 這個領域在全球的現況及未來發展如何?",
+            "Answer": "來自於request或是呼應國際趨勢，看哪個題目是值得探索的。現在AI的發展也造成高速傳輸相關領域現在越來越紅。"
+            },
+            {
+            "Question": "請問教授對於從事類比電路設計領域、想要出國的學生有什麼建議?",
+            "Answer": "類比電路的研究會需要先進製程的配合，因此要慎選有能夠配合的學校。出國建議在國外可以有一份工作了解不同的環境。另外不要一味追求與別人相同的熱門領域，選定適合自己的領域才是最重要的。"
+            }
+      ],
+      "link":[
+        { "LinkName": "投影片", "link": null },
+        { "LinkName": "介紹影片", "link": "https://youtu.be/aB7crq_nm-4?si=xmOPzb8gvMmjeEw7" },
+        { "LinkName": "教授QA", "link": "https://www.youtube.com/watch?v=aB7crq_nm-4&t=303s" }
+       
+      ]
+    },
+    {
+      "id": 76,
+      "name": "Prof. 林顯易",
+      "LabName": "Human-Centered Robotic and Automation Laboratory",
+      "department": ["電控所"],
+      "OfficeLocation": "",
+      "email": "sofin@nycu.edu.tw",
+      "photo": null,
+      "LabWebsite": "https://www.arlabtw.com/",
+      "tags": ["#AI", "#機器人", "#微機電系統"],
+      "research": [
+        
+            {
+            "title": "Robotics",
+            "subtitle": [ 
+            "Collaborative Robotics Technologies",
+            "Human-Robot Interaction",
+            "Unmanned Autonomous Robots",
+            "Digital Twins"]
+            },
+            {
+            "title": "AI/Machine Learning",
+            "subtitle":[
+            "Deep learning models for industrial applications",
+            "Machine learning"]
+            },
+            {
+            "title": "Sensing and Imaging",
+            "subtitle": [ 
+            "Force and Image processing for robots",
+            "Biomedical imaging automation"
+          ]
+            },
+            {
+            "title": "Mechatronics Designs",
+            "subtitle":[
+            "Industrial automation for various industries"
+          ]
+            }
+      ],
+        
+      "RecomendedCourses": [
+        "機器人學", "AI相關像是ML等課程", "程式經驗(C++, python, .NET, C# 等等)"
+      ],
+      "faqs": [
+            {
+            "Question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
+            "Answer": "如果專題生有自己的想法、想研究的主題的話會支持他，否則會給一個主題讓他做"
+            },
+            {
+            "Question": "教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
+            "Answer":"希望學生可以自我要求，有一個自己的目標，並且朝目標邁進，希望專題生有自己的時間管理，有問題可以問研究生，但是如果沒有想法，沒辦法獨立做也可以跟研究生一起看要研究什麼。"
+            },
+            {
+            "Question": "",
+            "Answer": ""
+            }, 
+            {
+            "Question": "",
+            "Answer": ""
+            },
+            {
+            "Question": "",
+            "Answer":""
+            },
+            {
+            "Question": "",
+            "Answer": ""
+            },
+            {
+            "Question": "",
+            "Answer": ""
+            },
+            {
+            "Question": "",
+            "Answer":""
+            },
+            {
+            "Question": "",
+            "Answer": ""
+            }
+      ],
+      "link":[
+        { "LinkName": "投影片", "link": "" },
+        { "LinkName": "介紹影片", "link": "" },
+        { "LinkName": "教授QA", "link": "" }
        
       ]
     }

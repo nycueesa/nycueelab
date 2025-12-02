@@ -21,7 +21,8 @@
       "生醫電子",
       "控制系統",
       "電波",
-      "量子資訊"
+      "量子資訊",
+      "數學"
     ]
   },
   "professors": [
@@ -102,9 +103,9 @@
     },
     {
       "id": 2,
-      "name": "Prof. 趙昌博",
+      "name": "Prof. 李鎮宜",
       "LabName": "System Integration & Silicon Implementation Group",
-      "department": ["電控所"],
+      "department": ["電子所乙B組"],
       "OfficeLocation": "ED538",
       "email": "cylee@nycu.edu.tw",
       "photo": null,
@@ -147,6 +148,386 @@
         { "LinkName": "介紹影片", "link": "https://www.youtube.com/watch?v=4BVJv9DnNIA" },
         { "LinkName": "教授QA", "link": "https://youtu.be/NRjlbgD7Wyc" }
        
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Prof. 王傑智",
+      "LabName": "機器人感知與學習實驗室",
+      "department": ["電控所","電機所"],
+      "OfficeLocation": null,
+      "email": "bob@nycu.edu.tw",
+      "photo": null,
+      "LabWebsite": "https://sites.google.com/site/chiehchihbobwang",
+      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "research": [
+        
+            {
+            "title": "自駕車的軟體系統",
+            "subtitle":null
+            }
+      ],
+        
+      "RecomendedCourses": [
+        "無"
+      ],
+      "faqs": [
+            {
+            "Question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
+            "Answer": "研究主題與自駕車相關，可以自己選擇相關題目。"
+            },
+            {
+            "Question": "請問教授如何挑選實驗室的研究主題? 這個領域在全球的現況及未來發展如何?",
+            "Answer":"自駕車是個酷酷的東西!! 這個主題在機器人裡面是個很生活的應用，興趣>>>發展。"
+            },
+            {
+            "Question": "教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
+            "Answer": "邊做邊學，就是打code，但實驗室有實體的sensor可以直接執行寫出來的code。"
+            },
+            {
+            "Question": "專題是否有先修科目要求?",
+            "Answer": "沒有，但要喜歡coding。"
+            },
+            {
+            "Question": "修習教授專題是否有成績要求?",
+            "Answer": "沒有，修課成績跟專題做得好不好沒關。"
+            },
+            {
+            "Question": "實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
+            "Answer": " 之前自駕車的產業並不興盛，目前市面上的自駕車公司也都有學生前往就業。但畢業生擁有軟體能力，因此出路也很廣，包括創業、出國、手機公司、晶片廠，也有人會選擇聯發科之類的大公司，但人各有志，還是要看自己未來的規劃。"
+            }
+      ],
+      "link":[
+        { "LinkName": "投影片", "link": "https://drive.google.com/file/d/1s1tsQ9jhGmtaRMYydThrSVpBV8b80q-W/view?usp=sharing" },
+        { "LinkName": "介紹影片", "link": "https://youtu.be/NQi7aciMqpA?si=gd8eQvwcXzeKrkVP" },
+        { "LinkName": "教授QA", "link": "https://youtu.be/UZYi87HGCxo" }
+       
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Prof. 陳佳宏",
+      "LabName": "ADC Lab",
+      "department": ["電機所"],
+      "OfficeLocation": null,
+      "email": "derekchen@nycu.edu.tw",
+      "photo": null,
+      "LabWebsite": "https://adclab.web.nycu.edu.tw/",
+      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "research": [
+        
+            {
+            "title": "高解析度Analog-to-Digital Converter (ADC)",
+            "subtitle":["Delta-Sigma（Σ-Δ）ADC",
+                        "SAR ADC",
+                        "Time-interleaced ADCs"]
+            },
+            {
+            "title": "Digital to analog converter (DAC)",
+            "subtitle": null
+            },
+            {
+            "title": "Phase-Locked Loops(PLL)",
+            "subtitle":null
+            }
+
+      ],
+        
+      "RecomendedCourses": [
+        "訊號與系統",
+        "DSP導論",
+        "AIC導論",
+        "AIC LAB",
+        "VLSI",
+        "VLSI LAB",
+        "邏輯設計",
+        "混合訊號系統設計(陳佳宏教授開設)"
+      ],
+      "faqs": [
+            {
+            "Question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
+            "Answer": "會指定研究主題，與專題生討論，挑選難易適合、學生有興趣的題目。"
+            },
+            {
+            "Question": "教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
+            "Answer":"學會電路設計工具的使用，例如matlab、電路繪製軟體(virtuoso)、Spice軟體(LTspice、Hspice)從基礎電路設計開始實作，找出電路規格、如何做出電路，從上到下去了解。利用過去所學來解決遇到的問題"
+            },
+            {
+            "Question": "專題是否有先修科目要求?",
+            "Answer": " 電路學、電子學、訊號與系統、數位訊號處理(建議)"
+            },
+            {
+            "Question": " 修習教授專題是否有成績要求?",
+            "Answer": "沒有成績要求，但若人數多會以有相關課程的同學優先。"
+            },
+            {
+            "Question": " 實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
+            "Answer": "聯發科、瑞昱、聯詠、原相、立錡等一線大廠，主要是做類比及混和訊號的設計工作。甚至還沒畢業就都有預聘了。"
+            }
+      ],
+      "link":[
+        { "LinkName": "投影片", "link": "https://youtu.be/CUcQ94FQbao"},
+        { "LinkName": "介紹影片", "link": "https://youtu.be/CUcQ94FQbao" },
+        { "LinkName": "教授QA", "link": "https://youtu.be/O1GuLalpq2M" }
+      ]
+    },
+    {
+      "id": 42,
+      "name": "Prof. 方凱田",
+      "LabName": "Mobile Intelligent Network Technology (MINT) Lab",
+      "department": ["電信所"],
+      "OfficeLocation": null,
+      "email": "ktfeng@nycu.edu.tw",
+      "photo": null,
+      "LabWebsite": "https://sites.google.com/nycu.edu.tw/mintlab/lab-activities",
+      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "research": [
+            {
+            "title": "B5G/6G/Wi-Fi無線通訊網路",
+            "subtitle":["Federated Learning/Deep Learning Enhanced Networks",
+                        "Reflective Intelligent Surface (RIS), Full-Duplex",
+                        "O-RANs, IEEE 802.11ax (Wi-Fi)"]
+            },
+            {
+            "title": "低軌衛星",
+            "subtitle":[
+                "Low Earth Orbit (LEO), Beam Training & Management"
+            ]
+            },
+            {
+            "title": "無線人員及呼吸感測",
+            "subtitle":[
+                "Multi-Room Presence Detection",
+                "Vital Sign, Apnea, Breath, Gesture Detectio"
+            ]
+            },
+             {
+            "title": "機器學習",
+            "subtitle":[
+                "DNN, RNN, GAN, Un/Semi-Supervised Learning"
+            ]
+            },
+            {
+            "title": "無線室內定位及追蹤",
+            "subtitle":[
+                "Indoor Localization and Tracking"
+            ]
+            }
+      ],
+        
+      "RecomendedCourses": [
+        "必修課程機率、訊號與系統即可",
+        "修專題時建議修習:通訊原理、機器學習、人工智慧"
+      ],
+      "faqs": [
+            {
+            "Question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
+            "Answer": "實驗室大多是在進行無線通訊及網路的研究，因此在此範疇內有興趣的題目皆可與教授提出討論，另外，尚無想法教授也可指定題目。"
+            },
+            {
+            "Question": "教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
+            "Answer":"進行方式: 實作、跑結果入門熟悉。討論者: 主要由碩博士學生帶，但教授也非常歡迎學生一同討論。專題目的: 以了解自己的興趣為主，因此不會指派過於繁重任務。人數: 可個人或分組(三人內為佳)。"
+            },
+            {
+            "Question": "專題是否有先修科目要求?",
+            "Answer": "機率、訊號與系統。"
+            },
+            {
+            "Question": " 修習教授專題是否有成績要求?",
+            "Answer": ": 否。"
+            },
+            {
+            "Question": " 實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
+            "Answer": "通常會就業於MediaTek(聯發科) 及瑞昱。"
+            }
+      ],
+      "link":[
+        { "LinkName": "投影片", "link": "https://drive.google.com/file/d/1j3M7hZValeuDBawa2U9968ntYZuEmVtv/view?usp=sharing"},
+        { "LinkName": "介紹影片", "link": "https://youtu.be/7W4IYEQaGMA" },
+        { "LinkName": "教授QA", "link": "https://youtu.be/kkJimbhIVH0" }
+      ]
+    },
+    {
+      "id": 70,
+      "name": "Prof. 陳稷康",
+      "LabName": "應用超音波實驗室",
+      "department": ["電機所"],
+      "OfficeLocation": null,
+      "email": "ngchen@nycu.edu.tw",
+      "photo": null,
+      "LabWebsite": "https://www.facebook.com/NYCUAUL/",
+      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "research": [
+            {
+            "title": "醫用超音波應用",
+            "subtitle":["發展新測量化學反應",
+                        "模擬人體組織"]
+            },
+            {
+            "title": "海洋主動式超音波應用",
+            "subtitle":[
+                "珊瑚: 偵測活/死",
+                "海藻: 地球暖化"
+            ]
+            }
+      ],
+        
+      "RecomendedCourses": [
+        "無，進來再學"
+      ],
+      "faqs": [
+            {
+            "Question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
+            "Answer": "指定主題，但會讓學生挑選。"
+            },
+            {
+            "Question": "教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
+            "Answer":"看題目，有些要寫code、計算、實驗都不一定。Meeting每周一次，會不定期進實驗室看看。"
+            },
+            {
+            "Question": "專題是否有先修科目要求?",
+            "Answer": "無。"
+            },
+            {
+            "Question": " 修習教授專題是否有成績要求?",
+            "Answer": "無。"
+            },
+            {
+            "Question": " 實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
+            "Answer": "台積電、聯發科都有。也有到醫院的。"
+            }
+      ],
+      "link":[
+        { "LinkName": "投影片", "link": "https://drive.google.com/file/d/1QSJqUDEjhpfbzpqZyhHxIyuA3tJPwwZD/view?usp=sharing"},
+        { "LinkName": "介紹影片", "link": "https://youtu.be/zdcr0QVAPWE" },
+        { "LinkName": "教授QA", "link": "https://youtu.be/NmWCRZUdLa4" }
+      ]
+    },
+    {
+      "id": 72,
+      "name": "Prof. 温宏斌",
+      "LabName": "自動化計算智慧實驗室",
+      "department": ["電子所乙B組"],
+      "OfficeLocation": null,
+      "email": "opwen@nycu.edu.tw",
+      "photo": null,
+      "LabWebsite": "https://cialab.web.nycu.edu.tw/",
+      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "research": [
+            {
+            "title": "EDA",
+            "subtitle":["Radiation Hardening",
+                        "A.I. Cell Generation",
+                        "Verification & Test"]
+            },
+            {
+            "title": "CloudNet",
+            "subtitle":[
+                "P4/INT in 5G",
+                "Software Defined Networking",
+                "Network Security"
+            ]
+            }
+      ],
+      "RecomendedCourses": [
+        "詳見問答"
+      ],
+      "faqs": [
+            {
+            "Question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
+            "Answer": " 教授不喜歡指定主題，教授喜歡跟學生一起腦力激盪。每年的題目都不會重複，教授會讓學生回去針對社會趨勢想出題目，然後再跟教授討論出更適合的專題題目。"
+            },
+            {
+            "Question": "教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
+            "Answer":"專題是綜合的練習，一些知識方面是default技能，專題訓練是將很多課程結合在一起。同時在做專題是以外面新創競賽來當成推動力量，教授會將一些競賽經驗或、其他專家的對談和社會趨勢跟專題生分享，提升專題生的表達能力和社交能力。讓專題生除了在專業方面得到訓練外，還可以為他們未來職涯發展有更進一步的任時即提升。"
+            },
+            {
+            "Question": "專題是否有先修科目要求?",
+            "Answer": "必修是基礎，教授對於專題生當作已經有良好的程式能力、微算機原理、嵌入式裝置的基礎。除此之外教授暑假會上一些課要求專題生完成。"
+            },
+            {
+            "Question": " 修習教授專題是否有成績要求?",
+            "Answer": " 完全沒有，成績對教授而言不重要。教授注重對能力展現、對未來有沒有熱情等其他方面。只要能夠來到這個系，教授都不會去看一個人的成績去評斷一個人的能力。"
+            },
+            {
+            "Question": " 實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
+            "Answer": "研究室學生做的專題都是有跟產學合作，所以這些學生畢業後很容易進到這些合作的企業，像是聯發科(有80%的人都是教授的研究生)。也有一些學生最後進到全世界第一大第二大的IC設計公司、台積電、美國外商公司等等地方工作。"
+            }
+      ],
+      "link":[
+        { "LinkName": "投影片", "link": "https://drive.google.com/file/d/1X6L9MsGGfLvCqOc-pKiEBu6d_q0xx_cT/view?usp=sharing"},
+        { "LinkName": "介紹影片", "link": "https://youtu.be/xG9Yjtw1Z9g" },
+        { "LinkName": "教授QA", "link": "https://youtu.be/IcN3m2Ogp3A" }
+      ]
+    },
+    {
+      "id": 78,
+      "name": "Prof. 陳科宏",
+      "LabName": "低功率混合系統信號晶片設計實驗室",
+      "department": ["電機所","電控所"],
+      "OfficeLocation": null,
+      "email": "khchen@nycu.edu.tw",
+      "photo": null,
+      "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
+      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "research": [
+            {
+            "title": "Smart DC-DC converter with power management",
+            "subtitle":null
+            },
+            {
+            "title": "Current Mode DC-DC Buck Converter with on-Chip Capacitor Multiplier",
+            "subtitle":null
+            },
+            {
+            "title": "High-Efficiency Low Noise Converter for DVS and Power Management System",
+            "subtitle":null
+            },
+            {
+            "title": "One-Cycle Control Buck Converter for DVS with Dynamic Width Control and Error Correction Loops",
+            "subtitle":null
+            },
+            {
+            "title": "65K color OLED controller and driver",
+            "subtitle":null
+            },
+            {
+            "title": "DC-AC Inverter",
+            "subtitle":null
+            }
+    
+
+      ],
+      "RecomendedCourses": [
+        "電子學(一)、(二)",
+        "VLSI導論、AIC導論(optional)"
+      ],
+      "faqs": [
+            {
+            "Question":"教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
+            "Answer": "專題上會著重於使用工具，專題下有想法就可以跟教授、或研究生一起做計畫"
+            },
+            {
+            "Question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
+            "Answer":"會先做一些基本的電路當作training，熟習電路設計工具之後就能來找研究生或教授討論主題。"
+            },
+            {
+            "Question": "專題是否有先修科目要求?",
+            "Answer": "電子學一二，有些同學會修VLSI導論跟AIC導論等等，但是一般而言我們助教都會教，所以不用過於擔心"
+            },
+            {
+            "Question": " 修習教授專題是否有成績要求?",
+            "Answer": "無"
+            },
+            {
+            "Question": " 實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
+            "Answer": "聯發科、瑞昱、立錡、聯詠…等叫得出名字的design house幾乎都有。"
+            }
+      ],
+      "link":[
+        { "LinkName": "投影片", "link": "https://youtu.be/n8e8OcaRJyE"},
+        { "LinkName": "介紹影片", "link": "https://youtu.be/aWnf8bEYr18" },
+        { "LinkName": "教授QA", "link": null }
       ]
     }, 
     {

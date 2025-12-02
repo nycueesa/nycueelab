@@ -1,0 +1,325 @@
+{
+  "topics": {
+    "departments": [
+      "類比IC設計",
+      "數位IC設計",
+      "微機電系統",
+      "微感測器",
+      "半導體",
+      "光電",
+      "量子計算",
+      "資安",
+      "RF",
+      "無研究領域"
+    ],
+    "fields": [
+      "系統與晶片設計",
+      "通訊與網路",
+      "電力電子",
+      "光電與顯示",
+      "AI與數據科學",
+      "生醫電子",
+      "控制系統",
+      "電波",
+      "量子資訊"
+    ]
+  },
+  "professors": [
+    {
+      "id": 1,
+      "name": "Prof. 趙昌博",
+      "labName": "智慧感測實驗室",
+      "lab": "智慧感測實驗室",
+      "department": "電控所",
+      "location": "電控所",
+      "email": "changbo.chao@nycu.edu.tw",
+      "photo": "/images/professors/chao_changbo.jpg",
+      "image": null,
+      "website": "https://scholar.nycu.edu.tw/zh/persons/chang-bo-chao",
+      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "departments": ["類比IC設計"],
+      "fields": ["系統與晶片設計", "光電與顯示", "生醫電子"],
+      "research": {
+        "mainTopic": "Advanced Analog Circuit Design and Smart Sensing",
+        "subTopic": "智慧感測器設計與類比積體電路最佳化 : 專注於高效能感測系統與低功耗類比電路設計"
+      },
+      "courses": [
+        { "category": "硬體課程", "name": "類比積體電路設計" },
+        { "category": "硬體課程", "name": "感測器原理與應用" },
+        { "category": "硬體課程", "name": "混合訊號電路設計" }
+      ],
+      "faqs": [
+        "教授實驗室主要研究什麼方向? 適合對感測器有興趣的學生嗎?",
+        "專題生需要具備哪些基礎課程的知識? 類比電路的基礎要求到什麼程度?",
+        "實驗室有提供相關的IC設計工具訓練嗎? 例如Cadence或Synopsys?"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Prof. 蕭宏",
+      "labName": "先進類比電路實驗室",
+      "lab": "先進類比電路實驗室",
+      "department": "電控所",
+      "location": "電控所",
+      "email": "hsiao.hung@nycu.edu.tw",
+      "photo": "/images/professors/hsiao_hung.jpg",
+      "image": null,
+      "website": "https://faculty.nycu.edu.tw/hsiao",
+      "tags": ["#類比IC", "#半導體", "#射頻電路"],
+      "departments": ["類比IC設計", "半導體"],
+      "fields": ["系統與晶片設計", "通訊與網路"],
+      "research": {
+        "mainTopic": "RF and Analog Integrated Circuit Design",
+        "subTopic": "射頻積體電路與高速類比電路設計 : 開發5G/6G通訊系統所需的射頻前端電路"
+      },
+      "courses": [
+        { "category": "硬體課程", "name": "射頻積體電路設計" },
+        { "category": "硬體課程", "name": "通訊電路" },
+        { "category": "硬體課程", "name": "電路理論進階" }
+      ],
+      "faqs": [
+        "實驗室的研究偏向理論分析還是實作? 會有Tape out的機會嗎?",
+        "加入實驗室前需要會哪些模擬軟體? ADS或HFSS需要先學習嗎?",
+        "教授對於專題生的時間要求如何? 每週需要多少時間投入?"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Prof. 陳志成",
+      "labName": "半導體製程與元件實驗室",
+      "lab": "半導體製程與元件實驗室",
+      "department": "電控所",
+      "location": "電控所",
+      "email": "chihcheng.chen@nycu.edu.tw",
+      "photo": "/images/professors/chen_chihcheng.jpg",
+      "image": null,
+      "website": "https://semicon-lab.nycu.edu.tw",
+      "tags": ["#半導體", "#製程技術", "#元件物理"],
+      "departments": ["半導體"],
+      "fields": ["系統與晶片設計"],
+      "research": {
+        "mainTopic": "Advanced Semiconductor Device Physics and Process Technology",
+        "subTopic": "先進半導體元件開發與製程技術 : 研究新世代電晶體結構與材料技術"
+      },
+      "courses": [
+        { "category": "硬體課程", "name": "半導體元件物理" },
+        { "category": "硬體課程", "name": "積體電路製程技術" },
+        { "category": "硬體課程", "name": "奈米電子學" }
+      ],
+      "faqs": [
+        "實驗室有和產業界合作的機會嗎? 可以參觀晶圓廠嗎?",
+        "專題內容會偏向製程實驗還是模擬分析? 需要用到無塵室嗎?",
+        "教授會指定研究主題嗎? 或者是可以讓專題生自行提出想法?"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Prof. 濮大緯",
+      "labName": "功率半導體實驗室",
+      "lab": "功率半導體實驗室",
+      "department": "電控所",
+      "location": "電控所",
+      "email": "dawei.pu@nycu.edu.tw",
+      "photo": "/images/professors/pu_dawei.jpg",
+      "image": null,
+      "website": "https://power-devices.nycu.edu.tw",
+      "tags": ["#半導體", "#功率元件", "#寬能隙"],
+      "departments": ["半導體"],
+      "fields": ["電力電子"],
+      "research": {
+        "mainTopic": "Wide Bandgap Power Devices and Applications",
+        "subTopic": "寬能隙功率半導體元件研發 : 專注於GaN與SiC功率元件在電動車與再生能源的應用"
+      },
+      "courses": [
+        { "category": "硬體課程", "name": "功率電子" },
+        { "category": "硬體課程", "name": "化合物半導體" },
+        { "category": "軟體課程", "name": "電路模擬分析" }
+      ],
+      "faqs": [
+        "實驗室的研究方向和電動車產業的關聯性? 未來就業方向有哪些?",
+        "需要具備電力電子的背景嗎? 還是可以從零開始學習?",
+        "實驗室有提供企業實習的機會嗎? 和哪些公司有合作關係?"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Prof. 古承宗",
+      "labName": "數位系統設計實驗室",
+      "lab": "數位系統設計實驗室",
+      "department": "電控所",
+      "location": "電控所",
+      "email": "chengzong.gu@nycu.edu.tw",
+      "photo": "/images/professors/gu_chengzong.jpg",
+      "image": null,
+      "website": "https://digital-design.nycu.edu.tw",
+      "tags": ["#數位IC", "#VLSI", "#處理器設計"],
+      "departments": ["數位IC設計"],
+      "fields": ["系統與晶片設計", "AI與數據科學"],
+      "research": {
+        "mainTopic": "Digital System Design and Processor Architecture",
+        "subTopic": "高效能處理器架構與數位系統設計 : 開發AI加速器與RISC-V處理器核心"
+      },
+      "courses": [
+        { "category": "軟體課程", "name": "數位電路設計" },
+        { "category": "軟體課程", "name": "計算機結構" },
+        { "category": "硬體課程", "name": "VLSI設計" },
+        { "category": "軟體課程", "name": "Verilog HDL" }
+      ],
+      "faqs": [
+        "實驗室使用什麼硬體描述語言? Verilog還是VHDL為主?",
+        "專題生有機會參與Tape out嗎? 設計流程會學到完整的Front-end和Back-end嗎?",
+        "教授對於程式設計能力的要求如何? 需要會哪些程式語言?"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Prof. 林志遠",
+      "labName": "低功耗晶片設計實驗室",
+      "lab": "低功耗晶片設計實驗室",
+      "department": "電控所",
+      "location": "電控所",
+      "email": "zhiyuan.lin@nycu.edu.tw",
+      "photo": "/images/professors/lin_zhiyuan.jpg",
+      "image": null,
+      "website": "https://lowpower-vlsi.nycu.edu.tw",
+      "tags": ["#數位IC", "#低功耗", "#物聯網"],
+      "departments": ["數位IC設計"],
+      "fields": ["系統與晶片設計"],
+      "research": {
+        "mainTopic": "Low-Power VLSI Design for IoT Applications",
+        "subTopic": "物聯網低功耗晶片設計 : 開發超低功耗的感測與運算晶片用於穿戴式裝置"
+      },
+      "courses": [
+        { "category": "硬體課程", "name": "低功耗電路設計" },
+        { "category": "軟體課程", "name": "嵌入式系統" },
+        { "category": "硬體課程", "name": "SoC設計" },
+        { "category": "軟體課程", "name": "數位信號處理" }
+      ],
+      "faqs": [
+        "實驗室的研究成果有商品化的案例嗎? 有創業的可能性嗎?",
+        "專題需要同時具備硬體和軟體的能力嗎? 分工會如何進行?",
+        "教授會提供開發板和測試設備嗎? 需要自己購買工具嗎?"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Prof. 王美雪",
+      "labName": "光電積體電路實驗室",
+      "lab": "光電積體電路實驗室",
+      "department": "光電所",
+      "location": "光電所",
+      "email": "meixue.wang@nycu.edu.tw",
+      "photo": "/images/professors/wang_meixue.jpg",
+      "image": null,
+      "website": "https://optoelectronics.nycu.edu.tw",
+      "tags": ["#光電", "#光通訊", "#積體光學"],
+      "departments": ["光電"],
+      "fields": ["光電與顯示", "通訊與網路"],
+      "research": {
+        "mainTopic": "Photonic Integrated Circuits and Optical Communication",
+        "subTopic": "光子積體電路設計與光通訊系統 : 研發矽光子晶片與高速光收發模組"
+      },
+      "courses": [
+        { "category": "硬體課程", "name": "光電子學" },
+        { "category": "硬體課程", "name": "光纖通訊" },
+        { "category": "硬體課程", "name": "積體光學" },
+        { "category": "軟體課程", "name": "光學模擬軟體" }
+      ],
+      "faqs": [
+        "實驗室的研究偏向元件設計還是系統整合? 需要光學背景嗎?",
+        "會有機會使用光學實驗設備嗎? 實驗室有哪些量測儀器?",
+        "光電和電子的專業如何結合? 未來出路會是什麼產業?"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Prof. 張育仁",
+      "labName": "電磁波與天線實驗室",
+      "lab": "電磁波與天線實驗室",
+      "department": "電信所",
+      "location": "電信所",
+      "email": "yuren.chang@nycu.edu.tw",
+      "photo": "/images/professors/chang_yuren.jpg",
+      "image": null,
+      "website": "https://em-antenna.nycu.edu.tw",
+      "tags": ["#電磁", "#天線設計", "#無線通訊"],
+      "departments": ["RF"],
+      "fields": ["電波", "通訊與網路"],
+      "research": {
+        "mainTopic": "Antenna Design and Electromagnetic Wave Propagation",
+        "subTopic": "先進天線設計與電磁波傳播 : 開發5G毫米波天線與超材料應用"
+      },
+      "courses": [
+        { "category": "硬體課程", "name": "電磁學" },
+        { "category": "硬體課程", "name": "天線理論與設計" },
+        { "category": "軟體課程", "name": "電磁模擬" },
+        { "category": "硬體課程", "name": "微波工程" }
+      ],
+      "faqs": [
+        "實驗室會製作實體天線嗎? 還是以模擬為主?",
+        "需要先修過電磁學相關課程嗎? 數學要求會很高嗎?",
+        "研究成果可以應用在什麼實際產品上? 和通訊產業的關聯性?"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Prof. 李明華",
+      "labName": "生醫電子實驗室",
+      "lab": "生醫電子實驗室",
+      "department": "生醫所",
+      "location": "生醫所",
+      "email": "minghua.li@nycu.edu.tw",
+      "photo": "/images/professors/li_minghua.jpg",
+      "image": null,
+      "website": "https://biomedical-electronics.nycu.edu.tw",
+      "tags": ["#生醫", "#生醫感測", "#穿戴裝置"],
+      "departments": ["無研究領域"],
+      "fields": ["生醫電子", "AI與數據科學"],
+      "research": {
+        "mainTopic": "Biomedical Electronics and Wearable Health Monitoring",
+        "subTopic": "生醫訊號處理與穿戴式健康監測 : 開發智慧型生理訊號感測晶片與演算法"
+      },
+      "courses": [
+        { "category": "硬體課程", "name": "生醫電子學" },
+        { "category": "軟體課程", "name": "生醫訊號處理" },
+        { "category": "硬體課程", "name": "感測器介面電路" },
+        { "category": "軟體課程", "name": "機器學習應用" }
+      ],
+      "faqs": [
+        "需要有生物或醫學相關背景嗎? 還是純電子背景也可以?",
+        "實驗室有和醫院或醫學院合作嗎? 會有臨床測試的機會嗎?",
+        "研究方向偏向硬體設計還是演算法開發? 還是兩者都需要?"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Prof. 周建安",
+      "labName": "智慧電網實驗室",
+      "lab": "智慧電網實驗室",
+      "department": "電機所",
+      "location": "電機所",
+      "email": "jianan.zhou@nycu.edu.tw",
+      "photo": "/images/professors/zhou_jianan.jpg",
+      "image": null,
+      "website": "https://smart-grid.nycu.edu.tw",
+      "tags": ["#電力", "#智慧電網", "#再生能源"],
+      "departments": ["無研究領域"],
+      "fields": ["電力電子", "控制系統"],
+      "research": {
+        "mainTopic": "Smart Grid and Renewable Energy Integration",
+        "subTopic": "智慧電網與再生能源整合 : 研究電力系統最佳化與儲能系統管理"
+      },
+      "courses": [
+        { "category": "硬體課程", "name": "電力系統" },
+        { "category": "軟體課程", "name": "電力電子控制" },
+        { "category": "軟體課程", "name": "最佳化理論" },
+        { "category": "硬體課程", "name": "再生能源系統" }
+      ],
+      "faqs": [
+        "實驗室研究偏向硬體還是軟體? 需要寫程式做模擬嗎?",
+        "對於未來想進入台電或能源產業的學生,實驗室能提供什麼幫助?",
+        "專題會接觸到實際的電力設備嗎? 還是以電腦模擬為主?"
+      ]
+    }
+  ]
+}

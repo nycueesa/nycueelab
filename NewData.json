@@ -1,0 +1,78 @@
+{
+  "topics": {
+    "departments": [
+      "類比IC設計",
+      "數位IC設計",
+      "微機電系統",
+      "微感測器",
+      "半導體",
+      "光電",
+      "量子計算",
+      "資安",
+      "RF",
+      "無研究領域"
+    ],
+    "fields": [
+      "系統與晶片設計",
+      "通訊與網路",
+      "電力電子",
+      "光電與顯示",
+      "AI與數據科學",
+      "生醫電子",
+      "控制系統",
+      "電波",
+      "量子資訊"
+    ]
+  },
+  "professors": [
+    {
+      "id": 2,
+      "name": "Prof. 趙昌博",
+      "LabName": "System Integration & Silicon Implementation Group",
+      "department": ["電控所"],
+      "OfficeLocation": "ED538",
+      "email": "cylee@nycu.edu.tw",
+      "photo": null,
+      "LabWebsite": "https://scholar.nycu.edu.tw/zh/persons/chang-bo-chao",
+      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "research": [
+        
+            {
+            "title": "IC design for Sensor:",
+            "subtitle": [ "Fast Medical Tests: 生物醫學檢測(健康診斷)，已有10年以上研究，開始商業化",
+            "細胞治療: 使用半導體sensor檢測體細胞到幹細胞的過程、掌握細胞品質及功能",
+            "超高速攝影: 與Stanford合作開發可達10Mfps的影像感測元件，捕捉瞬間行為"]
+            },
+            {
+            "title": "IC design for AI:",
+            "subtitle":["Edge AI: 優化大型語言模型的演算法及硬體架構，使其能在如手機等edge devices上本地運算，保障使用者隱私。",
+            "Mobile Healthcare: 取出心電訊號並透過AI模型分析，檢測心臟疾病發生與否"]
+            }
+      ],
+        
+      "RecomendedCourses": [
+        "大二修完基本科目已具備專題所需能力"
+      ],
+      "faqs": [
+            {
+            "Question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
+            "Answer": "從實驗室進行的項目進行挑選，具體的內容可依自身興趣和教授以及學長姐討論"
+            },
+            {
+            "Question": "教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
+            "Answer":"以培養團隊合作研究能力為主，也要具備獨立研究發想的技能，具體內容依照興趣和學長姐討論而定"
+            },
+            {
+            "Question": "專題是否有先修科目要求?",
+            "Answer": "大二修完基本科目已具備專題所需能力"
+            }
+      ],
+      "link":[
+        { "LinkName": "投影片", "link": "https://drive.google.com/file/d/18iOUQxWn8ff4B6pUyJGJMtbG9Ll5F5im/view?usp=sharing" },
+        { "LinkName": "介紹影片", "link": "https://www.youtube.com/watch?v=4BVJv9DnNIA" },
+        { "LinkName": "教授QA", "link": "https://youtu.be/NRjlbgD7Wyc" }
+       
+      ]
+    }
+    ]
+}

@@ -103,76 +103,74 @@
     },
     {
       "id": 1,
-      "name": "Prof. ",
-      "labName": "",
-      "department": [""],
+      "name": "Prof. 劉建男",
+      "labName": "Mixed-Signal Electronic Design Automation Lab ",
+      "department": ["電子所乙B組"],
       "officeLocation": "",
-      "email": "@nycu.edu.tw",
+      "email": "jimmyliu@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "",
-      "tags": ["#", "#", "#", "#"],
+      "LabWebsite": "https://mseda.iee.nycu.edu.tw/",
+      "tags": ["#EDA"],
       "research": [
         
             {
-            "title": "",
+            "title": "AI for EDA Algorithms",
             "subtitle": [ 
-            "",
-            "",
-            ""]
+            "DNN-Assisted Analog Circuit Sizing: 透過AI輔助類比電路sizing"
+            ]
             },
             {
-            "title": "",
+            "title": "EDA for New AI Devices",
             "subtitle":[
-            "",
-            ""]
-            }
+            "System Behavioral Models for IMC: 針對in-memory computing的模擬工具"]
+            },
+            {
+            "title": "Automatic Analog Design Migration",
+            "subtitle":[
+            "將設計快速轉移到不同製程 (eg. 28nm to 16nm)"]
+            },
+            {
+            "title": "Analog Behavior Modeling for System Verification",
+            "subtitle":[
+            "將數位及類比電路一起模擬"]
+            } 
+
+            
       ],
         
       "recomendedCourses": [
-        ""
+        "資料結構", "演算法", "超大型積體電路設計"
       ],
       "faqs": [
             {
-            "question": "",
-            "answer": ""
+            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
+            "answer": "升大三暑假給資料自主學習；大三上練習EDA經典考古題；大三下參加CAD contest或針對實驗室的題目實作(可自行選擇)"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
+            "answer":"兩週一次meeting(學長姐帶領學弟妹進行implementation)、主要以撰寫C++為主"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "專題是否有先修科目要求?",
+            "answer": "無(但建議先修資料結構)"
             }, 
             {
-            "question": "",
-            "answer": ""
+            "question": "修習教授專題是否有成績要求?",
+            "answer": "無，歡迎所有有興趣的學生"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
+            "answer":"EDA公司(synopsys、cadence):開發演算法；IC design house CAD部門:完善公司內EDA tools環境(把不同EDA tools整合起來，方便designer工作)；轉職硬體設計工程師"
             },
             {
-            "question": "",
-            "answer": ""
-            },
-            {
-            "question": "",
-            "answer": ""
-            },
-            {
-            "question": "",
-            "answer":""
-            },
-            {
-            "question": "",
-            "answer": ""
+            "question": "研究所畢業條件為何?",
+            "answer": "不一定要寫Paper，但要做到可以投Paper的程度"
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "" },
-        { "linkName": "介紹影片", "link": "" },
-        { "linkName": "教授QA", "link": "" }
+        { "linkName": "投影片", "link": "https://drive.google.com/file/d/1uhMBIlMWz3GFneC9snjfy0O6OYTCj4MJ/view?usp=sharing" },
+        { "linkName": "介紹影片", "link": "https://youtu.be/vG0u3Lo9uAs" },
+        { "linkName": "教授QA", "link": "https://youtu.be/nRCToaCoPHc" }
        
       ]
     },

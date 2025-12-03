@@ -1261,7 +1261,7 @@
       "email": "bob@nycu.edu.tw",
       "photo": null,
       "LabWebsite": "https://sites.google.com/site/chiehchihbobwang",
-      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "tags": ["#機器人"],
       "research": [
         
             {
@@ -1297,7 +1297,27 @@
             {
             "question": "實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
             "answer": " 之前自駕車的產業並不興盛，目前市面上的自駕車公司也都有學生前往就業。但畢業生擁有軟體能力，因此出路也很廣，包括創業、出國、手機公司、晶片廠，也有人會選擇聯發科之類的大公司，但人各有志，還是要看自己未來的規劃。"
-            }
+            },
+            {
+            "question": "研究所畢業條件為何?",
+            "answer": "沒有硬性規範，也不一定要有paper才能畢業，但教授還是會有一定的要求，年限從1.5 ~ 3、4年都有。"
+            },
+            {
+            "question": " 請問教授能不能分享一些求學歷程的故事以及夢想?",
+            "answer": " Bob一直對機器人有狂熱，現在的工作就是他一直的夢想，他覺得「能不能做自己想做的事情」對於人生規畫非常重要"
+            },
+            {
+            "question": "請問教授會如何拓展學生的國際視野?",
+            "answer": "鼓勵學生參加國外研討會，除了新聞與網路資訊攝取更強調互動。"
+            },
+            {
+            "question": "請問教授會如何激發學生對於教授研究領域的興趣?",
+            "answer": "不行XD，喜歡自駕車的話實驗室可以給資源跟環境，但不喜歡的話也沒辦法。"
+            },
+            {
+            "question": "怎麼知道自己對自駕車有沒有興趣?",
+            "answer": "自駕車是一個比較生活化的研究，如果你在路上會思考要怎麼利用軟體偵測小狗或躲避違規者，那也許可以試試看。"
+            }  
       ],
       "link":[
         { "linkName": "投影片", "link": "https://drive.google.com/file/d/1s1tsQ9jhGmtaRMYydThrSVpBV8b80q-W/view?usp=sharing" },
@@ -1393,7 +1413,7 @@
       "email": "derekchen@nycu.edu.tw",
       "photo": null,
       "LabWebsite": "https://adclab.web.nycu.edu.tw/",
-      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "tags": ["#類比IC設計"],
       "research": [
         
             {
@@ -1443,6 +1463,26 @@
             {
             "question": " 實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
             "answer": "聯發科、瑞昱、聯詠、原相、立錡等一線大廠，主要是做類比及混和訊號的設計工作。甚至還沒畢業就都有預聘了。"
+            },
+            {
+            "question": "研究所畢業條件為何?",
+            "answer": "碩士：設計並量測完成一顆晶片，會以學長姐們做過的電路為基礎，並做一定幅度的修正。"
+            },
+            {
+            "question": "請問教授能不能分享一些求學歷程的故事以及夢想?",
+            "answer": "教授是出來工作八九年之後再去讀博士的，博士班生活基本上每天眼睛睜開就都在做研究，不斷的創新並改進電路，。雖然就讀期間很辛苦而且未來迷茫，但只要撐過去了就是一段很寶貴的成長經驗。"
+            },
+            {
+            "question": "請問教授如何挑選實驗室的研究主題? 這個領域在全球的現況及未來發展如何?",
+            "answer": "主要是以Analog-to-Digital Converter(ADC)為基礎，並改良現有的電路，以及延伸出去的電路(ex: 電視裡面的音響)。基本上這個領域是電路設計裡面非常重要的基礎單元，也可以整合成很多樣的應用。(ex: 智慧手表、觸控面板、6G)"
+            },
+            {
+            "question": "請問教授會如何激發學生對於教授研究領域的興趣?",
+            "answer": "碩一在修課之餘還會有培訓,接產學合作計畫與業界接軌，也有機會在畢業前接到預聘。"
+            },
+            {
+            "question": "請問教授會如何拓展學生的國際視野?",
+            "answer": "做研究時會參考各國發表的論文(ex: iEEE)，而投稿國際期刊、會議更是在跟世界各國的頂尖學生競爭，可以說生活處處都在跟國際接軌。"
             }
       ],
       "link":[
@@ -1681,7 +1721,7 @@
       "email": "ktfeng@nycu.edu.tw",
       "photo": null,
       "LabWebsite": "https://sites.google.com/nycu.edu.tw/mintlab/lab-activities",
-      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "tags": ["#通訊"],
       "research": [
             {
             "title": "B5G/6G/Wi-Fi無線通訊網路",
@@ -1735,12 +1775,28 @@
             },
             {
             "question": " 修習教授專題是否有成績要求?",
-            "answer": ": 否。"
+            "answer": "否。"
             },
             {
-            "question": " 實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
-            "answer": "通常會就業於MediaTek(聯發科) 及瑞昱。"
-            }
+            "question": "研究所畢業條件為何?",
+            "answer": "投稿論文，並於研究所期間每個禮拜做meeting，視研究生狀況予以畢業，但大多兩年左右畢業。"
+            },
+            {
+            "question": "請問教授能不能分享一些求學歷程的故事以及夢想?",
+            "answer": "以個人的興趣及學習狀態去抉擇欲從事的領域。"
+            },
+            {
+            "question": "請問教授如何挑選實驗室的研究主題? 這個領域在全球的現況及未來發展如何?",
+            "answer": "通訊即現在的國際趨勢之一，並藉由產學合作，因此實驗室研究主題能快速與業界接軌。"
+            },
+            {
+            "question": "請問教授會如何激發學生對於教授研究領域的興趣?",
+            "answer": "藉由多讀paper多了解此領域，閱讀達一定程度後，教授鼓勵學生與他討論，並教導做研究的方法與經驗。"
+            },
+            {
+            "question": "請問教授會如何拓展學生的國際視野?",
+            "answer": "參加國際會議投稿論文、參與國際研討會、與外國實驗室合作及meeting。"
+            },
       ],
       "link":[
         { "linkName": "投影片", "link": "https://drive.google.com/file/d/1j3M7hZValeuDBawa2U9968ntYZuEmVtv/view?usp=sharing"},
@@ -2481,223 +2537,272 @@
     },{
       "id": 64,
       "name": "Prof. 游家牧",
-      "labName": "",
-      "department": [""],
+      "labName": "智慧安全系統實驗室",
+      "department": ["電機所"],
       "officeLocation": "",
-      "email": "@nycu.edu.tw",
+      "email": "​chiamuyu@gmail.com",
       "photo": null,
-      "LabWebsite": "",
-      "tags": ["#", "#", "#", "#"],
+      "LabWebsite": "https://chiamuyu.weebly.com/",
+      "tags": ["#AI", "#多媒體處理", "#資安"],
       "research": [
         
             {
-            "title": "",
+            "title": "影像模型攻擊",
             "subtitle": [ 
-            "",
-            "",
-            ""]
+            "利用化妝誤導人臉辨識系統",
+            "單張人臉操縱並模擬聲音(Face Reenforcement for Deepfake)",
+            "自駕車辨識系統誤導"]
             },
             {
-            "title": "",
+            "title": "商業模型攻擊",
             "subtitle":[
-            "",
-            ""]
+            "讓stable diffusion文字生圖模型輸出不正當內容",
+            "從AI生圖偷取prompt (Prompt Stealing Attack)",
+            "從正常fine tuning讓大型語言模型輸出不正當內容(Finetuneing Jailbreak of LLM)"]
             }
       ],
         
       "recomendedCourses": [
-        ""
+        "基礎數理課程"
       ],
       "faqs": [
             {
-            "question": "",
-            "answer": ""
+            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
+            "answer": "希望可以從教授提供的大方向中選擇有興趣的主題。"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
+            "answer":"會需要看較多的conference paper，嘗試將paper上的pseudocode寫出來，或是試跑paper提供的open source code，實作paper的概念。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "專題是否有先修科目要求?",
+            "answer": "有數理基礎，微積分基礎，有興趣研究最重要。建議先自行上網學習有興趣的AI課程，自行加強。"
             }, 
             {
-            "question": "",
-            "answer": ""
+            "question": "修習教授專題是否有成績要求?",
+            "answer": "無，有興趣與熱忱，願意認真研究即可。"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
+            "answer":"由於以前在資財系，以前的學生多從事財經產業。資訊領域方面的學生也有加入軟體公司擔任IT相關職位。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "研究所畢業條件為何?",
+            "answer": "由教授評估學生個人狀態制定畢業標準。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "請問教授能不能分享一些求學歷程的故事以及夢想?",
+            "answer": "見影片。"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "請問教授如何挑選實驗室的研究主題? 這個領域在全球的現況及未來發展如何?",
+            "answer":"從網路安全、區塊鏈安全、AI安全中，選擇較為彈性的AI資安，涵蓋的領域較廣，也是較熱門的主題。現況AI發展快速，連帶AI安全的需求也成為全球共識，更是各國政府非常關注的發展項目，是正值發展熱潮的領域。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "請問教授會如何激發學生對於教授研究領域的興趣?",
+            "answer": "挑選「看得到」的題目，除了數理運算外還可以透過實作應用，提升興趣與成就感。"
+            },
+            {
+            "question": "請問教授會如何拓展學生的國際視野?",
+            "answer": "推薦國際交換，或是透過教授的人脈推薦出國實習。實驗室有跨國合作的研究項目，可以將眼界拓展到國際關注的題目，有機會也會帶學生出國參加國際研討會。"
+            },
+            {
+            "question": "是否有出國交換機會？",
+            "answer": "學碩博有機會有意願都可以，目前經驗是以學士與博士生為大宗。"
+            },
+            {
+            "question": "請問教授對專題生的評分標準為何？",
+            "answer": "完成所選的題目即可通過；若有困難，會視學生狀況與題目難易度調整研究目標與通過標準。"
+            },
+            {
+            "question": "請問教授是否是請研究生協助帶專題生？",
+            "answer": "前期由教授與專題生討論研究大方向與題目，中後期由有經驗或相關領域的實驗室學長姐協助實作細節的討論。"
+            },
+            {
+            "question": "請問教授專題規劃的期程為何？",
+            "answer": "如果一開始沒有基礎，建議以一年為期。Meeting頻率視學生情況而定，通常是每週一次，需要有一定的進展。"
             }
+
       ],
       "link":[
-        { "linkName": "投影片", "link": "" },
-        { "linkName": "介紹影片", "link": "" },
-        { "linkName": "教授QA", "link": "" }
+        { "linkName": "投影片", "link": "https://drive.google.com/file/d/1OgyIJiggcnLAgscStTU0aqbs5UJU2iWg/view?usp=sharing" },
+        { "linkName": "介紹影片", "link": "https://youtu.be/YjANhOXGkgQ" },
+        { "linkName": "教授QA", "link": "https://youtu.be/JpxzkLcxvFM" }
        
       ]
     },{
       "id": 66,
       "name": "Prof. 陳冠宇",
-      "labName": "",
-      "department": [""],
+      "labName": "先進晶片與數位健康實驗室",
+      "department": ["生醫所"],
       "officeLocation": "",
-      "email": "@nycu.edu.tw",
+      "email": "guanyu@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "",
-      "tags": ["#", "#", "#", "#"],
+      "LabWebsite": "http://www.gychen.website/",
+      "tags": ["#生醫", "#AI"],
       "research": [
         
             {
-            "title": "",
+            "title": "體外仿生器官晶片：模擬體內器官運作",
             "subtitle": [ 
-            "",
-            "",
-            ""]
+            "改善實際動物實驗體內環境與人體差異的問題，達到精準醫療",
+            "減少動物實驗"]
             },
             {
-            "title": "",
+            "title": "器官晶片融合電訊號與AI分析",
             "subtitle":[
-            "",
-            ""]
+            "深度學習監控器官晶片",
+            "智能生物材料"]
             }
       ],
         
       "recomendedCourses": [
-        ""
+        "無特別要求"
       ],
       "faqs": [
             {
-            "question": "",
-            "answer": ""
+            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
+            "answer": "不會讓同學指定主題，需要依照實驗室的研究主軸，可以由實驗室的主線研究進行延伸。實驗室已有內部分組，同學會依照興趣能力進入某一組別學習特定主題的題目。"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
+            "answer":"希望學生是主動型，能夠自行學習網路資源，與實驗室人員交流學習，自行安排進實驗室學習與meeting的時間。期間主要先和學長姐學習，並熟習實驗室，再自行完成一個小型的題目。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "專題是否有先修科目要求?",
+            "answer": "需要同學對仿生器官晶片有初步了解，這部分可以參考網路資源。"
             }, 
             {
-            "question": "",
-            "answer": ""
+            "question": "修習教授專題是否有成績要求?",
+            "answer": "無。"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
+            "answer":"見實驗室介紹影片。實驗室畢業最大宗是出國升學或工作，其他多在科技公司擔任製成、工程相關工作。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "研究所畢業條件為何?",
+            "answer": "無制式規定的畢業條件。與老師討論論文的目標，隨完成狀況動態調整。希望同學以兩年為目標先規劃好長期的研究進程。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "請問教授能不能分享一些求學歷程的故事以及夢想?",
+            "answer": "見影片。"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "請問教授如何挑選實驗室的研究主題? 這個領域在全球的現況及未來發展如何?",
+            "answer":"以痛點作為出發點，希望能解決業界臨床現況的困境，專注在解決更有困難性的題目。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "請問教授會如何激發學生對於教授研究領域的興趣?",
+            "answer": "希望同學能常來實驗室，透實作學習增加參與感與成就感。"
+            },
+            {
+            "question": "請問教授會如何拓展學生的國際視野?",
+            "answer": "實驗室參加許多國際研討會，亦有不少國際研究專案，許多博班同學在國外長期駐點研究。"
+            },
+            {
+            "question": "請問教授走生醫晶片領域的契機？",
+            "answer": "發現問題，並以需求與問題為導向，對解方不設限，多方嘗試結合跨領域的資源嘗試解決困境，於是自然而然就走到這個研究領域。"
+            },
+            {
+            "question": "請問教授是否對於專題生有暑期先修安排？",
+            "answer": "無。但希望學生能在暑假將其他外務做完整的規劃或結尾，為開學後的專題留出完整的時間。"
+            },
+            {
+            "question": "請問教授對專題生的評分標準為何？",
+            "answer": "視不同學生狀況給分，但不強求同學要花非常多時間在專題上，付出多少心力就能學習到多少知識，由同學自行斟酌，給分不會太為難。"
+            },
+            {
+            "question": "請問教授是否是請研究生協助帶專題生？",
+            "answer": "主要是由各分組的學長姐帶領，有問題也可以自行和教授約討論，每週也有大型例會可以跟所有人討論問題。希望大家能主動解決問題。"
+            },
+            {
+            "question": "請問教授專題規劃的期程為何？",
+            "answer": "前兩三個月先熟悉實驗室的題目與相關專業知識，這部分的學習也可以提前在暑假完成。而後再自行實作題目。"
+            },
+            {
+            "question": "請問教授希望專題生一週花多少時間在專題研究上？",
+            "answer": "尊重不同學生的狀況對時間分配的選擇。"
             }
+
+
       ],
       "link":[
-        { "linkName": "投影片", "link": "" },
-        { "linkName": "介紹影片", "link": "" },
-        { "linkName": "教授QA", "link": "" }
+        { "linkName": "投影片", "link": "https://drive.google.com/file/d/16uRol1NLRhEI6HR-le2y5hd9UFdL4rS_/view?usp=sharing" },
+        { "linkName": "介紹影片", "link": "https://youtu.be/xV4-uLsAIDI" },
+        { "linkName": "教授QA", "link": "https://youtu.be/Ln6TKkFAVn4" }
        
       ]
     },{
       "id": 68,
       "name": "Prof. 余俊宏",
-      "labName": "",
-      "department": [""],
+      "labName": "通訊與網路實驗室",
+      "department": ["電信所"],
       "officeLocation": "",
-      "email": "@nycu.edu.tw",
+      "email": "yuji@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "",
-      "tags": ["#", "#", "#", "#"],
+      "LabWebsite": "http://tnt.lab.nycu.edu.tw/",
+      "tags": ["#通信"],
       "research": [
         
             {
-            "title": "",
+            "title": "通訊科學與系統",
             "subtitle": [ 
-            "",
-            "",
-            ""]
-            },
-            {
-            "title": "",
-            "subtitle":[
-            "",
-            ""]
+            "錯誤更正碼",
+            "通訊系統",
+            "天線陣列"]
             }
       ],
-        
       "recomendedCourses": [
-        ""
+        "線性代數、訊號與系統、機率、通訊原理(一)或(二)",
+        "建議: 數位訊號處理導論、演算法導論、通訊原理實驗"
       ],
       "faqs": [
             {
-            "question": "",
-            "answer": ""
+            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
+            "answer": "會限定範圍，訊息處理、通訊系統、多天線系統的波束成型、錯誤碼等等。"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
+            "answer":"Coding部分會先學習通訊領域專用的code，然後會有一些coding。有準備paper以及主題相關的資料。會定期meeting。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "專題是否有先修科目要求?",
+            "answer": "如上。大二還沒修到的課，可以和專題同時進行。"
             }, 
             {
-            "question": "",
-            "answer": ""
+            "question": "修習教授專題是否有成績要求?",
+            "answer": "無。"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
+            "answer":"主要是聯發科、瑞昱、慧隆，還有其他的。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "研究所畢業條件為何?",
+            "answer": "碩士論文的題目要做好，要求品質，並且希望發表。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "請問教授能不能分享一些求學歷程的故事以及夢想?",
+            "answer": "見影片。"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "請問教授如何挑選實驗室的研究主題? 這個領域在全球的現況及未來發展如何?",
+            "answer":"見影片。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "請問教授會如何激發學生對於教授研究領域的興趣?",
+            "answer": "見影片。"
+            },
+            {
+            "question": "請問教授會如何拓展學生的國際視野?",
+            "answer": "見影片。"
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "" },
-        { "linkName": "介紹影片", "link": "" },
-        { "linkName": "教授QA", "link": "" }
+        { "linkName": "投影片", "link": "https://drive.google.com/file/d/1ZTzr7Y49KOPBQVY7dppkTwkKK8pDg0DL/view?usp=sharing" },
+        { "linkName": "介紹影片", "link": "https://youtu.be/QqOGIe3_aHc" },
+        { "linkName": "教授QA", "link": "https://youtu.be/W2IrbUxQkXM" }
        
       ]
     },{
@@ -2709,7 +2814,7 @@
       "email": "ngchen@nycu.edu.tw",
       "photo": null,
       "LabWebsite": "https://www.facebook.com/NYCUAUL/",
-      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "tags": ["#生醫"],
       "research": [
             {
             "title": "醫用超音波應用",
@@ -2746,16 +2851,37 @@
             "answer": "無。"
             },
             {
-            "question": " 實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
+            "question": "實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
             "answer": "台積電、聯發科都有。也有到醫院的。"
-            }
+            },
+            {
+            "question": "研究所畢業條件為何?",
+            "answer": "理想是把成果發表成一篇文章。或是也可以延續學長姐的題目繼續做"
+            },
+            {
+            "question": "請問教授能不能分享一些求學歷程的故事以及夢想?",
+            "answer": "見影片。"
+            },
+            {
+            "question": "請問教授如何挑選實驗室的研究主題? 這個領域在全球的現況及未來發展如何?",
+            "answer": "見影片。"
+            },
+            {
+            "question": "請問教授會如何激發學生對於教授研究領域的興趣?",
+            "answer": "見影片。"
+            },
+            {
+            "question": "請問教授會如何拓展學生的國際視野?",
+            "answer": "見影片。"
+            },
       ],
       "link":[
         { "linkName": "投影片", "link": "https://drive.google.com/file/d/1QSJqUDEjhpfbzpqZyhHxIyuA3tJPwwZD/view?usp=sharing"},
         { "linkName": "介紹影片", "link": "https://youtu.be/zdcr0QVAPWE" },
         { "linkName": "教授QA", "link": "https://youtu.be/NmWCRZUdLa4" }
       ]
-    },{
+    },
+    {
       "id": 72,
       "name": "Prof. 温宏斌",
       "labName": "自動化計算智慧實驗室",
@@ -2764,7 +2890,7 @@
       "email": "opwen@nycu.edu.tw",
       "photo": null,
       "LabWebsite": "https://cialab.web.nycu.edu.tw/",
-      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "tags": ["#EDA", "#AI", "#通訊"],
       "research": [
             {
             "title": "EDA",
@@ -2804,6 +2930,38 @@
             {
             "question": " 實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
             "answer": "研究室學生做的專題都是有跟產學合作，所以這些學生畢業後很容易進到這些合作的企業，像是聯發科(有80%的人都是教授的研究生)。也有一些學生最後進到全世界第一大第二大的IC設計公司、台積電、美國外商公司等等地方工作。"
+            },
+            {
+            "question": "研究所畢業條件為何?",
+            "answer": "原則上教授希望每個研究生都具備完成一個專案的能力(獨立研究能力、分析能力、寫報告能力)。包含題目的發想以及對社會趨勢的觀察，跟教授一起合作完成一篇高品質的國際論文或期刊論文。"
+            },
+            {
+            "question": "請問教授能不能分享一些求學歷程的故事以及夢想?",
+            "answer": "教授是資工系畢業，但教授不是因為喜歡念資工而去念資工。教授其實想念戲劇系，但是因為家庭因素，變成分數到了就去念哪個理組科系。一開始身旁都是程式競賽選手，所以剛開始教授讀得很挫折。後來因為心智成長及逐漸成熟，當受過訓練過後發現其實大家能力都差不多，所以觀察和別人的差異性很重要，找到自己優於別人的特點。像教授當時覺得自己抽象觀念比較好，所以做很多實驗觀察不太需要透過實際寫程式去觀察結果，而是用腦袋想就可以想說會有那些問題出現。老天對大家很公平，每人都有擅長跟不擅長的事情。對於不擅長的事情只要做到70分就好，因為門檻不高，只要花一點時間就可以達到。反而從80~90分甚至到95分是需要花大量時間精力才能達到的。所以不用話太多時間在自己不擅長的地方，而是去想如何讓這些擅長的事情更精進。"
+            },
+            {
+            "question": "請問教授如何挑選實驗室的研究主題? 這個領域在全球的現況及未來發展如何?",
+            "answer": "都是針對全球最大的產業板塊(IC設計)以及第二大產業板塊(網路通訊)去發想，這些產業對於未來是有前(錢)途的，是具有實際產值的。細部主題發展都是跟企業合作，跟上現今趨勢，都是對現在或未來有幫助的。"
+            },
+            {
+            "question": "請問教授會如何激發學生對於教授研究領域的興趣?",
+            "answer": "在研究週會時學生跟教授都會報告。教授會跟研究生去分享他跟一些產業的合作者互動得到的新知或視野跟學生分享。讓學生知道現在在台灣跟全球的產業脈動，以及如何看待科技文明對人來文明的改變。(詳細可見問答影片)"
+            },
+            {
+            "question": "請問教授會如何拓展學生的國際視野?",
+            "answer": "詳見影片(主要教授希望大家能夠當一個第二幸福的人，可能工作不是自己最喜歡的事情，但這工作可以讓你發揮你能力的)"
+            },
+            {
+            "question": "人數上限?",
+            "answer": "8個(兩組)。教授會依據學生積極程度去制定相關規則。"
+            },
+            {
+            "question": "大一大二必修尚未修完，那要如何選擇實驗室?",
+            "answer": "詳見影片"
+            },
+            {
+            "question": "給大一大二全面性建議",
+            "answer": "詳見影片"
             }
       ],
       "link":[
@@ -2814,75 +2972,84 @@
     },{
       "id": 74,
       "name": "Prof. 洪瑞華",
-      "labName": "",
-      "department": [""],
+      "labName": "前瞻半導體製程與元件實驗室",
+      "department": ["電子所甲組"],
       "officeLocation": "",
-      "email": "@nycu.edu.tw",
+      "email": "rayhua@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "",
-      "tags": ["#", "#", "#", "#"],
+      "LabWebsite": "https://rhhlab.wixsite.com/astdl/blank-1",
+      "tags": ["#光電", "#半導體"],
       "research": [
         
             {
-            "title": "",
-            "subtitle": [ 
-            "",
-            "",
-            ""]
+            "title": "Solid-State Light-Emitting Devices ( UVC)"
             },
             {
-            "title": "",
+            "title": "Si Photonics with Heat Dissipation"
+            },
+            {
+            "title": "Compound Semiconductors Growth by MOCVD",
             "subtitle":[
-            "",
-            ""]
+            "AlGaInP",
+            "GaN",
+            "ZnO",
+            "Ga2O3",
+            "ZnGa2O4"]
+            },
+            {
+            "title": "Power Devices with Heat Dissipation"
             }
       ],
         
       "recomendedCourses": [
-        ""
+        "電機系的必修科目:電子學、電路學","半導體物理相關 (建議)"
       ],
       "faqs": [
             {
-            "question": "",
-            "answer": ""
+            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
+            "answer": "先跟學長姐學習機台，看是否對對應題目有興趣，並尊重學生意願進行選擇，若無特殊方向，則由教授提供方向。"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
+            "answer":"主要為給予題目去研究，同時閱讀paper，能夠以報告方式呈現要表達的內容，最主要希望培養同學獨立解決問題的能力。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "專題是否有先修科目要求?",
+            "answer": "除了電機系的必修科目，基本的電子學、電路學的部分，希望能有一些半導體物理的知識。"
             }, 
             {
-            "question": "",
-            "answer": ""
+            "question": "修習教授專題是否有成績要求?",
+            "answer": " 無"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
+            "answer":"多進入晶圓廠 ( 如：台積電 )，或大公司的半導體製程部門，也有外商的部分 ( 如：艾司摩爾 )。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "研究所畢業條件為何?",
+            "answer": "完成有自己研究數據的論文，多數學生在兩年內會畢業，鼓勵學生進行發表，讓研究成果被更多人知道。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "請問教授能不能分享一些求學歷程的故事以及夢想?",
+            "answer": "在學生時期的研究，應為台灣最早完成砷化鎵和silicon磊晶成長的實驗室。"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "請問教授如何挑選實驗室的研究主題? 這個領域在全球的現況及未來發展如何?",
+            "answer":"有兩個方面，改善在產業量產但存在問題的產品，或協助公司共同研發未量產的產品。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "請問教授會如何激發學生對於教授研究領域的興趣?",
+            "answer": "了解領域在國際的重要程度，對研究的領域更有信心，多參加產學合作的研討會，能夠用學習的專業跟業界接軌。"
+            },
+            {
+            "question": "請問教授會如何拓展學生的國際視野?",
+            "answer": "多參加國際研討會。"
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "" },
-        { "linkName": "介紹影片", "link": "" },
-        { "linkName": "教授QA", "link": "" }
+        { "linkName": "投影片", "link": "https://drive.google.com/file/d/1m34PN6P2n24JVxgReeQeISb5v7KEo-KC/view?usp=sharing" },
+        { "linkName": "介紹影片", "link": "https://youtu.be/43bLa304KLQ" },
+        { "linkName": "教授QA", "link": "https://youtu.be/p2MwDmwIEw0" }
        
       ]
     },{
@@ -2982,7 +3149,7 @@
       "email": "khchen@nycu.edu.tw",
       "photo": null,
       "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
-      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "tags": ["#類比IC設計"],
       "research": [
             {
             "title": "Smart DC-DC converter with power management",
@@ -3035,7 +3202,16 @@
             {
             "question": " 實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
             "answer": "聯發科、瑞昱、立錡、聯詠…等叫得出名字的design house幾乎都有。"
+            },
+            {
+            "question": "研究所畢業條件為何?",
+            "answer": "發paper，我們實驗室每年幾乎都有上ISSCC等頂尖論文研討會，這樣達成學術交流目的"
+            },
+            {
+            "question": "請問教授會建議學生出國嗎?",
+            "answer": "出國看看蠻好的，但是要搞清楚要唸的是什麼，需要好好選擇"
             }
+
       ],
       "link":[
         { "linkName": "投影片", "link": "https://youtu.be/n8e8OcaRJyE"},

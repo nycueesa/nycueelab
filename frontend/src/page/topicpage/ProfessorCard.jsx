@@ -15,7 +15,7 @@ const ProfessorCard = ({ data, onClick }) => {
       onClick={onClick}
     >
       <div className={styles['card-header-tags']}>
-        {data.tags.map(tag => `#${tag}`).join(' ')}
+        {data.tags.join(' ')}
       </div>
 
       <div className={styles['card-content-wrapper']}>

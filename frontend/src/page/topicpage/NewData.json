@@ -2976,402 +2976,408 @@
     },{
       "id": 78,
       "name": "Prof. 陳科宏",
-      "labName": "低功率混合系統信號晶片設計實驗室",
-      "department": ["電機所","電控所"],
-      "officeLocation": null,
-      "email": "khchen@nycu.edu.tw",
+      "labName": "",
+      "department": [""],
+      "officeLocation": "",
+      "email": "@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
-      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "LabWebsite": "",
+      "tags": ["#", "#", "#", "#"],
       "research": [
+        
             {
-            "title": "Smart DC-DC converter with power management",
-            "subtitle":null
+            "title": "",
+            "subtitle": [ 
+            "",
+            "",
+            ""]
             },
             {
-            "title": "Current Mode DC-DC Buck Converter with on-Chip Capacitor Multiplier",
-            "subtitle":null
-            },
-            {
-            "title": "High-Efficiency Low Noise Converter for DVS and Power Management System",
-            "subtitle":null
-            },
-            {
-            "title": "One-Cycle Control Buck Converter for DVS with Dynamic Width Control and Error Correction Loops",
-            "subtitle":null
-            },
-            {
-            "title": "65K color OLED controller and driver",
-            "subtitle":null
-            },
-            {
-            "title": "DC-AC Inverter",
-            "subtitle":null
+            "title": "",
+            "subtitle":[
+            "",
+            ""]
             }
-    
-
       ],
+        
       "recomendedCourses": [
-        "電子學(一)、(二)",
-        "VLSI導論、AIC導論(optional)"
+        ""
       ],
       "faqs": [
             {
-            "question":"教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
-            "answer": "專題上會著重於使用工具，專題下有想法就可以跟教授、或研究生一起做計畫"
+            "question": "",
+            "answer": ""
             },
             {
-            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
-            "answer":"會先做一些基本的電路當作training，熟習電路設計工具之後就能來找研究生或教授討論主題。"
+            "question": "",
+            "answer":""
             },
             {
-            "question": "專題是否有先修科目要求?",
-            "answer": "電子學一二，有些同學會修VLSI導論跟AIC導論等等，但是一般而言我們助教都會教，所以不用過於擔心"
+            "question": "",
+            "answer": ""
+            }, 
+            {
+            "question": "",
+            "answer": ""
             },
             {
-            "question": " 修習教授專題是否有成績要求?",
-            "answer": "無"
+            "question": "",
+            "answer":""
             },
             {
-            "question": " 實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
-            "answer": "聯發科、瑞昱、立錡、聯詠…等叫得出名字的design house幾乎都有。"
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer":""
+            },
+            {
+            "question": "",
+            "answer": ""
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "https://youtu.be/n8e8OcaRJyE"},
-        { "linkName": "介紹影片", "link": "https://youtu.be/aWnf8bEYr18" },
-        { "linkName": "教授QA", "link": null }
+        { "linkName": "投影片", "link": "" },
+        { "linkName": "介紹影片", "link": "" },
+        { "linkName": "教授QA", "link": "" }
+       
       ]
     },{
       "id": 80,
       "name": "Prof. 賴伯承",
-      "labName": "低功率混合系統信號晶片設計實驗室",
-      "department": ["電機所","電控所"],
-      "officeLocation": null,
-      "email": "khchen@nycu.edu.tw",
+      "labName": "",
+      "department": [""],
+      "officeLocation": "",
+      "email": "@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
-      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "LabWebsite": "",
+      "tags": ["#", "#", "#", "#"],
       "research": [
+        
             {
-            "title": "Smart DC-DC converter with power management",
-            "subtitle":null
+            "title": "",
+            "subtitle": [ 
+            "",
+            "",
+            ""]
             },
             {
-            "title": "Current Mode DC-DC Buck Converter with on-Chip Capacitor Multiplier",
-            "subtitle":null
-            },
-            {
-            "title": "High-Efficiency Low Noise Converter for DVS and Power Management System",
-            "subtitle":null
-            },
-            {
-            "title": "One-Cycle Control Buck Converter for DVS with Dynamic Width Control and Error Correction Loops",
-            "subtitle":null
-            },
-            {
-            "title": "65K color OLED controller and driver",
-            "subtitle":null
-            },
-            {
-            "title": "DC-AC Inverter",
-            "subtitle":null
+            "title": "",
+            "subtitle":[
+            "",
+            ""]
             }
-    
-
       ],
+        
       "recomendedCourses": [
-        "電子學(一)、(二)",
-        "VLSI導論、AIC導論(optional)"
+        ""
       ],
       "faqs": [
             {
-            "question":"教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
-            "answer": "專題上會著重於使用工具，專題下有想法就可以跟教授、或研究生一起做計畫"
+            "question": "",
+            "answer": ""
             },
             {
-            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
-            "answer":"會先做一些基本的電路當作training，熟習電路設計工具之後就能來找研究生或教授討論主題。"
+            "question": "",
+            "answer":""
             },
             {
-            "question": "專題是否有先修科目要求?",
-            "answer": "電子學一二，有些同學會修VLSI導論跟AIC導論等等，但是一般而言我們助教都會教，所以不用過於擔心"
+            "question": "",
+            "answer": ""
+            }, 
+            {
+            "question": "",
+            "answer": ""
             },
             {
-            "question": " 修習教授專題是否有成績要求?",
-            "answer": "無"
+            "question": "",
+            "answer":""
             },
             {
-            "question": " 實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
-            "answer": "聯發科、瑞昱、立錡、聯詠…等叫得出名字的design house幾乎都有。"
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer":""
+            },
+            {
+            "question": "",
+            "answer": ""
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "https://youtu.be/n8e8OcaRJyE"},
-        { "linkName": "介紹影片", "link": "https://youtu.be/aWnf8bEYr18" },
-        { "linkName": "教授QA", "link": null }
+        { "linkName": "投影片", "link": "" },
+        { "linkName": "介紹影片", "link": "" },
+        { "linkName": "教授QA", "link": "" }
+       
       ]
     },{
       "id": 82,
       "name": "Prof. 侯拓宏",
-      "labName": "低功率混合系統信號晶片設計實驗室",
-      "department": ["電機所","電控所"],
-      "officeLocation": null,
-      "email": "khchen@nycu.edu.tw",
+      "labName": "",
+      "department": [""],
+      "officeLocation": "",
+      "email": "@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
-      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "LabWebsite": "",
+      "tags": ["#", "#", "#", "#"],
       "research": [
+        
             {
-            "title": "Smart DC-DC converter with power management",
-            "subtitle":null
+            "title": "",
+            "subtitle": [ 
+            "",
+            "",
+            ""]
             },
             {
-            "title": "Current Mode DC-DC Buck Converter with on-Chip Capacitor Multiplier",
-            "subtitle":null
-            },
-            {
-            "title": "High-Efficiency Low Noise Converter for DVS and Power Management System",
-            "subtitle":null
-            },
-            {
-            "title": "One-Cycle Control Buck Converter for DVS with Dynamic Width Control and Error Correction Loops",
-            "subtitle":null
-            },
-            {
-            "title": "65K color OLED controller and driver",
-            "subtitle":null
-            },
-            {
-            "title": "DC-AC Inverter",
-            "subtitle":null
+            "title": "",
+            "subtitle":[
+            "",
+            ""]
             }
-    
-
       ],
+        
       "recomendedCourses": [
-        "電子學(一)、(二)",
-        "VLSI導論、AIC導論(optional)"
+        ""
       ],
       "faqs": [
             {
-            "question":"教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
-            "answer": "專題上會著重於使用工具，專題下有想法就可以跟教授、或研究生一起做計畫"
+            "question": "",
+            "answer": ""
             },
             {
-            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
-            "answer":"會先做一些基本的電路當作training，熟習電路設計工具之後就能來找研究生或教授討論主題。"
+            "question": "",
+            "answer":""
             },
             {
-            "question": "專題是否有先修科目要求?",
-            "answer": "電子學一二，有些同學會修VLSI導論跟AIC導論等等，但是一般而言我們助教都會教，所以不用過於擔心"
+            "question": "",
+            "answer": ""
+            }, 
+            {
+            "question": "",
+            "answer": ""
             },
             {
-            "question": " 修習教授專題是否有成績要求?",
-            "answer": "無"
+            "question": "",
+            "answer":""
             },
             {
-            "question": " 實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
-            "answer": "聯發科、瑞昱、立錡、聯詠…等叫得出名字的design house幾乎都有。"
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer":""
+            },
+            {
+            "question": "",
+            "answer": ""
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "https://youtu.be/n8e8OcaRJyE"},
-        { "linkName": "介紹影片", "link": "https://youtu.be/aWnf8bEYr18" },
-        { "linkName": "教授QA", "link": null }
+        { "linkName": "投影片", "link": "" },
+        { "linkName": "介紹影片", "link": "" },
+        { "linkName": "教授QA", "link": "" }
+       
       ]
     },{
       "id": 84,
       "name": "Prof. 陳榮治",
-      "labName": "低功率混合系統信號晶片設計實驗室",
-      "department": ["電機所","電控所"],
-      "officeLocation": null,
-      "email": "khchen@nycu.edu.tw",
+      "labName": "",
+      "department": [""],
+      "officeLocation": "",
+      "email": "@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
-      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "LabWebsite": "",
+      "tags": ["#", "#", "#", "#"],
       "research": [
+        
             {
-            "title": "Smart DC-DC converter with power management",
-            "subtitle":null
+            "title": "",
+            "subtitle": [ 
+            "",
+            "",
+            ""]
             },
             {
-            "title": "Current Mode DC-DC Buck Converter with on-Chip Capacitor Multiplier",
-            "subtitle":null
-            },
-            {
-            "title": "High-Efficiency Low Noise Converter for DVS and Power Management System",
-            "subtitle":null
-            },
-            {
-            "title": "One-Cycle Control Buck Converter for DVS with Dynamic Width Control and Error Correction Loops",
-            "subtitle":null
-            },
-            {
-            "title": "65K color OLED controller and driver",
-            "subtitle":null
-            },
-            {
-            "title": "DC-AC Inverter",
-            "subtitle":null
+            "title": "",
+            "subtitle":[
+            "",
+            ""]
             }
-    
-
       ],
+        
       "recomendedCourses": [
-        "電子學(一)、(二)",
-        "VLSI導論、AIC導論(optional)"
+        ""
       ],
       "faqs": [
             {
-            "question":"教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
-            "answer": "專題上會著重於使用工具，專題下有想法就可以跟教授、或研究生一起做計畫"
+            "question": "",
+            "answer": ""
             },
             {
-            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
-            "answer":"會先做一些基本的電路當作training，熟習電路設計工具之後就能來找研究生或教授討論主題。"
+            "question": "",
+            "answer":""
             },
             {
-            "question": "專題是否有先修科目要求?",
-            "answer": "電子學一二，有些同學會修VLSI導論跟AIC導論等等，但是一般而言我們助教都會教，所以不用過於擔心"
+            "question": "",
+            "answer": ""
+            }, 
+            {
+            "question": "",
+            "answer": ""
             },
             {
-            "question": " 修習教授專題是否有成績要求?",
-            "answer": "無"
+            "question": "",
+            "answer":""
             },
             {
-            "question": " 實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
-            "answer": "聯發科、瑞昱、立錡、聯詠…等叫得出名字的design house幾乎都有。"
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer":""
+            },
+            {
+            "question": "",
+            "answer": ""
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "https://youtu.be/n8e8OcaRJyE"},
-        { "linkName": "介紹影片", "link": "https://youtu.be/aWnf8bEYr18" },
-        { "linkName": "教授QA", "link": null }
+        { "linkName": "投影片", "link": "" },
+        { "linkName": "介紹影片", "link": "" },
+        { "linkName": "教授QA", "link": "" }
+       
       ]
     },{
       "id": 86,
       "name": "Prof. 郭治群",
-      "labName": "低功率混合系統信號晶片設計實驗室",
-      "department": ["電機所","電控所"],
-      "officeLocation": null,
-      "email": "khchen@nycu.edu.tw",
+      "labName": "",
+      "department": [""],
+      "officeLocation": "",
+      "email": "@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
-      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "LabWebsite": "",
+      "tags": ["#", "#", "#", "#"],
       "research": [
+        
             {
-            "title": "Smart DC-DC converter with power management",
-            "subtitle":null
+            "title": "",
+            "subtitle": [ 
+            "",
+            "",
+            ""]
             },
             {
-            "title": "Current Mode DC-DC Buck Converter with on-Chip Capacitor Multiplier",
-            "subtitle":null
-            },
-            {
-            "title": "High-Efficiency Low Noise Converter for DVS and Power Management System",
-            "subtitle":null
-            },
-            {
-            "title": "One-Cycle Control Buck Converter for DVS with Dynamic Width Control and Error Correction Loops",
-            "subtitle":null
-            },
-            {
-            "title": "65K color OLED controller and driver",
-            "subtitle":null
-            },
-            {
-            "title": "DC-AC Inverter",
-            "subtitle":null
+            "title": "",
+            "subtitle":[
+            "",
+            ""]
             }
-    
-
       ],
+        
       "recomendedCourses": [
-        "電子學(一)、(二)",
-        "VLSI導論、AIC導論(optional)"
+        ""
       ],
       "faqs": [
             {
-            "question":"教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
-            "answer": "專題上會著重於使用工具，專題下有想法就可以跟教授、或研究生一起做計畫"
+            "question": "",
+            "answer": ""
             },
             {
-            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
-            "answer":"會先做一些基本的電路當作training，熟習電路設計工具之後就能來找研究生或教授討論主題。"
+            "question": "",
+            "answer":""
             },
             {
-            "question": "專題是否有先修科目要求?",
-            "answer": "電子學一二，有些同學會修VLSI導論跟AIC導論等等，但是一般而言我們助教都會教，所以不用過於擔心"
+            "question": "",
+            "answer": ""
+            }, 
+            {
+            "question": "",
+            "answer": ""
             },
             {
-            "question": " 修習教授專題是否有成績要求?",
-            "answer": "無"
+            "question": "",
+            "answer":""
             },
             {
-            "question": " 實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
-            "answer": "聯發科、瑞昱、立錡、聯詠…等叫得出名字的design house幾乎都有。"
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer":""
+            },
+            {
+            "question": "",
+            "answer": ""
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "https://youtu.be/n8e8OcaRJyE"},
-        { "linkName": "介紹影片", "link": "https://youtu.be/aWnf8bEYr18" },
-        { "linkName": "教授QA", "link": null }
+        { "linkName": "投影片", "link": "" },
+        { "linkName": "介紹影片", "link": "" },
+        { "linkName": "教授QA", "link": "" }
+       
       ]
     },{
       "id": 88,
       "name": "Prof. 林群祐",
-      "labName": "低功率混合系統信號晶片設計實驗室",
-      "department": ["電機所","電控所"],
+      "labName": "307實驗室",
+      "department": ["電子所乙A組"],
       "officeLocation": null,
-      "email": "khchen@nycu.edu.tw",
+      "email": "cylin.iee@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
-      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "LabWebsite": "http://www.alab.iee.nycu.edu.tw/~esd/cylin/",
+      "tags": ["#類比IC設計"],
       "research": [
             {
-            "title": "Smart DC-DC converter with power management",
-            "subtitle":null
-            },
-            {
-            "title": "Current Mode DC-DC Buck Converter with on-Chip Capacitor Multiplier",
-            "subtitle":null
-            },
-            {
-            "title": "High-Efficiency Low Noise Converter for DVS and Power Management System",
-            "subtitle":null
-            },
-            {
-            "title": "One-Cycle Control Buck Converter for DVS with Dynamic Width Control and Error Correction Loops",
-            "subtitle":null
-            },
-            {
-            "title": "65K color OLED controller and driver",
-            "subtitle":null
-            },
-            {
-            "title": "DC-AC Inverter",
-            "subtitle":null
-            }
-    
-
-      ],
+            "title": "類比積體電路設計",
+            "subtitle":[
+              "生醫應用之積體電路設計",
+              "輸入輸出級電路與靜電放電防護設計"
+            ]
+            }      
+          ],
       "recomendedCourses": [
         "電子學(一)、(二)",
-        "VLSI導論、AIC導論(optional)"
+        "修過AIC導論更佳"
       ],
       "faqs": [
             {
-            "question":"教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
-            "answer": "專題上會著重於使用工具，專題下有想法就可以跟教授、或研究生一起做計畫"
+            "question":"教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
+            "answer": "老師每週會和學生進行討論，一起探討可能的研究主題，並逐步確定最適合的研究方向；這個過程是互相討論，共同決定的。"
             },
             {
-            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
-            "answer":"會先做一些基本的電路當作training，熟習電路設計工具之後就能來找研究生或教授討論主題。"
+            "question": "教授會希望同學在專題受到什麼訓練?",
+            "answer":"學生應在專題研究過程中學習選擇和閱讀相關論文的能力、熟練操作電路設計軟體、實際進行電路設計和實作、以及撰寫研究成果報告。透過這些學習過程，學生可以建立堅實的基礎，為未來進入研究所做好準備。"
             },
             {
             "question": "專題是否有先修科目要求?",
-            "answer": "電子學一二，有些同學會修VLSI導論跟AIC導論等等，但是一般而言我們助教都會教，所以不用過於擔心"
+            "answer": "專題研究的先修科目包括電機系的必修課程，尤其是與電子電路相關的科目。"
             },
             {
             "question": " 修習教授專題是否有成績要求?",
@@ -3379,703 +3385,774 @@
             },
             {
             "question": " 實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
-            "answer": "聯發科、瑞昱、立錡、聯詠…等叫得出名字的design house幾乎都有。"
+            "answer": "老師今年2月才轉職至陽交大，目前未有這裡的畢業生。若根據過去在師大指導學生的情況，大多數畢業生都就業於園區公司，如聯發科、聯詠、瑞昱等公司皆有本研究群的畢業生，主要從事類比電路設計的工作。"
+            },
+            {
+            "question": "研究所畢業條件為何?",
+            "answer": "研究所畢業的條件包括完成電路設計、下線、量測，並且需要撰寫符合可投稿水準的論文。前述工作期間以兩年為原則，提早完成亦可提早畢業。"
+            },
+            {
+            "question": "請問教授能不能分享一些求學歷程的故事以及夢想?",
+            "answer": "老師本身畢業於交大最早成立的研究所--1958年成立的電子研究所，並先後就讀過交大最早成立的科系--1964年成立的電子物理學系和電子工程學系，且在前述每個系所都拿過書卷獎。其實老師在進入交大之前，並非來自所謂的明星高中，但在交通大學的環境中，透過教授對學生的指導，以及自己不斷的努力，我們都可以在自己的領域找到一片天。"
+            },
+            {
+            "question": "請問教授如何挑選實驗室的研究主題? 這個領域在全球的現況及未來發展如何?",
+            "answer": "挑選研究主題可透過多種途徑，如閱讀相關論文以了解全球各大學的研究趨勢，查閱專利以瞭解企業的發展方向，以及研究相關計畫以認識實務所需。這些方法能夠幫助找到有價值且具前瞻性的研究主題。"
+            },
+            {
+            "question": "請問教授會如何激發學生對於教授研究領域的興趣?",
+            "answer": "提供機會讓學生參與到研究計畫中，讓學生親身體驗研究的樂趣和意義，從而激發學生對這個領域的興趣和熱情。"
+            },
+            {
+            "question": "請問教授會如何拓展學生的國際視野?",
+            "answer": "鼓勵學生參加國際研討會、海外交換計畫等方式來拓展學生的國際視野，讓學生接觸不同文化與思維，擴展全球視野和交流能力。"
+
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "https://youtu.be/n8e8OcaRJyE"},
-        { "linkName": "介紹影片", "link": "https://youtu.be/aWnf8bEYr18" },
-        { "linkName": "教授QA", "link": null }
+        { "linkName": "投影片", "link": "https://drive.google.com/file/d/1sXMxfXatDHuXKJJZO616Ea6MyEXZ6tDi/view?usp=sharing"},
+        { "linkName": "介紹影片", "link": "https://youtu.be/2BWuzVFVVuc" },
+        { "linkName": "教授QA", "link": "https://youtu.be/iZqgTeFAyvQ" }
       ]
     },{
       "id": 90,
       "name": "Prof. 陳冠能",
-      "labName": "低功率混合系統信號晶片設計實驗室",
-      "department": ["電機所","電控所"],
-      "officeLocation": null,
-      "email": "khchen@nycu.edu.tw",
+      "labName": "",
+      "department": [""],
+      "officeLocation": "",
+      "email": "@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
-      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "LabWebsite": "",
+      "tags": ["#", "#", "#", "#"],
       "research": [
+        
             {
-            "title": "Smart DC-DC converter with power management",
-            "subtitle":null
+            "title": "",
+            "subtitle": [ 
+            "",
+            "",
+            ""]
             },
             {
-            "title": "Current Mode DC-DC Buck Converter with on-Chip Capacitor Multiplier",
-            "subtitle":null
-            },
-            {
-            "title": "High-Efficiency Low Noise Converter for DVS and Power Management System",
-            "subtitle":null
-            },
-            {
-            "title": "One-Cycle Control Buck Converter for DVS with Dynamic Width Control and Error Correction Loops",
-            "subtitle":null
-            },
-            {
-            "title": "65K color OLED controller and driver",
-            "subtitle":null
-            },
-            {
-            "title": "DC-AC Inverter",
-            "subtitle":null
+            "title": "",
+            "subtitle":[
+            "",
+            ""]
             }
-    
-
       ],
+        
       "recomendedCourses": [
-        "電子學(一)、(二)",
-        "VLSI導論、AIC導論(optional)"
+        ""
       ],
       "faqs": [
             {
-            "question":"教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
-            "answer": "專題上會著重於使用工具，專題下有想法就可以跟教授、或研究生一起做計畫"
+            "question": "",
+            "answer": ""
             },
             {
-            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
-            "answer":"會先做一些基本的電路當作training，熟習電路設計工具之後就能來找研究生或教授討論主題。"
+            "question": "",
+            "answer":""
             },
             {
-            "question": "專題是否有先修科目要求?",
-            "answer": "電子學一二，有些同學會修VLSI導論跟AIC導論等等，但是一般而言我們助教都會教，所以不用過於擔心"
+            "question": "",
+            "answer": ""
+            }, 
+            {
+            "question": "",
+            "answer": ""
             },
             {
-            "question": " 修習教授專題是否有成績要求?",
-            "answer": "無"
+            "question": "",
+            "answer":""
             },
             {
-            "question": " 實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
-            "answer": "聯發科、瑞昱、立錡、聯詠…等叫得出名字的design house幾乎都有。"
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer":""
+            },
+            {
+            "question": "",
+            "answer": ""
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "https://youtu.be/n8e8OcaRJyE"},
-        { "linkName": "介紹影片", "link": "https://youtu.be/aWnf8bEYr18" },
-        { "linkName": "教授QA", "link": null }
+        { "linkName": "投影片", "link": "" },
+        { "linkName": "介紹影片", "link": "" },
+        { "linkName": "教授QA", "link": "" }
+       
       ]
     },{
       "id": 92,
       "name": "Prof. 劉益宏",
-      "labName": "低功率混合系統信號晶片設計實驗室",
-      "department": ["電機所","電控所"],
-      "officeLocation": null,
-      "email": "khchen@nycu.edu.tw",
+      "labName": "",
+      "department": [""],
+      "officeLocation": "",
+      "email": "@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
-      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "LabWebsite": "",
+      "tags": ["#", "#", "#", "#"],
       "research": [
+        
             {
-            "title": "Smart DC-DC converter with power management",
-            "subtitle":null
+            "title": "",
+            "subtitle": [ 
+            "",
+            "",
+            ""]
             },
             {
-            "title": "Current Mode DC-DC Buck Converter with on-Chip Capacitor Multiplier",
-            "subtitle":null
-            },
-            {
-            "title": "High-Efficiency Low Noise Converter for DVS and Power Management System",
-            "subtitle":null
-            },
-            {
-            "title": "One-Cycle Control Buck Converter for DVS with Dynamic Width Control and Error Correction Loops",
-            "subtitle":null
-            },
-            {
-            "title": "65K color OLED controller and driver",
-            "subtitle":null
-            },
-            {
-            "title": "DC-AC Inverter",
-            "subtitle":null
+            "title": "",
+            "subtitle":[
+            "",
+            ""]
             }
-    
-
       ],
+        
       "recomendedCourses": [
-        "電子學(一)、(二)",
-        "VLSI導論、AIC導論(optional)"
+        ""
       ],
       "faqs": [
             {
-            "question":"教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
-            "answer": "專題上會著重於使用工具，專題下有想法就可以跟教授、或研究生一起做計畫"
+            "question": "",
+            "answer": ""
             },
             {
-            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
-            "answer":"會先做一些基本的電路當作training，熟習電路設計工具之後就能來找研究生或教授討論主題。"
+            "question": "",
+            "answer":""
             },
             {
-            "question": "專題是否有先修科目要求?",
-            "answer": "電子學一二，有些同學會修VLSI導論跟AIC導論等等，但是一般而言我們助教都會教，所以不用過於擔心"
+            "question": "",
+            "answer": ""
+            }, 
+            {
+            "question": "",
+            "answer": ""
             },
             {
-            "question": " 修習教授專題是否有成績要求?",
-            "answer": "無"
+            "question": "",
+            "answer":""
             },
             {
-            "question": " 實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
-            "answer": "聯發科、瑞昱、立錡、聯詠…等叫得出名字的design house幾乎都有。"
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer":""
+            },
+            {
+            "question": "",
+            "answer": ""
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "https://youtu.be/n8e8OcaRJyE"},
-        { "linkName": "介紹影片", "link": "https://youtu.be/aWnf8bEYr18" },
-        { "linkName": "教授QA", "link": null }
+        { "linkName": "投影片", "link": "" },
+        { "linkName": "介紹影片", "link": "" },
+        { "linkName": "教授QA", "link": "" }
+       
       ]
     },{
       "id": 94,
       "name": "Prof. 趙昌博",
-      "labName": "低功率混合系統信號晶片設計實驗室",
-      "department": ["電機所","電控所"],
-      "officeLocation": null,
-      "email": "khchen@nycu.edu.tw",
+      "labName": "",
+      "department": [""],
+      "officeLocation": "",
+      "email": "@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
-      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "LabWebsite": "",
+      "tags": ["#", "#", "#", "#"],
       "research": [
+        
             {
-            "title": "Smart DC-DC converter with power management",
-            "subtitle":null
+            "title": "",
+            "subtitle": [ 
+            "",
+            "",
+            ""]
             },
             {
-            "title": "Current Mode DC-DC Buck Converter with on-Chip Capacitor Multiplier",
-            "subtitle":null
-            },
-            {
-            "title": "High-Efficiency Low Noise Converter for DVS and Power Management System",
-            "subtitle":null
-            },
-            {
-            "title": "One-Cycle Control Buck Converter for DVS with Dynamic Width Control and Error Correction Loops",
-            "subtitle":null
-            },
-            {
-            "title": "65K color OLED controller and driver",
-            "subtitle":null
-            },
-            {
-            "title": "DC-AC Inverter",
-            "subtitle":null
+            "title": "",
+            "subtitle":[
+            "",
+            ""]
             }
-    
-
       ],
+        
       "recomendedCourses": [
-        "電子學(一)、(二)",
-        "VLSI導論、AIC導論(optional)"
+        ""
       ],
       "faqs": [
             {
-            "question":"教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
-            "answer": "專題上會著重於使用工具，專題下有想法就可以跟教授、或研究生一起做計畫"
+            "question": "",
+            "answer": ""
             },
             {
-            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
-            "answer":"會先做一些基本的電路當作training，熟習電路設計工具之後就能來找研究生或教授討論主題。"
+            "question": "",
+            "answer":""
             },
             {
-            "question": "專題是否有先修科目要求?",
-            "answer": "電子學一二，有些同學會修VLSI導論跟AIC導論等等，但是一般而言我們助教都會教，所以不用過於擔心"
+            "question": "",
+            "answer": ""
+            }, 
+            {
+            "question": "",
+            "answer": ""
             },
             {
-            "question": " 修習教授專題是否有成績要求?",
-            "answer": "無"
+            "question": "",
+            "answer":""
             },
             {
-            "question": " 實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
-            "answer": "聯發科、瑞昱、立錡、聯詠…等叫得出名字的design house幾乎都有。"
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer":""
+            },
+            {
+            "question": "",
+            "answer": ""
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "https://youtu.be/n8e8OcaRJyE"},
-        { "linkName": "介紹影片", "link": "https://youtu.be/aWnf8bEYr18" },
-        { "linkName": "教授QA", "link": null }
+        { "linkName": "投影片", "link": "" },
+        { "linkName": "介紹影片", "link": "" },
+        { "linkName": "教授QA", "link": "" }
+       
       ]
     },{
       "id": 96,
       "name": "Prof. 孫家偉",
-      "labName": "低功率混合系統信號晶片設計實驗室",
-      "department": ["電機所","電控所"],
-      "officeLocation": null,
-      "email": "khchen@nycu.edu.tw",
+      "labName": "",
+      "department": [""],
+      "officeLocation": "",
+      "email": "@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
-      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "LabWebsite": "",
+      "tags": ["#", "#", "#", "#"],
       "research": [
+        
             {
-            "title": "Smart DC-DC converter with power management",
-            "subtitle":null
+            "title": "",
+            "subtitle": [ 
+            "",
+            "",
+            ""]
             },
             {
-            "title": "Current Mode DC-DC Buck Converter with on-Chip Capacitor Multiplier",
-            "subtitle":null
-            },
-            {
-            "title": "High-Efficiency Low Noise Converter for DVS and Power Management System",
-            "subtitle":null
-            },
-            {
-            "title": "One-Cycle Control Buck Converter for DVS with Dynamic Width Control and Error Correction Loops",
-            "subtitle":null
-            },
-            {
-            "title": "65K color OLED controller and driver",
-            "subtitle":null
-            },
-            {
-            "title": "DC-AC Inverter",
-            "subtitle":null
+            "title": "",
+            "subtitle":[
+            "",
+            ""]
             }
-    
-
       ],
+        
       "recomendedCourses": [
-        "電子學(一)、(二)",
-        "VLSI導論、AIC導論(optional)"
+        ""
       ],
       "faqs": [
             {
-            "question":"教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
-            "answer": "專題上會著重於使用工具，專題下有想法就可以跟教授、或研究生一起做計畫"
+            "question": "",
+            "answer": ""
             },
             {
-            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
-            "answer":"會先做一些基本的電路當作training，熟習電路設計工具之後就能來找研究生或教授討論主題。"
+            "question": "",
+            "answer":""
             },
             {
-            "question": "專題是否有先修科目要求?",
-            "answer": "電子學一二，有些同學會修VLSI導論跟AIC導論等等，但是一般而言我們助教都會教，所以不用過於擔心"
+            "question": "",
+            "answer": ""
+            }, 
+            {
+            "question": "",
+            "answer": ""
             },
             {
-            "question": " 修習教授專題是否有成績要求?",
-            "answer": "無"
+            "question": "",
+            "answer":""
             },
             {
-            "question": " 實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
-            "answer": "聯發科、瑞昱、立錡、聯詠…等叫得出名字的design house幾乎都有。"
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer":""
+            },
+            {
+            "question": "",
+            "answer": ""
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "https://youtu.be/n8e8OcaRJyE"},
-        { "linkName": "介紹影片", "link": "https://youtu.be/aWnf8bEYr18" },
-        { "linkName": "教授QA", "link": null }
+        { "linkName": "投影片", "link": "" },
+        { "linkName": "介紹影片", "link": "" },
+        { "linkName": "教授QA", "link": "" }
+       
       ]
     },{
       "id": 98,
       "name": "Prof. 蔡作敏",
-      "labName": "低功率混合系統信號晶片設計實驗室",
-      "department": ["電機所","電控所"],
-      "officeLocation": null,
-      "email": "khchen@nycu.edu.tw",
+      "labName": "",
+      "department": [""],
+      "officeLocation": "",
+      "email": "@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
-      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "LabWebsite": "",
+      "tags": ["#", "#", "#", "#"],
       "research": [
+        
             {
-            "title": "Smart DC-DC converter with power management",
-            "subtitle":null
+            "title": "",
+            "subtitle": [ 
+            "",
+            "",
+            ""]
             },
             {
-            "title": "Current Mode DC-DC Buck Converter with on-Chip Capacitor Multiplier",
-            "subtitle":null
-            },
-            {
-            "title": "High-Efficiency Low Noise Converter for DVS and Power Management System",
-            "subtitle":null
-            },
-            {
-            "title": "One-Cycle Control Buck Converter for DVS with Dynamic Width Control and Error Correction Loops",
-            "subtitle":null
-            },
-            {
-            "title": "65K color OLED controller and driver",
-            "subtitle":null
-            },
-            {
-            "title": "DC-AC Inverter",
-            "subtitle":null
+            "title": "",
+            "subtitle":[
+            "",
+            ""]
             }
-    
-
       ],
+        
       "recomendedCourses": [
-        "電子學(一)、(二)",
-        "VLSI導論、AIC導論(optional)"
+        ""
       ],
       "faqs": [
             {
-            "question":"教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
-            "answer": "專題上會著重於使用工具，專題下有想法就可以跟教授、或研究生一起做計畫"
+            "question": "",
+            "answer": ""
             },
             {
-            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
-            "answer":"會先做一些基本的電路當作training，熟習電路設計工具之後就能來找研究生或教授討論主題。"
+            "question": "",
+            "answer":""
             },
             {
-            "question": "專題是否有先修科目要求?",
-            "answer": "電子學一二，有些同學會修VLSI導論跟AIC導論等等，但是一般而言我們助教都會教，所以不用過於擔心"
+            "question": "",
+            "answer": ""
+            }, 
+            {
+            "question": "",
+            "answer": ""
             },
             {
-            "question": " 修習教授專題是否有成績要求?",
-            "answer": "無"
+            "question": "",
+            "answer":""
             },
             {
-            "question": " 實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
-            "answer": "聯發科、瑞昱、立錡、聯詠…等叫得出名字的design house幾乎都有。"
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer":""
+            },
+            {
+            "question": "",
+            "answer": ""
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "https://youtu.be/n8e8OcaRJyE"},
-        { "linkName": "介紹影片", "link": "https://youtu.be/aWnf8bEYr18" },
-        { "linkName": "教授QA", "link": null }
+        { "linkName": "投影片", "link": "" },
+        { "linkName": "介紹影片", "link": "" },
+        { "linkName": "教授QA", "link": "" }
+       
       ]
     },{
       "id": 100,
       "name": "Prof. 許鉦宗",
-      "labName": "低功率混合系統信號晶片設計實驗室",
-      "department": ["電機所","電控所"],
-      "officeLocation": null,
-      "email": "khchen@nycu.edu.tw",
+      "labName": "",
+      "department": [""],
+      "officeLocation": "",
+      "email": "@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
-      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "LabWebsite": "",
+      "tags": ["#", "#", "#", "#"],
       "research": [
+        
             {
-            "title": "Smart DC-DC converter with power management",
-            "subtitle":null
+            "title": "",
+            "subtitle": [ 
+            "",
+            "",
+            ""]
             },
             {
-            "title": "Current Mode DC-DC Buck Converter with on-Chip Capacitor Multiplier",
-            "subtitle":null
-            },
-            {
-            "title": "High-Efficiency Low Noise Converter for DVS and Power Management System",
-            "subtitle":null
-            },
-            {
-            "title": "One-Cycle Control Buck Converter for DVS with Dynamic Width Control and Error Correction Loops",
-            "subtitle":null
-            },
-            {
-            "title": "65K color OLED controller and driver",
-            "subtitle":null
-            },
-            {
-            "title": "DC-AC Inverter",
-            "subtitle":null
+            "title": "",
+            "subtitle":[
+            "",
+            ""]
             }
-    
-
       ],
+        
       "recomendedCourses": [
-        "電子學(一)、(二)",
-        "VLSI導論、AIC導論(optional)"
+        ""
       ],
       "faqs": [
             {
-            "question":"教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
-            "answer": "專題上會著重於使用工具，專題下有想法就可以跟教授、或研究生一起做計畫"
+            "question": "",
+            "answer": ""
             },
             {
-            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
-            "answer":"會先做一些基本的電路當作training，熟習電路設計工具之後就能來找研究生或教授討論主題。"
+            "question": "",
+            "answer":""
             },
             {
-            "question": "專題是否有先修科目要求?",
-            "answer": "電子學一二，有些同學會修VLSI導論跟AIC導論等等，但是一般而言我們助教都會教，所以不用過於擔心"
+            "question": "",
+            "answer": ""
+            }, 
+            {
+            "question": "",
+            "answer": ""
             },
             {
-            "question": " 修習教授專題是否有成績要求?",
-            "answer": "無"
+            "question": "",
+            "answer":""
             },
             {
-            "question": " 實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
-            "answer": "聯發科、瑞昱、立錡、聯詠…等叫得出名字的design house幾乎都有。"
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer":""
+            },
+            {
+            "question": "",
+            "answer": ""
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "https://youtu.be/n8e8OcaRJyE"},
-        { "linkName": "介紹影片", "link": "https://youtu.be/aWnf8bEYr18" },
-        { "linkName": "教授QA", "link": null }
+        { "linkName": "投影片", "link": "" },
+        { "linkName": "介紹影片", "link": "" },
+        { "linkName": "教授QA", "link": "" }
+       
       ]
     },{
       "id": 102,
       "name": "Prof. 戴立嘉",
-      "labName": "低功率混合系統信號晶片設計實驗室",
-      "department": ["電機所","電控所"],
-      "officeLocation": null,
-      "email": "khchen@nycu.edu.tw",
+      "labName": "",
+      "department": [""],
+      "officeLocation": "",
+      "email": "@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
-      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "LabWebsite": "",
+      "tags": ["#", "#", "#", "#"],
       "research": [
+        
             {
-            "title": "Smart DC-DC converter with power management",
-            "subtitle":null
+            "title": "",
+            "subtitle": [ 
+            "",
+            "",
+            ""]
             },
             {
-            "title": "Current Mode DC-DC Buck Converter with on-Chip Capacitor Multiplier",
-            "subtitle":null
-            },
-            {
-            "title": "High-Efficiency Low Noise Converter for DVS and Power Management System",
-            "subtitle":null
-            },
-            {
-            "title": "One-Cycle Control Buck Converter for DVS with Dynamic Width Control and Error Correction Loops",
-            "subtitle":null
-            },
-            {
-            "title": "65K color OLED controller and driver",
-            "subtitle":null
-            },
-            {
-            "title": "DC-AC Inverter",
-            "subtitle":null
+            "title": "",
+            "subtitle":[
+            "",
+            ""]
             }
-    
-
       ],
+        
       "recomendedCourses": [
-        "電子學(一)、(二)",
-        "VLSI導論、AIC導論(optional)"
+        ""
       ],
       "faqs": [
             {
-            "question":"教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
-            "answer": "專題上會著重於使用工具，專題下有想法就可以跟教授、或研究生一起做計畫"
+            "question": "",
+            "answer": ""
             },
             {
-            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
-            "answer":"會先做一些基本的電路當作training，熟習電路設計工具之後就能來找研究生或教授討論主題。"
+            "question": "",
+            "answer":""
             },
             {
-            "question": "專題是否有先修科目要求?",
-            "answer": "電子學一二，有些同學會修VLSI導論跟AIC導論等等，但是一般而言我們助教都會教，所以不用過於擔心"
+            "question": "",
+            "answer": ""
+            }, 
+            {
+            "question": "",
+            "answer": ""
             },
             {
-            "question": " 修習教授專題是否有成績要求?",
-            "answer": "無"
+            "question": "",
+            "answer":""
             },
             {
-            "question": " 實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
-            "answer": "聯發科、瑞昱、立錡、聯詠…等叫得出名字的design house幾乎都有。"
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer":""
+            },
+            {
+            "question": "",
+            "answer": ""
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "https://youtu.be/n8e8OcaRJyE"},
-        { "linkName": "介紹影片", "link": "https://youtu.be/aWnf8bEYr18" },
-        { "linkName": "教授QA", "link": null }
+        { "linkName": "投影片", "link": "" },
+        { "linkName": "介紹影片", "link": "" },
+        { "linkName": "教授QA", "link": "" }
+       
       ]
     },{
       "id": 104,
       "name": "Prof. 林聖廸",
-      "labName": "低功率混合系統信號晶片設計實驗室",
-      "department": ["電機所","電控所"],
-      "officeLocation": null,
-      "email": "khchen@nycu.edu.tw",
+      "labName": "",
+      "department": [""],
+      "officeLocation": "",
+      "email": "@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
-      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "LabWebsite": "",
+      "tags": ["#", "#", "#", "#"],
       "research": [
+        
             {
-            "title": "Smart DC-DC converter with power management",
-            "subtitle":null
+            "title": "",
+            "subtitle": [ 
+            "",
+            "",
+            ""]
             },
             {
-            "title": "Current Mode DC-DC Buck Converter with on-Chip Capacitor Multiplier",
-            "subtitle":null
-            },
-            {
-            "title": "High-Efficiency Low Noise Converter for DVS and Power Management System",
-            "subtitle":null
-            },
-            {
-            "title": "One-Cycle Control Buck Converter for DVS with Dynamic Width Control and Error Correction Loops",
-            "subtitle":null
-            },
-            {
-            "title": "65K color OLED controller and driver",
-            "subtitle":null
-            },
-            {
-            "title": "DC-AC Inverter",
-            "subtitle":null
+            "title": "",
+            "subtitle":[
+            "",
+            ""]
             }
-    
-
       ],
+        
       "recomendedCourses": [
-        "電子學(一)、(二)",
-        "VLSI導論、AIC導論(optional)"
+        ""
       ],
       "faqs": [
             {
-            "question":"教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
-            "answer": "專題上會著重於使用工具，專題下有想法就可以跟教授、或研究生一起做計畫"
+            "question": "",
+            "answer": ""
             },
             {
-            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
-            "answer":"會先做一些基本的電路當作training，熟習電路設計工具之後就能來找研究生或教授討論主題。"
+            "question": "",
+            "answer":""
             },
             {
-            "question": "專題是否有先修科目要求?",
-            "answer": "電子學一二，有些同學會修VLSI導論跟AIC導論等等，但是一般而言我們助教都會教，所以不用過於擔心"
+            "question": "",
+            "answer": ""
+            }, 
+            {
+            "question": "",
+            "answer": ""
             },
             {
-            "question": " 修習教授專題是否有成績要求?",
-            "answer": "無"
+            "question": "",
+            "answer":""
             },
             {
-            "question": " 實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
-            "answer": "聯發科、瑞昱、立錡、聯詠…等叫得出名字的design house幾乎都有。"
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer":""
+            },
+            {
+            "question": "",
+            "answer": ""
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "https://youtu.be/n8e8OcaRJyE"},
-        { "linkName": "介紹影片", "link": "https://youtu.be/aWnf8bEYr18" },
-        { "linkName": "教授QA", "link": null }
+        { "linkName": "投影片", "link": "" },
+        { "linkName": "介紹影片", "link": "" },
+        { "linkName": "教授QA", "link": "" }
+       
       ]
     },{
       "id": 106,
       "name": "Prof. 馮智豪",
-      "labName": "低功率混合系統信號晶片設計實驗室",
-      "department": ["電機所","電控所"],
-      "officeLocation": null,
-      "email": "khchen@nycu.edu.tw",
+      "labName": "",
+      "department": [""],
+      "officeLocation": "",
+      "email": "@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
-      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "LabWebsite": "",
+      "tags": ["#", "#", "#", "#"],
       "research": [
+        
             {
-            "title": "Smart DC-DC converter with power management",
-            "subtitle":null
+            "title": "",
+            "subtitle": [ 
+            "",
+            "",
+            ""]
             },
             {
-            "title": "Current Mode DC-DC Buck Converter with on-Chip Capacitor Multiplier",
-            "subtitle":null
-            },
-            {
-            "title": "High-Efficiency Low Noise Converter for DVS and Power Management System",
-            "subtitle":null
-            },
-            {
-            "title": "One-Cycle Control Buck Converter for DVS with Dynamic Width Control and Error Correction Loops",
-            "subtitle":null
-            },
-            {
-            "title": "65K color OLED controller and driver",
-            "subtitle":null
-            },
-            {
-            "title": "DC-AC Inverter",
-            "subtitle":null
+            "title": "",
+            "subtitle":[
+            "",
+            ""]
             }
-    
-
       ],
+        
       "recomendedCourses": [
-        "電子學(一)、(二)",
-        "VLSI導論、AIC導論(optional)"
+        ""
       ],
       "faqs": [
             {
-            "question":"教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
-            "answer": "專題上會著重於使用工具，專題下有想法就可以跟教授、或研究生一起做計畫"
+            "question": "",
+            "answer": ""
             },
             {
-            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
-            "answer":"會先做一些基本的電路當作training，熟習電路設計工具之後就能來找研究生或教授討論主題。"
+            "question": "",
+            "answer":""
             },
             {
-            "question": "專題是否有先修科目要求?",
-            "answer": "電子學一二，有些同學會修VLSI導論跟AIC導論等等，但是一般而言我們助教都會教，所以不用過於擔心"
+            "question": "",
+            "answer": ""
+            }, 
+            {
+            "question": "",
+            "answer": ""
             },
             {
-            "question": " 修習教授專題是否有成績要求?",
-            "answer": "無"
+            "question": "",
+            "answer":""
             },
             {
-            "question": " 實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
-            "answer": "聯發科、瑞昱、立錡、聯詠…等叫得出名字的design house幾乎都有。"
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer":""
+            },
+            {
+            "question": "",
+            "answer": ""
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "https://youtu.be/n8e8OcaRJyE"},
-        { "linkName": "介紹影片", "link": "https://youtu.be/aWnf8bEYr18" },
-        { "linkName": "教授QA", "link": null }
+        { "linkName": "投影片", "link": "" },
+        { "linkName": "介紹影片", "link": "" },
+        { "linkName": "教授QA", "link": "" }
+       
       ]
     },{
       "id": 108,
       "name": "Prof. 紀佩綾",
-      "labName": "低功率混合系統信號晶片設計實驗室",
-      "department": ["電機所","電控所"],
-      "officeLocation": null,
-      "email": "khchen@nycu.edu.tw",
+      "labName": "",
+      "department": [""],
+      "officeLocation": "",
+      "email": "@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
-      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "LabWebsite": "",
+      "tags": ["#", "#", "#", "#"],
       "research": [
+        
             {
-            "title": "Smart DC-DC converter with power management",
-            "subtitle":null
+            "title": "",
+            "subtitle": [ 
+            "",
+            "",
+            ""]
             },
             {
-            "title": "Current Mode DC-DC Buck Converter with on-Chip Capacitor Multiplier",
-            "subtitle":null
-            },
-            {
-            "title": "High-Efficiency Low Noise Converter for DVS and Power Management System",
-            "subtitle":null
-            },
-            {
-            "title": "One-Cycle Control Buck Converter for DVS with Dynamic Width Control and Error Correction Loops",
-            "subtitle":null
-            },
-            {
-            "title": "65K color OLED controller and driver",
-            "subtitle":null
-            },
-            {
-            "title": "DC-AC Inverter",
-            "subtitle":null
+            "title": "",
+            "subtitle":[
+            "",
+            ""]
             }
-    
-
       ],
+        
       "recomendedCourses": [
-        "電子學(一)、(二)",
-        "VLSI導論、AIC導論(optional)"
+        ""
       ],
       "faqs": [
             {
-            "question":"教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
-            "answer": "專題上會著重於使用工具，專題下有想法就可以跟教授、或研究生一起做計畫"
+            "question": "",
+            "answer": ""
             },
             {
-            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
-            "answer":"會先做一些基本的電路當作training，熟習電路設計工具之後就能來找研究生或教授討論主題。"
+            "question": "",
+            "answer":""
             },
             {
-            "question": "專題是否有先修科目要求?",
-            "answer": "電子學一二，有些同學會修VLSI導論跟AIC導論等等，但是一般而言我們助教都會教，所以不用過於擔心"
+            "question": "",
+            "answer": ""
+            }, 
+            {
+            "question": "",
+            "answer": ""
             },
             {
-            "question": " 修習教授專題是否有成績要求?",
-            "answer": "無"
+            "question": "",
+            "answer":""
             },
             {
-            "question": " 實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
-            "answer": "聯發科、瑞昱、立錡、聯詠…等叫得出名字的design house幾乎都有。"
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer":""
+            },
+            {
+            "question": "",
+            "answer": ""
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "https://youtu.be/n8e8OcaRJyE"},
-        { "linkName": "介紹影片", "link": "https://youtu.be/aWnf8bEYr18" },
-        { "linkName": "教授QA", "link": null }
+        { "linkName": "投影片", "link": "" },
+        { "linkName": "介紹影片", "link": "" },
+        { "linkName": "教授QA", "link": "" }
+       
       ]
     },
     {
@@ -4382,140 +4459,150 @@
   {
       "id": 118,
       "name": "Prof. 張添烜",
-      "labName": "低功率混合系統信號晶片設計實驗室",
-      "department": ["電機所","電控所"],
-      "officeLocation": null,
-      "email": "khchen@nycu.edu.tw",
+      "labName": "",
+      "department": [""],
+      "officeLocation": "",
+      "email": "@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
-      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "LabWebsite": "",
+      "tags": ["#", "#", "#", "#"],
       "research": [
+        
             {
-            "title": "Smart DC-DC converter with power management",
-            "subtitle":null
+            "title": "",
+            "subtitle": [ 
+            "",
+            "",
+            ""]
             },
             {
-            "title": "Current Mode DC-DC Buck Converter with on-Chip Capacitor Multiplier",
-            "subtitle":null
-            },
-            {
-            "title": "High-Efficiency Low Noise Converter for DVS and Power Management System",
-            "subtitle":null
-            },
-            {
-            "title": "One-Cycle Control Buck Converter for DVS with Dynamic Width Control and Error Correction Loops",
-            "subtitle":null
-            },
-            {
-            "title": "65K color OLED controller and driver",
-            "subtitle":null
-            },
-            {
-            "title": "DC-AC Inverter",
-            "subtitle":null
+            "title": "",
+            "subtitle":[
+            "",
+            ""]
             }
-    
-
       ],
+        
       "recomendedCourses": [
-        "電子學(一)、(二)",
-        "VLSI導論、AIC導論(optional)"
+        ""
       ],
       "faqs": [
             {
-            "question":"教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
-            "answer": "專題上會著重於使用工具，專題下有想法就可以跟教授、或研究生一起做計畫"
+            "question": "",
+            "answer": ""
             },
             {
-            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
-            "answer":"會先做一些基本的電路當作training，熟習電路設計工具之後就能來找研究生或教授討論主題。"
+            "question": "",
+            "answer":""
             },
             {
-            "question": "專題是否有先修科目要求?",
-            "answer": "電子學一二，有些同學會修VLSI導論跟AIC導論等等，但是一般而言我們助教都會教，所以不用過於擔心"
+            "question": "",
+            "answer": ""
+            }, 
+            {
+            "question": "",
+            "answer": ""
             },
             {
-            "question": " 修習教授專題是否有成績要求?",
-            "answer": "無"
+            "question": "",
+            "answer":""
             },
             {
-            "question": " 實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
-            "answer": "聯發科、瑞昱、立錡、聯詠…等叫得出名字的design house幾乎都有。"
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer":""
+            },
+            {
+            "question": "",
+            "answer": ""
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "https://youtu.be/n8e8OcaRJyE"},
-        { "linkName": "介紹影片", "link": "https://youtu.be/aWnf8bEYr18" },
-        { "linkName": "教授QA", "link": null }
+        { "linkName": "投影片", "link": "" },
+        { "linkName": "介紹影片", "link": "" },
+        { "linkName": "教授QA", "link": "" }
+       
       ]
     },{
       "id": 122,
       "name": "Prof. 陳科宏",
-      "labName": "低功率混合系統信號晶片設計實驗室",
-      "department": ["電機所","電控所"],
-      "officeLocation": null,
-      "email": "khchen@nycu.edu.tw",
+      "labName": "",
+      "department": [""],
+      "officeLocation": "",
+      "email": "@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
-      "tags": ["#類比IC", "#數位IC", "#光電", "#生醫"],
+      "LabWebsite": "",
+      "tags": ["#", "#", "#", "#"],
       "research": [
+        
             {
-            "title": "Smart DC-DC converter with power management",
-            "subtitle":null
+            "title": "",
+            "subtitle": [ 
+            "",
+            "",
+            ""]
             },
             {
-            "title": "Current Mode DC-DC Buck Converter with on-Chip Capacitor Multiplier",
-            "subtitle":null
-            },
-            {
-            "title": "High-Efficiency Low Noise Converter for DVS and Power Management System",
-            "subtitle":null
-            },
-            {
-            "title": "One-Cycle Control Buck Converter for DVS with Dynamic Width Control and Error Correction Loops",
-            "subtitle":null
-            },
-            {
-            "title": "65K color OLED controller and driver",
-            "subtitle":null
-            },
-            {
-            "title": "DC-AC Inverter",
-            "subtitle":null
+            "title": "",
+            "subtitle":[
+            "",
+            ""]
             }
-    
-
       ],
+        
       "recomendedCourses": [
-        "電子學(一)、(二)",
-        "VLSI導論、AIC導論(optional)"
+        ""
       ],
       "faqs": [
             {
-            "question":"教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
-            "answer": "專題上會著重於使用工具，專題下有想法就可以跟教授、或研究生一起做計畫"
+            "question": "",
+            "answer": ""
             },
             {
-            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
-            "answer":"會先做一些基本的電路當作training，熟習電路設計工具之後就能來找研究生或教授討論主題。"
+            "question": "",
+            "answer":""
             },
             {
-            "question": "專題是否有先修科目要求?",
-            "answer": "電子學一二，有些同學會修VLSI導論跟AIC導論等等，但是一般而言我們助教都會教，所以不用過於擔心"
+            "question": "",
+            "answer": ""
+            }, 
+            {
+            "question": "",
+            "answer": ""
             },
             {
-            "question": " 修習教授專題是否有成績要求?",
-            "answer": "無"
+            "question": "",
+            "answer":""
             },
             {
-            "question": " 實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
-            "answer": "聯發科、瑞昱、立錡、聯詠…等叫得出名字的design house幾乎都有。"
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer": ""
+            },
+            {
+            "question": "",
+            "answer":""
+            },
+            {
+            "question": "",
+            "answer": ""
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "https://youtu.be/n8e8OcaRJyE"},
-        { "linkName": "介紹影片", "link": "https://youtu.be/aWnf8bEYr18" },
-        { "linkName": "教授QA", "link": null }
+        { "linkName": "投影片", "link": "" },
+        { "linkName": "介紹影片", "link": "" },
+        { "linkName": "教授QA", "link": "" }
+       
       ]
     }
     

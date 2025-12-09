@@ -770,172 +770,189 @@
     },{
       "id": 16,
       "name": "Prof. 陳宏明",
-      "labName": "",
-      "department": [""],
+      "labName": "超大型積體電路(實體)設計自動化實驗室",
+      "department": ["電子所乙B組"],
       "officeLocation": "",
-      "email": "@nycu.edu.tw",
+      "email": "hmchen@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "",
-      "tags": ["#", "#", "#", "#"],
+      "LabWebsite": "https://vdalab.web.nycu.edu.tw/",
+      "tags": ["#EDA"],
       "research": [
         
             {
-            "title": "",
+            "title": "AI and ML/DL in EDA",
             "subtitle": [ 
-            "",
+            "New methodologies from AI and machine learning",
+            "Currently applied on noise sensor placement and routing/DRC violation predition",
+            "Next steps include analog circuit design automation and package router"]
+            },
+            {
+            "title": "Analog layout migration and generation ",
+            "subtitle":[
             "",
             ""]
             },
             {
-            "title": "",
+            "title": "Advanced Cell Lib Generation",
             "subtitle":[
-            "",
-            ""]
+            "ICGx3@ASAP7nm"
+          ]
             }
       ],
         
       "recomendedCourses": [
-        ""
+        "Algorithms and programming language；Data structures play important roles；Device modeling；Interconnect modeling；Manufacture related issues；Circuit design and synthesis"
       ],
       "faqs": [
             {
-            "question": "",
-            "answer": ""
+            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
+            "answer": "透過參加CAD競賽，來進行專題。"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
+            "answer":"精進C++的編寫能力"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "專題是否有先修科目要求?",
+            "answer": "修過資料結構和VLSI實驗"
             }, 
             {
-            "question": "",
-            "answer": ""
+            "question": "修習教授專題是否有成績要求?",
+            "answer": "沒有"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
+            "answer":"西門子EDA、TSMC、聯發科、聯詠"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "研究所畢業條件為何?",
+            "answer": "參加過CAD競賽、一篇以英文撰寫以及有圖稿品質的論文、在大一C++課程當一年(上下學期)的助教"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "請問教授能不能分享一些求學歷程的故事以及夢想?",
+            "answer": "未知"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "請問教授如何挑選實驗室的研究主題? 這個領域在全球的現況及未來發展如何?",
+            "answer":"未知"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "請問教授會如何激發學生對於教授研究領域的興趣?",
+            "answer": "未知 "
+            },
+            {
+            "question": "請問教授會如何拓展學生的國際視野?",
+            "answer": "未知"
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "" },
-        { "linkName": "介紹影片", "link": "" },
-        { "linkName": "教授QA", "link": "" }
+        { "linkName": "投影片", "link": "https://drive.google.com/file/d/1xrNwD7KxCnRqAL28ZPWzA_jCifyTNK3F/view?usp=sharing" },
+        { "linkName": "介紹影片", "link": "https://youtu.be/cqVYbBNs-ZE?si=raz6_H8buPmlBIfQ" },
+        { "linkName": "教授QA", "link": "https://youtu.be/3jdrUEmimLQ?si=htLXqKc2ZfD9UR-u" }
        
       ]
     },{
       "id": 18,
       "name": "Prof. 宋開泰",
-      "labName": "",
-      "department": [""],
+      "labName": "智慧型系統控制整合實驗室",
+      "department": ["電控所"],
       "officeLocation": "",
-      "email": "@nycu.edu.tw",
+      "email": "ktsong@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "",
+      "LabWebsite": "http://isci.lab.nycu.edu.tw/",
       "tags": ["#", "#", "#", "#"],
       "research": [
         
             {
-            "title": "",
+            "title": "e-Robotics 智慧型機器人",
             "subtitle": [ 
-            "",
-            "",
-            ""]
+            "網控與協作機器人",
+            "醫療機器人",
+            "機器人定位與導航",
+            "全向式移動式機器人",
+            "家用機器人",
+            "雙足機器人",
+            "UAVs"]
             },
             {
-            "title": "",
+            "title": "Image Processing and Computer Vision 影像處理及電腦視覺",
             "subtitle":[
-            "",
-            ""]
+            "影像追蹤與控制",
+            "嵌入式影像系統",
+            "人臉偵測與辨識",
+            "人體姿態偵測",
+            "語音辨識"]
             }
       ],
         
       "recomendedCourses": [
-        ""
+        "電機系必修，無課程要求；程式能力，硬體裝置介面的知識"
       ],
       "faqs": [
             {
-            "question": "",
-            "answer": ""
+            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
+            "answer": "會指定研究主題並由學長姐指導，希望以競賽為主，但也可以不參加競賽。也可以在某個大方向內讓學生自行發揮"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
+            "answer":"透過paper、workshops、展覽來增進domain knowledge "
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "專題是否有先修科目要求?",
+            "answer": "電機系必修，希望有軟體能力跟運用電子電路的匯入能力"
             }, 
             {
-            "question": "",
-            "answer": ""
+            "question": "修習教授專題是否有成績要求?",
+            "answer": "無"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
+            "answer":"畢業學生最高比例去聯發科，其他如瑞昱半導體、聯詠科技、研華、Google機器人專業、達明機器人、新代科技、上銀科技、大銀微系統也是學生幾個主要的出路，也有少部分人會創業。工作型態多數與系統整合、機器人有關"
             },
             {
-            "question": "",
-            "answer": ""
-            },
-            {
-            "question": "",
-            "answer": ""
-            },
-            {
-            "question": "",
-            "answer":""
-            },
-            {
-            "question": "",
-            "answer": ""
+            "question": "研究所畢業條件為何?",
+            "answer": "把論文寫好，有個成果！"
             }
       ],
       "link":[
         { "linkName": "投影片", "link": "" },
-        { "linkName": "介紹影片", "link": "" },
-        { "linkName": "教授QA", "link": "" }
+        { "linkName": "介紹影片", "link": "https://youtu.be/YRYglqKkyk8?si=pHYei09wh1cqIa1C" },
+        { "linkName": "教授QA", "link": "https://youtu.be/XXiHKoAyWpk?si=gmhbXsQbSwIxw_tM" }
        
       ]
     },{
       "id": 20,
       "name": "Prof. 陳坤志",
-      "labName": "",
-      "department": [""],
+      "labName": "智慧型可靠度系統晶片實驗室",
+      "department": ["電子所乙B組"],
       "officeLocation": "",
-      "email": "@nycu.edu.tw",
+      "email": "kcchen@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "",
-      "tags": ["#", "#", "#", "#"],
+      "LabWebsite": "https://sites.google.com/site/cereslaben/advisor",
+      "tags": ["#數位IC設計", "#AI", "#", "#"],
       "research": [
         
             {
-            "title": "",
+            "title": "Intelligent Thermal and Power Management",
             "subtitle": [ 
             "",
             "",
             ""]
             },
             {
-            "title": "",
+            "title": "Intelligent Data Analysis and Processing Algorithm",
+            "subtitle":[
+            "",
+            ""]
+            },
+            {
+            "title": "Reliable Designs of Intelligent System Architecture",
+            "subtitle":[
+            "",
+            ""]
+            },
+            {
+            "title": "Key Application for Artificial Internet of Things",
             "subtitle":[
             "",
             ""]
@@ -943,73 +960,92 @@
       ],
         
       "recomendedCourses": [
-        ""
+        "線性代數；機率；電子學；計算機組織；數位電路與系統；邏輯設計；演算法"
       ],
       "faqs": [
             {
-            "question": "",
-            "answer": ""
+            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
+            "answer": "教授會把目前實驗室研究的專題進行簡化，所以學生有問題可以直接和學長姐進行討論(因為學生的問題很有可能也是之前學長姐遇過的問題)。"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
+            "answer":"一開始打基礎會先看paper。當確認專題方向後會先給相關資料，除了加強觀念，也可以知道最近這方面領域發生甚麼事情。也會給一些之前實驗室發表過的paper。再來會去做一些之前實驗室做過得一些數據，最後再去做延伸。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "專題是否有先修科目要求?",
+            "answer": "因為是數位IC實驗室，所以對於計算機組織、資料結構、邏輯設計比較熟的話會比較容易上手。還會牽扯到一些演算法，但不太像軟體的演算法，而是一些數學的應用。基本上都是偏向電機系比修科目。"
             }, 
             {
-            "question": "",
-            "answer": ""
+            "question": "修習教授專題是否有成績要求?",
+            "answer": "沒有限制。只要有興趣就可以來，根據興趣或者修課狀況進行進一步的探討。"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
+            "answer":"大部分學生必也後都是在IC design的公司上班。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "研究所畢業條件為何?",
+            "answer": "有三種畢業條件，可以擇一完成：1. 發表會議論文: 和研究主題最有相關，透過發表國際論文增加國際視野，也可以跟外國人交流，拓展人脈。 2. 競賽得獎: 全國全世界IC設計競賽，以及旺宏金矽獎(特定學生)。目的是為訓練學生的實作能力。加上有時間限制，更可以考驗學生實力 3. 設計一顆IC並被批准逕赴製造"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "請問教授實驗室歷年來都收幾個學生?超額怎麼辦?",
+            "answer": "每年所上都會限制老師可以收的名額。約為4~6個。篩選條件不是以成績為主，而是重視討論風氣。除了了解自己的專題，也可以知道別人在做甚麼，並且培養問問題的習慣。收人標準會希望能和實驗室相處融洽。所以當學生問可不可以進教授的實驗室，教授都會希望先去跟實驗室裡面得學長姐聊聊，看看自己是不適合這個實驗室。超額會先以和實驗室學長姐聊天進行評估。"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "請問教授如何建議大二生還沒修過太多專業的課程，那可以透過甚麼方式去找尋自己適合的領域? ",
+            "answer":"大二很多科目還在打基礎。同學可以利用時間去看看一些科技新聞，或者看一些科技文章。有些和學校老師做的領域有一點相關。有問題就可以直接去拜訪教授。也可以從學科出發。上課的時候老師常常會提及一些應用，這些觀念會用在現今科技哪方面的地方。可以從以上去發想。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "請問教授能不能給大學生一些全面性的建議?",
+            "answer": "大學是大家求學過程中很精華的時間。雖然有很多作業要做，但大家都一樣，但就是享受一起完成專題、完成作業的過程。另外四年其實很快就過去了，當你未來回來看大學，四年看起來很慢，但是之後就會發覺時間越過越快，會沒什麼時間去想自己想成為什麼樣的人。所以大學四年可以好好想想自己未來規劃。不要急著想趕快畢業，因為這是非常難得的時光，有很多免費資源，但當出社會後就甚麼東西都要錢。"
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "" },
-        { "linkName": "介紹影片", "link": "" },
-        { "linkName": "教授QA", "link": "" }
+        { "linkName": "投影片", "link": "https://drive.google.com/file/d/1Fuq2rBJ3-Nakj0OCIaKutkOqTg2nV5vb/view?usp=sharing" },
+        { "linkName": "介紹影片", "link": "https://youtu.be/BrC6MltSFLs" },
+        { "linkName": "教授QA", "link": "https://youtu.be/j0HfngbkzqM?si=t6KHd99Gex2P-0Zj" }
        
       ]
     },{
       "id": 22,
       "name": "Prof. 郭峻因",
-      "labName": "",
-      "department": [""],
+      "labName": "智慧視覺系統暨SOC設計實驗室（Intelligent Vision System &SOC Design Laboratory",
+      "department": ["電子所乙B組"],
       "officeLocation": "",
-      "email": "@nycu.edu.tw",
+      "email": "jiguo@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "",
-      "tags": ["#", "#", "#", "#"],
+      "LabWebsite": "http://ivs.ee.nctu.edu.tw/",
+      "tags": ["#多媒體", "#AI", "#類比IC設計", "#數位IC設計"],
       "research": [
         
             {
-            "title": "",
+            "title": "VLSI設計",
             "subtitle": [ 
             "",
             "",
             ""]
             },
             {
-            "title": "",
+            "title": "SOC設計",
+            "subtitle":[
+            "Vision SOC for Autonomous Driving",
+            "Energy efficient SOC design",
+            "Medical Imaging SOC"]
+            },
+            {
+            "title": "DIP設計",
+            "subtitle":[
+            "",
+            ""]
+            },
+            {
+            "title": "數位信號處理",
+            "subtitle":[
+            "",
+            ""]
+            },
+            {
+            "title": "智慧視覺系統設定",
             "subtitle":[
             "",
             ""]
@@ -1017,50 +1053,62 @@
       ],
         
       "recomendedCourses": [
-        ""
+        "無（如果在想研究的主題上沒有相對應的領域知識，可以利用網路找資料或再去修相對應的課程）"
       ],
       "faqs": [
             {
-            "question": "",
-            "answer": ""
+            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
+            "answer": "教授會鼓勵同學發想自己想做的主題，以自身所學去解決生活上的難題"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
+            "answer":"會依據學生的專題主題，有不同的進行方式"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "修習教授專題是否有成績要求?",
+            "answer": "無"
             }, 
             {
-            "question": "",
-            "answer": ""
+            "question": "實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
+            "answer": "聯發科等各類IC設計公司、台積電、外商公司（google）等等。系統設計的就業範圍很廣，不需太擔心"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "研究所畢業條件為何?",
+            "answer":"有創意的研究主題"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "請問教授能不能分享之前學長姐做過的專題？",
+            "answer": "智能輪椅（讓坐輪椅的人可以連網控制家電）、訊號轉換、旋轉射擊槍（可以精準迅速瞄準各方向的敵人）"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "請問教授的研究生需要同時準備自己的專題和教授產學合作方面的專題嗎？",
+            "answer": "基本上會先公布產學合作方面的題目，若同學有興趣可以直接深究，"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "請問教授是如何挑選研究生主題方向？",
+            "answer":"會先了解學生想做什麼方面的專題（AI、IC設計），之後給予這方面的主題讓學生研究"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "請問教授覺得AI和IC設計要如何整合？",
+            "answer": "未來是系統的時代，各大公司都想製作自己的晶片，來配合自身的演算法，讓系統的運作流"
+            },
+            {
+            "question": "請問教授在收研究生時有沒有注重的科目？",
+            "answer": "會重視和研究有關的基礎，實作課程以及做事態度"
+            },
+            {
+            "question": "請問教授對專題的規劃是兩學期還是一學期？",
+            "answer": "會依學生的想法來決定"
+            },
+            {
+            "question": "請問教授專題進行的方式？",
+            "answer": "技術方面跟學長姐學習，內容方面會不定時跟教授meeting，資源由實驗室提供"
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "" },
-        { "linkName": "介紹影片", "link": "" },
-        { "linkName": "教授QA", "link": "" }
+        { "linkName": "投影片", "link": "https://docs.google.com/presentation/d/1BmY_jbSu5O18QzfGQbFmIUxJafTJPJjn/edit?usp=sharing&ouid=113649966114813721195&rtpof=true&sd=true" },
+        { "linkName": "介紹影片", "link": "https://youtu.be/2jGTFSKC96w?si=k6sTb3IJgOWQRrDr" },
+        { "linkName": "教授QA", "link": "https://youtu.be/lms3Ns8gufA?si=Mo7HmW6E9wDDoLQ6" }
        
       ]
     },{

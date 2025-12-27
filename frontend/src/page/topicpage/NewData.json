@@ -2552,75 +2552,89 @@
     },{
       "id": 60,
       "name": "Prof. 譚至善",
-      "labName": "",
-      "department": [""],
+      "labName": "Light Taiwan 化合物半導體實驗室",
+      "department": ["電子所甲組"],
       "officeLocation": "",
-      "email": "@nycu.edu.tw",
+      "email": "cstan@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "",
-      "tags": ["#", "#", "#", "#"],
+      "LabWebsite": "https://sites.google.com/view/lighttaiwan",
+      "tags": ["#固態"],
       "research": [
         
             {
-            "title": "",
+            "title": "PV",
             "subtitle": [ 
-            "",
-            "",
-            ""]
+            "Perovskite solar cell",
+            "Near Infrared photodetector",
+            "Flexible"]
             },
             {
-            "title": "",
+            "title": "LED",
             "subtitle":[
-            "",
-            ""]
+            "Blue light",
+            "Flexible"]
+            },
+            {
+            "title": "模擬",
+            "subtitle":[
+            "The first principle calculation",
+            "元件電性模擬(TCAD)"]
             }
       ],
         
       "recomendedCourses": [
-        ""
+        "半物；固態物理；量子力學"
       ],
       "faqs": [
             {
-            "question": "",
-            "answer": ""
+            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
+            "answer": "如果學生真的很有想法，老師也不會限制題目。如果沒有想法，老師也會讓你探索想做什麼題目。"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
+            "answer":"有的組別會有儀器的操作以及量測，比如說進無塵室之類的。有的組別也會學習材料計算相關的軟體。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "專題是否有先修科目要求?",
+            "answer": "沒有強制，但會建議修習半物、固物、量子力學"
             }, 
             {
-            "question": "",
-            "answer": ""
+            "question": "修習教授專題是否有成績要求?",
+            "answer": "無，比起成績更著重對實驗室領域的興趣"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
+            "answer":"實驗室剛成立不久，目前畢業生有去：台積電(量測)、環球晶(材料計算)"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "研究所畢業條件為何?",
+            "answer": "碩士兩年準時放人"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "請問教授能不能分享一些求學歷程的故事以及夢想?",
+            "answer": "(這邊是分享學長的故事)學長一開始是想走數位ic，修了數電和演算法之後發現自己比較沒有興趣，後來去修了固態組的課之後發現對這個領域比較有天份和興趣，所以就來到這個實驗室了。"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "請問教授如何挑選實驗室的研究主題? 這個領域在全球的現況及未來發展如何?",
+            "answer":"目前主要是鈣鈦礦以及材料計算。鈣鈦礦是現在全世界許多機構都在研究的題目；材料計算的貢獻則是可以降低很多研發經費及時間"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "請問教授會如何激發學生對於教授研究領域的興趣?",
+            "answer": "直接跟教授聊天。教授現在才三十幾歲，跟他聊天就像朋友，無論是要聊研究還是人生他都可以和你侃侃而談，完全沒有壓力。"
+            },
+            {
+            "question": "請問教授會如何拓展學生的國際視野?",
+            "answer": "教授很鼓勵大家出國交換，比如說博士最後一年可以出國，回來就直接畢業。"
+            },
+            {
+            "question": "請問學長為何想要簽博?",
+            "answer": "老師提出的方案很吸引人，而且說到做到。比如說碩逕博只要五年就可以畢業，而且在這個實驗室也做得蠻開心的。"
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "" },
-        { "linkName": "介紹影片", "link": "" },
-        { "linkName": "教授QA", "link": "" }
+        { "linkName": "投影片", "link": "https://drive.google.com/file/d/1iZ1eczEw8R8dq2orJM5-qAB1352ypTla/view?usp=sharing" },
+        { "linkName": "介紹影片", "link": "https://youtu.be/bMET1TA_G2o" },
+        { "linkName": "教授QA", "link": "https://youtu.be/umrhKmv9BJA" }
        
       ]
     },{

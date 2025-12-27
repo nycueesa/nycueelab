@@ -2074,19 +2074,25 @@
       "officeLocation": "",
       "email": "hcchang.ee@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "",
+      "LabWebsite": "https://sites.google.com/view/oasis317/",
       "tags": ["#", "#", "#", "#"],
       "research": [
         
             {
-            "title": "",
+            "title": "系統晶片設計",
             "subtitle": [ 
             "",
             "",
             ""]
             },
             {
-            "title": "",
+            "title": "編碼理論",
+            "subtitle":[
+            "",
+            ""]
+            },
+            {
+            "title": "訊號處理",
             "subtitle":[
             "",
             ""]
@@ -2094,56 +2100,60 @@
       ],
         
       "recomendedCourses": [
-        ""
+        "無"
       ],
       "faqs": [
             {
-            "question": "",
-            "answer": ""
+            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定？",
+            "answer": "可以分為已經知道答案的和不知道答案的。若是想做已經知道答案的，會有一些training，按部就班做出成果。而不知道答案的。"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "請問教授專題是以兩學期做規劃還是一學期呢？",
+            "answer":"一個學期大概只能把training走完，所以希望專題生可以做兩個學期以上。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "請問教授希望同學在專題中受到什麼樣的訓練? (如撰寫verilog、閱讀paper、培養獨立研究的能力等)",
+            "answer": "如果三者只能選一個，我會選培養獨立研究的能力，前兩者比較像技能。"
             }, 
             {
-            "question": "",
-            "answer": ""
+            "question": "專題是否有先修科目要求?",
+            "answer": "這個答案取決於你的專題想做什麼，但以大學生來說，我會希望多一點數學課，基本的就是線代和機率，如果是做security、錯誤更正碼，蠻多偏向抽象代數，但系上沒開。若要做電路設計，至少要先修過數位電路系統，或是VLSI，甚至VLSI Labs，但專題生在兩三個學期的時間內不見得會做到電路設計，所以大部分還是偏演算法的討論，c++很重要。"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "修習教授專題是否有成績要求?",
+            "answer":"會想看修過甚麼課，但沒有成績要求。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "研究所畢業條件為何?",
+            "answer": "找尋有記憶點的題目去鑽研，有學習到新東西並對得起自己的學位。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "請問教授如何挑選實驗室的研究主題? 這個領域在全球的現況及未來發展如何?",
+            "answer": "研究室的主題除了教授碩博班研究的錯誤更正碼以及加密解密等領域，還有現在當紅的AI。而這些領域都具有很大的發展性，同學只需找尋有興趣的領域鑽研即可。"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "請問教授會如何激發學生對於教授研究領域的興趣?",
+            "answer":"研究的興趣來自於對領域的好奇以及不甘心，在找尋答案的過程中激發兩者可以培養對研究領域的興趣。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "請問教授會如何拓展學生的國際視野?",
+            "answer": "透過加強語文能力、參加研討會或是到國外進行交換。"
+            },
+            {
+            "question": "請問教授能不能分享一些求學歷程的故事以及夢想?",
+            "answer": "在讀碩士的時候，偶然想出一個更快速的演算法，但事後卻發現其實早已有人提出。因為不甘心，會更願意花時間或醞釀出更有趣的idea，以此勉勵各位要有不甘心的精神，做研究會更有心得與成就感"
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "" },
-        { "linkName": "介紹影片", "link": "" },
-        { "linkName": "教授QA", "link": "" }
+        { "linkName": "投影片", "link": "https://drive.google.com/file/d/1Fie5IM9ZSX0oE8E52J1EDyLWLz4mJ948/view?usp=sharing" },
+        { "linkName": "介紹影片", "link": "https://youtu.be/-6yxL67xTok" },
+        { "linkName": "教授QA", "link": "https://youtu.be/OY-D3vcLZgA" }
        
       ]
     },{
       "id": 50,
       "name": "Prof. 邱一",
-      "labName": "",
+      "labName": "微機電系統晶片實驗室",
       "department": [""],
       "officeLocation": "",
       "email": "@nycu.edu.tw",

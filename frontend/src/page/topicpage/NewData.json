@@ -2718,75 +2718,100 @@
     },{
       "id": 64,
       "name": "Prof. 游家牧",
-      "labName": "",
-      "department": [""],
+      "labName": "智慧安全系統實驗室",
+      "department": ["電機所"],
       "officeLocation": "",
-      "email": "@nycu.edu.tw",
+      "email": "​chiamuyu@gmail.com",
       "photo": null,
-      "LabWebsite": "",
-      "tags": ["#", "#", "#", "#"],
+      "LabWebsite": "https://chiamuyu.weebly.com/",
+      "tags": ["#AI", "#多媒體處理", "#資安"],
       "research": [
         
             {
-            "title": "",
+            "title": "影像模型攻擊",
             "subtitle": [ 
-            "",
-            "",
-            ""]
+            "利用化妝誤導人臉辨識系統",
+            "單張人臉操縱並模擬聲音(Face Reenforcement for Deepfake)",
+            "自駕車辨識系統誤導"]
             },
             {
-            "title": "",
+            "title": "商業模型攻擊",
             "subtitle":[
-            "",
-            ""]
+            "讓stable diffusion文字生圖模型輸出不正當內容",
+            "從AI生圖偷取prompt (Prompt Stealing Attack)",
+            "從正常fine tuning讓大型語言模型輸出不正當內容(Finetuneing Jailbreak of LLM)"]
             }
       ],
         
       "recomendedCourses": [
-        ""
+        "基礎數理課程"
       ],
       "faqs": [
             {
-            "question": "",
-            "answer": ""
+            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
+            "answer": "希望可以從教授提供的大方向中選擇有興趣的主題。"
             },
             {
-            "question": "",
-            "answer":""
+            "question": " 教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
+            "answer":"會需要看較多的conference paper，嘗試將paper上的pseudocode寫出來，或是試跑paper提供的open source code，實作paper的概念。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "專題是否有先修科目要求?",
+            "answer": "有數理基礎，微積分基礎，有興趣研究最重要。建議先自行上網學習有興趣的AI課程，自行加強。"
             }, 
             {
-            "question": "",
-            "answer": ""
+            "question": "修習教授專題是否有成績要求?",
+            "answer": "無，有興趣與熱忱，願意認真研究即可。"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
+            "answer":"由於以前在資財系，以前的學生多從事財經產業。資訊領域方面的學生也有加入軟體公司擔任IT相關職位。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "研究所畢業條件為何?",
+            "answer": "由教授評估學生個人狀態制定畢業標準。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "請問教授能不能分享一些求學歷程的故事以及夢想?",
+            "answer": "見影片。 "
             },
             {
-            "question": "",
-            "answer":""
+            "question": "請問教授如何挑選實驗室的研究主題? 這個領域在全球的現況及未來發展如何?",
+            "answer":"從網路安全、區塊鏈安全、AI安全中，選擇較為彈性的AI資安，涵蓋的領域較廣，也是較熱門的主題。現況AI發展快速，連帶AI安全的需求也成為全球共識，更是各國政府非常關注的發展項目，是正值發展熱潮的領域。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "請問教授會如何激發學生對於教授研究領域的興趣?",
+            "answer": "挑選「看得到」的題目，除了數理運算外還可以透過實作應用，提升興趣與成就感。"
+            },
+            {
+            "question": "請問教授會如何拓展學生的國際視野?",
+            "answer":"推薦國際交換，或是透過教授的人脈推薦出國實習。實驗室有跨國合作的研究項目，可以將眼界拓展到國際關注的題目，有機會也會帶學生出國參加國際研討會。"
+            },
+            {
+            "question": "是否有出國交換機會？",
+            "answer": "學碩博有機會有意願都可以，目前經驗是以學士與博士生為大宗。"
+            },
+            {
+            "question": "請問教授是否對於專題生有暑期先修安排？",
+            "answer":"暑假會需要看完老師提供的AI線上課程並完成簡單的作業，不需要非常精熟但希望學生至少要對AI領域有一定的了解。"
+            },
+            {
+            "question": "請問教授對專題生的評分標準為何？",
+            "answer": "完成所選的題目即可通過；若有困難，會視學生狀況與題目難易度調整研究目標與通過標準。"
+            }
+            {
+            "question": "請問教授是否是請研究生協助帶專題生？",
+            "answer": "前期由教授與專題生討論研究大方向與題目，中後期由有經驗或相關領域的實驗室學長姐協助實作細節的討論。"
+            }
+            {
+            "question": "請問教授專題規劃的期程為何？",
+            "answer": "如果一開始沒有基礎，建議以一年為期。Meeting頻率視學生情況而定，通常是每週一次，需要有一定的進展。"
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "" },
-        { "linkName": "介紹影片", "link": "" },
-        { "linkName": "教授QA", "link": "" }
+        { "linkName": "投影片", "link": "https://drive.google.com/file/d/1OgyIJiggcnLAgscStTU0aqbs5UJU2iWg/view?usp=sharing" },
+        { "linkName": "介紹影片", "link": "https://youtu.be/YjANhOXGkgQ" },
+        { "linkName": "教授QA", "link": "https://youtu.be/JpxzkLcxvFM" }
        
       ]
     },{

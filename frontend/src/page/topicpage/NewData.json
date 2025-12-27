@@ -2918,21 +2918,21 @@
     },{
       "id": 68,
       "name": "Prof. 余俊宏",
-      "labName": "",
-      "department": [""],
+      "labName": "通訊與網路實驗室",
+      "department": ["電信所"],
       "officeLocation": "",
-      "email": "@nycu.edu.tw",
+      "email": "yuji@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "",
-      "tags": ["#", "#", "#", "#"],
+      "LabWebsite": "http://tnt.lab.nycu.edu.tw/",
+      "tags": ["#通訊"],
       "research": [
         
             {
-            "title": "",
+            "title": "通訊科學與系統",
             "subtitle": [ 
-            "",
-            "",
-            ""]
+            "錯誤更正碼",
+            "通訊系統",
+            "天線陣列"]
             },
             {
             "title": "",
@@ -2943,50 +2943,54 @@
       ],
         
       "recomendedCourses": [
-        ""
+        "線性代數、訊號與系統、機率、通訊原理(一)或(二)；建議: 數位訊號處理導論、演算法導論、通訊原理實驗"
       ],
       "faqs": [
             {
-            "question": "",
-            "answer": ""
+            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
+            "answer": "會限定範圍，訊息處理、通訊系統、多天線系統的波束成型、錯誤碼等等。"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
+            "answer":"Coding部分會先學習通訊領域專用的code，然後會有一些coding。有準備paper以及主題相關的資料。會定期meeting。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "專題是否有先修科目要求?",
+            "answer": "如上。大二還沒修到的課，可以和專題同時進行。"
             }, 
             {
-            "question": "",
-            "answer": ""
+            "question": "修習教授專題是否有成績要求?",
+            "answer": "無。"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
+            "answer":"主要是聯發科、瑞昱、慧隆，還有其他的。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "研究所畢業條件為何?",
+            "answer": "碩士論文的題目要做好，要求品質，並且希望發表。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "請問教授能不能分享一些求學歷程的故事以及夢想?",
+            "answer": "見影片。"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "請問教授如何挑選實驗室的研究主題? 這個領域在全球的現況及未來發展如何?",
+            "answer":"見影片。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "請問教授會如何激發學生對於教授研究領域的興趣?",
+            "answer": "見影片。"
+            },
+            {
+            "question": "請問教授會如何拓展學生的國際視野?",
+            "answer": "見影片。"
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "" },
-        { "linkName": "介紹影片", "link": "" },
-        { "linkName": "教授QA", "link": "" }
+        { "linkName": "投影片", "link": "https://drive.google.com/file/d/1ZTzr7Y49KOPBQVY7dppkTwkKK8pDg0DL/view?usp=sharing" },
+        { "linkName": "介紹影片", "link": "https://youtu.be/QqOGIe3_aHc" },
+        { "linkName": "教授QA", "link": "https://youtu.be/W2IrbUxQkXM" }
        
       ]
     },{

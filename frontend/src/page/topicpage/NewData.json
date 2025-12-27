@@ -4558,27 +4558,26 @@
     {
       "id": 114,
       "name": "Prof. 吳卓諭",
-      "labName": "",
-      "department": [""],
-      "officeLocation": "",
-      "email": "@nycu.edu.tw",
+      "labName": "無線感測與通訊實驗室",
+      "department": ["電信所", "電機所"],
+      "officeLocation": "https://cm.nycu.edu.tw/teachers.php?pa=getItem&teacher_id=255&locale=tw",
+      "email": "jywu@cc.nctu.edu.tw",
       "photo": null,
       "LabWebsite": "",
-      "tags": ["#", "#", "#", "#"],
+      "tags": ["#通訊"],
       "research": [
         
             {
-            "title": "",
-            "subtitle": [ 
-            "",
-            "",
-            ""]
+            "title": "Signal Processing",
+            "subtitle": []
             },
             {
-            "title": "",
-            "subtitle":[
-            "",
-            ""]
+            "title": "Wireless Communications & Networks",
+            "subtitle":[]
+            },
+            {
+            "title": "Control Systems",
+            "subtitle":[]
             }
       ],
         
@@ -4587,39 +4586,43 @@
       ],
       "faqs": [
             {
-            "question": "",
+            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
             "answer": ""
             },
             {
-            "question": "",
+            "question": "教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
             "answer":""
             },
             {
-            "question": "",
+            "question": "專題是否有先修科目要求?",
             "answer": ""
             }, 
             {
-            "question": "",
+            "question": "修習教授專題是否有成績要求?",
             "answer": ""
             },
             {
-            "question": "",
+            "question": "實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
             "answer":""
             },
             {
-            "question": "",
+            "question": "研究所畢業條件為何?",
             "answer": ""
             },
             {
-            "question": "",
+            "question": "請問教授能不能分享一些求學歷程的故事以及夢想?",
             "answer": ""
             },
             {
-            "question": "",
+            "question": "請問教授如何挑選實驗室的研究主題? 這個領域在全球的現況及未來發展如何?",
             "answer":""
             },
             {
-            "question": "",
+            "question": "請問教授會如何激發學生對於教授研究領域的興趣?",
+            "answer": ""
+            },
+            {
+            "question": "請問教授會如何拓展學生的國際視野?",
             "answer": ""
             }
       ],
@@ -4633,27 +4636,34 @@
     {
       "id": 116,
       "name": "Prof. 簡仁宗",
-      "labName": "",
-      "department": [""],
+      "labName": "機器學習實驗室",
+      "department": ["電機所"],
       "officeLocation": "",
-      "email": "@nycu.edu.tw",
+      "email": "jtchien@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "",
-      "tags": ["#", "#", "#", "#"],
+      "LabWebsite": "http://chien.cm.nycu.edu.tw/ (無法使用)",
+      "tags": ["#多媒體處理", "#通訊", "#AI"],
       "research": [
         
             {
-            "title": "",
-            "subtitle": [ 
-            "",
-            "",
-            ""]
+            "title": "機器學習",
+            "subtitle": []
             },
             {
-            "title": "",
-            "subtitle":[
-            "",
-            ""]
+            "title": "深度學習",
+            "subtitle": []
+            },
+            {
+            "title": "語音處理",
+            "subtitle": []
+            },
+            {
+            "title": "自然語言處理",
+            "subtitle": []
+            },
+            {
+            "title": "電腦視覺",
+            "subtitle": []
             }
       ],
         
@@ -4662,39 +4672,43 @@
       ],
       "faqs": [
             {
-            "question": "",
+            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
             "answer": ""
             },
             {
-            "question": "",
+            "question": "教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
             "answer":""
             },
             {
-            "question": "",
+            "question": "專題是否有先修科目要求?",
             "answer": ""
             }, 
             {
-            "question": "",
+            "question": "修習教授專題是否有成績要求?",
             "answer": ""
             },
             {
-            "question": "",
+            "question": "實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
             "answer":""
             },
             {
-            "question": "",
+            "question": "研究所畢業條件為何?",
             "answer": ""
             },
             {
-            "question": "",
+            "question": "請問教授能不能分享一些求學歷程的故事以及夢想?",
             "answer": ""
             },
             {
-            "question": "",
+            "question": "請問教授如何挑選實驗室的研究主題? 這個領域在全球的現況及未來發展如何?",
             "answer":""
             },
             {
-            "question": "",
+            "question": "請問教授會如何激發學生對於教授研究領域的興趣?",
+            "answer": ""
+            },
+            {
+            "question": "請問教授會如何拓展學生的國際視野?",
             "answer": ""
             }
       ],

@@ -54,10 +54,15 @@ def read_professors_byID(id : int):
     獲取對應id的教授資訊
     """
     data = get_latest_professor_data()
+    target_professor = None
     for person in data['professors'] :
         if person['id'] == id:
             target_professor = person
             break
+
+    if target_professor is None:
+        raise HTTPException(status_code=404, detail=f"找不到 ID 為 {id} 的教授")
+
     return target_professor
 
 @app.get("/")

@@ -1,18 +1,20 @@
 import { useEffect, useState, useRef } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import styles from "./Professor.module.css";
-import allData from "../../assets/allData.json";
 
-// Function to find professor by ID
-const findProfessorById = (id) => {
-  return allData.professors.find(p => String(p.id) === String(id)) || null;
-};
+// API base URL - you can move this to a config file later
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
 
 function Professor() {
   // Get professor ID from URL parameter
   const { profId } = useParams();
   const [searchParams] = useSearchParams();
   const id = profId || searchParams.get('id');
+
+  // State for professor data and loading/error states
+  const [professorDataFromApi, setProfessorDataFromApi] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   // Animation state for each section
   const [heroVisible, setHeroVisible] = useState(false);
@@ -29,8 +31,36 @@ function Professor() {
   const courseCardRefs = useRef([]);
   const qaItemRefs = useRef([]);
 
-  // Load professor data based on ID
-  const professorDataFromJson = id ? findProfessorById(id) : null;
+  // Fetch professor data from API when component mounts or id changes
+  useEffect(() => {
+    const fetchProfessorData = async () => {
+      if (!id) {
+        setLoading(false);
+        return;
+      }
+
+      try {
+        setLoading(true);
+        setError(null);
+
+        const response = await fetch(`${API_BASE_URL}/api/professors/id=${id}`);
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        setProfessorDataFromApi(data);
+      } catch (err) {
+        console.error("Error fetching professor data:", err);
+        setError(err.message || "無法載入教授資料");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProfessorData();
+  }, [id]);
 
   // Default data for demo/fallback
   const defaultData = {
@@ -54,34 +84,6 @@ function Professor() {
       "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?"
     ]
   };
-
-  // Use loaded data or fallback to default
-  const professorData = professorDataFromJson ? {
-    name: professorDataFromJson.name,
-    labName: professorDataFromJson.labName,
-    department: professorDataFromJson.department,
-    email: professorDataFromJson.email,
-    photo: professorDataFromJson.photo || professorDataFromJson.image || "/placeholder-professor.jpg",
-    research: professorDataFromJson.research || { mainTopic: "", subTopic: "" },
-    courses: professorDataFromJson.courses || [],
-    faqs: professorDataFromJson.faqs || []
-  } : defaultData;
-
-  // If ID provided but professor not found, show error
-  if (id && !professorDataFromJson) {
-    return (
-      <div className={styles.professorPage}>
-        <section className={styles.heroSection}>
-          <div className={styles.heroContent}>
-            <div className={styles.heroLeft}>
-              <h1 className={styles.labName}>找不到教授資料</h1>
-              <p className={styles.department}>找不到 ID 為 "{id}" 的教授資料。</p>
-            </div>
-          </div>
-        </section>
-      </div>
-    );
-  }
 
   // Trigger hero animation on mount
   useEffect(() => {
@@ -175,7 +177,7 @@ function Professor() {
       Object.values(timeouts).forEach(timeout => clearTimeout(timeout));
       observer.disconnect();
     };
-  }, [professorData.courses.length]);
+  }, [professorDataFromApi?.courses?.length]);
 
   // Separate observer for Q&A items with stagger
   useEffect(() => {
@@ -228,8 +230,68 @@ function Professor() {
       Object.values(timeouts).forEach(timeout => clearTimeout(timeout));
       observer.disconnect();
     };
-  }, [professorData.faqs.length]);
+  }, [professorDataFromApi?.faqs?.length]);
 
+  // Use loaded data from API or fallback to default
+  const professorData = professorDataFromApi ? {
+    name: professorDataFromApi.name,
+    labName: professorDataFromApi.labName,
+    department: professorDataFromApi.department,
+    email: professorDataFromApi.email,
+    photo: professorDataFromApi.photo || professorDataFromApi.image || "/placeholder-professor.jpg",
+    research: professorDataFromApi.research || { mainTopic: "", subTopic: "" },
+    courses: professorDataFromApi.courses || [],
+    faqs: professorDataFromApi.faqs || []
+  } : defaultData;
+
+  // Show loading state
+  if (loading) {
+    return (
+      <div className={styles.professorPage}>
+        <section className={styles.heroSection}>
+          <div className={styles.heroContent}>
+            <div className={styles.heroLeft}>
+              <h1 className={styles.labName}>載入中...</h1>
+              <p className={styles.department}>正在載入教授資料</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
+
+  // Show error state
+  if (error) {
+    return (
+      <div className={styles.professorPage}>
+        <section className={styles.heroSection}>
+          <div className={styles.heroContent}>
+            <div className={styles.heroLeft}>
+              <h1 className={styles.labName}>載入錯誤</h1>
+              <p className={styles.department}>錯誤訊息: {error}</p>
+              <p className={styles.department}>請確認後端伺服器是否正在運行</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
+
+  // If ID provided but professor not found, show error
+  if (id && !professorDataFromApi) {
+    return (
+      <div className={styles.professorPage}>
+        <section className={styles.heroSection}>
+          <div className={styles.heroContent}>
+            <div className={styles.heroLeft}>
+              <h1 className={styles.labName}>找不到教授資料</h1>
+              <p className={styles.department}>找不到 ID 為 "{id}" 的教授資料。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.professorPage}>

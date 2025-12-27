@@ -2154,74 +2154,80 @@
       "id": 50,
       "name": "Prof. 邱一",
       "labName": "微機電系統晶片實驗室",
-      "department": [""],
+      "department": ["電機所"],
       "officeLocation": "",
-      "email": "@nycu.edu.tw",
+      "email": "yichiu@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "",
-      "tags": ["#", "#", "#", "#"],
+      "LabWebsite": "	http://140.113.150.4/",
+      "tags": ["#微機電系統", "#微感測器"],
       "research": [
         
             {
-            "title": "",
+            "title": "CMOS MEMS 微感測器(micro sensor)",
             "subtitle": [ 
-            "",
-            "",
-            ""]
+            "[CMOS-MEMS壓阻式頻率輸出加速度計](http://140.113.150.4/abstract_web/abstract_Bug.pdf)",
+            "[具有LC差動式振盪器與數位輸出的電容式加速度計](http://140.113.150.4/abstract_web/abstract_Roger.pdf)",
+            "[具有可變電感的CMOS MEMS加速度計](http://140.113.150.4/abstract_web/abstract_CW.pdf)"]
             },
             {
-            "title": "",
+            "title": "能量擷取 (energy harvesting)",
             "subtitle":[
-            "",
-            ""]
+            "[利用軟性電路板製作的駐極體能量擷取器](http://140.113.150.4/abstract_web/abstract_Rolex.pdf)",
+            "[可撓式駐極體能源轉換裝置](http://140.113.150.4/abstract_web/abstract_Wu.pdf)",
+            "[具有微流道之可撓電磁式能量轉換器](http://140.113.150.4/abstract_web/abstract_Su.pdf)",
+            "[使用銅網製作之可繞式駐極體能量擷取器](http://140.113.150.4/abstract_web/abstract_Lee.pdf)"]
             }
       ],
         
       "recomendedCourses": [
-        ""
+        "無"
       ],
       "faqs": [
             {
-            "question": "",
-            "answer": ""
+            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
+            "answer": "原則上會先讓學生了解實驗室的大方向，再自己挑選感興趣的主題，如果學生沒有想法的話，也可以由教授指定。"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "教授會希望專題生受到什麼訓練? (如撰寫程式、閱讀paper等)",
+            "answer":"主要是讓同學能把課堂上學到的東西實際應用在專題題目上，至於讀paper的部分則是要讓同學能把paper上的東西轉化成自己的知識。撰寫程式、閱讀paper、撰寫報告"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "專題生有沒有機會 layout PCB電路?",
+            "answer": "要看做專題的時間長短，PCB電路原則上一個學期可以做完，但如果是IC電路的layout，可能就要花更久的時間。"
             }, 
             {
-            "question": "",
-            "answer": ""
+            "question": "專題是否有先修科目要求?",
+            "answer": "沒有"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "修習教授專題是否有成績要求?",
+            "answer":"沒有"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
+            "answer": "實驗室畢業同學的就業範圍很廣，包括台積電、友達、華碩等等，工作型態可能要問當事人才知道。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "研究所畢業條件為何?",
+            "answer": "通常會先拿到一個題目，從設計開始都要自己做，然後再進一步測量結果，分析結果的好壞，原則上就把這個流程跑一遍。"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "請問教授能不能分享一些求學歷程的故事或是一些勉勵的話?",
+            "answer":"本身博士班是去國外念的，蠻鼓勵同學去國外留學，接收一些新的刺激。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "請問教授如何挑選實驗室的研究主題? 這個領域在全球的現況及未來發展如何?",
+            "answer": "原則上會根據現今的發展趨勢來制定研究主題。"
+            },
+            {
+            "question": "實驗室有沒有產學合作的機會？",
+            "answer": "實驗室偶爾會有產學合作的機會，但不是每年都有。"
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "" },
-        { "linkName": "介紹影片", "link": "" },
-        { "linkName": "教授QA", "link": "" }
+        { "linkName": "投影片", "link": "https://drive.google.com/file/d/1P4QgefJBBzDKKvzQAMqmHzjToCdiBfjk/view?usp=sharing" },
+        { "linkName": "介紹影片", "link": "https://youtu.be/qEQdbnzdwfk" },
+        { "linkName": "教授QA", "link": "https://youtu.be/4L9e0Bwns3Y" }
        
       ]
     },{

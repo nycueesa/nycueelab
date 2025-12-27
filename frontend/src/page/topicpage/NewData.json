@@ -3107,24 +3107,39 @@
     },{
       "id": 74,
       "name": "Prof. 洪瑞華",
-      "labName": "",
-      "department": [""],
+      "labName": "前瞻半導體製程與元件實驗室",
+      "department": ["電子所甲組"],
       "officeLocation": "",
-      "email": "@nycu.edu.tw",
+      "email": "rayhua@nycu.edu.tw",
       "photo": null,
-      "LabWebsite": "",
-      "tags": ["#", "#", "#", "#"],
+      "LabWebsite": "https://rhhlab.wixsite.com/astdl/blank-1",
+      "tags": ["#光電", "#半導體"],
       "research": [
         
             {
-            "title": "",
+            "title": "Solid-State Light-Emitting Devices ( UVC)",
             "subtitle": [ 
             "",
             "",
             ""]
             },
             {
-            "title": "",
+            "title": "Si Photonics with Heat Dissipation",
+            "subtitle":[
+            "",
+            ""]
+            },
+            {
+            "title": "Compound Semiconductors Growth by MOCVD",
+            "subtitle":[
+            "AlGaInP",
+            "GaN",
+            "ZnO",
+            "Ga2O3",
+            "ZnGa2O4"]
+            },
+            {
+            "title": "Power Devices with Heat Dissipation",
             "subtitle":[
             "",
             ""]
@@ -3132,50 +3147,54 @@
       ],
         
       "recomendedCourses": [
-        ""
+        "電子學；電路學；半導體物理相關"
       ],
       "faqs": [
             {
-            "question": "",
-            "answer": ""
+            "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
+            "answer": "先跟學長姐學習機台，看是否對對應題目有興趣，並尊重學生意願進行選擇，若無特殊方向，則由教授提供方向。"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
+            "answer":"主要為給予題目去研究，同時閱讀paper，能夠以報告方式呈現要表達的內容，最主要希望培養同學獨立解決問題的能力。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "專題是否有先修科目要求?",
+            "answer": "除了電機系的必修科目，基本的電子學、電路學的部分，希望能有一些半導體物理的知識。"
             }, 
             {
-            "question": "",
-            "answer": ""
+            "question": "修習教授專題是否有成績要求?",
+            "answer": "無"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
+            "answer":"多進入晶圓廠 ( 如：台積電 )，或大公司的半導體製程部門，也有外商的部分 ( 如：艾司摩爾 )。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "研究所畢業條件為何?",
+            "answer": "完成有自己研究數據的論文，多數學生在兩年內會畢業，鼓勵學生進行發表，讓研究成果被更多人知道。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "請問教授能不能分享一些求學歷程的故事以及夢想?",
+            "answer": "在學生時期的研究，應為台灣最早完成砷化鎵和silicon磊晶成長的實驗室。"
             },
             {
-            "question": "",
-            "answer":""
+            "question": "請問教授如何挑選實驗室的研究主題? 這個領域在全球的現況及未來發展如何?",
+            "answer":"有兩個方面，改善在產業量產但存在問題的產品，或協助公司共同研發未量產的產品。"
             },
             {
-            "question": "",
-            "answer": ""
+            "question": "請問教授會如何激發學生對於教授研究領域的興趣?",
+            "answer": "了解領域在國際的重要程度，對研究的領域更有信心，多參加產學合作的研討會，能夠用學習的專業跟業界接軌。"
+            },
+            {
+            "question": "請問教授會如何拓展學生的國際視野?",
+            "answer": "多參加國際研討會。"
             }
       ],
       "link":[
-        { "linkName": "投影片", "link": "" },
-        { "linkName": "介紹影片", "link": "" },
-        { "linkName": "教授QA", "link": "" }
+        { "linkName": "投影片", "link": "https://drive.google.com/file/d/1m34PN6P2n24JVxgReeQeISb5v7KEo-KC/view?usp=sharing" },
+        { "linkName": "介紹影片", "link": "https://youtu.be/43bLa304KLQ" },
+        { "linkName": "教授QA", "link": "https://youtu.be/p2MwDmwIEw0" }
        
       ]
     },{

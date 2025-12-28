@@ -23,8 +23,8 @@ export default defineConfig({
     },
     // 確保 HMR 正常運作
     hmr: {
-      port: 5173,
-      host: "0.0.0.0",
+      clientPort: 5577, // 使用對外暴露的 port
+      host: "localhost",
     },
   },
 });

@@ -11,6 +11,9 @@ services:
       - ./frontend:/app
       # 使用一個 volume 來緩存 node_modules，避免每次重啟都重新安裝
       - frontend_lab_node_modules:/app/node_modules
+    environment:
+      # Frontend runs in browser (host), so use localhost to access backend
+      - VITE_API_BASE_URL=http://localhost:11451
     # 啟動時先安裝依賴，然後啟動 Vite 開發伺服器
     command: sh -c "npm install && npm run dev"
     # depends_on:

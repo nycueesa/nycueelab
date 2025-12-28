@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:11451";
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL || "http://localhost:11451";
 
 /**
  * Custom hook to fetch and cache data from backend API
@@ -18,7 +19,15 @@ export function useData() {
         setLoading(true);
         setError(null);
 
-        const response = await fetch(`${API_BASE_URL}/api/data`);
+        // console.log("API : ", API_BASE_URL);
+        // console.log("所有的環境變數:", import.meta.env);
+
+        const response = await fetch(`${API_BASE_URL}/api/data`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

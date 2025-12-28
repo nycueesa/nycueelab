@@ -3,8 +3,9 @@ import { useState, useEffect } from 'react';
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:11451";
 
 /**
- * Custom hook to fetch and cache NewData.json from backend API
- * This ensures we only have one source of truth (root NewData.json)
+ * Custom hook to fetch and cache data from backend API
+ * Data is stored in backend/data/NewData.json and served via API
+ * This ensures we only have one source of truth - all data comes from backend API
  */
 export function useData() {
   const [data, setData] = useState(null);

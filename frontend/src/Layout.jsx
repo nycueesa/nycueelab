@@ -15,7 +15,7 @@ import SearchBar from "./components/SearchBar.jsx";
 import SearchResults from "./components/SearchResults.jsx";
 import HomeIcon from "./components/HomeIcon.jsx";
 import { searchProfessors, getFilterOptions } from "./utils/searchEngine.js";
-import allData from "./assets/allData.json";
+import newData from "./assets/NewData.json";
 
 import eesaLogo from "@/assets/icon.jpg";
 import houseIcon from "@/assets/house.svg";
@@ -37,7 +37,7 @@ function TopNavbar() {
 
   useEffect(() => {
     // 初始化過濾選項
-    setFilterOptions(getFilterOptions(allData));
+    setFilterOptions(getFilterOptions(newData));
   }, []);
 
   useEffect(() => {
@@ -76,7 +76,7 @@ function TopNavbar() {
       return;
     }
 
-    const results = searchProfessors(query, allData, filters);
+    const results = searchProfessors(query, newData, filters);
     setSearchResults(results);
     setShowSearchResults(true);
   };

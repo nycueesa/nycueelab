@@ -22,12 +22,12 @@ def get_latest_professor_data():
     Finds and loads the professor data from the JSON file.
     In the future, this function can be modified to fetch data from a database.
     """
-    
-    data_file_path = Path(__file__).parent / "data" / "allData.json"
- 
+
+    data_file_path = Path(__file__).parent / "data" / "NewData.json"
+
     if not data_file_path.is_file():
         # If the file doesn't exist, raise a 500 Internal Server Error
-        raise HTTPException(status_code=500, detail="未在./backend/data中找到allData.json，請檢查是否存在此文件")
+        raise HTTPException(status_code=500, detail="未在./backend/data中找到NewData.json，請檢查是否存在此文件")
 
     try:
         with open(data_file_path, "r", encoding="utf-8") as f:
@@ -43,7 +43,7 @@ def get_latest_professor_data():
 @app.get("/api/professors")
 def read_all_professors():
     """
-    獲取所有教授資訊(allData.json)
+    獲取所有教授資訊(NewData.json)
     API endpoint to get all professor information.
     """
     return get_latest_professor_data()

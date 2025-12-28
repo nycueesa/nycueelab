@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './SearchBar.module.css';
 import filterIcon from '@/assets/filter.svg';
+import magnifierIcon from '@/assets/megnifier.svg';
 
 export default function SearchBar({
   onSearch,
@@ -73,6 +74,7 @@ export default function SearchBar({
   return (
     <div className={styles.searchBarContainer}>
       <div className={styles.searchInputWrapper}>
+        <img src={magnifierIcon} alt="Search" className={styles.searchIcon} />
         <input
           type="text"
           placeholder="搜尋"

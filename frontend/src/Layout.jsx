@@ -102,7 +102,23 @@ function TopNavbar() {
           <Navbar.Brand as={Link} to="/" className={`${styles.brandTitle} ${styles[`brandTitle${theme.charAt(0).toUpperCase() + theme.slice(1)}`]}`}>
             陽明交大電機專題資訊
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Toggle aria-controls="basic-navbar-nav" className={`${styles.menuButton}`}>
+            <svg
+              className={`${styles.menuButtonImg} ${styles[`menuButtonImg${theme.charAt(0).toUpperCase() + theme.slice(1)}`]}`}
+              width="54"
+              height="58"
+              viewBox="0 0 54 58"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="menu"
+            >
+              <path d="M47.25 24.1667H6.75" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M47.25 14.5H6.75" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M47.25 33.8333H6.75" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M47.25 43.5H6.75" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               {/* Desktop version */}

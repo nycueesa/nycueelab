@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || "http://140.113.160.136:11451";
+  import.meta.env.VITE_API_BASE_URL || "https://140.113.160.136:11451";
 
 /**
  * Custom hook to fetch and cache data from backend API
@@ -22,7 +22,8 @@ export function useData() {
         // console.log("API : ", API_BASE_URL);
         // console.log("所有的環境變數:", import.meta.env);
 
-        const response = await fetch(`${API_BASE_URL}/api/data`, {
+        // const response = await fetch(`${API_BASE_URL}/api/data`, {
+        const response = await fetch(`https://140.113.160.136:11451/api/data`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

@@ -4,7 +4,7 @@ import styles from "./Professor.module.css";
 
 // API base URL - you can move this to a config file later
 const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || "http://140.113.160.136:11451";
+  import.meta.env.VITE_API_BASE_URL || "https://140.113.160.136:11451";
 
 function Professor() {
   // Get professor ID from URL parameter

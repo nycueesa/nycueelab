@@ -36,7 +36,7 @@ export const calculateRelevance = (query, text) => {
  * 搜尋教授
  * @param {string} query - 搜尋詞
  * @param {object} allData - 完整的教授數據 { topics: {...}, professors: [...] }
- * @param {object} filters - 過濾條件 { location: string, lab: string, departments: string }
+ * @param {object} filters - 過濾條件 { location: string, departments: string }
  * @returns {array} 搜尋結果，按相關度排序
  */
 export const searchProfessors = (query, allData, filters = {}) => {
@@ -47,7 +47,6 @@ export const searchProfessors = (query, allData, filters = {}) => {
   professors.forEach((professor) => {
     // 應用過濾條件（AND 邏輯）
     if (filters.location && professor.location !== filters.location) return;
-    if (filters.lab && professor.lab !== filters.lab) return;
     if (filters.departments && (!professor.departments || !professor.departments.includes(filters.departments))) return;
     
     // 如果沒有搜尋詞，直接加入結果
@@ -120,17 +119,15 @@ export const searchProfessors = (query, allData, filters = {}) => {
 /**
  * 獲取所有可用的過濾選項
  * @param {object} allData - 完整的教授數據 { topics: {...}, professors: [...] }
- * @returns {object} 包含locations, labs, departments 的對象
+ * @returns {object} 包含locations, departments 的對象
  */
 export const getFilterOptions = (allData) => {
   const locations = new Set();
-  const labs = new Set();
   const departments = new Set();
   const professors = allData.professors || [];
   
   professors.forEach((professor) => {
     if (professor.location) locations.add(professor.location);
-    if (professor.lab) labs.add(professor.lab);
     if (professor.departments && Array.isArray(professor.departments)) {
       professor.departments.forEach(dept => departments.add(dept));
     }
@@ -138,7 +135,6 @@ export const getFilterOptions = (allData) => {
   
   return {
     locations: Array.from(locations).sort(),
-    labs: Array.from(labs).sort(),
     departments: Array.from(departments).sort(),
   };
 };

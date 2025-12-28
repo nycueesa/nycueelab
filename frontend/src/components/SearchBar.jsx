@@ -12,7 +12,6 @@ export default function SearchBar({
   const [showFilters, setShowFilters] = useState(false);
   const [selectedFilters, setSelectedFilters] = useState({
     location: '',
-    lab: '',
     department: '',
   });
   const filterRef = useRef(null);
@@ -54,17 +53,14 @@ export default function SearchBar({
   const clearFilters = () => {
     setSelectedFilters({
       location: '',
-      lab: '',
       department: '',
     });
     onFilterChange({
       location: '',
-      lab: '',
       department: '',
     });
     onSearch(query, {
       location: '',
-      lab: '',
       department: '',
     });
   };
@@ -120,24 +116,6 @@ export default function SearchBar({
                   onClick={() => handleFilterChange('location', location)}
                 >
                   {location}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* 實驗室過濾器 */}
-          <div className={styles.filterGroup}>
-            <label className={styles.filterGroupTitle}>實驗室 (Lab)</label>
-            <div className={styles.filterOptions}>
-              {filterOptions?.labs?.map((lab) => (
-                <button
-                  key={lab}
-                  className={`${styles.filterOption} ${
-                    selectedFilters.lab === lab ? styles.active : ''
-                  }`}
-                  onClick={() => handleFilterChange('lab', lab)}
-                >
-                  {lab}
                 </button>
               ))}
             </div>

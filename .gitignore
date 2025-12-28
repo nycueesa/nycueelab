@@ -20,8 +20,10 @@ dist/
 # Docker 相關
 .docker/
 
-# Database
+# Database (但保留 backend/data/NewData.json)
 data/
+!backend/data/
+!backend/data/NewData.json
 
 # 執行期間產生的資料 (絕不納入版本控制)
 logs/

@@ -77,8 +77,12 @@ function TopNavbar() {
     };
   }, [showSearchResults]);
 
-  const handleSearch = (query, filters) => {
-    if (!query.trim() || !newData) {
+  const handleSearch = (query, filters = {}) => {
+    if (!newData) return;
+
+    const hasFilters = Boolean(filters?.location || filters?.department);
+
+    if (!query.trim() && !hasFilters) {
       setSearchResults([]);
       setShowSearchResults(false);
       return;
@@ -90,7 +94,11 @@ function TopNavbar() {
   };
 
   const handleFilterChange = (filters) => {
-    // 過濾器改變時會自動觸發 handleSearch
+    // Filter changes also trigger SearchBar.onSearch with同一批 filters，這裡無需額外處理
+    const hasFilters = Boolean(filters?.location || filters?.department);
+    if (hasFilters && !showSearchResults) {
+      setShowSearchResults(true);
+    }
   };
 
   const handleSearchResultClick = () => {

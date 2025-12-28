@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || "http://localhost:11451";
+  import.meta.env.VITE_API_BASE_URL || "http://140.113.160.136:11451";
 
 /**
  * Custom hook to fetch and cache data from backend API

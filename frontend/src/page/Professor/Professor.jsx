@@ -3,13 +3,14 @@ import { useParams, useSearchParams } from "react-router-dom";
 import styles from "./Professor.module.css";
 
 // API base URL - you can move this to a config file later
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:11451";
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL || "http://140.113.160.136:11451";
 
 function Professor() {
   // Get professor ID from URL parameter
   const { profId } = useParams();
   const [searchParams] = useSearchParams();
-  const id = profId || searchParams.get('id');
+  const id = profId || searchParams.get("id");
 
   // State for professor data and loading/error states
   const [professorDataFromApi, setProfessorDataFromApi] = useState(null);
@@ -50,10 +51,10 @@ function Professor() {
         }
 
         const data = await response.json();
-        console.log('Fetched professor data:', data);
-        console.log('Research data:', data.research);
-        console.log('Courses (RecomendedCourses):', data.RecomendedCourses);
-        console.log('Courses (recomendedCourses):', data.recomendedCourses);
+        console.log("Fetched professor data:", data);
+        console.log("Research data:", data.research);
+        console.log("Courses (RecomendedCourses):", data.RecomendedCourses);
+        console.log("Courses (recomendedCourses):", data.recomendedCourses);
         setProfessorDataFromApi(data);
       } catch (err) {
         console.error("Error fetching professor data:", err);
@@ -78,17 +79,17 @@ function Professor() {
     research: [
       {
         title: "範例研究領域",
-        subtitle: ["研究項目一", "研究項目二"]
-      }
+        subtitle: ["研究項目一", "研究項目二"],
+      },
     ],
     RecomendedCourses: ["基礎課程"],
     faqs: [
       {
         Question: "這是範例問題?",
-        Answer: "這是範例答案。"
-      }
+        Answer: "這是範例答案。",
+      },
     ],
-    link: []
+    link: [],
   };
 
   // Use loaded data from API or fallback to default
@@ -99,19 +100,26 @@ function Professor() {
       name: professorDataFromApi.name,
       labName: professorDataFromApi.LabName || professorDataFromApi.labName,
       department: Array.isArray(professorDataFromApi.department)
-        ? professorDataFromApi.department.join(', ')
-        : (professorDataFromApi.department || ""),
-      officeLocation: professorDataFromApi.OfficeLocation || professorDataFromApi.officeLocation,
+        ? professorDataFromApi.department.join(", ")
+        : professorDataFromApi.department || "",
+      officeLocation:
+        professorDataFromApi.OfficeLocation ||
+        professorDataFromApi.officeLocation,
       email: professorDataFromApi.email,
       photo: professorDataFromApi.photo || "/placeholder-professor.jpg",
-      labWebsite: professorDataFromApi.LabWebsite || professorDataFromApi.website,
+      labWebsite:
+        professorDataFromApi.LabWebsite || professorDataFromApi.website,
       research: professorDataFromApi.research || [],
-      courses: professorDataFromApi.RecomendedCourses || professorDataFromApi.recomendedCourses || professorDataFromApi.courses || [],
+      courses:
+        professorDataFromApi.RecomendedCourses ||
+        professorDataFromApi.recomendedCourses ||
+        professorDataFromApi.courses ||
+        [],
       faqs: professorDataFromApi.faqs || [],
-      links: professorDataFromApi.link || []
+      links: professorDataFromApi.link || [],
     };
 
-    console.log('Mapped professorData.courses:', mappedData.courses);
+    console.log("Mapped professorData.courses:", mappedData.courses);
     return mappedData;
   }, [professorDataFromApi]);
 
@@ -128,7 +136,7 @@ function Professor() {
   useEffect(() => {
     const fallbackTimer = setTimeout(() => {
       if (!researchVisible) {
-        console.log('Fallback: Forcing research section to be visible');
+        console.log("Fallback: Forcing research section to be visible");
         setResearchVisible(true);
       }
     }, 1000);
@@ -139,7 +147,7 @@ function Professor() {
   useEffect(() => {
     const fallbackTimer = setTimeout(() => {
       if (!linksVisible) {
-        console.log('Fallback: Forcing links section to be visible');
+        console.log("Fallback: Forcing links section to be visible");
         setLinksVisible(true);
       }
     }, 2000);
@@ -150,8 +158,8 @@ function Professor() {
   useEffect(() => {
     const observerOptions = {
       root: null, // viewport
-      rootMargin: '0px', // Trigger when element enters viewport
-      threshold: 0.05 // Trigger when 5% of element is visible
+      rootMargin: "0px", // Trigger when element enters viewport
+      threshold: 0.05, // Trigger when 5% of element is visible
     };
 
     const observerCallback = (entries) => {
@@ -160,7 +168,7 @@ function Professor() {
         if (entry.target === researchRef.current) {
           if (entry.isIntersecting) {
             setResearchVisible(true);
-            console.log('Research section visible:', true);
+            console.log("Research section visible:", true);
           }
         }
         // Links section
@@ -172,7 +180,10 @@ function Professor() {
       });
     };
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
 
     // Observe sections
     if (researchRef.current) observer.observe(researchRef.current);
@@ -186,12 +197,18 @@ function Professor() {
   // Fallback: Show course cards after delay if observer doesn't trigger
   useEffect(() => {
     const fallbackTimer = setTimeout(() => {
-      if (professorData.courses && professorData.courses.length > 0 && courseCardsVisible.length === 0) {
-        console.log('Fallback: Triggering staggered animation for course cards');
+      if (
+        professorData.courses &&
+        professorData.courses.length > 0 &&
+        courseCardsVisible.length === 0
+      ) {
+        console.log(
+          "Fallback: Triggering staggered animation for course cards"
+        );
         // Stagger the animation instead of showing all at once
         professorData.courses.forEach((_, index) => {
           setTimeout(() => {
-            setCourseCardsVisible(prev => {
+            setCourseCardsVisible((prev) => {
               if (!prev.includes(index)) {
                 return [...prev, index];
               }
@@ -212,8 +229,8 @@ function Professor() {
 
     const observerOptions = {
       root: null,
-      rootMargin: '0px',
-      threshold: 0.05
+      rootMargin: "0px",
+      threshold: 0.05,
     };
 
     const timeouts = {};
@@ -229,7 +246,7 @@ function Professor() {
             }
             // Stagger the animation by index when entering
             timeouts[index] = setTimeout(() => {
-              setCourseCardsVisible(prev => {
+              setCourseCardsVisible((prev) => {
                 if (!prev.includes(index)) {
                   return [...prev, index];
                 }
@@ -241,22 +258,25 @@ function Professor() {
             if (timeouts[index]) {
               clearTimeout(timeouts[index]);
             }
-            setCourseCardsVisible(prev => prev.filter(i => i !== index));
+            setCourseCardsVisible((prev) => prev.filter((i) => i !== index));
           }
         }
       });
     };
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
 
     // Observe each course card
-    courseCardRefs.current.forEach(card => {
+    courseCardRefs.current.forEach((card) => {
       if (card) observer.observe(card);
     });
 
     return () => {
       // Clear all timeouts on cleanup
-      Object.values(timeouts).forEach(timeout => clearTimeout(timeout));
+      Object.values(timeouts).forEach((timeout) => clearTimeout(timeout));
       observer.disconnect();
     };
   }, [professorData.courses?.length]);
@@ -265,8 +285,8 @@ function Professor() {
   useEffect(() => {
     const observerOptions = {
       root: null,
-      rootMargin: '0px 0px -50px 0px',
-      threshold: 0.1
+      rootMargin: "0px 0px -50px 0px",
+      threshold: 0.1,
     };
 
     const timeouts = {};
@@ -282,7 +302,7 @@ function Professor() {
             }
             // Stagger the animation by index when entering
             timeouts[index] = setTimeout(() => {
-              setQaItemsVisible(prev => {
+              setQaItemsVisible((prev) => {
                 if (!prev.includes(index)) {
                   return [...prev, index];
                 }
@@ -294,22 +314,25 @@ function Professor() {
             if (timeouts[index]) {
               clearTimeout(timeouts[index]);
             }
-            setQaItemsVisible(prev => prev.filter(i => i !== index));
+            setQaItemsVisible((prev) => prev.filter((i) => i !== index));
           }
         }
       });
     };
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
 
     // Observe each Q&A item
-    qaItemRefs.current.forEach(item => {
+    qaItemRefs.current.forEach((item) => {
       if (item) observer.observe(item);
     });
 
     return () => {
       // Clear all timeouts on cleanup
-      Object.values(timeouts).forEach(timeout => clearTimeout(timeout));
+      Object.values(timeouts).forEach((timeout) => clearTimeout(timeout));
       observer.disconnect();
     };
   }, [professorDataFromApi?.faqs?.length]);
@@ -355,7 +378,9 @@ function Professor() {
           <div className={styles.heroContent}>
             <div className={styles.heroLeft}>
               <h1 className={styles.labName}>找不到教授資料</h1>
-              <p className={styles.department}>找不到 ID 為 "{id}" 的教授資料。</p>
+              <p className={styles.department}>
+                找不到 ID 為 "{id}" 的教授資料。
+              </p>
             </div>
           </div>
         </section>
@@ -369,16 +394,18 @@ function Professor() {
       <section className={styles.heroSection}>
         <div className={styles.heroContent}>
           <div
-            className={`${styles.heroLeft} ${heroVisible ? styles.heroLeftVisible : ''}`}
+            className={`${styles.heroLeft} ${
+              heroVisible ? styles.heroLeftVisible : ""
+            }`}
           >
             <h1 className={styles.labName}>{professorData.labName}</h1>
             <p className={styles.department}>{professorData.department}</p>
             {professorData.officeLocation && (
-              <p className={styles.officeLocation}>📍 辦公室: {professorData.officeLocation}</p>
+              <p className={styles.officeLocation}>
+                📍 辦公室: {professorData.officeLocation}
+              </p>
             )}
-            <p className={styles.contactInfo}>
-              ✉️ {professorData.email}
-            </p>
+            <p className={styles.contactInfo}>✉️ {professorData.email}</p>
             {professorData.labWebsite && (
               <div className={styles.buttonWrapper}>
                 <a
@@ -394,7 +421,9 @@ function Professor() {
           </div>
           <div className={styles.heroRight}>
             <div
-              className={`${styles.professorPhotoContainer} ${heroVisible ? styles.professorPhotoVisible : ''}`}
+              className={`${styles.professorPhotoContainer} ${
+                heroVisible ? styles.professorPhotoVisible : ""
+              }`}
             >
               <img
                 src={professorData.photo}
@@ -414,7 +443,9 @@ function Professor() {
           <p className={styles.sectionSubtitle}>What we do</p>
         </div>
         <div
-          className={`${styles.researchContent} ${researchVisible ? styles.researchContentVisible : ''}`}
+          className={`${styles.researchContent} ${
+            researchVisible ? styles.researchContentVisible : ""
+          }`}
         >
           {professorData.research && professorData.research.length > 0 ? (
             professorData.research.map((topic, index) => (
@@ -422,13 +453,17 @@ function Professor() {
                 {topic.title && (
                   <h3 className={styles.researchMainTopic}>{topic.title}</h3>
                 )}
-                {topic.subtitle && Array.isArray(topic.subtitle) && topic.subtitle.length > 0 && (
-                  <div className={styles.researchSubtopics}>
-                    {topic.subtitle.map((sub, subIndex) => (
-                      <p key={subIndex} className={styles.researchSubTopic}>{sub}</p>
-                    ))}
-                  </div>
-                )}
+                {topic.subtitle &&
+                  Array.isArray(topic.subtitle) &&
+                  topic.subtitle.length > 0 && (
+                    <div className={styles.researchSubtopics}>
+                      {topic.subtitle.map((sub, subIndex) => (
+                        <p key={subIndex} className={styles.researchSubTopic}>
+                          {sub}
+                        </p>
+                      ))}
+                    </div>
+                  )}
               </div>
             ))
           ) : (
@@ -448,8 +483,12 @@ function Professor() {
             professorData.courses.map((course, index) => (
               <div
                 key={index}
-                ref={el => courseCardRefs.current[index] = el}
-                className={`${styles.courseCard} ${courseCardsVisible.includes(index) ? styles.courseCardVisible : ''}`}
+                ref={(el) => (courseCardRefs.current[index] = el)}
+                className={`${styles.courseCard} ${
+                  courseCardsVisible.includes(index)
+                    ? styles.courseCardVisible
+                    : ""
+                }`}
               >
                 <div className={styles.courseName}>{course}</div>
               </div>
@@ -475,12 +514,18 @@ function Professor() {
             return (
               <div
                 key={index}
-                ref={el => qaItemRefs.current[index] = el}
-                className={`${styles.qaItem} ${qaItemsVisible.includes(index) ? styles.qaItemVisible : ''}`}
+                ref={(el) => (qaItemRefs.current[index] = el)}
+                className={`${styles.qaItem} ${
+                  qaItemsVisible.includes(index) ? styles.qaItemVisible : ""
+                }`}
               >
                 <div className={styles.qaQuestion}>
                   <span className={styles.searchIcon}>🔍</span>
-                  <span className={styles.qaText}>{typeof question === 'string' ? question : JSON.stringify(question)}</span>
+                  <span className={styles.qaText}>
+                    {typeof question === "string"
+                      ? question
+                      : JSON.stringify(question)}
+                  </span>
                 </div>
                 {answer && (
                   <div className={styles.qaAnswer}>
@@ -503,11 +548,13 @@ function Professor() {
         </div>
         <div className={styles.linksContent}>
           <div
-            className={`${styles.linksContentWrapper} ${linksVisible ? styles.linksContentWrapperVisible : ''}`}
+            className={`${styles.linksContentWrapper} ${
+              linksVisible ? styles.linksContentWrapperVisible : ""
+            }`}
           >
             {professorData.links && professorData.links.length > 0 ? (
               professorData.links
-                .filter(linkItem => linkItem.link)
+                .filter((linkItem) => linkItem.link)
                 .map((linkItem, index) => (
                   <a
                     key={index}

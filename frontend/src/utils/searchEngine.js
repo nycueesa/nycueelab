@@ -36,20 +36,25 @@ export const calculateRelevance = (query, text) => {
  * 搜尋教授
  * @param {string} query - 搜尋詞
  * @param {object} allData - 完整的教授數據 { topics: {...}, professors: [...] }
- * @param {object} filters - 過濾條件 { location: string, lab: string, departments: string }
+ * @param {object} filters - 過濾條件 { location: string, departments: string }
  * @returns {array} 搜尋結果，按相關度排序
  */
 export const searchProfessors = (query, allData, filters = {}) => {
   const results = [];
   const professors = allData.professors || [];
-  
-  // 遍歷所有教授
+
   professors.forEach((professor) => {
-    // 應用過濾條件（AND 邏輯）
-    if (filters.location && professor.location !== filters.location) return;
-    if (filters.lab && professor.lab !== filters.lab) return;
-    if (filters.departments && (!professor.departments || !professor.departments.includes(filters.departments))) return;
-    
+    const professorDepartments = Array.isArray(professor.department)
+      ? professor.department
+      : Array.isArray(professor.departments)
+        ? professor.departments
+        : [];
+    const professorTags = Array.isArray(professor.tags) ? professor.tags : [];
+
+    // 過濾：系所 -> department，領域 -> tags
+    if (filters.location && !professorDepartments.includes(filters.location)) return;
+    if (filters.department && !professorTags.includes(filters.department)) return;
+
     // 如果沒有搜尋詞，直接加入結果
     if (!query) {
       results.push({
@@ -58,51 +63,39 @@ export const searchProfessors = (query, allData, filters = {}) => {
       });
       return;
     }
-    
-    // 計算相關度
+
     let maxRelevance = 0;
-    
-    // 檢查每個搜尋欄位
+
     const searchFields = [
-      String(professor.id), // id
-      professor.name, // name
-      professor.lab, // lab
-      professor.location, // location
+      String(professor.id),
+      professor.name,
+      professor.lab || professor.labName,
+      professor.location,
+      ...professorDepartments,
     ];
-    
-    // 檢查 tags（陣列）
-    if (professor.tags && Array.isArray(professor.tags)) {
-      professor.tags.forEach(tag => {
-        const relevance = calculateRelevance(query, tag);
-        maxRelevance = Math.max(maxRelevance, relevance);
-      });
-    }
-    
-    // 檢查 departments（陣列）
-    if (professor.departments && Array.isArray(professor.departments)) {
-      professor.departments.forEach(dept => {
-        const relevance = calculateRelevance(query, dept);
-        maxRelevance = Math.max(maxRelevance, relevance);
-      });
-    }
-    
-    // 檢查 fields（陣列）
+
+    // tags 視為領域，優先比對
+    professorTags.forEach(tag => {
+      const relevance = calculateRelevance(query, tag);
+      maxRelevance = Math.max(maxRelevance, relevance);
+    });
+
+    // 其他陣列欄位
     if (professor.fields && Array.isArray(professor.fields)) {
       professor.fields.forEach(field => {
         const relevance = calculateRelevance(query, field);
         maxRelevance = Math.max(maxRelevance, relevance);
       });
     }
-    
-    // 檢查其他欄位
+
+    // 基本欄位
     searchFields.forEach(field => {
       if (field) {
         const relevance = calculateRelevance(query, field);
         maxRelevance = Math.max(maxRelevance, relevance);
       }
     });
-    
-    // 只有相關度大於0才加入結果
+
     if (maxRelevance > 0) {
       results.push({
         ...professor,
@@ -110,35 +103,35 @@ export const searchProfessors = (query, allData, filters = {}) => {
       });
     }
   });
-  
-  // 按相關度排序（降序）
+
   results.sort((a, b) => b.relevance - a.relevance);
-  
   return results;
 };
 
 /**
  * 獲取所有可用的過濾選項
  * @param {object} allData - 完整的教授數據 { topics: {...}, professors: [...] }
- * @returns {object} 包含locations, labs, departments 的對象
+ * @returns {object} 包含locations, departments 的對象
  */
 export const getFilterOptions = (allData) => {
-  const locations = new Set();
-  const labs = new Set();
-  const departments = new Set();
+  const locations = new Set(); // 系所 -> professor.department
+  const departments = new Set(); // 領域 -> professor.tags
   const professors = allData.professors || [];
-  
+
   professors.forEach((professor) => {
-    if (professor.location) locations.add(professor.location);
-    if (professor.lab) labs.add(professor.lab);
-    if (professor.departments && Array.isArray(professor.departments)) {
-      professor.departments.forEach(dept => departments.add(dept));
-    }
+    const professorDepartments = Array.isArray(professor.department)
+      ? professor.department
+      : Array.isArray(professor.departments)
+        ? professor.departments
+        : [];
+    const professorTags = Array.isArray(professor.tags) ? professor.tags : [];
+
+    professorDepartments.forEach(dep => dep && locations.add(dep));
+    professorTags.forEach(tag => tag && departments.add(tag));
   });
-  
+
   return {
     locations: Array.from(locations).sort(),
-    labs: Array.from(labs).sort(),
     departments: Array.from(departments).sort(),
   };
 };

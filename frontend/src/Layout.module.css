@@ -180,35 +180,44 @@
 .menuButton {
   background: transparent;
   border: none;
-  padding: 0.5rem;
+  padding: 0; /* remove oval padding */
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
+  border-radius: 0; /* no rounded background */
+  transition: opacity 0.2s ease;
+  outline: none;
+  box-shadow: none;
 }
 
+/* Remove hover background to avoid gradient/oval effect */
 .menuButton:hover {
-  background-color: rgba(217,231,237,0.1);
+  background-color: transparent !important;
+}
+
+/* Remove focus/active outlines from the toggle */
+.menuButton:focus,
+.menuButton:active {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .menuButtonImg {
   width: 28px;
   height: 28px;
   transition: opacity 0.2s;
+  display: block;
+  color: #254D70; /* navbar toggle color */
 }
 
 .menuButtonImgDark {
-  filter: invert(95%) sepia(8%) saturate(154%) hue-rotate(164deg) brightness(96%) contrast(91%);
+  filter: none;
+  color: #254D70; /* navbar toggle color */
 }
 
 .menuButtonImgLight {
-  filter: invert(26%) sepia(15%) saturate(1926%) hue-rotate(176deg) brightness(94%) contrast(87%);
-}
-
-.dropdownMenu {
-  padding: 0.5rem 0 !important;
-  margin: 0.5rem 0 0 0 !important;
+  filter: none;
+  color: #254D70; /* navbar toggle color */
   right: 0 !important;
   left: auto !important;
   transform: none !important;

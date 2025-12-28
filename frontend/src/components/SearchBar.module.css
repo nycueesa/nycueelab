@@ -32,6 +32,28 @@
   background: #b3dafb;
 }
 
+/* Magnifier icon inside the input (no background/border) */
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  transition: filter 0.2s ease, opacity 0.2s ease;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  filter: none;
+  opacity: 0.95;
+}
+
+
 /* Dark theme */
 .searchInput {
   border-color: #254D70;

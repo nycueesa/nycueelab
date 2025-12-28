@@ -16,13 +16,14 @@ export default function SearchResults({ results, isOpen, onClose, onResultClick 
   };
 
   return (
-    <div className={styles.searchResultsContainer}>
+    <div className={styles.searchResultsContainer} data-search-result>
       <div className={styles.searchResultsList}>
         {results.map((professor) => (
           <div
             key={professor.id}
             className={styles.resultItem}
             onClick={() => handleResultClick(professor)}
+            data-search-result
           >
             <div className={styles.resultHeader}>
               <h4 className={styles.professorsName}>{professor.name}</h4>

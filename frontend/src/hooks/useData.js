@@ -23,7 +23,7 @@ export function useData() {
         // console.log("所有的環境變數:", import.meta.env);
 
         // const response = await fetch(`${API_BASE_URL}/api/data`, {
-        const response = await fetch(`/api/data`, {
+        const response = await fetch(`/nycueelab/api/data`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

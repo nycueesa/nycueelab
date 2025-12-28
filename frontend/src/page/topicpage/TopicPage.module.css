@@ -95,54 +95,83 @@
 
 
 /* --- 3. 教授 "小格子" 展開 --- */
+.panel-wrapper {
+  position: relative;
+  margin-top: 30px;
+}
 .professor-reveal-panel {
-  overflow: hidden; 
-  max-height: 0; 
-  transition: max-height 0.5s ease-in-out;
-  padding-top: 40px; 
-}
-.professor-reveal-panel.active { 
-  max-height: 500px; 
-}
-.professor-grid-inline {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr); 
-  gap: 20px; 
-  padding: 0 0 40px 0; 
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease-out 0.1s, transform 0.5s ease-out 0.1s;
-}
-.professor-reveal-panel.active .professor-grid-inline {
-  opacity: 1;
-  transform: translateY(0);
-}
-.professor-button {
-  background-color: #f8f9fa;
-  color: #212529;
-  border: 1px solid #dee2e6;
-  border-radius: 6px;
-  padding: 18px 15px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.2s;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+  max-height: 0;
+  transition: max-height 0.5s ease-in-out;
 }
-.professor-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+.professor-reveal-panel.active {
+  max-height: 500px;
+  background-color: #ffffff;
+  border: 2px solid #0d6efd;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.arrow-pointer {
+  position: absolute;
+  top: -10px;
+  height: 0;
+  z-index: 10;
+  transform: translateX(-50%);
+}
+.arrow-pointer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -12px;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid #0d6efd;
+}
+.arrow-pointer::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: -10px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #ffffff;
+}
+.professor-chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.3s ease-out 0.35s, transform 0.3s ease-out 0.35s;
+}
+.professor-reveal-panel.active .professor-chips-container {
+  opacity: 1;
+  transform: translateX(0);
+}
+.professor-chip {
+  background-color: #e9ecef;
+  color: #495057;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: none;
+}
+.professor-chip:hover {
+  background-color: #0d6efd;
+  color: white;
 }
 .no-professors-text-inline {
   font-size: 1.1rem;
-  color: #f8f9fa;
-  grid-column: 1 / -1; 
+  color: #666;
   text-align: center;
-  padding: 20px 0;
+  padding: 0;
+  margin: 0;
 }
 
 

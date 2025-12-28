@@ -49,28 +49,36 @@ const ButtonGrid = ({
           </div>
 
           {/* 2. 恢復：滑動展開面板 */}
-          <div className={`${styles['professor-reveal-panel']} ${selectedTopic && row.includes(selectedTopic) ? styles.active : ''}`}>
+          <div className={styles['panel-wrapper']}>
             {selectedTopic && row.includes(selectedTopic) && (
-              <div className={styles['professor-grid-inline']}>
-                {(professorData[selectedTopic] || []).length > 0 ? (
-                  
-                  (professorData[selectedTopic] || []).map((prof) => (
-                    <button 
-                      // 由於 JSON 中有 ID 欄位，這裡使用 ID 作為 key 更安全
-                      key={prof.id} 
-                      className={styles['professor-button']}
-                      // ** 核心修改：直接呼叫跳轉函式，傳入 prof.id **
-                      onClick={() => handleProfessorClick(prof.id)} 
-                    >
-                      {prof.name}
-                    </button>
-                  ))
-
-                ) : (
-                  <p className={styles['no-professors-text-inline']}>此領域尚無教授資料</p>
-                )}
-              </div>
+              <div
+                className={styles['arrow-pointer']}
+                style={{
+                  left: `${((row.indexOf(selectedTopic) + 0.5) / row.length) * 100}%`
+                }}
+              />
             )}
+            <div
+              className={`${styles['professor-reveal-panel']} ${selectedTopic && row.includes(selectedTopic) ? styles.active : ''}`}
+            >
+              {selectedTopic && row.includes(selectedTopic) && (
+                <div className={styles['professor-chips-container']}>
+                  {(professorData[selectedTopic] || []).length > 0 ? (
+                    (professorData[selectedTopic] || []).map((prof) => (
+                      <span
+                        key={prof.id}
+                        className={styles['professor-chip']}
+                        onClick={() => handleProfessorClick(prof.id)}
+                      >
+                        {prof.name}
+                      </span>
+                    ))
+                  ) : (
+                    <p className={styles['no-professors-text-inline']}>此領域尚無教授資料</p>
+                  )}
+                </div>
+              )}
+            </div>
           </div>
 
         </React.Fragment>

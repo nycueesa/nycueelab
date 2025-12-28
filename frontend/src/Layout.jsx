@@ -59,8 +59,13 @@ function TopNavbar() {
   // 點擊外面關閉搜尋結果
   useEffect(() => {
     const handleClickOutside = (event) => {
+      // 檢查點擊是否在搜索容器外面，並且不在搜索結果內
       if (searchContainerRef.current && !searchContainerRef.current.contains(event.target)) {
-        setShowSearchResults(false);
+        // 檢查是否點擊的是搜索結果項目
+        const isSearchResult = event.target.closest('[data-search-result]');
+        if (!isSearchResult) {
+          setShowSearchResults(false);
+        }
       }
     };
 
@@ -91,9 +96,8 @@ function TopNavbar() {
   const handleSearchResultClick = () => {
     setShowSearchResults(false);
   };
-  // 判斷是否使用淺色版本
-  const isLightVersion = location.pathname === '/topicpage'; // 首頁使用淺色版本，可以根據需求添加其他路徑
-  const theme = isLightVersion ? 'light' : 'dark';
+  // 所有頁面都使用淺色版本
+  const theme = 'light';
   return (
     <>
       <Navbar ref={navbarRef} variant={theme} expand="lg"

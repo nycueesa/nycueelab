@@ -1,28 +1,43 @@
 import React from 'react';
-import styles from './ProfessorInfo.module.css'; 
-import { useParams } from 'react-router-dom'; 
-
-// ** 關鍵修正：導入新的 JSON 檔案名 **
-import newData from '../NewData.json';
+import styles from './ProfessorInfo.module.css';
+import { useParams } from 'react-router-dom';
+import { useData } from '../../../hooks/useData.js';
 
 // (假設您使用 public/assets/，這是在 App.jsx 中設定的)
 const BASE_URL = import.meta.env.BASE_URL;
 const DEFAULT_AVATAR_URL = `${BASE_URL}assets/default-prof.jpg`;
 
-// ** 關鍵修正：從 newData.professors 讀取 **
-const ALL_PROFESSORS_LIST = newData.professors; 
-
-// 輔助函式：根據 ID 查找教授 (不變)
-const findProfessorById = (id) => {
-    return ALL_PROFESSORS_LIST.find(p => String(p.id) === id) || null;
-};
-
-
 const ProfessorInfo = () => {
     const { profId } = useParams();
-    const professor = findProfessorById(profId);
+    const { data: newData, loading, error } = useData();
+
+    // 從資料中查找教授
+    const professor = React.useMemo(() => {
+        if (!newData || !newData.professors) return null;
+        return newData.professors.find(p => String(p.id) === profId) || null;
+    }, [newData, profId]);
 
     // --- JSX 渲染 ---
+    if (loading) {
+        return (
+            <div className={styles['full-width-page']} style={{ padding: '40px 20px' }}>
+                <div className={styles['detail-page-container']}>
+                    <p className={styles['no-professors-text']}>載入中...</p>
+                </div>
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div className={styles['full-width-page']} style={{ padding: '40px 20px' }}>
+                <div className={styles['detail-page-container']}>
+                    <p className={styles['no-professors-text']}>載入錯誤: {error}</p>
+                </div>
+            </div>
+        );
+    }
+
     if (!professor) {
         return (
             <div className={styles['full-width-page']} style={{ padding: '40px 20px' }}>

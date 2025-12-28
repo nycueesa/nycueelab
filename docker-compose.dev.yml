@@ -26,6 +26,8 @@ services:
     volumes:
       # 將本地 backend 資料夾同步到容器中
       - ./backend:/code
+      # 掛載根目錄的 NewData.json
+      - ./NewData.json:/NewData.json:ro
     # depends_on:
     #   backend:
     #     condition: service_healthy

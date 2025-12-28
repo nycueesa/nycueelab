@@ -1,17 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './TopicPage.module.css';
-import ButtonGrid from './ButtonGrid'; 
-import ProfessorDetail from './ProfessorDetail'; 
-import ProfessorInfo from './infoPage/ProfessorInfo'; 
+import ButtonGrid from './ButtonGrid';
+import ProfessorDetail from './ProfessorDetail';
+import ProfessorInfo from './infoPage/ProfessorInfo';
+import { useData } from '../../hooks/useData.js'; 
 
-// 導入 JSON 檔案
-import newData from './NewData.json'; 
-
-const TABS_CONFIG = ['依系所瀏覽', '依領域瀏覽']; 
-
-// 讀取所有教授的主列表
-const ALL_PROFESSORS_LIST = newData.professors || [];
-
+const TABS_CONFIG = ['依系所瀏覽', '依領域瀏覽'];
 
 // ** 修正 1：生成乾淨的標籤列表 (移除 #) **
 const generateUniqueTags = (professors) => {
@@ -34,20 +28,27 @@ const generateUniqueTags = (professors) => {
             });
         }
     }
-    return Array.from(tagSet).sort(); 
+    return Array.from(tagSet).sort();
 };
 
-// 從 JSON 讀取系所列表 (假設 JSON 中的 departments 沒有 #)
-const DEPARTMENT_TOPICS_CONFIG = newData.topics.departments || [];
-
-// 從教授資料動態生成領域列表 (已移除 #)
-const FIELD_TOPICS_CONFIG = generateUniqueTags(ALL_PROFESSORS_LIST);
-
-
 function TopicPage() {
+  const { data: newData, loading, error } = useData();
   const [activeTab, setActiveTab] = useState(TABS_CONFIG[0]);
-  const [selectedTopic, setSelectedTopic] = useState(null); 
-  const [detailPageTopic, setDetailPageTopic] = useState(null); 
+  const [selectedTopic, setSelectedTopic] = useState(null);
+  const [detailPageTopic, setDetailPageTopic] = useState(null);
+  const [departmentTopics, setDepartmentTopics] = useState([]);
+  const [fieldTopics, setFieldTopics] = useState([]);
+  const [allProfessors, setAllProfessors] = useState([]);
+
+  // 當資料載入完成時，更新狀態
+  useEffect(() => {
+    if (newData) {
+      const professors = newData.professors || [];
+      setAllProfessors(professors);
+      setDepartmentTopics(newData.topics?.departments || []);
+      setFieldTopics(generateUniqueTags(professors));
+    }
+  }, [newData]); 
 
   const handleTopicSelect = (topic) => {
     if (selectedTopic === topic) {
@@ -70,14 +71,14 @@ function TopicPage() {
    */
   const generateProfessorMap = (topicList, filterKey) => {
     const profMap = {};
-    
+
     // 1. 初始化所有主題的空陣列 (鍵名是乾淨的，如 "AI")
     for (const topic of topicList) {
       profMap[topic] = [];
     }
-    
+
     // 2. 遍歷所有教授
-    for (const prof of ALL_PROFESSORS_LIST) {
+    for (const prof of allProfessors) {
       const profTopics = prof[filterKey]; // 取得教授的 tags 或 department
       
       if (profTopics && Array.isArray(profTopics)) {
@@ -106,17 +107,20 @@ function TopicPage() {
 
   // 決定要渲染什麼內容
   const renderTabContent = () => {
-    
+    if (!newData || allProfessors.length === 0) {
+      return null;
+    }
+
     let currentTopics, currentData;
-    
+
     if (activeTab === '依系所瀏覽') {
-      currentTopics = DEPARTMENT_TOPICS_CONFIG;
+      currentTopics = departmentTopics;
       // 依系所篩選，通常不需要去 #，但上面的邏輯兼容
-      currentData = generateProfessorMap(currentTopics, 'department'); 
+      currentData = generateProfessorMap(currentTopics, 'department');
     } else if (activeTab === '依領域瀏覽') {
-      currentTopics = FIELD_TOPICS_CONFIG; // 這是沒有 # 的列表
+      currentTopics = fieldTopics; // 這是沒有 # 的列表
       // 依領域篩選，會自動處理 JSON 中有 # 的情況
-      currentData = generateProfessorMap(currentTopics, 'tags'); 
+      currentData = generateProfessorMap(currentTopics, 'tags');
     } else {
       return <div className={styles['tab-content-placeholder']}>依清單瀏覽 內容</div>;
     }
@@ -142,17 +146,14 @@ function TopicPage() {
   };
 
   // --- 載入狀態檢查 ---
-  const isLoading = false;
-  const error = null;
-
-  if (isLoading) {
-     return <div className={styles['nycu-topic-container']}>Loading data...</div>;
+  if (loading) {
+     return <div className={styles['nycu-topic-container']}>載入中...</div>;
   }
   if (error) {
-     return <div className={styles['nycu-topic-container']}>Error loading data: {error}</div>;
+     return <div className={styles['nycu-topic-container']}>載入錯誤: {error}</div>;
   }
-  if (ALL_PROFESSORS_LIST.length === 0) {
-     return <div className={styles['nycu-topic-container']}>No professor data available.</div>;
+  if (!newData || allProfessors.length === 0) {
+     return <div className={styles['nycu-topic-container']}>暫無教授資料</div>;
   }
 
   return (

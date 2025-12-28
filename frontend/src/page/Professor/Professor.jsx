@@ -44,7 +44,7 @@ function Professor() {
         setLoading(true);
         setError(null);
 
-        const response = await fetch(`${API_BASE_URL}/api/professors/id=${id}`);
+        const response = await fetch(`/api/professors/id=${id}`);
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

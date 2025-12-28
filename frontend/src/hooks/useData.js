@@ -23,7 +23,7 @@ export function useData() {
         // console.log("所有的環境變數:", import.meta.env);
 
         // const response = await fetch(`${API_BASE_URL}/api/data`, {
-        const response = await fetch(`https://140.113.160.136:11451/api/data`, {
+        const response = await fetch(`/api/data`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

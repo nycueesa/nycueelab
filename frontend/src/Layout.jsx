@@ -191,6 +191,11 @@ export default function Layout({ children }) {
       }
     }, [navigate]);  
 
+    // 路由變更時捲到頁面頂端
+    useEffect(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    }, [location.pathname]);
+
   return (
     <div className={styles.layoutContainer}>
       {!isMainPage && <TopNavbar />}

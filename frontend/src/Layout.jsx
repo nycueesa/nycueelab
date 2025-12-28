@@ -59,8 +59,13 @@ function TopNavbar() {
   // 點擊外面關閉搜尋結果
   useEffect(() => {
     const handleClickOutside = (event) => {
+      // 檢查點擊是否在搜索容器外面，並且不在搜索結果內
       if (searchContainerRef.current && !searchContainerRef.current.contains(event.target)) {
-        setShowSearchResults(false);
+        // 檢查是否點擊的是搜索結果項目
+        const isSearchResult = event.target.closest('[data-search-result]');
+        if (!isSearchResult) {
+          setShowSearchResults(false);
+        }
       }
     };
 
@@ -72,8 +77,12 @@ function TopNavbar() {
     };
   }, [showSearchResults]);
 
-  const handleSearch = (query, filters) => {
-    if (!query.trim() || !newData) {
+  const handleSearch = (query, filters = {}) => {
+    if (!newData) return;
+
+    const hasFilters = Boolean(filters?.location || filters?.department);
+
+    if (!query.trim() && !hasFilters) {
       setSearchResults([]);
       setShowSearchResults(false);
       return;
@@ -85,15 +94,18 @@ function TopNavbar() {
   };
 
   const handleFilterChange = (filters) => {
-    // 過濾器改變時會自動觸發 handleSearch
+    // Filter changes also trigger SearchBar.onSearch with同一批 filters，這裡無需額外處理
+    const hasFilters = Boolean(filters?.location || filters?.department);
+    if (hasFilters && !showSearchResults) {
+      setShowSearchResults(true);
+    }
   };
 
   const handleSearchResultClick = () => {
     setShowSearchResults(false);
   };
-  // 判斷是否使用淺色版本
-  const isLightVersion = location.pathname === '/topicpage'; // 首頁使用淺色版本，可以根據需求添加其他路徑
-  const theme = isLightVersion ? 'light' : 'dark';
+  // 所有頁面都使用淺色版本
+  const theme = 'light';
   return (
     <>
       <Navbar ref={navbarRef} variant={theme} expand="lg"
@@ -102,7 +114,23 @@ function TopNavbar() {
           <Navbar.Brand as={Link} to="/" className={`${styles.brandTitle} ${styles[`brandTitle${theme.charAt(0).toUpperCase() + theme.slice(1)}`]}`}>
             陽明交大電機專題資訊
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Toggle aria-controls="basic-navbar-nav" className={`${styles.menuButton}`}>
+            <svg
+              className={`${styles.menuButtonImg} ${styles[`menuButtonImg${theme.charAt(0).toUpperCase() + theme.slice(1)}`]}`}
+              width="54"
+              height="58"
+              viewBox="0 0 54 58"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="menu"
+            >
+              <path d="M47.25 24.1667H6.75" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M47.25 14.5H6.75" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M47.25 33.8333H6.75" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M47.25 43.5H6.75" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               {/* Desktop version */}

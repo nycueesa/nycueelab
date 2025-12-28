@@ -1,9 +1,9 @@
-import { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import styles from "./Professor.module.css";
 
 // API base URL - you can move this to a config file later
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:11451";
 
 function Professor() {
   // Get professor ID from URL parameter
@@ -52,6 +52,8 @@ function Professor() {
         const data = await response.json();
         console.log('Fetched professor data:', data);
         console.log('Research data:', data.research);
+        console.log('Courses (RecomendedCourses):', data.RecomendedCourses);
+        console.log('Courses (recomendedCourses):', data.recomendedCourses);
         setProfessorDataFromApi(data);
       } catch (err) {
         console.error("Error fetching professor data:", err);
@@ -88,6 +90,30 @@ function Professor() {
     ],
     link: []
   };
+
+  // Use loaded data from API or fallback to default
+  const professorData = React.useMemo(() => {
+    if (!professorDataFromApi) return defaultData;
+
+    const mappedData = {
+      name: professorDataFromApi.name,
+      labName: professorDataFromApi.LabName || professorDataFromApi.labName,
+      department: Array.isArray(professorDataFromApi.department)
+        ? professorDataFromApi.department.join(', ')
+        : (professorDataFromApi.department || ""),
+      officeLocation: professorDataFromApi.OfficeLocation || professorDataFromApi.officeLocation,
+      email: professorDataFromApi.email,
+      photo: professorDataFromApi.photo || "/placeholder-professor.jpg",
+      labWebsite: professorDataFromApi.LabWebsite || professorDataFromApi.website,
+      research: professorDataFromApi.research || [],
+      courses: professorDataFromApi.RecomendedCourses || professorDataFromApi.recomendedCourses || professorDataFromApi.courses || [],
+      faqs: professorDataFromApi.faqs || [],
+      links: professorDataFromApi.link || []
+    };
+
+    console.log('Mapped professorData.courses:', mappedData.courses);
+    return mappedData;
+  }, [professorDataFromApi]);
 
   // Trigger hero animation on mount
   useEffect(() => {
@@ -157,12 +183,37 @@ function Professor() {
     };
   }, []);
 
+  // Fallback: Show course cards after delay if observer doesn't trigger
+  useEffect(() => {
+    const fallbackTimer = setTimeout(() => {
+      if (professorData.courses && professorData.courses.length > 0 && courseCardsVisible.length === 0) {
+        console.log('Fallback: Triggering staggered animation for course cards');
+        // Stagger the animation instead of showing all at once
+        professorData.courses.forEach((_, index) => {
+          setTimeout(() => {
+            setCourseCardsVisible(prev => {
+              if (!prev.includes(index)) {
+                return [...prev, index];
+              }
+              return prev;
+            });
+          }, index * 150); // 150ms delay between each card, same as observer
+        });
+      }
+    }, 1500); // Wait 1.5 seconds before fallback
+    return () => clearTimeout(fallbackTimer);
+  }, [professorData.courses, courseCardsVisible.length]);
+
   // Separate observer for course cards with stagger
   useEffect(() => {
+    if (!professorData.courses || professorData.courses.length === 0) {
+      return;
+    }
+
     const observerOptions = {
       root: null,
-      rootMargin: '0px 0px -50px 0px',
-      threshold: 0.1
+      rootMargin: '0px',
+      threshold: 0.05
     };
 
     const timeouts = {};
@@ -208,7 +259,7 @@ function Professor() {
       Object.values(timeouts).forEach(timeout => clearTimeout(timeout));
       observer.disconnect();
     };
-  }, [professorDataFromApi?.RecomendedCourses?.length]);
+  }, [professorData.courses?.length]);
 
   // Separate observer for Q&A items with stagger
   useEffect(() => {
@@ -262,23 +313,6 @@ function Professor() {
       observer.disconnect();
     };
   }, [professorDataFromApi?.faqs?.length]);
-
-  // Use loaded data from API or fallback to default
-  const professorData = professorDataFromApi ? {
-    name: professorDataFromApi.name,
-    labName: professorDataFromApi.LabName || professorDataFromApi.labName,
-    department: Array.isArray(professorDataFromApi.department)
-      ? professorDataFromApi.department.join(', ')
-      : (professorDataFromApi.department || ""),
-    officeLocation: professorDataFromApi.OfficeLocation,
-    email: professorDataFromApi.email,
-    photo: professorDataFromApi.photo || "/placeholder-professor.jpg",
-    labWebsite: professorDataFromApi.LabWebsite || professorDataFromApi.website,
-    research: professorDataFromApi.research || [],
-    courses: professorDataFromApi.RecomendedCourses || professorDataFromApi.courses || [],
-    faqs: professorDataFromApi.faqs || [],
-    links: professorDataFromApi.link || []
-  } : defaultData;
 
   // Show loading state
   if (loading) {
@@ -410,15 +444,19 @@ function Professor() {
           <p className={styles.sectionSubtitle}>Recommended Courses</p>
         </div>
         <div className={styles.courseCards}>
-          {professorData.courses.map((course, index) => (
-            <div
-              key={index}
-              ref={el => courseCardRefs.current[index] = el}
-              className={`${styles.courseCard} ${courseCardsVisible.includes(index) ? styles.courseCardVisible : ''}`}
-            >
-              <div className={styles.courseName}>{course}</div>
-            </div>
-          ))}
+          {professorData.courses && professorData.courses.length > 0 ? (
+            professorData.courses.map((course, index) => (
+              <div
+                key={index}
+                ref={el => courseCardRefs.current[index] = el}
+                className={`${styles.courseCard} ${courseCardsVisible.includes(index) ? styles.courseCardVisible : ''}`}
+              >
+                <div className={styles.courseName}>{course}</div>
+              </div>
+            ))
+          ) : (
+            <p className={styles.noCoursesText}>暫無修課建議</p>
+          )}
         </div>
         <div className={styles.curveBottom}></div>
       </section>
@@ -429,24 +467,30 @@ function Professor() {
           <h2 className={styles.sectionTitle}>同學提問 Q&A</h2>
         </div>
         <div className={styles.qaContent}>
-          {professorData.faqs.map((faq, index) => (
-            <div
-              key={index}
-              ref={el => qaItemRefs.current[index] = el}
-              className={`${styles.qaItem} ${qaItemsVisible.includes(index) ? styles.qaItemVisible : ''}`}
-            >
-              <div className={styles.qaQuestion}>
-                <span className={styles.searchIcon}>🔍</span>
-                <span className={styles.qaText}>{faq.Question || faq}</span>
-              </div>
-              {faq.Answer && (
-                <div className={styles.qaAnswer}>
-                  <span className={styles.answerIcon}>💡</span>
-                  <span className={styles.answerText}>{faq.Answer}</span>
+          {professorData.faqs.map((faq, index) => {
+            // Support both uppercase and lowercase field names
+            const question = faq.Question || faq.question || faq;
+            const answer = faq.Answer || faq.answer;
+
+            return (
+              <div
+                key={index}
+                ref={el => qaItemRefs.current[index] = el}
+                className={`${styles.qaItem} ${qaItemsVisible.includes(index) ? styles.qaItemVisible : ''}`}
+              >
+                <div className={styles.qaQuestion}>
+                  <span className={styles.searchIcon}>🔍</span>
+                  <span className={styles.qaText}>{typeof question === 'string' ? question : JSON.stringify(question)}</span>
                 </div>
-              )}
-            </div>
-          ))}
+                {answer && (
+                  <div className={styles.qaAnswer}>
+                    <span className={styles.answerIcon}>💡</span>
+                    <span className={styles.answerText}>{answer}</span>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </section>
 
@@ -472,7 +516,7 @@ function Professor() {
                     rel="noopener noreferrer"
                     className={styles.linkButton}
                   >
-                    {linkItem.LinkName}
+                    {linkItem.LinkName || linkItem.linkName}
                   </a>
                 ))
             ) : (

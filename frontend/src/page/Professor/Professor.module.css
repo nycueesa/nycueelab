@@ -94,6 +94,24 @@
   line-height: 1.6;
 }
 
+.tagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tag {
+  background: rgba(255, 255, 255, 0.2);
+  color: #e0e7ef;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 .buttonWrapper {
   margin-top: 24px;
 }
@@ -119,6 +137,24 @@
   border-radius: 12px;
   background: #D3D3D3;
   display: block;
+}
+
+.professorPhotoPlaceholder {
+  width: 280px;
+  height: 350px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #5B7FB5 0%, #4A6FA5 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.professorPhotoPlaceholder span {
+  font-size: 5rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .professorName {
@@ -330,6 +366,15 @@
   justify-content: center;
 }
 
+.noCoursesText {
+  font-size: 1.2rem;
+  color: #999;
+  font-style: italic;
+  text-align: center;
+  width: 100%;
+  padding: 40px 20px;
+}
+
 .curveBottom {
   position: absolute;
   bottom: 0;
@@ -405,6 +450,15 @@
   line-height: 1.5;
 }
 
+.noQaText {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+  text-align: center;
+  width: 100%;
+  padding: 40px 20px;
+}
+
 /* ===== Links Section (formerly Media Section) ===== */
 .linksSection {
   background: #f5f5f5;
@@ -467,6 +521,73 @@
 .linksContentWrapperVisible {
   opacity: 1 !important;
   transform: translateY(0) !important;
+}
+
+/* Embed Grid Styles */
+.embedGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.embedCard {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.embedCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.embedTitle {
+  background: linear-gradient(135deg, #4A6FA5 0%, #5B7FB5 100%);
+  color: white;
+  margin: 0;
+  padding: 18px 24px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.embedContainer {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  background: #f0f0f0;
+}
+
+.embedIframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.embedFallbackLink {
+  display: block;
+  padding: 40px 20px;
+  text-align: center;
+  color: #4A6FA5;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background: #f8f9fa;
+  transition: background 0.2s ease;
+}
+
+.embedFallbackLink:hover {
+  background: #e9ecef;
+  color: #3A5A85;
+  text-decoration: none;
 }
 
 .linkButton {
@@ -581,9 +702,14 @@
     font-size: 1rem;
   }
 
-  .professorPhoto {
+  .professorPhoto,
+  .professorPhotoPlaceholder {
     width: 220px;
     height: 280px;
+  }
+
+  .professorPhotoPlaceholder span {
+    font-size: 4rem;
   }
 
   .researchTopic {
@@ -633,6 +759,16 @@
     gap: 20px;
   }
 
+  .embedGrid {
+    gap: 32px;
+    max-width: 100%;
+  }
+
+  .embedTitle {
+    font-size: 1.1rem;
+    padding: 16px 20px;
+  }
+
   .linkButton {
     min-width: 180px;
     padding: 12px 24px;
@@ -668,9 +804,14 @@
     font-size: 0.95rem;
   }
 
-  .professorPhoto {
+  .professorPhoto,
+  .professorPhotoPlaceholder {
     width: 180px;
     height: 240px;
+  }
+
+  .professorPhotoPlaceholder span {
+    font-size: 3rem;
   }
 
   .researchTopic {
@@ -731,6 +872,20 @@
   .linksContentWrapper {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+
+  .embedGrid {
+    gap: 24px;
+  }
+
+  .embedTitle {
+    font-size: 1rem;
+    padding: 14px 16px;
+  }
+
+  .embedFallbackLink {
+    padding: 30px 16px;
+    font-size: 1rem;
   }
 
   .linkButton {

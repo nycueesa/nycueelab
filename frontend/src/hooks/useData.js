@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 
-const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || "https://140.113.160.136:11451";
+// 根據環境自動選擇 API 路徑
+// 開發環境：直接連接本地後端
+// 生產環境：使用相對路徑（透過 Nginx 反向代理）
+export const API_BASE = import.meta.env.DEV
+  ? "http://localhost:11451/api"
+  : "/nycueelab/api";
 
 /**
  * Custom hook to fetch and cache data from backend API
@@ -19,11 +23,7 @@ export function useData() {
         setLoading(true);
         setError(null);
 
-        // console.log("API : ", API_BASE_URL);
-        // console.log("所有的環境變數:", import.meta.env);
-
-        // const response = await fetch(`${API_BASE_URL}/api/data`, {
-        const response = await fetch(`/nycueelab/api/data`, {
+        const response = await fetch(`${API_BASE}/data`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

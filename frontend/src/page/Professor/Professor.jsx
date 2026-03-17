@@ -1,10 +1,43 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import styles from "./Professor.module.css";
+import { API_BASE } from "../../hooks/useData";
 
-// API base URL - you can move this to a config file later
-const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || "https://140.113.160.136:11451";
+/**
+ * 將各種連結轉換為可嵌入的格式
+ */
+function getEmbedInfo(url) {
+  if (!url) return null;
+
+  // YouTube - 多種格式支援
+  // https://youtu.be/VIDEO_ID
+  // https://www.youtube.com/watch?v=VIDEO_ID
+  // https://youtube.com/watch?v=VIDEO_ID
+  const youtubeMatch = url.match(
+    /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{11})/
+  );
+  if (youtubeMatch) {
+    return {
+      type: "youtube",
+      embedUrl: `https://www.youtube.com/embed/${youtubeMatch[1]}`,
+      thumbnail: `https://img.youtube.com/vi/${youtubeMatch[1]}/hqdefault.jpg`,
+    };
+  }
+
+  // Google Drive - 文件預覽
+  // https://drive.google.com/file/d/FILE_ID/view?usp=sharing
+  const driveMatch = url.match(/drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)/);
+  if (driveMatch) {
+    return {
+      type: "drive",
+      embedUrl: `https://drive.google.com/file/d/${driveMatch[1]}/preview`,
+      fileId: driveMatch[1],
+    };
+  }
+
+  // 無法識別的連結
+  return null;
+}
 
 function Professor() {
   // Get professor ID from URL parameter
@@ -13,7 +46,7 @@ function Professor() {
   const id = profId || searchParams.get("id");
 
   // State for professor data and loading/error states
-  const [professorDataFromApi, setProfessorDataFromApi] = useState(null);
+  const [professorData, setProfessorData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -44,18 +77,14 @@ function Professor() {
         setLoading(true);
         setError(null);
 
-        const response = await fetch(`/nycueelab/api/professors/id=${id}`);
+        const response = await fetch(`${API_BASE}/professors/id=${id}`);
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
 
         const data = await response.json();
-        console.log("Fetched professor data:", data);
-        console.log("Research data:", data.research);
-        console.log("Courses (RecomendedCourses):", data.RecomendedCourses);
-        console.log("Courses (recomendedCourses):", data.recomendedCourses);
-        setProfessorDataFromApi(data);
+        setProfessorData(data);
       } catch (err) {
         console.error("Error fetching professor data:", err);
         setError(err.message || "無法載入教授資料");
@@ -67,65 +96,8 @@ function Professor() {
     fetchProfessorData();
   }, [id]);
 
-  // Default data for demo/fallback (matching NewData.json structure)
-  const defaultData = {
-    name: "Prof. 範例教授",
-    LabName: "範例實驗室",
-    department: ["電子所"],
-    OfficeLocation: "ED123",
-    email: "professor@nycu.edu.tw",
-    photo: null,
-    LabWebsite: "",
-    research: [
-      {
-        title: "範例研究領域",
-        subtitle: ["研究項目一", "研究項目二"],
-      },
-    ],
-    RecomendedCourses: ["基礎課程"],
-    faqs: [
-      {
-        Question: "這是範例問題?",
-        Answer: "這是範例答案。",
-      },
-    ],
-    link: [],
-  };
-
-  // Use loaded data from API or fallback to default
-  const professorData = React.useMemo(() => {
-    if (!professorDataFromApi) return defaultData;
-
-    const mappedData = {
-      name: professorDataFromApi.name,
-      labName: professorDataFromApi.LabName || professorDataFromApi.labName,
-      department: Array.isArray(professorDataFromApi.department)
-        ? professorDataFromApi.department.join(", ")
-        : professorDataFromApi.department || "",
-      officeLocation:
-        professorDataFromApi.OfficeLocation ||
-        professorDataFromApi.officeLocation,
-      email: professorDataFromApi.email,
-      photo: professorDataFromApi.photo || "/placeholder-professor.jpg",
-      labWebsite:
-        professorDataFromApi.LabWebsite || professorDataFromApi.website,
-      research: professorDataFromApi.research || [],
-      courses:
-        professorDataFromApi.RecomendedCourses ||
-        professorDataFromApi.recomendedCourses ||
-        professorDataFromApi.courses ||
-        [],
-      faqs: professorDataFromApi.faqs || [],
-      links: professorDataFromApi.link || [],
-    };
-
-    console.log("Mapped professorData.courses:", mappedData.courses);
-    return mappedData;
-  }, [professorDataFromApi]);
-
   // Trigger hero animation on mount
   useEffect(() => {
-    // Small delay to ensure DOM is ready
     const timer = setTimeout(() => {
       setHeroVisible(true);
     }, 50);
@@ -136,7 +108,6 @@ function Professor() {
   useEffect(() => {
     const fallbackTimer = setTimeout(() => {
       if (!researchVisible) {
-        console.log("Fallback: Forcing research section to be visible");
         setResearchVisible(true);
       }
     }, 1000);
@@ -147,7 +118,6 @@ function Professor() {
   useEffect(() => {
     const fallbackTimer = setTimeout(() => {
       if (!linksVisible) {
-        console.log("Fallback: Forcing links section to be visible");
         setLinksVisible(true);
       }
     }, 2000);
@@ -157,22 +127,18 @@ function Professor() {
   // Intersection Observer for detecting when elements enter/exit viewport
   useEffect(() => {
     const observerOptions = {
-      root: null, // viewport
-      rootMargin: "0px", // Trigger when element enters viewport
-      threshold: 0.05, // Trigger when 5% of element is visible
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.05,
     };
 
     const observerCallback = (entries) => {
       entries.forEach((entry) => {
-        // Research section
         if (entry.target === researchRef.current) {
           if (entry.isIntersecting) {
             setResearchVisible(true);
-            console.log("Research section visible:", true);
           }
-        }
-        // Links section
-        else if (entry.target === linksRef.current) {
+        } else if (entry.target === linksRef.current) {
           if (entry.isIntersecting) {
             setLinksVisible(true);
           }
@@ -185,7 +151,6 @@ function Professor() {
       observerOptions
     );
 
-    // Observe sections
     if (researchRef.current) observer.observe(researchRef.current);
     if (linksRef.current) observer.observe(linksRef.current);
 
@@ -196,17 +161,10 @@ function Professor() {
 
   // Fallback: Show course cards after delay if observer doesn't trigger
   useEffect(() => {
+    const courses = professorData?.recomendedCourses || [];
     const fallbackTimer = setTimeout(() => {
-      if (
-        professorData.courses &&
-        professorData.courses.length > 0 &&
-        courseCardsVisible.length === 0
-      ) {
-        console.log(
-          "Fallback: Triggering staggered animation for course cards"
-        );
-        // Stagger the animation instead of showing all at once
-        professorData.courses.forEach((_, index) => {
+      if (courses.length > 0 && courseCardsVisible.length === 0) {
+        courses.forEach((_, index) => {
           setTimeout(() => {
             setCourseCardsVisible((prev) => {
               if (!prev.includes(index)) {
@@ -214,16 +172,17 @@ function Professor() {
               }
               return prev;
             });
-          }, index * 150); // 150ms delay between each card, same as observer
+          }, index * 150);
         });
       }
-    }, 1500); // Wait 1.5 seconds before fallback
+    }, 1500);
     return () => clearTimeout(fallbackTimer);
-  }, [professorData.courses, courseCardsVisible.length]);
+  }, [professorData?.recomendedCourses, courseCardsVisible.length]);
 
   // Separate observer for course cards with stagger
   useEffect(() => {
-    if (!professorData.courses || professorData.courses.length === 0) {
+    const courses = professorData?.recomendedCourses || [];
+    if (courses.length === 0) {
       return;
     }
 
@@ -240,11 +199,9 @@ function Professor() {
         const index = courseCardRefs.current.indexOf(entry.target);
         if (index !== -1) {
           if (entry.isIntersecting) {
-            // Clear any existing timeout for this card
             if (timeouts[index]) {
               clearTimeout(timeouts[index]);
             }
-            // Stagger the animation by index when entering
             timeouts[index] = setTimeout(() => {
               setCourseCardsVisible((prev) => {
                 if (!prev.includes(index)) {
@@ -252,9 +209,8 @@ function Professor() {
                 }
                 return prev;
               });
-            }, index * 150); // 150ms delay between each card
+            }, index * 150);
           } else {
-            // Remove immediately when leaving viewport
             if (timeouts[index]) {
               clearTimeout(timeouts[index]);
             }
@@ -269,17 +225,15 @@ function Professor() {
       observerOptions
     );
 
-    // Observe each course card
     courseCardRefs.current.forEach((card) => {
       if (card) observer.observe(card);
     });
 
     return () => {
-      // Clear all timeouts on cleanup
       Object.values(timeouts).forEach((timeout) => clearTimeout(timeout));
       observer.disconnect();
     };
-  }, [professorData.courses?.length]);
+  }, [professorData?.recomendedCourses?.length]);
 
   // Separate observer for Q&A items with stagger
   useEffect(() => {
@@ -296,11 +250,9 @@ function Professor() {
         const index = qaItemRefs.current.indexOf(entry.target);
         if (index !== -1) {
           if (entry.isIntersecting) {
-            // Clear any existing timeout for this item
             if (timeouts[index]) {
               clearTimeout(timeouts[index]);
             }
-            // Stagger the animation by index when entering
             timeouts[index] = setTimeout(() => {
               setQaItemsVisible((prev) => {
                 if (!prev.includes(index)) {
@@ -308,9 +260,8 @@ function Professor() {
                 }
                 return prev;
               });
-            }, index * 100); // 100ms delay between each item
+            }, index * 100);
           } else {
-            // Remove immediately when leaving viewport
             if (timeouts[index]) {
               clearTimeout(timeouts[index]);
             }
@@ -325,17 +276,15 @@ function Professor() {
       observerOptions
     );
 
-    // Observe each Q&A item
     qaItemRefs.current.forEach((item) => {
       if (item) observer.observe(item);
     });
 
     return () => {
-      // Clear all timeouts on cleanup
       Object.values(timeouts).forEach((timeout) => clearTimeout(timeout));
       observer.disconnect();
     };
-  }, [professorDataFromApi?.faqs?.length]);
+  }, [professorData?.faqs?.length]);
 
   // Show loading state
   if (loading) {
@@ -371,7 +320,7 @@ function Professor() {
   }
 
   // If ID provided but professor not found, show error
-  if (id && !professorDataFromApi) {
+  if (id && !professorData) {
     return (
       <div className={styles.professorPage}>
         <section className={styles.heroSection}>
@@ -388,6 +337,46 @@ function Professor() {
     );
   }
 
+  // Extract data with proper field names from NewData.json
+  const {
+    name = "",
+    labName = "",
+    department = [],
+    officeLocation = "",
+    email = "",
+    photo = null,
+    LabWebsite = "",
+    tags = [],
+    research = [],
+    recomendedCourses = [],
+    faqs = [],
+    link = [],
+  } = professorData || {};
+
+  // Format department array to string
+  const departmentStr = Array.isArray(department)
+    ? department.join(", ")
+    : department;
+
+  // Format tags for display (remove # if needed)
+  const formattedTags = tags
+    .map((tag) => (tag.startsWith("#") ? tag : `#${tag}`))
+    .filter((tag) => tag !== "#" && tag.trim() !== "");
+
+  // Pre-filter data to handle empty strings
+  const validCourses = recomendedCourses.filter(
+    (course) => course && course.trim() !== ""
+  );
+  const validFaqs = faqs.filter(
+    (faq) => faq.question && faq.question.trim() !== ""
+  );
+  const validResearch = research.filter(
+    (r) => r.title && r.title.trim() !== ""
+  );
+  const validLinks = link.filter(
+    (l) => l.link && l.link.trim() !== ""
+  );
+
   return (
     <div className={styles.professorPage}>
       {/* Hero Section */}
@@ -398,18 +387,27 @@ function Professor() {
               heroVisible ? styles.heroLeftVisible : ""
             }`}
           >
-            <h1 className={styles.labName}>{professorData.labName}</h1>
-            <p className={styles.department}>{professorData.department}</p>
-            {professorData.officeLocation && (
+            <h1 className={styles.labName}>{labName || "實驗室名稱"}</h1>
+            <p className={styles.department}>{departmentStr}</p>
+            {officeLocation && (
               <p className={styles.officeLocation}>
-                📍 辦公室: {professorData.officeLocation}
+                辦公室: {officeLocation}
               </p>
             )}
-            <p className={styles.contactInfo}>✉️ {professorData.email}</p>
-            {professorData.labWebsite && (
+            {email && <p className={styles.contactInfo}>{email}</p>}
+            {formattedTags.length > 0 && (
+              <div className={styles.tagsContainer}>
+                {formattedTags.map((tag, index) => (
+                  <span key={index} className={styles.tag}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+            {LabWebsite && (
               <div className={styles.buttonWrapper}>
                 <a
-                  href={professorData.labWebsite}
+                  href={LabWebsite}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.moreButton}
@@ -425,12 +423,18 @@ function Professor() {
                 heroVisible ? styles.professorPhotoVisible : ""
               }`}
             >
-              <img
-                src={professorData.photo}
-                alt={professorData.name}
-                className={styles.professorPhoto}
-              />
-              <div className={styles.professorName}>{professorData.name}</div>
+              {photo ? (
+                <img
+                  src={photo}
+                  alt={name}
+                  className={styles.professorPhoto}
+                />
+              ) : (
+                <div className={styles.professorPhotoPlaceholder}>
+                  <span>{name?.replace("Prof. ", "").charAt(0) || "?"}</span>
+                </div>
+              )}
+              <div className={styles.professorName}>{name}</div>
             </div>
           </div>
         </div>
@@ -447,21 +451,21 @@ function Professor() {
             researchVisible ? styles.researchContentVisible : ""
           }`}
         >
-          {professorData.research && professorData.research.length > 0 ? (
-            professorData.research.map((topic, index) => (
+          {validResearch.length > 0 ? (
+            validResearch.map((topic, index) => (
               <div key={index} className={styles.researchTopic}>
-                {topic.title && (
-                  <h3 className={styles.researchMainTopic}>{topic.title}</h3>
-                )}
+                <h3 className={styles.researchMainTopic}>{topic.title}</h3>
                 {topic.subtitle &&
                   Array.isArray(topic.subtitle) &&
                   topic.subtitle.length > 0 && (
                     <div className={styles.researchSubtopics}>
-                      {topic.subtitle.map((sub, subIndex) => (
-                        <p key={subIndex} className={styles.researchSubTopic}>
-                          {sub}
-                        </p>
-                      ))}
+                      {topic.subtitle
+                        .filter((sub) => sub && sub.trim() !== "")
+                        .map((sub, subIndex) => (
+                          <p key={subIndex} className={styles.researchSubTopic}>
+                            {sub}
+                          </p>
+                        ))}
                     </div>
                   )}
               </div>
@@ -479,8 +483,8 @@ function Professor() {
           <p className={styles.sectionSubtitle}>Recommended Courses</p>
         </div>
         <div className={styles.courseCards}>
-          {professorData.courses && professorData.courses.length > 0 ? (
-            professorData.courses.map((course, index) => (
+          {validCourses.length > 0 ? (
+            validCourses.map((course, index) => (
               <div
                 key={index}
                 ref={(el) => (courseCardRefs.current[index] = el)}
@@ -506,12 +510,8 @@ function Professor() {
           <h2 className={styles.sectionTitle}>同學提問 Q&A</h2>
         </div>
         <div className={styles.qaContent}>
-          {professorData.faqs.map((faq, index) => {
-            // Support both uppercase and lowercase field names
-            const question = faq.Question || faq.question || faq;
-            const answer = faq.Answer || faq.answer;
-
-            return (
+          {validFaqs.length > 0 ? (
+            validFaqs.map((faq, index) => (
               <div
                 key={index}
                 ref={(el) => (qaItemRefs.current[index] = el)}
@@ -520,26 +520,24 @@ function Professor() {
                 }`}
               >
                 <div className={styles.qaQuestion}>
-                  <span className={styles.searchIcon}>🔍</span>
-                  <span className={styles.qaText}>
-                    {typeof question === "string"
-                      ? question
-                      : JSON.stringify(question)}
-                  </span>
+                  <span className={styles.searchIcon}>Q</span>
+                  <span className={styles.qaText}>{faq.question}</span>
                 </div>
-                {answer && (
+                {faq.answer && faq.answer.trim() !== "" && (
                   <div className={styles.qaAnswer}>
-                    <span className={styles.answerIcon}>💡</span>
-                    <span className={styles.answerText}>{answer}</span>
+                    <span className={styles.answerIcon}>A</span>
+                    <span className={styles.answerText}>{faq.answer}</span>
                   </div>
                 )}
               </div>
-            );
-          })}
+            ))
+          ) : (
+            <p className={styles.noQaText}>暫無 Q&A 資訊</p>
+          )}
         </div>
       </section>
 
-      {/* Links Section (formerly Media Section) */}
+      {/* Links Section */}
       <section className={styles.linksSection} ref={linksRef}>
         <div className={styles.curveTop}></div>
         <div className={styles.sectionHeader}>
@@ -552,20 +550,39 @@ function Professor() {
               linksVisible ? styles.linksContentWrapperVisible : ""
             }`}
           >
-            {professorData.links && professorData.links.length > 0 ? (
-              professorData.links
-                .filter((linkItem) => linkItem.link)
-                .map((linkItem, index) => (
-                  <a
-                    key={index}
-                    href={linkItem.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.linkButton}
-                  >
-                    {linkItem.LinkName || linkItem.linkName}
-                  </a>
-                ))
+            {validLinks.length > 0 ? (
+              <div className={styles.embedGrid}>
+                {validLinks.map((linkItem, index) => {
+                  const embedInfo = getEmbedInfo(linkItem.link);
+                  const linkName = linkItem.linkName || "連結";
+
+                  return (
+                    <div key={index} className={styles.embedCard}>
+                      <h4 className={styles.embedTitle}>{linkName}</h4>
+                      {embedInfo ? (
+                        <div className={styles.embedContainer}>
+                          <iframe
+                            src={embedInfo.embedUrl}
+                            title={linkName}
+                            className={styles.embedIframe}
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                          />
+                        </div>
+                      ) : (
+                        <a
+                          href={linkItem.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={styles.embedFallbackLink}
+                        >
+                          開啟連結 →
+                        </a>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
             ) : (
               <p className={styles.noLinksHint}>暫無相關連結</p>
             )}

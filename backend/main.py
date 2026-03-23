@@ -4,6 +4,7 @@ from pathlib import Path
 from datetime import timedelta
 from fastapi import FastAPI, HTTPException, Depends, status
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 # 匯入認證相關函式
@@ -28,6 +29,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# 教授照片靜態檔案路由
+app.mount("/photo", StaticFiles(directory=Path(__file__).parent / "photo"), name="photo")
 
 # === 資料模型 ===
 class LoginRequest(BaseModel):

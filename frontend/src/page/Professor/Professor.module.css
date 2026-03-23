@@ -135,7 +135,7 @@
   height: 350px;
   object-fit: cover;
   border-radius: 12px;
-  background: #D3D3D3;
+  background: transparent !important;
   display: block;
 }
 

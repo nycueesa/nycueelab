@@ -35,7 +35,7 @@
       ],
       "officeLocation": "",
       "email": "@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id0.png",
       "LabWebsite": "",
       "tags": [
         "#",
@@ -125,7 +125,7 @@
       ],
       "officeLocation": "",
       "email": "jimmyliu@nycu.edu.tw",
-      "photo": null,
+      "photo": "/photo/professor_id1.png",
       "LabWebsite": "https://mseda.iee.nycu.edu.tw/",
       "tags": [
         "#EDA"
@@ -231,7 +231,7 @@
       ],
       "officeLocation": "",
       "email": "cylee@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id2.png",
       "LabWebsite": "http://www.si2lab.org/",
       "tags": [
         "#數位IC設計",
@@ -359,7 +359,7 @@
       ],
       "officeLocation": "",
       "email": "kyoung@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id4.png",
       "LabWebsite": "https://cn.nycu.edu.tw/zh_tw/Departmental_staff/FullTime/%E6%A5%8A%E8%B0%B7%E6%B4%8B-2791487",
       "tags": [
         "#自動控制",
@@ -464,7 +464,7 @@
       ],
       "officeLocation": "",
       "email": "jdhuang@nycu.edu.tw / nctu.adar@gmail.com",
-      "photo": null,
+      "photo": "professor_id6.png",
       "LabWebsite": "https://sites.google.com/view/adarlab",
       "tags": [
         "#AI",
@@ -580,7 +580,7 @@
       ],
       "officeLocation": "",
       "email": "wang@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id8.png",
       "LabWebsite": "https://wang.web.nycu.edu.tw/",
       "tags": [
         "#通訊",
@@ -685,7 +685,7 @@
       ],
       "officeLocation": "",
       "email": "cylai@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id10.png",
       "LabWebsite": "http://qic.lab.nycu.edu.tw/",
       "tags": [
         "#量子計算",
@@ -803,7 +803,7 @@
       ],
       "officeLocation": "",
       "email": "hhshuai@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id12.png",
       "LabWebsite": "https://basiclab.lab.nycu.edu.tw/Yummy/index.html",
       "tags": [
         "#AI"
@@ -923,7 +923,7 @@
       ],
       "officeLocation": "",
       "email": "yicwu@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id14.png",
       "LabWebsite": "https://sites.google.com/view/nycu-icssl/home/",
       "tags": [
         "#數位IC設計",
@@ -1074,7 +1074,7 @@
       ],
       "officeLocation": "",
       "email": "hmchen@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id16.png",
       "LabWebsite": "https://vdalab.web.nycu.edu.tw/",
       "tags": [
         "#EDA"
@@ -1191,7 +1191,7 @@
       ],
       "officeLocation": "",
       "email": "ktsong@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id18.png",
       "LabWebsite": "http://isci.lab.nycu.edu.tw/",
       "tags": [
         "#",
@@ -1276,7 +1276,7 @@
       ],
       "officeLocation": "",
       "email": "kcchen@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id20.png",
       "LabWebsite": "https://sites.google.com/site/cereslaben/advisor",
       "tags": [
         "#數位IC設計",
@@ -1424,7 +1424,7 @@
       ],
       "officeLocation": "",
       "email": "jiguo@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id22.png",
       "LabWebsite": "http://ivs.ee.nctu.edu.tw/",
       "tags": [
         "#多媒體",
@@ -1553,7 +1553,7 @@
       ],
       "officeLocation": "",
       "email": "hchengwang@gmail.com",
-      "photo": null,
+      "photo": "professor_id24.png",
       "LabWebsite": "https://arg-nctu.github.io/",
       "tags": [
         "#自動控制",
@@ -1672,7 +1672,7 @@
       ],
       "officeLocation": "",
       "email": "pwli@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id26.png",
       "LabWebsite": "https://sites.google.com/nycu.edu.tw/pwli/",
       "tags": [
         "#固態",
@@ -1769,7 +1769,7 @@
       ],
       "officeLocation": "",
       "email": "yudoliao@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id28.png",
       "LabWebsite": "https://wiml.web.nycu.edu.tw/",
       "tags": [
         "#",
@@ -1931,7 +1931,7 @@
       ],
       "officeLocation": null,
       "email": "bob@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id30.png",
       "LabWebsite": "https://sites.google.com/site/chiehchihbobwang",
       "tags": [
         "#類比IC",
@@ -1999,7 +1999,7 @@
       ],
       "officeLocation": "",
       "email": "hchong@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id32.png",
       "LabWebsite": "https://amsdft.web.nycu.edu.tw/",
       "tags": [
         "#類比IC設計",
@@ -2106,7 +2106,7 @@
       ],
       "officeLocation": null,
       "email": "derekchen@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id34.png",
       "LabWebsite": "https://adclab.web.nycu.edu.tw/",
       "tags": [
         "#類比IC",
@@ -2208,7 +2208,7 @@
       ],
       "officeLocation": "",
       "email": "hakko@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id36.png",
       "LabWebsite": "https://hakko0921.wixsite.com/wpmu?lang=zh",
       "tags": [
         "#類比IC設計"
@@ -2308,7 +2308,7 @@
       ],
       "officeLocation": "",
       "email": "sauhsuan@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id38.png",
       "LabWebsite": "https://cm.nycu.edu.tw/pages.php?pa=lab_content&lab_id=1&locale=tw",
       "tags": [
         "#通訊",
@@ -2411,7 +2411,7 @@
       ],
       "officeLocation": "",
       "email": "mango@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id40.png",
       "LabWebsite": "http://tiger.iee.nycu.edu.tw/",
       "tags": [
         "#AI",
@@ -2503,7 +2503,7 @@
       ],
       "officeLocation": null,
       "email": "ktfeng@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id42.png",
       "LabWebsite": "https://sites.google.com/nycu.edu.tw/mintlab/lab-activities",
       "tags": [
         "#類比IC",
@@ -2608,7 +2608,7 @@
       ],
       "officeLocation": "",
       "email": "tesheng@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id44.png",
       "LabWebsite": "https://sites.google.com/view/avir-lab?pli=1",
       "tags": [
         "#自動控制"
@@ -2706,7 +2706,7 @@
       ],
       "officeLocation": "",
       "email": "yumin@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id46.png",
       "LabWebsite": "https://cm.nycu.edu.tw/teachers.php?pa=getItem&teacher_id=260&locale=tw",
       "tags": [
         "#EDA"
@@ -2818,7 +2818,7 @@
       ],
       "officeLocation": "",
       "email": "hcchang.ee@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id48.png",
       "LabWebsite": "https://sites.google.com/view/oasis317/",
       "tags": [
         "#",
@@ -2931,7 +2931,7 @@
       ],
       "officeLocation": "",
       "email": "yichiu@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id50.png",
       "LabWebsite": "http://140.113.150.4/",
       "tags": [
         "#微機電系統",
@@ -3025,7 +3025,7 @@
       ],
       "officeLocation": "",
       "email": "jeng@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id52.png",
       "LabWebsite": "https://sites.google.com/nctu.edu.tw/jeng/",
       "tags": [
         "#通訊",
@@ -3129,7 +3129,7 @@
       ],
       "officeLocation": "",
       "email": "wzchen@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id54.png",
       "LabWebsite": "http://www.alab.iee.nycu.edu.tw/wpmu/wzchen/",
       "tags": [
         "#類比IC設計"
@@ -3237,7 +3237,7 @@
       ],
       "officeLocation": "",
       "email": "weichenh@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id56.png",
       "LabWebsite": "https://sites.google.com/nctu.edu.tw/weichenhresearchgroup/home",
       "tags": [
         "#生醫",
@@ -3327,7 +3327,7 @@
       ],
       "officeLocation": "",
       "email": "tzuhsien54120@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id58.png",
       "LabWebsite": "https://dee.nycu.edu.tw/teachers.php?pa=getItem&teacher_id=146&locale=tw#",
       "tags": [
         "#通訊",
@@ -3447,7 +3447,7 @@
       ],
       "officeLocation": "",
       "email": "cstan@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id60.png",
       "LabWebsite": "https://sites.google.com/view/lighttaiwan",
       "tags": [
         "#固態"
@@ -3549,7 +3549,7 @@
       ],
       "officeLocation": "",
       "email": "chwang@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id62.png",
       "LabWebsite": "https://cm.nycu.edu.tw/teachers.php?pa=getItem&teacher_id=259&locale=tw",
       "tags": [
         "#通訊"
@@ -3639,7 +3639,7 @@
       ],
       "officeLocation": "",
       "email": "​chiamuyu@gmail.com",
-      "photo": null,
+      "photo": "professor_id64.png",
       "LabWebsite": "https://chiamuyu.weebly.com/",
       "tags": [
         "#AI",
@@ -3753,7 +3753,7 @@
       ],
       "officeLocation": "",
       "email": "guanyu@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id66.png",
       "LabWebsite": "http://www.gychen.website/",
       "tags": [
         "#生醫",
@@ -3874,7 +3874,7 @@
       ],
       "officeLocation": "",
       "email": "yuji@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id68.png",
       "LabWebsite": "http://tnt.lab.nycu.edu.tw/",
       "tags": [
         "#通訊"
@@ -3965,7 +3965,7 @@
       ],
       "officeLocation": null,
       "email": "ngchen@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id70.png",
       "LabWebsite": "https://www.facebook.com/NYCUAUL/",
       "tags": [
         "#類比IC",
@@ -4038,7 +4038,7 @@
       ],
       "officeLocation": null,
       "email": "opwen@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id72.png",
       "LabWebsite": "https://cialab.web.nycu.edu.tw/",
       "tags": [
         "#類比IC",
@@ -4129,7 +4129,7 @@
       ],
       "officeLocation": "",
       "email": "rayhua@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id74.png",
       "LabWebsite": "https://rhhlab.wixsite.com/astdl/blank-1",
       "tags": [
         "#光電",
@@ -4238,7 +4238,7 @@
       ],
       "officeLocation": "",
       "email": "sofin@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id76.png",
       "LabWebsite": "https://www.arlabtw.com/",
       "tags": [
         "#AI",
@@ -4336,7 +4336,7 @@
       ],
       "officeLocation": null,
       "email": "khchen@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id78.png",
       "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
       "tags": [
         "#類比IC",
@@ -4421,7 +4421,7 @@
       ],
       "officeLocation": null,
       "email": "khchen@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id80.png",
       "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
       "tags": [
         "#類比IC",
@@ -4506,7 +4506,7 @@
       ],
       "officeLocation": null,
       "email": "khchen@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id82.png",
       "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
       "tags": [
         "#類比IC",
@@ -4603,7 +4603,7 @@
       ],
       "officeLocation": null,
       "email": "khchen@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id84.png",
       "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
       "tags": [
         "#類比IC",
@@ -4692,7 +4692,7 @@
       ],
       "officeLocation": null,
       "email": "khchen@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id86.png",
       "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
       "tags": [
         "#類比IC",
@@ -4777,7 +4777,7 @@
       ],
       "officeLocation": null,
       "email": "khchen@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id88.png",
       "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
       "tags": [
         "#類比IC",
@@ -4862,7 +4862,7 @@
       ],
       "officeLocation": null,
       "email": "khchen@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id90.png",
       "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
       "tags": [
         "#類比IC",
@@ -4951,7 +4951,7 @@
       ],
       "officeLocation": null,
       "email": "khchen@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id92.png",
       "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
       "tags": [
         "#類比IC",
@@ -5036,7 +5036,7 @@
       ],
       "officeLocation": null,
       "email": "khchen@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id94.png",
       "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
       "tags": [
         "#類比IC",
@@ -5129,7 +5129,7 @@
       ],
       "officeLocation": null,
       "email": "khchen@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id96.png",
       "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
       "tags": [
         "#類比IC",
@@ -5214,7 +5214,7 @@
       ],
       "officeLocation": null,
       "email": "khchen@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id98.png",
       "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
       "tags": [
         "#類比IC",
@@ -5299,7 +5299,7 @@
       ],
       "officeLocation": null,
       "email": "khchen@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id100.png",
       "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
       "tags": [
         "#類比IC",
@@ -5384,7 +5384,7 @@
       ],
       "officeLocation": null,
       "email": "khchen@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id102.png",
       "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
       "tags": [
         "#類比IC",
@@ -5473,7 +5473,7 @@
       ],
       "officeLocation": null,
       "email": "khchen@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id104.png",
       "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
       "tags": [
         "#類比IC",
@@ -5558,7 +5558,7 @@
       ],
       "officeLocation": null,
       "email": "khchen@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id106.png",
       "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
       "tags": [
         "#類比IC",
@@ -5647,7 +5647,7 @@
       ],
       "officeLocation": null,
       "email": "khchen@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id108.png",
       "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
       "tags": [
         "#類比IC",
@@ -5731,7 +5731,7 @@
       ],
       "officeLocation": "",
       "email": "oym@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id110.png",
       "LabWebsite": "https://ebil.web.nycu.edu.tw/",
       "tags": [
         "#生醫",
@@ -5832,7 +5832,7 @@
       ],
       "officeLocation": "",
       "email": "mdker@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id112.png",
       "LabWebsite": "http://www.alab.iee.nycu.edu.tw/~mdker/",
       "tags": [
         "#類比IC設計"
@@ -5941,7 +5941,7 @@
       ],
       "officeLocation": "https://cm.nycu.edu.tw/teachers.php?pa=getItem&teacher_id=255&locale=tw",
       "email": "jywu@cc.nctu.edu.tw",
-      "photo": null,
+      "photo": "professor_id114.png",
       "LabWebsite": "",
       "tags": [
         "#通訊"
@@ -6029,7 +6029,7 @@
       ],
       "officeLocation": "",
       "email": "jtchien@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id116.png",
       "LabWebsite": "http://chien.cm.nycu.edu.tw/ (無法使用)",
       "tags": [
         "#多媒體處理",
@@ -6132,7 +6132,7 @@
       ],
       "officeLocation": null,
       "email": "khchen@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id118.png",
       "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
       "tags": [
         "#類比IC",
@@ -6281,7 +6281,7 @@
       ],
       "officeLocation": null,
       "email": "khchen@nycu.edu.tw",
-      "photo": null,
+      "photo": "professor_id122.png",
       "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
       "tags": [
         "#類比IC",

@@ -73,7 +73,7 @@ def get_latest_professor_data():
     所有資料都從後端 API 提供，前端不直接讀取檔案
     """
 
-    data_file_path = Path(__file__).parent / "data" / "NewData.json"
+    data_file_path = Path(__file__).parent / "NewData.json"
 
     if not data_file_path.is_file():
         raise HTTPException(

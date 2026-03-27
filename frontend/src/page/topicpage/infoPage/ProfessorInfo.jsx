@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './ProfessorInfo.module.css';
 import { useParams } from 'react-router-dom';
-import { useData } from '../../../hooks/useData.js';
+import { useData, API_BASE } from '../../../hooks/useData.js';
 
 // (假設您使用 public/assets/，這是在 App.jsx 中設定的)
 const BASE_URL = import.meta.env.BASE_URL;
@@ -84,7 +84,7 @@ const ProfessorInfo = () => {
                         
                     </div>
                     <div className={styles['prof-info-image-wrapper']}>
-                        <img src={photo || DEFAULT_AVATAR_URL} alt={name} className={styles['prof-info-image']} />
+                        <img src={photo ? `${API_BASE.replace(/\/api$/, "")}/photo/${photo}` : DEFAULT_AVATAR_URL} alt={name} className={styles['prof-info-image']} />
                     </div>
                 </div>
             </div>

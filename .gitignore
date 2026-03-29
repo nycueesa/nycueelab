@@ -24,6 +24,7 @@ dist/
 data/
 !backend/data/
 !backend/data/NewData.json
+*.pdf
 
 # 執行期間產生的資料 (絕不納入版本控制)
 logs/

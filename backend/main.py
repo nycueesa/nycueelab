@@ -31,7 +31,7 @@ app.add_middleware(
 )
 
 # 教授照片靜態檔案路由
-app.mount("/photo", StaticFiles(directory=Path(__file__).parent / "photo"), name="photo")
+app.mount("/api/photo", StaticFiles(directory=Path(__file__).parent / "photo"), name="photo")
 
 # === 資料模型 ===
 class LoginRequest(BaseModel):

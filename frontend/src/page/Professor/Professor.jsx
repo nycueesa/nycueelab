@@ -425,7 +425,7 @@ function Professor() {
             >
               {photo ? (
                 <img
-                  src={`${API_BASE.replace(/\/api$/, "")}/photo/${photo}`}
+                  src={`${API_BASE}/photo/${photo}`}
                   alt={name}
                   className={styles.professorPhoto}
                 />

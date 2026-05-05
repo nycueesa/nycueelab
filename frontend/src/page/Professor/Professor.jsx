@@ -197,25 +197,18 @@ function Professor() {
     const observerCallback = (entries) => {
       entries.forEach((entry) => {
         const index = courseCardRefs.current.indexOf(entry.target);
-        if (index !== -1) {
-          if (entry.isIntersecting) {
-            if (timeouts[index]) {
-              clearTimeout(timeouts[index]);
-            }
-            timeouts[index] = setTimeout(() => {
-              setCourseCardsVisible((prev) => {
-                if (!prev.includes(index)) {
-                  return [...prev, index];
-                }
-                return prev;
-              });
-            }, index * 150);
-          } else {
-            if (timeouts[index]) {
-              clearTimeout(timeouts[index]);
-            }
-            setCourseCardsVisible((prev) => prev.filter((i) => i !== index));
-          }
+        if (index === -1) return;
+        if (entry.isIntersecting) {
+          if (timeouts[index]) clearTimeout(timeouts[index]);
+          timeouts[index] = setTimeout(() => {
+            setCourseCardsVisible((prev) =>
+              prev.includes(index) ? prev : [...prev, index]
+            );
+          }, index * 150);
+        } else if (entry.boundingClientRect.top > 0) {
+          // Only re-hide if the element exited below the viewport.
+          if (timeouts[index]) clearTimeout(timeouts[index]);
+          setCourseCardsVisible((prev) => prev.filter((i) => i !== index));
         }
       });
     };
@@ -243,30 +236,17 @@ function Professor() {
       threshold: 0.1,
     };
 
-    const timeouts = {};
-
     const observerCallback = (entries) => {
       entries.forEach((entry) => {
         const index = qaItemRefs.current.indexOf(entry.target);
-        if (index !== -1) {
-          if (entry.isIntersecting) {
-            if (timeouts[index]) {
-              clearTimeout(timeouts[index]);
-            }
-            timeouts[index] = setTimeout(() => {
-              setQaItemsVisible((prev) => {
-                if (!prev.includes(index)) {
-                  return [...prev, index];
-                }
-                return prev;
-              });
-            }, index * 100);
-          } else {
-            if (timeouts[index]) {
-              clearTimeout(timeouts[index]);
-            }
-            setQaItemsVisible((prev) => prev.filter((i) => i !== index));
-          }
+        if (index === -1) return;
+        if (entry.isIntersecting) {
+          setQaItemsVisible((prev) =>
+            prev.includes(index) ? prev : [...prev, index]
+          );
+        } else if (entry.boundingClientRect.top > 0) {
+          // Only re-hide if the element exited below the viewport.
+          setQaItemsVisible((prev) => prev.filter((i) => i !== index));
         }
       });
     };
@@ -280,10 +260,7 @@ function Professor() {
       if (item) observer.observe(item);
     });
 
-    return () => {
-      Object.values(timeouts).forEach((timeout) => clearTimeout(timeout));
-      observer.disconnect();
-    };
+    return () => observer.disconnect();
   }, [professorData?.faqs?.length]);
 
   // Show loading state
@@ -363,10 +340,13 @@ function Professor() {
     .map((tag) => (tag.startsWith("#") ? tag : `#${tag}`))
     .filter((tag) => tag !== "#" && tag.trim() !== "");
 
-  // Pre-filter data to handle empty strings
-  const validCourses = recomendedCourses.filter(
-    (course) => course && course.trim() !== ""
-  );
+  // Pre-filter data to handle empty strings.
+  // Some entries pack multiple courses into one string separated by ；/;,
+  // so split those out so each course renders on its own line.
+  const validCourses = recomendedCourses
+    .flatMap((course) => (course ? course.split(/[；;]/) : []))
+    .map((course) => course.trim())
+    .filter((course) => course !== "");
   const validFaqs = faqs.filter(
     (faq) => faq.question && faq.question.trim() !== ""
   );
@@ -564,10 +544,27 @@ function Professor() {
                           <iframe
                             src={embedInfo.embedUrl}
                             title={linkName}
-                            className={styles.embedIframe}
+                            className={`${styles.embedIframe} ${
+                              embedInfo.type === "drive"
+                                ? styles.embedIframeStatic
+                                : ""
+                            }`}
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                           />
+                          {embedInfo.type === "drive" && (
+                            <a
+                              href={linkItem.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={styles.embedOpenOverlay}
+                              aria-label={`在新分頁開啟 ${linkName}`}
+                            >
+                              <span className={styles.embedOpenHint}>
+                                點擊開啟 ↗
+                              </span>
+                            </a>
+                          )}
                         </div>
                       ) : (
                         <a

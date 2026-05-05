@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styles from './TopicPage.module.css';
 import ButtonGrid from './ButtonGrid';
-import ProfessorDetail from './ProfessorDetail';
 import ProfessorInfo from './infoPage/ProfessorInfo';
-import { useData } from '../../hooks/useData.js'; 
+import { useData } from '../../hooks/useData.js';
 
 const TABS_CONFIG = ['依系所瀏覽', '依領域瀏覽'];
 
@@ -35,7 +34,6 @@ function TopicPage() {
   const { data: newData, loading, error } = useData();
   const [activeTab, setActiveTab] = useState(TABS_CONFIG[0]);
   const [selectedTopic, setSelectedTopic] = useState(null);
-  const [detailPageTopic, setDetailPageTopic] = useState(null);
   const [departmentTopics, setDepartmentTopics] = useState([]);
   const [fieldTopics, setFieldTopics] = useState([]);
   const [allProfessors, setAllProfessors] = useState([]);
@@ -51,18 +49,12 @@ function TopicPage() {
   }, [newData]); 
 
   const handleTopicSelect = (topic) => {
-    if (selectedTopic === topic) {
-      setDetailPageTopic(topic); 
-    } else {
-      setSelectedTopic(topic);
-      setDetailPageTopic(null); 
-    }
+    setSelectedTopic((prev) => (prev === topic ? null : topic));
   };
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
-    setSelectedTopic(null); 
-    setDetailPageTopic(null); 
+    setSelectedTopic(null);
   };
 
   /**
@@ -125,16 +117,6 @@ function TopicPage() {
       return <div className={styles['tab-content-placeholder']}>依清單瀏覽 內容</div>;
     }
 
-    if (detailPageTopic) {
-      const professorsInTopic = currentData[detailPageTopic] || [];
-      return (
-        <ProfessorDetail
-          topic={detailPageTopic} 
-          professors={professorsInTopic}
-        />
-      );
-    } 
-    
     return (
       <ButtonGrid
         buttons={currentTopics} 

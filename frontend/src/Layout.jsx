@@ -298,10 +298,29 @@ export default function Layout({ children }) {
     }
   }, [navigate]);
 
-    // 路由變更時捲到頁面頂端
-    useEffect(() => {
-      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-    }, [location.pathname]);
+  // 路由變更時：reload 留下的捲動位置優先恢復，否則捲到頁面頂端
+  useEffect(() => {
+    const key = `scroll:${window.location.pathname}`;
+    const saved = sessionStorage.getItem(key);
+    if (saved !== null) {
+      sessionStorage.removeItem(key);
+      const target = parseInt(saved, 10);
+      let attempts = 0;
+      const tryScroll = () => {
+        const maxScroll =
+          document.documentElement.scrollHeight - window.innerHeight;
+        if (maxScroll >= target || attempts >= 60) {
+          window.scrollTo({ top: target, left: 0, behavior: "auto" });
+          return;
+        }
+        attempts += 1;
+        requestAnimationFrame(tryScroll);
+      };
+      requestAnimationFrame(tryScroll);
+      return;
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [location.pathname]);
 
   return (
     <div className={styles.layoutContainer}>

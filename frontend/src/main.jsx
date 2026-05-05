@@ -9,6 +9,24 @@ import App from "./App.jsx";
 import { store, persistor } from "./redux/store.js"; // ✅ named import
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+// Browser scroll restoration is disabled because it fires before async data
+// finishes loading and the page grows. We persist the scroll position on
+// beforeunload and restore it manually in Layout once the page is tall enough.
+if ("scrollRestoration" in window.history) {
+  window.history.scrollRestoration = "manual";
+}
+
+window.addEventListener("beforeunload", () => {
+  try {
+    sessionStorage.setItem(
+      `scroll:${window.location.pathname}`,
+      String(window.scrollY)
+    );
+  } catch {
+    /* sessionStorage may be unavailable */
+  }
+});
+
 const container = document.getElementById("root");
 const root = createRoot(container);
 

@@ -16,14 +16,17 @@ export default function SearchResults({ results, isOpen, onClose, onResultClick 
   };
 
   return (
-    <div className={styles.searchResultsContainer} data-search-result>
-      <div className={styles.searchResultsList}>
+    // The overlay container intentionally has no data-search-result —
+    // clicking its dim background should count as "outside" and close the popup.
+    // Only the white results list is marked, so the outside-click handler in
+    // Layout.jsx leaves clicks inside the actual content alone.
+    <div className={styles.searchResultsContainer}>
+      <div className={styles.searchResultsList} data-search-result>
         {results.map((professor) => (
           <div
             key={professor.id}
             className={styles.resultItem}
             onClick={() => handleResultClick(professor)}
-            data-search-result
           >
             <div className={styles.resultHeader}>
               <h4 className={styles.professorsName}>{professor.name}</h4>

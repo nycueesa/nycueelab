@@ -7,6 +7,7 @@ export default function SearchBar({
   onSearch,
   onFilterChange,
   filterOptions,
+  onFocus,
 }) {
   const [query, setQuery] = useState('');
   const [showFilters, setShowFilters] = useState(false);
@@ -76,6 +77,11 @@ export default function SearchBar({
           placeholder="搜尋"
           value={query}
           onChange={handleQueryChange}
+          onFocus={() => {
+            // Re-pop the results dropdown when the user clicks back into the input
+            // after dismissing it with an outside click.
+            if (onFocus) onFocus(query, selectedFilters);
+          }}
           className={styles.searchInput}
         />
         <button

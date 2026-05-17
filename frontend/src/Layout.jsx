@@ -31,7 +31,6 @@ function TopNavbar() {
   const [showSearchResults, setShowSearchResults] = useState(false);
   const [filterOptions, setFilterOptions] = useState({});
   const navbarRef = useRef(null);
-  const searchContainerRef = useRef(null);
   const location = useLocation();
   const { data: newData, loading: dataLoading } = useData();
 
@@ -59,24 +58,21 @@ function TopNavbar() {
   }, []);
 
   // 點擊外面關閉搜尋結果
+  // 用 data-attribute 來判斷「點到的元素是否屬於搜尋區」，比 ref 更穩 —
+  // 因為 Bootstrap 同時 mount 了 desktop / mobile 兩個 SearchBar，單一 ref
+  // 只會指向其中一個 DOM 節點，導致另一邊的點擊永遠被判定成 "outside"。
   useEffect(() => {
+    if (!showSearchResults) return;
+
     const handleClickOutside = (event) => {
-      // 檢查點擊是否在搜索容器外面，並且不在搜索結果內
-      if (
-        searchContainerRef.current &&
-        !searchContainerRef.current.contains(event.target)
-      ) {
-        // 檢查是否點擊的是搜索結果項目
-        const isSearchResult = event.target.closest("[data-search-result]");
-        if (!isSearchResult) {
-          setShowSearchResults(false);
-        }
+      const insideSearch = event.target.closest("[data-search-container]");
+      const insideResults = event.target.closest("[data-search-result]");
+      if (!insideSearch && !insideResults) {
+        setShowSearchResults(false);
       }
     };
 
-    if (showSearchResults) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -108,6 +104,21 @@ function TopNavbar() {
 
   const handleSearchResultClick = () => {
     setShowSearchResults(false);
+  };
+
+  // Re-open the results dropdown when the user clicks back into the search input
+  // after an outside-click dismissed it. If they hadn't searched yet (empty query
+  // and no filters), do nothing — there's nothing to show.
+  const handleSearchFocus = (query, filters) => {
+    const hasFilters = Boolean(filters?.location || filters?.department);
+    const hasQuery = Boolean(query && query.trim());
+    if (!hasQuery && !hasFilters) return;
+    if (searchResults.length > 0) {
+      setShowSearchResults(true);
+    } else {
+      // Filters set but no cached results yet — run a search now.
+      handleSearch(query, filters);
+    }
   };
   // 所有頁面都使用淺色版本
   const theme = "light";
@@ -193,11 +204,12 @@ function TopNavbar() {
                   ]
                 } d-none d-lg-flex`}
               >
-                <div ref={searchContainerRef}>
+                <div data-search-container>
                   <SearchBar
                     onSearch={handleSearch}
                     onFilterChange={handleFilterChange}
                     filterOptions={filterOptions}
+                    onFocus={handleSearchFocus}
                   />
                 </div>
                 <Link
@@ -213,11 +225,12 @@ function TopNavbar() {
               </div>
               {/* Mobile version */}
               <div className="d-lg-none">
-                <div ref={searchContainerRef} style={{ marginBottom: "10px" }}>
+                <div data-search-container style={{ marginBottom: "10px" }}>
                   <SearchBar
                     onSearch={handleSearch}
                     onFilterChange={handleFilterChange}
                     filterOptions={filterOptions}
+                    onFocus={handleSearchFocus}
                   />
                 </div>
                 <Nav.Link

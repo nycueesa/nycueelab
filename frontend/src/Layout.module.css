@@ -1,5 +1,5 @@
 :root {
-  --navbar-height: 80px; /* 預設值 */
+  --navbar-height: 64px; /* 預設值 — JS overrides at runtime with measured height */
 }
 
 .layoutContainer {
@@ -13,7 +13,7 @@
 .layoutMain {
   flex: 1;
   display: flex;
-  padding-top: var(--navbar-height, 80px); /* 使用CSS變數，如果沒有設置則預設為80px */
+  padding-top: var(--navbar-height, 64px); /* 使用CSS變數，如果沒有設置則預設為64px */
   width: 100%;
 }
 .noNavbar {
@@ -32,7 +32,7 @@
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0.5rem 2rem;
+  padding: 0.25rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -69,9 +69,9 @@
 }
 
 .brandTitle {
-  font-size: 2.4rem !important;
+  font-size: 1.8rem !important;
   font-weight: 900;
-  margin: 1rem;
+  margin: 0.3rem 1rem;
   padding: 0;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -298,17 +298,17 @@
 
 @media (max-width: 1024px) {
   .customContainer {
-    padding: 0.5rem 1.5rem;
+    padding: 0.25rem 1.5rem;
   }
-  
+
   .brandTitle {
-    font-size: 2rem !important;
+    font-size: 1.6rem !important;
   }
 }
 
 @media (max-width: 768px) {
   .brandTitle {
-    font-size: 1.6rem !important;
+    font-size: 1.4rem !important;
   }
 
   .navRight {
@@ -332,12 +332,12 @@
 
 @media (max-width: 576px) {
   .customContainer {
-    padding: 0.5rem 1rem;
+    padding: 0.25rem 1rem;
   }
 
   .brandTitle {
-    font-size: 1.4rem !important;
-    margin: 0.5rem;
+    font-size: 1.2rem !important;
+    margin: 0.25rem 0.5rem;
   }
 
   .navSearch {

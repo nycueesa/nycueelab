@@ -56,6 +56,9 @@ function Professor() {
   const [courseCardsVisible, setCourseCardsVisible] = useState([]);
   const [qaItemsVisible, setQaItemsVisible] = useState([]);
   const [linksVisible, setLinksVisible] = useState(false);
+  // Per-card collapsed state for 相關連結 entries (投影片 / 介紹影片 / 專題影片 / ...).
+  // Keyed by card index. Cards named "專題影片" default to collapsed; others expand.
+  const [collapsedLinks, setCollapsedLinks] = useState({});
 
   // Refs to track elements
   const researchRef = useRef(null);
@@ -353,8 +356,10 @@ function Professor() {
   const validResearch = research.filter(
     (r) => r.title && r.title.trim() !== ""
   );
+  // Keep only links that are non-empty AND embed-recognised (YouTube / Google Drive).
+  // Anything getEmbedInfo can't parse is treated as invalid and hidden entirely.
   const validLinks = link.filter(
-    (l) => l.link && l.link.trim() !== ""
+    (l) => l.link && l.link.trim() !== "" && getEmbedInfo(l.link) !== null
   );
 
   return (
@@ -535,12 +540,53 @@ function Professor() {
                 {validLinks.map((linkItem, index) => {
                   const embedInfo = getEmbedInfo(linkItem.link);
                   const linkName = linkItem.linkName || "連結";
+                  // Default: 專題影片 starts collapsed; everything else expanded.
+                  // collapsedLinks[index] overrides once the user toggles it.
+                  const defaultCollapsed = linkName.trim() === "專題影片";
+                  const isCollapsed =
+                    collapsedLinks[index] !== undefined
+                      ? collapsedLinks[index]
+                      : defaultCollapsed;
 
                   return (
                     <div key={index} className={styles.embedCard}>
-                      <h4 className={styles.embedTitle}>{linkName}</h4>
-                      {embedInfo ? (
-                        <div className={styles.embedContainer}>
+                      <h4
+                        className={styles.embedTitle}
+                        onClick={() =>
+                          setCollapsedLinks((prev) => ({
+                            ...prev,
+                            [index]: !isCollapsed,
+                          }))
+                        }
+                        role="button"
+                        tabIndex={0}
+                        aria-expanded={!isCollapsed}
+                        aria-controls={`embed-body-${index}`}
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            e.preventDefault();
+                            setCollapsedLinks((prev) => ({
+                              ...prev,
+                              [index]: !isCollapsed,
+                            }));
+                          }
+                        }}
+                      >
+                        {linkName}
+                        <span
+                          className={`${styles.embedChevron} ${
+                            isCollapsed ? styles.embedChevronCollapsed : ""
+                          }`}
+                          aria-hidden="true"
+                        >
+                          ▾
+                        </span>
+                      </h4>
+                      {!isCollapsed && (
+                        <div
+                          className={styles.embedContainer}
+                          id={`embed-body-${index}`}
+                        >
                           <iframe
                             src={embedInfo.embedUrl}
                             title={linkName}
@@ -566,15 +612,6 @@ function Professor() {
                             </a>
                           )}
                         </div>
-                      ) : (
-                        <a
-                          href={linkItem.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={styles.embedFallbackLink}
-                        >
-                          開啟連結 →
-                        </a>
                       )}
                     </div>
                   );

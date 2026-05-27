@@ -337,10 +337,7 @@ export default function Layout({ children }) {
 
   return (
     <div className={styles.layoutContainer}>
-      {!isMainPage && <TopNavbar />}
-      <main
-        className={`${styles.layoutMain} ${isMainPage ? styles.noNavbar : ""}`}
-      >
+      <main className={`${styles.layoutMain} ${styles.noNavbar}`}>
         {children}
       </main>
       {!isMainPage && <Footer />}

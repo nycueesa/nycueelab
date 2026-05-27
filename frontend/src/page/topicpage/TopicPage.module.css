@@ -1,319 +1,261 @@
-/* --- 1. 整體 & 頁籤 --- */
-.nycu-topic-container {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
-    'Noto Sans', sans-serif;
-  background-color: #f1f3f5;
+/* Ensure Noto Sans TC + IBM Plex Mono are loaded globally (public/index.html). */
+
+.page {
+  flex: 1;
   width: 100%;
-  float: none; 
-}
-.browse-nav {
+  min-height: 100vh;
+  background: #f4f7fb;
+  color: #1a2530;
+  font-family: "Noto Sans TC", "Helvetica Neue", Helvetica, sans-serif;
+  padding-top: clamp(28px, 3vw, 48px);
+  padding-bottom: clamp(48px, 6vw, 80px);
+  padding-left: max(clamp(24px, 4vw, 64px), calc((100vw - 1400px) / 2));
+  padding-right: max(clamp(24px, 4vw, 64px), calc((100vw - 1400px) / 2));
+  box-sizing: border-box;
   display: flex;
-  gap: 8px;
-  padding: 10px 20px 0;
-  background-color: #f1f3f5;
-  border-bottom: 2px solid #3a536e;
-  flex-wrap: wrap; /* 允許在手機端換行 */
-}
-.browse-nav-item {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #e9ecef;
-  background-color: #9faab5;
-  border: none;
-  padding: 12px 18px;
-  cursor: pointer;
-  border-radius: 10px 10px 0 0;
-  transition: all 0.2s;
-  flex: 1; /* 在手機端平均分配寬度 */
-  min-width: 120px;
-  text-align: center;
-}
-.browse-nav-item:not(.active):hover {
-  background-color: #8a96a1;
-}
-.browse-nav-item.active {
-  background-color: #0d6efd;
-  color: white;
-  margin-bottom: -2px; 
-  padding-bottom: 14px; 
-}
-.content-area {
-  background-color: #3a536e; /* 深藍色背景 */
-  padding: 40px 20px;
-  min-height: 70vh;
-  overflow: hidden; 
-}
-.content-area-wrapper {
-  position: relative;
+  flex-direction: column;
+  gap: 28px;
 }
 
-/* --- 2. 領域按鈕網格 (ButtonGrid) --- */
-.topic-grid-wrapper {
-  max-width: 900px;
-  margin: 0 auto;
+/* ── Top bar ───────────────────────────────────────── */
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
 }
-.grid-row-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px; 
-  margin-bottom: 0; 
-}
-.grid-button {
-  background-color: #f8f9fa; 
-  color: #212529;
-  border: 1px solid #dee2e6;
-  border-radius: 8px;
-  padding: 45px;
-  font-size: 1.6rem;
-  font-weight: 600;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.2s;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+.brand {
   display: flex;
   align-items: center;
-  justify-content: center;
-  word-break: break-word; /* 防止文字溢出 */
+  gap: 10px;
+}
+.brand strong {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.brandMark {
+  width: 12px;
+  height: 12px;
+  background: #3c78b8;
+  display: inline-block;
+}
+.homeLink {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: rgba(26, 37, 48, 0.6);
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0;
+}
+.homeLink:hover { color: #1a2530; }
+
+/* ── Hero + search ─────────────────────────────────── */
+.heroRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.title {
+  margin: 0;
+  font-weight: 800;
+  font-size: clamp(40px, 4.5vw, 68px);
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+.search {
+  width: min(420px, 100%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border: 1px solid rgba(26, 37, 48, 0.10);
+  padding: 12px 18px;
+  transition: border-color 0.15s ease;
+}
+.search:focus-within { border-color: #3c78b8; }
+.searchIcon { font-size: 16px; color: rgba(26, 37, 48, 0.6); }
+.searchInput {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 15px;
+  color: #1a2530;
+  outline: none;
+}
+.searchInput::placeholder { color: rgba(26, 37, 48, 0.42); }
+.searchClear {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: rgba(26, 37, 48, 0.6);
+  font-size: 16px;
+  padding: 0 2px;
+  line-height: 1;
 }
 
-.selected {
-  background-color: #0d6efd;
-  color: white;
-  border: 2px solid #0d6efd;
-  transform: translateY(0);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+/* ── Filter pill rails ─────────────────────────────── */
+.rails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-
-.grid-button.selected {
-  background-color: #0d6efd;
-  color: white;
-  border: 2px solid #0d6efd;
-}
-.grid-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.grid-button.active {
-  background-color: #fff;
-  color: #0d6efd;
-  border: 2px solid #0d6efd;
-  transform: translateY(0);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-
-/* --- 3. 教授 "小格子" 展開 --- */
-.panel-wrapper {
-  position: relative;
-  margin-top: 30px;
-}
-.professor-reveal-panel {
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.5s ease-in-out;
-}
-.professor-reveal-panel.active {
-  max-height: 2000px; /* 增加最大高度以容納多位教授 */
-  background-color: #ffffff;
-  border: 2px solid #0d6efd;
-  border-radius: 8px;
-  padding: 20px 24px;
-  margin-bottom: 40px;
-  position: relative;
-  overflow: visible; /* 允許內容撐開 */
-}
-.arrow-pointer {
-  position: absolute;
-  top: -10px;
-  height: 0;
-  z-index: 10;
-  transform: translateX(-50%);
-}
-.arrow-pointer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -12px;
-  border-left: 12px solid transparent;
-  border-right: 12px solid transparent;
-  border-bottom: 12px solid #0d6efd;
-}
-.arrow-pointer::after {
-  content: '';
-  position: absolute;
-  top: 3px;
-  left: -10px;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid #ffffff;
-}
-.professor-chips-container {
+.railRow {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  opacity: 0;
-  transform: translateX(-20px);
-  transition: opacity 0.3s ease-out 0.35s, transform 0.3s ease-out 0.35s;
+  gap: 8px;
 }
-.professor-reveal-panel.active .professor-chips-container {
-  opacity: 1;
-  transform: translateX(0);
-}
-.professor-chip {
-  background-color: #e9ecef;
-  color: #495057;
-  padding: 14px 24px;
-  border-radius: 8px;
-  font-size: 1.25rem;
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 14px;
+  border: 1px solid rgba(26, 37, 48, 0.10);
+  background: #fff;
+  color: #1a2530;
+  font-family: inherit;
+  font-size: 13px;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.15s ease;
-  border: none;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
-.professor-chip:hover {
-  background-color: #0d6efd;
-  color: white;
-}
-.no-professors-text-inline {
-  font-size: 1.1rem;
-  color: #666;
-  text-align: center;
-  padding: 0;
-  margin: 0;
-}
-
-
-/* --- 6. 實驗室詳情頁 (LabDetailPage) 樣式 --- */
-.lab-page-enter {
-  animation: fadeIn 0.4s ease-out; 
-}
-.lab-page-title {
-  color: white;
-  font-size: 2.8rem;
-  font-weight: 800;
-  margin-bottom: 5px;
-}
-.lab-page-subtitle {
-  color: #ccc;
-  font-size: 1.5rem;
-  font-weight: 500;
-  padding-bottom: 20px;
-  border-bottom: 2px solid #0d6efd;
-  margin-bottom: 30px;
-}
-.lab-content-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr; 
-  gap: 40px;
-}
-.lab-info-block {
-  font-size: 1.1rem;
-  line-height: 1.6;
+.pill:hover { background: #eef3f9; }
+.pillOn,
+.pillOn:hover {
+  border-color: #3c78b8;
+  background: #3c78b8;
   color: #fff;
-}
-.lab-info-block p {
-  margin-bottom: 12px;
-}
-.lab-info-block a {
-  color: #0d6efd;
-  text-decoration: none;
-}
-.lab-info-block a:hover {
-  text-decoration: underline;
-}
-.lab-page-image {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-.back-button {
-  background-color: #f8f9fa;
-  color: #3a536e;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 15px;
-  font-size: 1rem;
   font-weight: 600;
+}
+
+/* ── Active filter row ─────────────────────────────── */
+.activeRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-top: 1px solid rgba(26, 37, 48, 0.10);
+  padding-top: 16px;
+}
+.activeLeft {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.count {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  color: rgba(26, 37, 48, 0.6);
+  letter-spacing: 0.08em;
+  margin-right: 4px;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 4px 4px 12px;
+  background: #dde8f3;
+  color: #2a5b91;
+  font-size: 12px;
+}
+.chipX {
+  border: none;
+  background: transparent;
   cursor: pointer;
-  margin-bottom: 20px;
-  transition: background-color 0.2s;
+  color: #2a5b91;
+  font-size: 14px;
+  padding: 0 6px;
+  line-height: 1;
 }
-.back-button:hover {
-  background-color: #e9ecef;
+.clearBtn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: rgba(26, 37, 48, 0.6);
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0;
+}
+.clearBtn:hover { color: #1a2530; }
+
+/* ── Grid + cards ──────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+.card {
+  text-align: left;
+  background: #fff;
+  border: 1px solid rgba(26, 37, 48, 0.10);
+  padding: 22px 24px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 140px;
+  font-family: inherit;
+  color: #1a2530;
+  transition: border-color 0.15s ease, transform 0.2s ease;
+}
+.card:hover {
+  border-color: #3c78b8;
+  transform: translateY(-2px);
+}
+.cardDept {
+  font-size: 12px;
+  color: #3c78b8;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.cardName {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.cardLab {
+  font-size: 13px;
+  color: rgba(26, 37, 48, 0.6);
+  line-height: 1.4;
+}
+.cardTags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+.tag {
+  font-size: 11px;
+  padding: 3px 8px;
+  background: #dde8f3;
+  color: #2a5b91;
+  letter-spacing: 0.02em;
 }
 
-/* --- 7. 切換動畫 --- */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.grid-enter {
-  animation: fadeIn 0.4s ease-out;
-}
-
-/* --- 8. 其他頁籤 --- */
-.tab-content-placeholder {
-  color: white;
-  font-size: 1.5rem;
+/* ── Empty state ───────────────────────────────────── */
+.empty {
+  padding: 80px 0;
   text-align: center;
-  padding: 50px 0;
+  color: rgba(26, 37, 48, 0.6);
+  font-size: 15px;
 }
 
-/* --- 9. 手機端 RWD --- */
-@media (max-width: 992px) {
-  .grid-row-container {
-    gap: 20px;
+/* ── Mobile ────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .page {
+    gap: 22px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
-  .grid-button {
-    padding: 30px 15px;
-    font-size: 1.3rem;
-  }
-  .lab-page-title {
-    font-size: 2.2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .browse-nav {
-    padding: 10px 10px 0;
-  }
-  .browse-nav-item {
-    padding: 10px 12px;
-    font-size: 0.9rem;
-    min-width: 100px;
-  }
-  .content-area {
-    padding: 20px 15px;
-  }
-  .grid-button {
-    padding: 25px 10px;
-    font-size: 1.1rem;
-  }
-  .professor-chip {
-    padding: 10px 16px;
-    font-size: 1.1rem;
-  }
-  .lab-content-grid {
-    grid-template-columns: 1fr;
-  }
-  .lab-page-image {
-    max-width: 100%;
-    margin-top: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .grid-button {
-    padding: 20px 8px;
-    font-size: 1rem;
-  }
-  .lab-page-title {
-    font-size: 1.8rem;
-  }
-  .lab-page-subtitle {
-    font-size: 1.2rem;
-  }
+  .title { font-size: 36px; }
+  .search { width: 100%; }
+  .grid { grid-template-columns: 1fr; }
 }

@@ -1,164 +1,241 @@
-import React, { useState, useEffect } from 'react';
-import styles from './TopicPage.module.css';
-import ButtonGrid from './ButtonGrid';
-import ProfessorInfo from './infoPage/ProfessorInfo';
-import { useData } from '../../hooks/useData.js';
+import React, { useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import styles from "./TopicPage.module.css";
+import { useData } from "../../hooks/useData.js";
 
-const TABS_CONFIG = ['依系所瀏覽', '依領域瀏覽'];
+// Strip leading "#" and surrounding whitespace from a tag string.
+const cleanTag = (t) => (typeof t === "string" ? t.replace(/^#+/, "").trim() : "");
 
-// ** 修正 1：生成乾淨的標籤列表 (移除 #) **
-const generateUniqueTags = (professors) => {
-    const tagSet = new Set();
-    for (const prof of professors) {
-        if (Array.isArray(prof.tags)) {
-            prof.tags.forEach(tag => {
-                if (typeof tag === 'string') {
-                    // 移除開頭的 # 符號，並移除多餘空白
-                    let cleanedTag = tag.trim();
-                    if (cleanedTag.startsWith('#')) {
-                        cleanedTag = cleanedTag.substring(1);
-                    }
-                    
-                    // 確保清理後標籤不為空
-                    if (cleanedTag) { 
-                        tagSet.add(cleanedTag);
-                    }
-                }
-            });
-        }
-    }
-    return Array.from(tagSet).sort();
-};
-
-function TopicPage() {
-  const { data: newData, loading, error } = useData();
-  const [activeTab, setActiveTab] = useState(TABS_CONFIG[0]);
-  const [selectedTopic, setSelectedTopic] = useState(null);
-  const [departmentTopics, setDepartmentTopics] = useState([]);
-  const [fieldTopics, setFieldTopics] = useState([]);
-  const [allProfessors, setAllProfessors] = useState([]);
-
-  // 當資料載入完成時，更新狀態
-  useEffect(() => {
-    if (newData) {
-      const professors = newData.professors || [];
-      setAllProfessors(professors);
-      setDepartmentTopics(newData.topics?.departments || []);
-      setFieldTopics(generateUniqueTags(professors));
-    }
-  }, [newData]); 
-
-  const handleTopicSelect = (topic) => {
-    setSelectedTopic((prev) => (prev === topic ? null : topic));
-  };
-
-  const handleTabChange = (tab) => {
-    setActiveTab(tab);
-    setSelectedTopic(null);
-  };
-
-  /**
-   * ** 修正 2：動態生成教授映射表 (處理 # 對應問題) **
-   * 這個函式負責將教授分配到各個按鈕(格子)中
-   */
-  const generateProfessorMap = (topicList, filterKey) => {
-    const profMap = {};
-
-    // 1. 初始化所有主題的空陣列 (鍵名是乾淨的，如 "AI")
-    for (const topic of topicList) {
-      profMap[topic] = [];
-    }
-
-    // 2. 遍歷所有教授
-    for (const prof of allProfessors) {
-      const profTopics = prof[filterKey]; // 取得教授的 tags 或 department
-      
-      if (profTopics && Array.isArray(profTopics)) {
-        for (const rawTopic of profTopics) {
-          if (typeof rawTopic !== 'string') continue;
-
-          // 情況 A: 直接匹配 (例如系所名稱通常沒有 #)
-          if (profMap[rawTopic]) {
-            profMap[rawTopic].push(prof);
-            continue; // 匹配成功，跳過
-          }
-
-          // 情況 B: 處理帶有 # 的標籤 (例如教授資料是 "#AI"，但按鈕是 "AI")
-          if (rawTopic.startsWith('#')) {
-             const cleanTopic = rawTopic.substring(1); // 移除 #
-             if (profMap[cleanTopic]) {
-               profMap[cleanTopic].push(prof);
-             }
-          }
-        }
-      }
-    }
-    return profMap;
-  };
-
-
-  // 決定要渲染什麼內容
-  const renderTabContent = () => {
-    if (!newData || allProfessors.length === 0) {
-      return null;
-    }
-
-    let currentTopics, currentData;
-
-    if (activeTab === '依系所瀏覽') {
-      currentTopics = departmentTopics;
-      // 依系所篩選，通常不需要去 #，但上面的邏輯兼容
-      currentData = generateProfessorMap(currentTopics, 'department');
-    } else if (activeTab === '依領域瀏覽') {
-      currentTopics = fieldTopics; // 這是沒有 # 的列表
-      // 依領域篩選，會自動處理 JSON 中有 # 的情況
-      currentData = generateProfessorMap(currentTopics, 'tags');
-    } else {
-      return <div className={styles['tab-content-placeholder']}>依清單瀏覽 內容</div>;
-    }
-
-    return (
-      <ButtonGrid
-        buttons={currentTopics} 
-        selectedTopic={selectedTopic}
-        onTopicSelect={handleTopicSelect}
-        professorData={currentData}
-      />
-    );
-  };
-
-  // --- 載入狀態檢查 ---
-  if (loading) {
-     return <div className={styles['nycu-topic-container']}>載入中...</div>;
-  }
-  if (error) {
-     return <div className={styles['nycu-topic-container']}>載入錯誤: {error}</div>;
-  }
-  if (!newData || allProfessors.length === 0) {
-     return <div className={styles['nycu-topic-container']}>暫無教授資料</div>;
-  }
-
+// ────────────────────────────────────────────────────────────────────
+function Pill({ children, on, onClick }) {
   return (
-    <div className={styles['nycu-topic-container']}>
-      <nav className={styles['browse-nav']}>
-        {TABS_CONFIG.map((label) => (
-          <button
-            key={label}
-            className={`${styles['browse-nav-item']} ${activeTab === label ? styles.active : ''}`}
-            onClick={() => handleTabChange(label)}
-          >
-            {label}
-          </button>
-        ))}
-      </nav>
-      
-      <div className={styles['content-area']}>
-        <div className={styles['content-area-wrapper']}>
-          {renderTabContent()}
-        </div>
-      </div>
-    </div>
+    <button
+      type="button"
+      onClick={onClick}
+      className={`${styles.pill} ${on ? styles.pillOn : ""}`}
+    >
+      {children}
+    </button>
   );
 }
 
-export default TopicPage;
+function ActiveChip({ children, onClear }) {
+  return (
+    <span className={styles.chip}>
+      {children}
+      <button type="button" onClick={onClear} className={styles.chipX} aria-label="remove">
+        ×
+      </button>
+    </span>
+  );
+}
+
+function ProfCard({ prof, onPick }) {
+  return (
+    <button
+      type="button"
+      onClick={() => onPick(prof)}
+      className={styles.card}
+    >
+      <div className={styles.cardDept}>{prof.department.join(" · ")}</div>
+      <div className={styles.cardName}>{prof.name}</div>
+      <div className={styles.cardLab}>{prof.labName}</div>
+      <div className={styles.cardTags}>
+        {prof.cleanTags.map((t) => (
+          <span key={t} className={styles.tag}>{t}</span>
+        ))}
+      </div>
+    </button>
+  );
+}
+
+// ────────────────────────────────────────────────────────────────────
+export default function TopicPage() {
+  const navigate = useNavigate();
+  const { data, loading, error } = useData();
+  const [dept, setDept] = useState(null);
+  const [fields, setFields] = useState(new Set());
+  const [query, setQuery] = useState("");
+
+  // Normalize professors once: pre-clean tags and ensure department is an array.
+  // Drop placeholder/empty entries (id 0 in the JSON template).
+  const professors = useMemo(() => {
+    const raw = data?.professors ?? [];
+    return raw
+      .filter((p) => p && p.name && p.name.trim() !== "" && p.name.trim() !== "Prof.")
+      .map((p) => ({
+        ...p,
+        department: Array.isArray(p.department)
+          ? p.department.filter((d) => d && d.trim() !== "")
+          : p.department
+          ? [p.department]
+          : [],
+        cleanTags: (p.tags ?? []).map(cleanTag).filter((t) => t !== ""),
+      }));
+  }, [data]);
+
+  // Department display order: 電子甲 → 電子乙 → 電機所 → 電控所 → 生醫所 → rest.
+  // Match by substring so it survives small naming variations (e.g. "電子所甲組").
+  const DEPT_ORDER = ["電子所甲", "電子所乙", "電機所", "電控所", "生醫所"];
+  const deptRank = (d) => {
+    const i = DEPT_ORDER.findIndex((key) => d.includes(key));
+    return i === -1 ? DEPT_ORDER.length : i;
+  };
+  const DEPTS = useMemo(() => {
+    const raw = data?.topics?.departments ?? [];
+    return [...raw].sort((a, b) => {
+      const ra = deptRank(a);
+      const rb = deptRank(b);
+      if (ra !== rb) return ra - rb;
+      return a.localeCompare(b, "zh-Hant");
+    });
+  }, [data]);
+  // Fields are derived from the union of all professor tags (deduped, # stripped, sorted),
+  // matching the original TopicPage behaviour rather than the topics.fields list in JSON.
+  const FIELDS = useMemo(() => {
+    const set = new Set();
+    professors.forEach((p) => p.cleanTags.forEach((t) => set.add(t)));
+    return [...set].sort();
+  }, [professors]);
+
+  const toggleField = (f) => {
+    setFields((prev) => {
+      const next = new Set(prev);
+      next.has(f) ? next.delete(f) : next.add(f);
+      return next;
+    });
+  };
+  const clearField = (f) =>
+    setFields((prev) => {
+      const next = new Set(prev);
+      next.delete(f);
+      return next;
+    });
+  const clearAll = () => {
+    setDept(null);
+    setFields(new Set());
+    setQuery("");
+  };
+
+  const list = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    return professors.filter((p) => {
+      if (dept && !p.department.includes(dept)) return false;
+      if (fields.size > 0 && !p.cleanTags.some((t) => fields.has(t))) return false;
+      if (q) {
+        const blob = (
+          p.name +
+          " " +
+          (p.labName || "") +
+          " " +
+          p.department.join(" ") +
+          " " +
+          p.cleanTags.join(" ")
+        ).toLowerCase();
+        if (!blob.includes(q)) return false;
+      }
+      return true;
+    });
+  }, [professors, dept, fields, query]);
+
+  const hasFilters = dept !== null || fields.size > 0 || query.length > 0;
+
+  const onPick = (prof) => navigate(`/professor/${prof.id}`);
+
+  return (
+    <div className={styles.page}>
+      {/* Top bar */}
+      <div className={styles.topBar}>
+        <div className={styles.brand}>
+          <span className={styles.brandMark} aria-hidden="true" />
+          <strong>NYCUEE · LAB</strong>
+        </div>
+        <button
+          type="button"
+          onClick={() => navigate("/")}
+          className={styles.homeLink}
+        >
+          ← Home
+        </button>
+      </div>
+
+      {/* Hero + search */}
+      <div className={styles.heroRow}>
+        <h1 className={styles.title}>研究領域目錄</h1>
+        <div className={styles.search}>
+          <span className={styles.searchIcon} aria-hidden="true">⌕</span>
+          <input
+            type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="搜尋…"
+            className={styles.searchInput}
+          />
+          {query && (
+            <button
+              type="button"
+              onClick={() => setQuery("")}
+              className={styles.searchClear}
+              aria-label="clear search"
+            >
+              ×
+            </button>
+          )}
+        </div>
+      </div>
+
+      {/* Filter rails */}
+      <div className={styles.rails}>
+        <div className={styles.railRow}>
+          <Pill on={dept === null} onClick={() => setDept(null)}>全部系所</Pill>
+          {DEPTS.map((d) => (
+            <Pill key={d} on={dept === d} onClick={() => setDept(dept === d ? null : d)}>
+              {d}
+            </Pill>
+          ))}
+        </div>
+        <div className={styles.railRow}>
+          {FIELDS.map((f) => (
+            <Pill key={f} on={fields.has(f)} onClick={() => toggleField(f)}>
+              {f}
+            </Pill>
+          ))}
+        </div>
+      </div>
+
+      {/* Active filters + count */}
+      <div className={styles.activeRow}>
+        <div className={styles.activeLeft}>
+          <span className={styles.count}>
+            {String(list.length).padStart(2, "0")} / {String(professors.length).padStart(2, "0")}
+          </span>
+          {dept && <ActiveChip onClear={() => setDept(null)}>{dept}</ActiveChip>}
+          {[...fields].map((f) => (
+            <ActiveChip key={f} onClear={() => clearField(f)}>{f}</ActiveChip>
+          ))}
+          {query && <ActiveChip onClear={() => setQuery("")}>{`“${query}”`}</ActiveChip>}
+        </div>
+        {hasFilters && (
+          <button type="button" onClick={clearAll} className={styles.clearBtn}>
+            Clear
+          </button>
+        )}
+      </div>
+
+      {/* Grid */}
+      {loading ? (
+        <div className={styles.empty}>載入中…</div>
+      ) : error ? (
+        <div className={styles.empty}>載入錯誤: {error}</div>
+      ) : list.length === 0 ? (
+        <div className={styles.empty}>查無結果</div>
+      ) : (
+        <div className={styles.grid}>
+          {list.map((p) => (
+            <ProfCard key={p.id} prof={p} onPick={onPick} />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}

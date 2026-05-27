@@ -6,13 +6,19 @@ export default function Main() {
   const navigate = useNavigate();
   const handleClick = () => navigate("/topicpage");
 
-  // Paint <html> blue while Main is mounted so iOS rubber-band overscroll
-  // shows the page colour rather than the default white. Restored on unmount.
+  // Paint <html> and <body> blue while Main is mounted so iOS rubber-band
+  // overscroll shows the page colour rather than the default white.
+  // WebKit propagates body's bg to the canvas when set, so we paint both.
   useEffect(() => {
-    const prev = document.documentElement.style.backgroundColor;
-    document.documentElement.style.backgroundColor = "#034b77";
+    const html = document.documentElement;
+    const body = document.body;
+    const prevHtml = html.style.backgroundColor;
+    const prevBody = body.style.backgroundColor;
+    html.style.backgroundColor = "#034b77";
+    body.style.backgroundColor = "#034b77";
     return () => {
-      document.documentElement.style.backgroundColor = prev;
+      html.style.backgroundColor = prevHtml;
+      body.style.backgroundColor = prevBody;
     };
   }, []);
 

@@ -459,6 +459,16 @@ function Professor() {
                   src={`${API_BASE}/photo/${photo}`}
                   alt={name}
                   className={styles.professorPhoto}
+                  style={
+                    photo === "professor_id30.png"
+                      ? {
+                          width: "auto",
+                          maxWidth: "100%",
+                          objectFit: "contain",
+                          transform: "translateX(80px)",
+                        }
+                      : undefined
+                  }
                   fetchpriority="high"
                   decoding="async"
                   onError={(e) => {

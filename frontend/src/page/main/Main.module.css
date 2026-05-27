@@ -6,6 +6,7 @@
 .main {
   width: 100%;
   min-height: 100vh;
+  min-height: 100dvh;
   background: #034b77;
   color: #f4efe6;
   font-family: "Noto Sans TC", "Helvetica Neue", Helvetica, sans-serif;
@@ -153,7 +154,8 @@
 /* ── Responsive ──────────────────────────────────────────── */
 @media (max-width: 768px) {
   .main {
-    padding: 32px 24px 25vh;
+    padding: calc(32px + env(safe-area-inset-top)) 24px
+      calc(25vh + env(safe-area-inset-bottom));
   }
   .mainButton {
     font-size: 14px;

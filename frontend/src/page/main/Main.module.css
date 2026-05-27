@@ -1,75 +1,143 @@
+/* Make sure Noto Sans TC is loaded once globally — either via
+   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+   in public/index.html, or @import at the top of your global stylesheet.
+*/
+
 .main {
-  background: #034b77ff;
   width: 100%;
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 80px 20px;
-}
-
-.content {
+  background: #034b77;
+  color: #f4efe6;
+  font-family: "Noto Sans TC", "Helvetica Neue", Helvetica, sans-serif;
+  padding: clamp(40px, 5vw, 80px);
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+/* ── Top row ─────────────────────────────────────────────── */
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+}
+.topRow strong {
+  font-weight: 700;
+  display: block;
+}
+.topRow span {
+  color: rgba(244, 239, 230, 0.55);
+}
+.topRight {
+  color: rgba(244, 239, 230, 0.55);
+  text-align: right;
+}
+
+/* ── Hero ────────────────────────────────────────────────── */
+.hero {
+  animation: revealUp 0.7s ease-out backwards;
+}
+
+.eyebrow {
+  display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 22px;
+  margin-bottom: clamp(20px, 2.5vw, 36px);
+}
+.block {
+  width: 48px;
+  height: 48px;
+  background: #f26c3c;
+  display: inline-block;
+  flex: 0 0 auto;
+}
+.eyebrowText {
+  font-size: clamp(15px, 1.15vw, 19px);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: rgba(244, 239, 230, 0.55);
 }
 
 .title {
-  font-size: 12vw;
-  font-weight: 800;
-  letter-spacing: 0.5vw;
-  font-family: "Arial Black", sans-serif;
-  line-height: 1.2;
-  text-align: center;
   margin: 0;
-  background: linear-gradient(to right, #90c6ecff, #FFFFFF);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  transform: scaleY(1.3) scaleX(0.85);
-  animation: revealTitle 2s ease-out backwards;
+  font-weight: 900;
+  font-size: clamp(64px, 13.5vw, 210px);
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+}
+.dot {
+  color: #f26c3c;
+}
+
+/* ── Bottom row ──────────────────────────────────────────── */
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
 }
 
 .mainButton {
-  padding: 1.2rem 6rem;
-  min-width: 400px;
-  font-size: 1.5rem;
+  background: transparent;
+  color: #f4efe6;
+  border: 1.5px solid #f4efe6;
+  padding: 22px 44px;
+  font-family: inherit;
   font-weight: 600;
-  color: #D9E7ED;
-  background: rgba(217, 231, 237, 0.1);
-  border: 2px solid #D9E7ED;
-  border-radius: 8px;
+  font-size: 17px;
+  letter-spacing: 0.08em;
   cursor: pointer;
-  transition: all 0.3s ease;
-  animation: revealFromCenter 1.3s ease-out 0.1s backwards;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  animation: revealFromCenter 0.6s ease-out 0.3s backwards;
 }
-
 .mainButton:hover {
-  background: #D9E7ED;
-  color: #034b77ff;
+  background: #f4efe6;
+  color: #034b77;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(217, 231, 237, 0.3);
 }
-
 .mainButton:active {
   transform: translateY(0);
 }
 
-/* Animations */
-@keyframes revealTitle {
+.arrow {
+  font-size: 20px;
+  transition: transform 0.25s ease;
+}
+.mainButton:hover .arrow {
+  transform: translateX(4px);
+}
+
+.bottomRight {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(244, 239, 230, 0.55);
+  text-align: right;
+  line-height: 1.7;
+}
+
+/* ── Animations ──────────────────────────────────────────── */
+@keyframes revealUp {
   from {
     clip-path: inset(0 0 100% 0);
     opacity: 0;
-    transform: scaleY(1.3) scaleX(0.85);
+    transform: translateY(12px);
   }
   to {
     clip-path: inset(0 0 0 0);
     opacity: 1;
-    transform: scaleY(1.3) scaleX(0.85);
+    transform: translateY(0);
   }
 }
-
 @keyframes revealFromCenter {
   from {
     clip-path: inset(0 80% 0 80%);
@@ -81,11 +149,24 @@
   }
 }
 
-/* Responsive design */
+/* ── Responsive ──────────────────────────────────────────── */
 @media (max-width: 768px) {
+  .main {
+    padding: 32px 24px;
+  }
   .mainButton {
-    font-size: 1.2rem;
-    padding: 1rem 3rem;
-    min-width: 250px;
+    font-size: 14px;
+    padding: 16px 28px;
+  }
+  .block {
+    width: 36px;
+    height: 36px;
+  }
+  .topRow,
+  .bottomRow {
+    font-size: 11px;
+  }
+  .bottomRight {
+    font-size: 10px;
   }
 }

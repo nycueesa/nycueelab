@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Main.module.css";
 
 export default function Main() {
   const navigate = useNavigate();
   const handleClick = () => navigate("/topicpage");
+
+  // Paint <html> blue while Main is mounted so iOS rubber-band overscroll
+  // shows the page colour rather than the default white. Restored on unmount.
+  useEffect(() => {
+    const prev = document.documentElement.style.backgroundColor;
+    document.documentElement.style.backgroundColor = "#034b77";
+    return () => {
+      document.documentElement.style.backgroundColor = prev;
+    };
+  }, []);
 
   return (
     <div className={styles.main}>

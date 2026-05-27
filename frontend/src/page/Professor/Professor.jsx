@@ -297,22 +297,6 @@ function Professor() {
     return () => observer.disconnect();
   }, [professorData?.faqs?.length]);
 
-  // Show loading state
-  if (loading) {
-    return (
-      <div className={styles.professorPage}>
-        <section className={styles.heroSection}>
-          <div className={styles.heroContent}>
-            <div className={styles.heroLeft}>
-              <h1 className={styles.labName}>載入中...</h1>
-              <p className={styles.department}>正在載入教授資料</p>
-            </div>
-          </div>
-        </section>
-      </div>
-    );
-  }
-
   // Show error state
   if (error) {
     return (
@@ -331,7 +315,7 @@ function Professor() {
   }
 
   // If ID provided but professor not found, show error
-  if (id && !professorData) {
+  if (id && !loading && !professorData) {
     return (
       <div className={styles.professorPage}>
         <section className={styles.heroSection}>
@@ -430,8 +414,12 @@ function Professor() {
               heroVisible ? styles.heroLeftVisible : ""
             }`}
           >
-            <h1 className={styles.labName}>{labName || "實驗室名稱"}</h1>
-            <p className={styles.department}>{departmentStr}</p>
+            <h1 className={styles.labName}>
+              {loading ? "載入中..." : labName || "實驗室名稱"}
+            </h1>
+            <p className={styles.department}>
+              {loading ? "正在載入教授資料" : departmentStr}
+            </p>
             {officeLocation && (
               <p className={styles.officeLocation}>
                 辦公室: {officeLocation}
@@ -466,17 +454,27 @@ function Professor() {
                 heroVisible ? styles.professorPhotoVisible : ""
               }`}
             >
-              {photo ? (
+              {photo && (
                 <img
                   src={`${API_BASE}/photo/${photo}`}
                   alt={name}
                   className={styles.professorPhoto}
+                  fetchpriority="high"
+                  decoding="async"
+                  onError={(e) => {
+                    e.currentTarget.src = "";
+                    e.currentTarget.style.display = "none";
+                    const placeholder = e.currentTarget.nextElementSibling;
+                    if (placeholder) placeholder.style.display = "flex";
+                  }}
                 />
-              ) : (
-                <div className={styles.professorPhotoPlaceholder}>
-                  <span>{name?.replace("Prof. ", "").charAt(0) || "?"}</span>
-                </div>
               )}
+              <div
+                className={styles.professorPhotoPlaceholder}
+                style={{ display: photo ? "none" : "flex" }}
+              >
+                <span>{name?.replace("Prof. ", "").charAt(0) || "?"}</span>
+              </div>
               <div className={styles.professorName}>{name}</div>
             </div>
           </div>

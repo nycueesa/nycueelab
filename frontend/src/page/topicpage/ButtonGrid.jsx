@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './TopicPage.module.css';
 // ** 關鍵新增：導入 useNavigate Hook **
 import { useNavigate } from 'react-router-dom';
@@ -22,7 +22,27 @@ const ButtonGrid = ({
   
   // ** 關鍵新增：取得導航函式 **
   const navigate = useNavigate();
-  const buttonRows = chunkArray(buttons, 3); 
+  
+  // RWD: 根據視窗寬度決定每列顯示幾個按鈕
+  const [columns, setColumns] = useState(3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 600) {
+        setColumns(1);
+      } else if (window.innerWidth < 992) {
+        setColumns(2);
+      } else {
+        setColumns(3);
+      }
+    };
+
+    handleResize(); // 初始執行
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const buttonRows = chunkArray(buttons, columns); 
 
   // ** 新增：處理教授小格子點擊事件 (直接跳轉) **
   const handleProfessorClick = (profId) => {
@@ -36,7 +56,10 @@ const ButtonGrid = ({
         <React.Fragment key={rowIndex}>
           
           {/* 1. 渲染「一排」領域按鈕 */}
-          <div className={styles['grid-row-container']}>
+          <div 
+            className={styles['grid-row-container']}
+            style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}
+          >
             {row.map((topic) => (
               <button
                 key={topic}

@@ -12,6 +12,7 @@
   padding: 10px 20px 0;
   background-color: #f1f3f5;
   border-bottom: 2px solid #3a536e;
+  flex-wrap: wrap; /* 允許在手機端換行 */
 }
 .browse-nav-item {
   font-size: 1rem;
@@ -23,6 +24,9 @@
   cursor: pointer;
   border-radius: 10px 10px 0 0;
   transition: all 0.2s;
+  flex: 1; /* 在手機端平均分配寬度 */
+  min-width: 120px;
+  text-align: center;
 }
 .browse-nav-item:not(.active):hover {
   background-color: #8a96a1;
@@ -66,6 +70,10 @@
   cursor: pointer;
   transition: all 0.2s;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-break: break-word; /* 防止文字溢出 */
 }
 
 .selected {
@@ -105,14 +113,14 @@
   transition: max-height 0.5s ease-in-out;
 }
 .professor-reveal-panel.active {
-  max-height: 500px;
+  max-height: 2000px; /* 增加最大高度以容納多位教授 */
   background-color: #ffffff;
   border: 2px solid #0d6efd;
   border-radius: 8px;
   padding: 20px 24px;
   margin-bottom: 40px;
   position: relative;
-  overflow: hidden;
+  overflow: visible; /* 允許內容撐開 */
 }
 .arrow-pointer {
   position: absolute;
@@ -176,12 +184,8 @@
 
 
 /* --- 6. 實驗室詳情頁 (LabDetailPage) 樣式 --- */
-/* (這個樣式應該在 ProfessorInfo.module.css 中，
-   但如果您的 ProfessorInfo 元件也導入了 TopicPage.module.css，
-   把它放在這裡也是可以運作的)
-*/
 .lab-page-enter {
-  animation: fadeIn 0.4s ease-out; /* 沿用既有的 fadeIn 動畫 */
+  animation: fadeIn 0.4s ease-out; 
 }
 .lab-page-title {
   color: white;
@@ -199,7 +203,7 @@
 }
 .lab-content-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr; /* 資訊佔 2/3，圖片佔 1/3 */
+  grid-template-columns: 2fr 1fr; 
   gap: 40px;
 }
 .lab-info-block {
@@ -256,4 +260,60 @@
   font-size: 1.5rem;
   text-align: center;
   padding: 50px 0;
+}
+
+/* --- 9. 手機端 RWD --- */
+@media (max-width: 992px) {
+  .grid-row-container {
+    gap: 20px;
+  }
+  .grid-button {
+    padding: 30px 15px;
+    font-size: 1.3rem;
+  }
+  .lab-page-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .browse-nav {
+    padding: 10px 10px 0;
+  }
+  .browse-nav-item {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    min-width: 100px;
+  }
+  .content-area {
+    padding: 20px 15px;
+  }
+  .grid-button {
+    padding: 25px 10px;
+    font-size: 1.1rem;
+  }
+  .professor-chip {
+    padding: 10px 16px;
+    font-size: 1.1rem;
+  }
+  .lab-content-grid {
+    grid-template-columns: 1fr;
+  }
+  .lab-page-image {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-button {
+    padding: 20px 8px;
+    font-size: 1rem;
+  }
+  .lab-page-title {
+    font-size: 1.8rem;
+  }
+  .lab-page-subtitle {
+    font-size: 1.2rem;
+  }
 }

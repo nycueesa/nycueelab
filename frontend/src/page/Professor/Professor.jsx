@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useParams, useSearchParams, useNavigate } from "react-router-dom";
 import styles from "./Professor.module.css";
 import { API_BASE } from "../../hooks/useData";
 
@@ -44,11 +44,20 @@ function Professor() {
   const { profId } = useParams();
   const [searchParams] = useSearchParams();
   const id = profId || searchParams.get("id");
+  const navigate = useNavigate();
+  const handleGoBack = () => navigate(-1);
 
   // State for professor data and loading/error states
   const [professorData, setProfessorData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  // Back button slide visibility — show on scroll-up, hide on scroll-down
+  const [backButtonVisible, setBackButtonVisible] = useState(true);
+  const lastScrollY = useRef(0);
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" ? window.innerWidth <= 768 : false
+  );
 
   // Animation state for each section
   const [heroVisible, setHeroVisible] = useState(false);
@@ -105,6 +114,28 @@ function Professor() {
       setHeroVisible(true);
     }, 50);
     return () => clearTimeout(timer);
+  }, []);
+
+  // Hide back button on scroll-down, show on scroll-up
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      if (currentY > lastScrollY.current && currentY > 50) {
+        setBackButtonVisible(false);
+      } else if (currentY < lastScrollY.current) {
+        setBackButtonVisible(true);
+      }
+      lastScrollY.current = currentY;
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Track mobile breakpoint so the back arrow can resize/reposition on phone
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // Fallback: Show research section after delay if observer doesn't trigger
@@ -363,7 +394,34 @@ function Professor() {
   );
 
   return (
-    <div className={styles.professorPage}>
+    <div className={styles.professorPage} style={{ position: 'relative' }}>
+      <button
+        type="button"
+        onClick={handleGoBack}
+        aria-label="返回"
+        style={{
+          position: 'fixed',
+          top: isMobile ? '6px' : '8px',
+          right: isMobile ? '10px' : '16px',
+          zIndex: 1000,
+          padding: isMobile ? '4px 8px' : '6px 10px',
+          background: 'transparent',
+          border: 'none',
+          borderRadius: '999px',
+          cursor: 'pointer',
+          fontSize: isMobile ? '1.3rem' : '1.6rem',
+          lineHeight: 1,
+          fontWeight: 600,
+          color: 'rgba(255, 255, 255, 0.6)',
+          textShadow: '0 1px 3px rgba(0,0,0,0.5)',
+          transform: backButtonVisible
+            ? 'translateX(0)'
+            : 'translateX(calc(100% + 40px))',
+          transition: 'transform 0.3s ease',
+        }}
+      >
+        ←
+      </button>
       {/* Hero Section */}
       <section className={styles.heroSection}>
         <div className={styles.heroContent}>

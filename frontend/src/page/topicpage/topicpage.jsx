@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./TopicPage.module.css";
 import { useData } from "../../hooks/useData.js";
@@ -62,7 +62,7 @@ export default function TopicPage() {
   const professors = useMemo(() => {
     const raw = data?.professors ?? [];
     return raw
-      .filter((p) => p && p.name && p.name.trim() !== "" && p.name.trim() !== "Prof.")
+      .filter((p) => p && p.name && p.name.trim() !== "" && p.name.trim() !== "Prof." && !p.hidden)
       .map((p) => ({
         ...p,
         department: Array.isArray(p.department)
@@ -90,13 +90,47 @@ export default function TopicPage() {
       return a.localeCompare(b, "zh-Hant");
     });
   }, [data]);
-  // Fields are derived from the union of all professor tags (deduped, # stripped, sorted),
-  // matching the original TopicPage behaviour rather than the topics.fields list in JSON.
+  // Fields are derived from the union of professor tags (deduped, # stripped).
+  // Scoped to the active dept filter so picking a department also narrows the field
+  // rail to only the tags that actually exist within it. Order mirrors the department
+  // rail: each tag's rank is the lowest deptRank among professors carrying it,
+  // ties broken by zh-Hant collation.
   const FIELDS = useMemo(() => {
-    const set = new Set();
-    professors.forEach((p) => p.cleanTags.forEach((t) => set.add(t)));
-    return [...set].sort();
-  }, [professors]);
+    const rankByTag = new Map();
+    professors.forEach((p) => {
+      if (dept && !p.department.includes(dept)) return;
+      const profRank = Math.min(
+        ...(p.department.length ? p.department.map(deptRank) : [DEPT_ORDER.length]),
+        DEPT_ORDER.length
+      );
+      p.cleanTags.forEach((t) => {
+        const prev = rankByTag.has(t) ? rankByTag.get(t) : Infinity;
+        if (profRank < prev) rankByTag.set(t, profRank);
+      });
+    });
+    return [...rankByTag.keys()].sort((a, b) => {
+      const ra = rankByTag.get(a);
+      const rb = rankByTag.get(b);
+      if (ra !== rb) return ra - rb;
+      return a.localeCompare(b, "zh-Hant");
+    });
+  }, [professors, dept]);
+
+  // Drop any active field selection that no longer exists in the current rail
+  // (e.g. user picked AI, then switched to a department where AI doesn't appear).
+  useEffect(() => {
+    setFields((prev) => {
+      if (prev.size === 0) return prev;
+      const available = new Set(FIELDS);
+      let changed = false;
+      const next = new Set();
+      prev.forEach((f) => {
+        if (available.has(f)) next.add(f);
+        else changed = true;
+      });
+      return changed ? next : prev;
+    });
+  }, [FIELDS]);
 
   const toggleField = (f) => {
     setFields((prev) => {
@@ -195,6 +229,7 @@ export default function TopicPage() {
           ))}
         </div>
         <div className={styles.railRow}>
+          <span className={styles.railLabel}>領域：</span>
           {FIELDS.map((f) => (
             <Pill key={f} on={fields.has(f)} onClick={() => toggleField(f)}>
               {f}

@@ -109,6 +109,17 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  align-items: center;
+}
+.railLabel {
+  display: inline-block;
+  min-width: 56px;
+  box-sizing: border-box;
+  padding: 7px 6px 7px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a2530;
+  text-align: right;
 }
 .pill {
   display: inline-flex;

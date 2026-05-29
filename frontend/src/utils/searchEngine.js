@@ -44,6 +44,7 @@ export const searchProfessors = (query, allData, filters = {}) => {
   const professors = allData.professors || [];
 
   professors.forEach((professor) => {
+    if (professor?.hidden) return;
     const professorDepartments = Array.isArray(professor.department)
       ? professor.department
       : Array.isArray(professor.departments)
@@ -119,6 +120,7 @@ export const getFilterOptions = (allData) => {
   const professors = allData.professors || [];
 
   professors.forEach((professor) => {
+    if (professor?.hidden) return;
     const professorDepartments = Array.isArray(professor.department)
       ? professor.department
       : Array.isArray(professor.departments)

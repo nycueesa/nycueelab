@@ -1191,10 +1191,7 @@
       "photo": "professor_id18.png",
       "LabWebsite": "http://isci.lab.nycu.edu.tw/",
       "tags": [
-        "#",
-        "#",
-        "#",
-        "#"
+        "#AI"
       ],
       "research": [
         {
@@ -1277,9 +1274,7 @@
       "LabWebsite": "https://sites.google.com/site/cereslaben/advisor",
       "tags": [
         "#數位IC設計",
-        "#AI",
-        "#",
-        "#"
+        "#AI"
       ],
       "research": [
         {
@@ -1424,7 +1419,8 @@
       "photo": "professor_id22.png",
       "LabWebsite": "http://ivs.ee.nctu.edu.tw/",
       "tags": [
-        "#多媒體",
+        "#多媒體處理",
+        "#EDA",
         "#AI",
         "#類比IC設計",
         "#數位IC設計"
@@ -1769,10 +1765,8 @@
       "photo": "professor_id28.png",
       "LabWebsite": "https://wiml.web.nycu.edu.tw/",
       "tags": [
-        "#",
-        "#",
-        "#",
-        "#"
+        "#類比IC設計",
+        "#生醫"
       ],
       "research": [
         {
@@ -1931,10 +1925,7 @@
       "photo": "professor_id30.png",
       "LabWebsite": "https://sites.google.com/site/chiehchihbobwang",
       "tags": [
-        "#類比IC",
-        "#數位IC",
-        "#光電",
-        "#生醫"
+        "#機器人"
       ],
       "research": [
         {
@@ -2106,10 +2097,7 @@
       "photo": "professor_id34.png",
       "LabWebsite": "https://adclab.web.nycu.edu.tw/",
       "tags": [
-        "#類比IC",
-        "#數位IC",
-        "#光電",
-        "#生醫"
+        "#類比IC設計"
       ],
       "research": [
         {
@@ -2508,10 +2496,7 @@
       "photo": "professor_id42.png",
       "LabWebsite": "https://sites.google.com/nycu.edu.tw/mintlab/lab-activities",
       "tags": [
-        "#類比IC",
-        "#數位IC",
-        "#光電",
-        "#生醫"
+        "#通訊"
       ],
       "research": [
         {
@@ -2827,10 +2812,7 @@
       "photo": "professor_id48.png",
       "LabWebsite": "https://sites.google.com/view/oasis317/",
       "tags": [
-        "#",
-        "#",
-        "#",
-        "#"
+        "#數位IC設計"
       ],
       "research": [
         {
@@ -3763,9 +3745,7 @@
       "LabWebsite": "http://www.gychen.website/",
       "tags": [
         "#生醫",
-        "#AI",
-        "#",
-        "#"
+        "#AI"
       ],
       "research": [
         {
@@ -3974,9 +3954,6 @@
       "photo": "professor_id70.png",
       "LabWebsite": "https://www.facebook.com/NYCUAUL/",
       "tags": [
-        "#類比IC",
-        "#數位IC",
-        "#光電",
         "#生醫"
       ],
       "research": [
@@ -4047,10 +4024,9 @@
       "photo": "professor_id72.png",
       "LabWebsite": "https://cialab.web.nycu.edu.tw/",
       "tags": [
-        "#類比IC",
-        "#數位IC",
-        "#光電",
-        "#生醫"
+        "#EDA",
+        "#通訊",
+        "#AI"
       ],
       "research": [
         {
@@ -4345,10 +4321,7 @@
       "photo": "professor_id78.png",
       "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
       "tags": [
-        "#類比IC",
-        "#數位IC",
-        "#光電",
-        "#生醫"
+        "#類比IC設計"
       ],
       "research": [
         {
@@ -4430,10 +4403,10 @@
       "photo": "professor_id80.png",
       "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
       "tags": [
-        "#類比IC",
-        "#數位IC",
-        "#光電",
-        "#生醫"
+        "#AI",
+        "#EDA",
+        "#多媒體處理",
+        "#數位IC設計"
       ],
       "research": [
         {
@@ -4500,7 +4473,8 @@
           "linkName": "教授QA",
           "link": null
         }
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": 82,
@@ -4515,10 +4489,8 @@
       "photo": "professor_id82.png",
       "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
       "tags": [
-        "#類比IC",
-        "#數位IC",
-        "#光電",
-        "#生醫"
+        "#半導體",
+        "#固態"
       ],
       "research": [
         {
@@ -4597,7 +4569,8 @@
           "linkName": "專題影片",
           "link": "https://www.youtube.com/watch?v=jXM_Ksknmxc"
         }
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": 84,
@@ -4612,9 +4585,6 @@
       "photo": "professor_id84.png",
       "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
       "tags": [
-        "#類比IC",
-        "#數位IC",
-        "#光電",
         "#生醫"
       ],
       "research": [
@@ -4686,7 +4656,8 @@
           "linkName": "專題影片",
           "link": "https://www.youtube.com/watch?v=askz7vnu0C4"
         }
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": 86,
@@ -4701,10 +4672,8 @@
       "photo": "professor_id86.png",
       "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
       "tags": [
-        "#類比IC",
-        "#數位IC",
-        "#光電",
-        "#生醫"
+        "#RF",
+        "#固態"
       ],
       "research": [
         {
@@ -4771,7 +4740,8 @@
           "linkName": "教授QA",
           "link": null
         }
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": 88,
@@ -4786,10 +4756,7 @@
       "photo": "professor_id88.png",
       "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
       "tags": [
-        "#類比IC",
-        "#數位IC",
-        "#光電",
-        "#生醫"
+        "#類比IC設計"
       ],
       "research": [
         {
@@ -4856,7 +4823,8 @@
           "linkName": "教授QA",
           "link": null
         }
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": 90,
@@ -4945,7 +4913,8 @@
           "linkName": "專題影片",
           "link": "https://www.youtube.com/watch?v=EzhFcaN5UPA"
         }
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": 92,
@@ -5030,7 +4999,8 @@
           "linkName": "教授QA",
           "link": null
         }
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": 94,
@@ -5123,7 +5093,8 @@
           "linkName": "專題影片",
           "link": "https://www.youtube.com/watch?v=Suwls5z3pwk"
         }
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": 96,
@@ -5208,7 +5179,8 @@
           "linkName": "教授QA",
           "link": null
         }
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": 98,
@@ -5293,7 +5265,8 @@
           "linkName": "教授QA",
           "link": null
         }
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": 100,
@@ -5378,7 +5351,8 @@
           "linkName": "教授QA",
           "link": null
         }
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": 102,
@@ -5467,7 +5441,8 @@
           "linkName": "專題影片",
           "link": "https://www.youtube.com/watch?v=h8S8QRgDNNY"
         }
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": 104,
@@ -5552,7 +5527,8 @@
           "linkName": "教授QA",
           "link": null
         }
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": 106,
@@ -5567,10 +5543,9 @@
       "photo": "professor_id106.png",
       "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
       "tags": [
-        "#類比IC",
-        "#數位IC",
-        "#光電",
-        "#生醫"
+        "#通訊",
+        "#AI",
+        "#訊息理論"
       ],
       "research": [
         {
@@ -5641,7 +5616,8 @@
           "linkName": "專題影片",
           "link": "https://www.youtube.com/watch?v=YNCwG7OsqVA"
         }
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": 108,
@@ -5656,10 +5632,7 @@
       "photo": "professor_id108.png",
       "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
       "tags": [
-        "#類比IC",
-        "#數位IC",
-        "#光電",
-        "#生醫"
+        "#RF"
       ],
       "research": [
         {
@@ -5726,7 +5699,8 @@
           "linkName": "教授QA",
           "link": null
         }
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": 110,
@@ -6141,10 +6115,8 @@
       "photo": "professor_id118.png",
       "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
       "tags": [
-        "#類比IC",
-        "#數位IC",
-        "#光電",
-        "#生醫"
+        "#數位IC設計",
+        "#AI"
       ],
       "research": [
         {
@@ -6275,7 +6247,8 @@
           "linkName": "專題影片",
           "link": "https://www.youtube.com/watch?v=RJfhQChZmtI"
         }
-      ]
+      ],
+      "hidden": true
     },
     {
       "id": 122,
@@ -6290,10 +6263,7 @@
       "photo": "professor_id122.png",
       "LabWebsite": "https://poweric.lab.nycu.edu.tw/",
       "tags": [
-        "#類比IC",
-        "#數位IC",
-        "#光電",
-        "#生醫"
+        "#類比IC設計"
       ],
       "research": [
         {
@@ -6432,7 +6402,8 @@
           "linkName": "專題影片",
           "link": "https://www.youtube.com/watch?v=gXA6C3KiTjg"
         }
-      ]
+      ],
+      "hidden": true
     }
   ]
 }

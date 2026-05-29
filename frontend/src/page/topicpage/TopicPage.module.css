@@ -128,11 +128,11 @@
 }
 .railRow {
   display: flex;
-  flex-wrap: wrap;
   gap: 8px;
-  align-items: center;
+  align-items: flex-start;
 }
 .railLabel {
+  flex: 0 0 auto;
   display: inline-block;
   min-width: 56px;
   box-sizing: border-box;
@@ -141,6 +141,13 @@
   font-weight: 600;
   color: #1a2530;
   text-align: right;
+}
+.railPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 .pill {
   display: inline-flex;

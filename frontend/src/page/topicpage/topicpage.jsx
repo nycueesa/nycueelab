@@ -230,20 +230,25 @@ export default function TopicPage() {
       {/* Filter rails */}
       <div className={styles.rails}>
         <div className={styles.railRow}>
-          <Pill on={dept === null} onClick={() => setDept(null)}>全部系所</Pill>
-          {DEPTS.map((d) => (
-            <Pill key={d} on={dept === d} onClick={() => setDept(dept === d ? null : d)}>
-              {d}
-            </Pill>
-          ))}
+          <span className={styles.railLabel}>系所：</span>
+          <div className={styles.railPills}>
+            <Pill on={dept === null} onClick={() => setDept(null)}>全部系所</Pill>
+            {DEPTS.map((d) => (
+              <Pill key={d} on={dept === d} onClick={() => setDept(dept === d ? null : d)}>
+                {d}
+              </Pill>
+            ))}
+          </div>
         </div>
         <div className={styles.railRow}>
           <span className={styles.railLabel}>領域：</span>
-          {FIELDS.map((f) => (
-            <Pill key={f} on={fields.has(f)} onClick={() => toggleField(f)}>
-              {f}
-            </Pill>
-          ))}
+          <div className={styles.railPills}>
+            {FIELDS.map((f) => (
+              <Pill key={f} on={fields.has(f)} onClick={() => toggleField(f)}>
+                {f}
+              </Pill>
+            ))}
+          </div>
         </div>
       </div>
 

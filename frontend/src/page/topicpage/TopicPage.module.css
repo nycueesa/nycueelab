@@ -52,6 +52,27 @@
 }
 .homeLink:hover { color: #1a2530; }
 
+.topBarRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.feedbackLink {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: rgba(26, 37, 48, 0.6);
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0;
+  transition: color 0.15s ease;
+}
+.feedbackLink:hover {
+  color: #1a2530;
+}
+
 /* ── Hero + search ─────────────────────────────────── */
 .heroRow {
   display: flex;

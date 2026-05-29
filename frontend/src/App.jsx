@@ -4,6 +4,7 @@ import Layout from "./Layout.jsx"
 import Main from "./page/main/Main.jsx"
 import TopicPage from "./page/topicpage/topicpage.jsx"
 import Professor from './page/Professor/Professor.jsx';
+import Feedback from './page/feedback/Feedback.jsx';
 
 function App(){
 	return (
@@ -17,6 +18,8 @@ function App(){
 					{/* New route for detailed professor page */}
 					<Route path="/professor/:profId" element={<Professor />} />
 					<Route path="/professor" element={<Professor />} />
+
+					<Route path="/feedback" element={<Feedback />} />
 
 				</Routes>
 		  	</Layout>

@@ -184,13 +184,22 @@ export default function TopicPage() {
           <span className={styles.brandMark} aria-hidden="true" />
           <strong>NYCUEE · LAB</strong>
         </div>
-        <button
-          type="button"
-          onClick={() => navigate("/")}
-          className={styles.homeLink}
-        >
-          ← Home
-        </button>
+        <div className={styles.topBarRight}>
+          <button
+            type="button"
+            onClick={() => navigate("/feedback")}
+            className={styles.feedbackLink}
+          >
+            意見回饋
+          </button>
+          <button
+            type="button"
+            onClick={() => navigate("/")}
+            className={styles.homeLink}
+          >
+            ← Home
+          </button>
+        </div>
       </div>
 
       {/* Hero + search */}

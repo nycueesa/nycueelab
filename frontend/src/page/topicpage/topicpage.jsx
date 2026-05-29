@@ -229,7 +229,7 @@ export default function TopicPage() {
 
       {/* Filter rails */}
       <div className={styles.rails}>
-        <div className={styles.railRow}>
+        <div className={styles.railSection}>
           <span className={styles.railLabel}>系所：</span>
           <div className={styles.railPills}>
             <Pill on={dept === null} onClick={() => setDept(null)}>全部系所</Pill>
@@ -240,7 +240,7 @@ export default function TopicPage() {
             ))}
           </div>
         </div>
-        <div className={styles.railRow}>
+        <div className={styles.railSection}>
           <span className={styles.railLabel}>領域：</span>
           <div className={styles.railPills}>
             {FIELDS.map((f) => (

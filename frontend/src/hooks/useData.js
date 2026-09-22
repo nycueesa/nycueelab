@@ -1,11 +1,7 @@
 import { useState, useEffect } from "react";
 
-// 根據環境自動選擇 API 路徑
-// 開發環境：直接連接本地後端
-// 生產環境：使用相對路徑（透過 Nginx 反向代理）
-export const API_BASE = import.meta.env.DEV
-  ? "http://localhost:11451/api"
-  : "/nycueelab/api";
+import { API_BASE } from '../utils/api';
+export { API_BASE };
 
 /**
  * Custom hook to fetch and cache data from backend API

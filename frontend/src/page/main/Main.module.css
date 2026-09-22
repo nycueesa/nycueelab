@@ -39,6 +39,17 @@
   color: rgba(244, 239, 230, 0.55);
   text-align: right;
 }
+.loginLink {
+  display: block;
+  margin: 0 0 12px auto;
+  padding: 7px 12px;
+  border: 1px solid rgba(244, 239, 230, 0.4);
+  border-radius: 4px;
+  background: transparent;
+  color: #f4efe6;
+  font-size: 12px;
+}
+.loginLink:hover { background: rgba(255, 255, 255, 0.1); }
 
 /* ── Hero ────────────────────────────────────────────────── */
 .hero {

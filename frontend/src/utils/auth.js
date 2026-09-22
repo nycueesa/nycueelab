@@ -1,186 +1,107 @@
-/**
- * 認證工具函式
- * 處理 JWT token 的儲存、取得、驗證等功能
- */
+import { API_BASE } from './api';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:11451";
-
-/**
- * 儲存 access token 到 localStorage
- * @param {string} token - JWT access token
- * @param {number} expiresIn - token 有效期間（秒）
- */
+// Keep credentials in the current browser session; never persist the password.
 export function saveToken(token, expiresIn) {
-  localStorage.setItem("access_token", token);
-  const expiresAt = Date.now() + expiresIn * 1000;
-  localStorage.setItem("token_expires_at", expiresAt.toString());
+  clearAuth();
+  sessionStorage.setItem('access_token', token);
+  sessionStorage.setItem('token_expires_at', String(Date.now() + expiresIn * 1000));
 }
 
-/**
- * 從 localStorage 取得 access token
- * @returns {string|null} JWT access token 或 null
- */
 export function getToken() {
-  return localStorage.getItem("access_token");
+  return sessionStorage.getItem('access_token');
 }
 
-/**
- * 檢查 token 是否已過期
- * @returns {boolean} true 表示已過期或不存在
- */
 export function isTokenExpired() {
-  const expiresAt = localStorage.getItem("token_expires_at");
-  if (!expiresAt) return true;
-  return Date.now() > parseInt(expiresAt);
+  const expiresAt = Number(sessionStorage.getItem('token_expires_at'));
+  return !Number.isFinite(expiresAt) || Date.now() >= expiresAt;
 }
 
-/**
- * 清除所有認證相關的 localStorage 資料
- */
 export function clearAuth() {
-  localStorage.removeItem("access_token");
-  localStorage.removeItem("token_expires_at");
-  localStorage.removeItem("user_info");
-}
-
-/**
- * 使用者登入
- * @param {string} username - 使用者名稱
- * @param {string} password - 密碼
- * @returns {Promise<Object>} 登入結果
- */
-export async function login(username, password) {
-  try {
-    const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username, password })
-    });
-
-    if (!response.ok) {
-      const error = await response.json();
-      throw new Error(error.detail || "Login failed");
-    }
-
-    const data = await response.json();
-
-    if (data.access_token) {
-      saveToken(data.access_token, data.expires_in);
-      return { success: true, data };
-    } else {
-      throw new Error("No access token received");
-    }
-  } catch (error) {
-    console.error("Login error:", error);
-    return { success: false, error: error.message };
+  for (const key of ['access_token', 'token_expires_at', 'user_info']) {
+    sessionStorage.removeItem(key);
+    // Remove credentials left by the previous demo implementation as well.
+    localStorage.removeItem(key);
   }
 }
 
-/**
- * 使用者登出
- */
+export async function login(email, password) {
+  try {
+    const response = await fetch(`${API_BASE}/auth/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email.trim().toLowerCase(), password }),
+      signal: AbortSignal.timeout(15000),
+    });
+    if (!response.ok) {
+      const messages = {
+        401: '電子郵件或密碼不正確，請再試一次。',
+        422: '請填寫有效的電子郵件與密碼。',
+        429: '嘗試次數過多，請稍後再試。',
+      };
+      return { success: false, error: messages[response.status] || '登入服務暫時無法使用，請稍後再試。' };
+    }
+    const data = await response.json();
+    if (!data.access_token || !data.user || !Number.isFinite(data.expires_in)) {
+      return { success: false, error: '登入回應異常，請稍後再試。' };
+    }
+    saveToken(data.access_token, data.expires_in);
+    sessionStorage.setItem('user_info', JSON.stringify(data.user));
+    return { success: true, data };
+  } catch {
+    return { success: false, error: '無法連線至登入服務，請確認網路後重試。' };
+  }
+}
+
 export function logout() {
   clearAuth();
-  // 可以選擇導向到登入頁面
-  // window.location.href = "/login";
 }
 
-/**
- * 獲取當前使用者資訊
- * @returns {Promise<Object|null>} 使用者資訊或 null
- */
 export async function getCurrentUser() {
-  const token = getToken();
-
-  if (!token || isTokenExpired()) {
+  if (!getToken() || isTokenExpired()) {
+    clearAuth();
     return null;
   }
-
   try {
-    const response = await fetch(`${API_BASE_URL}/api/auth/me`, {
-      headers: {
-        "Authorization": `Bearer ${token}`,
-        "Content-Type": "application/json",
-      }
+    const response = await fetch(`${API_BASE}/auth/me`, {
+      headers: { Authorization: `Bearer ${getToken()}` },
+      signal: AbortSignal.timeout(15000),
     });
-
     if (!response.ok) {
-      if (response.status === 401) {
-        clearAuth();
-      }
+      if (response.status === 401 || response.status === 403) clearAuth();
       return null;
     }
-
-    const userInfo = await response.json();
-    localStorage.setItem("user_info", JSON.stringify(userInfo));
-    return userInfo;
-  } catch (error) {
-    console.error("Error fetching user info:", error);
-    return null;
-  }
-}
-
-/**
- * 從 localStorage 取得快取的使用者資訊
- * @returns {Object|null} 使用者資訊或 null
- */
-export function getCachedUserInfo() {
-  const userInfoStr = localStorage.getItem("user_info");
-  if (!userInfoStr) return null;
-  try {
-    return JSON.parse(userInfoStr);
+    const user = await response.json();
+    sessionStorage.setItem('user_info', JSON.stringify(user));
+    return user;
   } catch {
     return null;
   }
 }
 
-/**
- * 檢查使用者是否已登入
- * @returns {boolean} true 表示已登入且 token 有效
- */
-export function isAuthenticated() {
-  return !!getToken() && !isTokenExpired();
+export function getCachedUserInfo() {
+  if (!isAuthenticated()) return null;
+  try { return JSON.parse(sessionStorage.getItem('user_info')); }
+  catch { return null; }
 }
 
-/**
- * 使用 token 發送 API 請求
- * @param {string} url - API endpoint URL
- * @param {Object} options - fetch options
- * @returns {Promise<Response>} fetch response
- */
+export function isAuthenticated() {
+  return Boolean(getToken()) && !isTokenExpired();
+}
+
 export async function fetchWithAuth(url, options = {}) {
-  const token = getToken();
-
-  // 如果 token 過期，清除並可選擇導向登入頁
-  if (isTokenExpired()) {
+  if (!isAuthenticated()) {
     clearAuth();
-    // window.location.href = "/login";
-    throw new Error("Token expired");
+    throw new Error('登入已過期，請重新登入。');
   }
-
-  const headers = {
-    ...options.headers,
-    "Content-Type": "application/json",
-  };
-
-  // 如果有 token，加入 Authorization header
-  if (token) {
-    headers["Authorization"] = `Bearer ${token}`;
+  const headers = new Headers(options.headers);
+  headers.set('Authorization', `Bearer ${getToken()}`);
+  if (!(options.body instanceof FormData) && !headers.has('Content-Type')) {
+    headers.set('Content-Type', 'application/json');
   }
-
-  const response = await fetch(url, {
-    ...options,
-    headers,
-  });
-
-  // 如果回應是 401，清除認證資料
+  const response = await fetch(url, { ...options, headers });
   if (response.status === 401) {
     clearAuth();
-    // window.location.href = "/login";
-    throw new Error("Unauthorized");
+    throw new Error('登入已失效，請重新登入。');
   }
-
   return response;
 }

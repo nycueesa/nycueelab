@@ -306,7 +306,7 @@ export default function Layout({ children }) {
     console.log(positions);
     const currentPathWithoutBase =
       window.location.pathname.replace("/nycueelab", "") || "/";
-    if (positions && positions !== currentPathWithoutBase) {
+    if (positions && positions !== currentPathWithoutBase && currentPathWithoutBase === "/") {
       navigate(positions, { replace: true });
     }
   }, [navigate]);
@@ -340,7 +340,7 @@ export default function Layout({ children }) {
       <main className={`${styles.layoutMain} ${styles.noNavbar}`}>
         {children}
       </main>
-      {!isMainPage && <Footer />}
+      {!isMainPage && location.pathname !== "/login" && <Footer />}
     </div>
   );
 }

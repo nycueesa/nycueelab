@@ -1,29 +1,62 @@
 from datetime import datetime, timedelta
 from typing import Optional
 from jose import JWTError, jwt
-from passlib.context import CryptContext
+import hashlib
+import hmac
+import secrets
+from pathlib import Path
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 import os
 
 # 配置
-SECRET_KEY = os.getenv("SECRET_KEY", "your-secret-key-change-this-in-production-use-at-least-32-characters")
+def load_secret_key():
+    configured = os.getenv("SECRET_KEY")
+    if configured:
+        if len(configured) < 32:
+            raise RuntimeError("SECRET_KEY must contain at least 32 characters")
+        return configured
+    if os.getenv("ENVIRONMENT") == "production":
+        raise RuntimeError("SECRET_KEY is required in production")
+    # Persist a random development secret so local sessions survive server restarts.
+    path = Path(__file__).parent / "storage" / ".jwt-secret"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        descriptor = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+    except FileExistsError:
+        return path.read_text().strip()
+    with os.fdopen(descriptor, "w") as handle:
+        secret = secrets.token_urlsafe(48)
+        handle.write(secret)
+    return secret
+
+
+SECRET_KEY = load_secret_key()
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
 # 密碼加密
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-security = HTTPBearer()
+PASSWORD_ITERATIONS = 600_000
+security = HTTPBearer(auto_error=False)
 
 # 驗證密碼
 def verify_password(plain_password: str, hashed_password: str) -> bool:
     """驗證明文密碼與雜湊密碼是否相符"""
-    return pwd_context.verify(plain_password, hashed_password)
+    try:
+        algorithm, iterations, salt, expected = hashed_password.split("$")
+        if algorithm != "pbkdf2_sha256":
+            return False
+        actual = hashlib.pbkdf2_hmac("sha256", plain_password.encode(), bytes.fromhex(salt), int(iterations))
+        return hmac.compare_digest(actual.hex(), expected)
+    except (ValueError, TypeError):
+        return False
 
 # 雜湊密碼
 def get_password_hash(password: str) -> str:
     """將明文密碼雜湊化"""
-    return pwd_context.hash(password)
+    salt = secrets.token_bytes(16)
+    digest = hashlib.pbkdf2_hmac("sha256", password.encode(), salt, PASSWORD_ITERATIONS)
+    return f"pbkdf2_sha256${PASSWORD_ITERATIONS}${salt.hex()}${digest.hex()}"
 
 # 建立 access token
 def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
@@ -61,6 +94,8 @@ def verify_token(credentials: HTTPAuthorizationCredentials = Depends(security)):
     Raises:
         HTTPException: 如果 token 無效或過期
     """
+    if credentials is None:
+        raise HTTPException(status_code=401, detail="請先登入", headers={"WWW-Authenticate": "Bearer"})
     try:
         token = credentials.credentials
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])

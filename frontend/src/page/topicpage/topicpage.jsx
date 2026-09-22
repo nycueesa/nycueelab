@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./TopicPage.module.css";
 import { useData } from "../../hooks/useData.js";
+import { isAuthenticated } from '../../utils/auth';
 
 // Strip leading "#" and surrounding whitespace from a tag string.
 const cleanTag = (t) => (typeof t === "string" ? t.replace(/^#+/, "").trim() : "");
@@ -185,6 +186,9 @@ export default function TopicPage() {
           <strong>NYCUEE · LAB</strong>
         </div>
         <div className={styles.topBarRight}>
+          <button type="button" onClick={() => navigate('/login')} className={styles.feedbackLink}>
+            {isAuthenticated() ? '我的帳號' : '會員登入'}
+          </button>
           <button
             type="button"
             onClick={() => navigate("/feedback")}

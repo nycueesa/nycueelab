@@ -14,6 +14,13 @@ export default defineConfig({
   server: {
     host: "0.0.0.0",
     port: 5173,
+    proxy: {
+      '/nycueelab/api': {
+        target: process.env.API_PROXY_TARGET || 'http://127.0.0.1:11451',
+        changeOrigin: true,
+        rewrite: (url) => url.replace(/^\/nycueelab/, ''),
+      },
+    },
     watch: {
       // 啟用 polling 模式來解決 WSL/Docker 檔案監控問題
       usePolling: true,
@@ -23,8 +30,7 @@ export default defineConfig({
     },
     // 確保 HMR 正常運作
     hmr: {
-      clientPort: 5577, // 使用對外暴露的 port
-      host: "localhost",
+      ...(process.env.VITE_HMR_CLIENT_PORT ? { clientPort: Number(process.env.VITE_HMR_CLIENT_PORT) } : {}),
     },
   },
 });

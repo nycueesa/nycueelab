@@ -6,6 +6,10 @@ local/
 # Python 相關
 __pycache__/
 *.pyc
+.venv/
+backend/storage/
+*.sqlite3
+*.sqlite3-*
 .env*
 venv/
 *.egg-info/

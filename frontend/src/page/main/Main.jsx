@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Main.module.css";
+import { isAuthenticated } from '../../utils/auth';
 
 export default function Main() {
   const navigate = useNavigate();
@@ -30,6 +31,9 @@ export default function Main() {
           <span>National Yang Ming Chiao Tung University</span>
         </div>
         <div className={styles.topRight}>
+          <button className={styles.loginLink} onClick={() => navigate('/login')}>
+            {isAuthenticated() ? '我的帳號' : '會員登入'} ↗
+          </button>
           Spring 2026
           <br />
           Hsinchu · Taiwan

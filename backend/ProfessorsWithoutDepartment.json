@@ -1,0 +1,1425 @@
+{
+  "source": "https://dee.nycu.edu.tw/teachers.php?pa=getList&locale=tw",
+  "professors": [
+    {
+      "id": 125,
+      "state": "未詢問",
+      "name": "張仲儒",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "cjchang1950@nycu.edu.tw",
+      "photo": "professor_id125.png",
+      "LabWebsite": "",
+      "tags": [
+        "系統控制",
+        "晶片設計",
+        "生醫工程",
+        "人工智慧與計算機工程",
+        "無線科技"
+      ],
+      "research": [
+        {
+          "title": "無線通訊系統"
+        },
+        {
+          "title": "智慧訊號處理"
+        },
+        {
+          "title": "無線感知技術"
+        },
+        {
+          "title": "智慧通訊網路"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 126,
+      "state": "未詢問",
+      "name": "李祖添",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "ttlee@ee.tku.edu.tw",
+      "photo": "professor_id126.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 127,
+      "state": "未詢問",
+      "name": "劉金智潔",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "",
+      "photo": "professor_id127.png",
+      "LabWebsite": "https://www2.eecs.berkeley.edu/Faculty/Homepages/king.html",
+      "tags": [],
+      "research": [],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 128,
+      "state": "未詢問",
+      "name": "張建禕",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "cchang@umbc.edu",
+      "photo": "https://dee.nycu.edu.tw/upload_files/teacher/1661424735.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "高光譜影像"
+        },
+        {
+          "title": "遙測影像處理"
+        },
+        {
+          "title": "自動目標辨識"
+        },
+        {
+          "title": "醫學影像"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 129,
+      "state": "未詢問",
+      "name": "張麗鳳",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "lifungzah@gmai.com",
+      "photo": "professor_id129.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 130,
+      "state": "未詢問",
+      "name": "莊炳湟",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "juang@ece.gatech.edu",
+      "photo": "professor_id130.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "Research interests: Speech processing, including recognition, synthesis, coding and enhancement Multi-channel and array signal processing Stochastic modeling of signal and data sequence Signal processing for communications Multimedia and multimodal"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 131,
+      "state": "未詢問",
+      "name": "韓竹",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "zhan2@uh.edu",
+      "photo": "professor_id131.png",
+      "LabWebsite": "http://www2.egr.uh.edu/~zhan2/",
+      "tags": [],
+      "research": [
+        {
+          "title": "Game Theory, Wireless Networking, Security, Data Analysis, Smart Grid"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 133,
+      "state": "未詢問",
+      "name": "莊紹勳",
+      "labName": "",
+      "department": [],
+      "officeLocation": "ED501",
+      "email": "schung@nycu.edu.tw",
+      "photo": "https://dee.nycu.edu.tw/upload_files/teacher/9f3ae950c814bb69469e9e6aa96df2fb.png",
+      "LabWebsite": "",
+      "tags": [
+        "固態與量子物理",
+        "人工智慧與計算機工程",
+        "半導體元件及工程",
+        "智慧與感測元件"
+      ],
+      "research": [],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 134,
+      "state": "未詢問",
+      "name": "李宇君",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "Donald.Lie@ttu.edu",
+      "photo": "https://dee.nycu.edu.tw/upload_files/teacher/6216af2b99ea17bf86da744ed09b71ff.png",
+      "LabWebsite": "https://rfsocttu.com",
+      "tags": [],
+      "research": [],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 137,
+      "state": "未詢問",
+      "name": "魏慶隆",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "wey@nycu.edu.tw",
+      "photo": "professor_id137.png",
+      "LabWebsite": "https://cn.nycu.edu.tw/en/Departmental_staff/ieee_fellow/%E9%AD%8F%E6%85%B6%E9%9A%86-93575774",
+      "tags": [],
+      "research": [
+        {
+          "title": "晶片設計/測試/偵錯"
+        },
+        {
+          "title": "系統可靠度分析/設計"
+        },
+        {
+          "title": "智慧型電源管理系統"
+        },
+        {
+          "title": "及智慧型電池管理系統"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 144,
+      "state": "未詢問",
+      "name": "Masayoshi Tomizuka",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "tomizuka@me.berkeley.edu",
+      "photo": "professor_id144.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 145,
+      "state": "未詢問",
+      "name": "陳陽闓",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "young-kai.chen@alcatellucent.com",
+      "photo": "https://dee.nycu.edu.tw/upload_files/teacher/1661425024.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 146,
+      "state": "未詢問",
+      "name": "楊春美",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "cmyang3140@nycu.edu.tw",
+      "photo": "professor_id146.png",
+      "LabWebsite": "",
+      "tags": [
+        "系統控制"
+      ],
+      "research": [
+        {
+          "title": "工程數學"
+        },
+        {
+          "title": "微積分"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 149,
+      "state": "未詢問",
+      "name": "廖弘源",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "liao@iis.sinica.edu.tw",
+      "photo": "professor_id149.png",
+      "LabWebsite": "https://homepage.iis.sinica.edu.tw/pages/liao/interests_en.html",
+      "tags": [],
+      "research": [
+        {
+          "title": "以內容為基礎之多媒體擷取"
+        },
+        {
+          "title": "機器學習"
+        },
+        {
+          "title": "人工智慧"
+        },
+        {
+          "title": "多媒體訊號處理"
+        },
+        {
+          "title": "中央研究院資訊科學研究所特聘研究員(2012-present)"
+        },
+        {
+          "title": "中央研究院資訊科學研究所所長(2018/09-present)"
+        },
+        {
+          "title": "國立成功大學電機系合聘教授 (2011/8-present)"
+        },
+        {
+          "title": "國立中興大學中興講座(2022-present)"
+        },
+        {
+          "title": "台灣國立清華大學物理系學士 1981"
+        },
+        {
+          "title": "美國西北大學電機研究所碩士 1985"
+        },
+        {
+          "title": "美國西北大學電機研究所博士 1990"
+        },
+        {
+          "title": "中央研究院資訊科學研究所助研究員(1991-1995)"
+        },
+        {
+          "title": "中央研究院資訊科學研究所副研究員(1995-1998)"
+        },
+        {
+          "title": "中央研究院資訊科學研究所研究員(1998-2012)"
+        },
+        {
+          "title": "中原大學資工系兼任講座教授(2010-2023)"
+        },
+        {
+          "title": "中央研究院資訊科學研究所副所長(1997-2000)"
+        },
+        {
+          "title": "中央研究院應用科學與工程研究所籌備處代主任 (2001-2004)"
+        },
+        {
+          "title": "中央研究院計算中心主任 (2006 -2008)"
+        },
+        {
+          "title": "中華民國影像處理暨圖形識別學會理事長(2006 -2008)"
+        },
+        {
+          "title": "國科會資訊學門(學門2)召集人(2008 – 2011)"
+        },
+        {
+          "title": "國立中興大學多媒體訊號處理講座教授(2009-2012)"
+        },
+        {
+          "title": "中央研究院資訊科學研究所特聘研究員(2012-present)"
+        },
+        {
+          "title": "國立中山大學合聘講座教授(2014-2016)"
+        },
+        {
+          "title": "國立交通大學合聘講座教授(2016-2019)"
+        },
+        {
+          "title": "國立中興大學中興講座(2022-2025)"
+        },
+        {
+          "title": "國立中興大學中興講座(2025-2028)"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 100,
+      "state": "未詢問",
+      "name": "許鉦宗",
+      "labName": "低功率混合系統信號晶片設計實驗室",
+      "department": [],
+      "officeLocation": "田家炳 602",
+      "email": "sheujt@nycu.edu.tw",
+      "photo": "professor_id100.png",
+      "LabWebsite": "https://nanobioelectronic.weebly.com/",
+      "tags": [
+        "生醫工程",
+        "半導體元件及工程",
+        "智慧與感測元件"
+      ],
+      "research": [
+        {
+          "title": "生醫電子與光電生醫科學與感測"
+        },
+        {
+          "title": "新穎奈米電子感測元件、智慧型氣體感測晶片(電子鼻)、微/奈米感測技術、半導體製程技術"
+        }
+      ],
+      "recomendedCourses": [
+        "電子學(一)、(二)",
+        "VLSI導論、AIC導論(optional)"
+      ],
+      "faqs": [
+        {
+          "question": "教授的專題會如何進行? (如撰寫verilog、閱讀paper等)",
+          "answer": "專題上會著重於使用工具，專題下有想法就可以跟教授、或研究生一起做計畫"
+        },
+        {
+          "question": "教授會指定研究主題嗎? 或者是可以讓專題生自行指定?",
+          "answer": "會先做一些基本的電路當作training，熟習電路設計工具之後就能來找研究生或教授討論主題。"
+        },
+        {
+          "question": "專題是否有先修科目要求?",
+          "answer": "電子學一二，有些同學會修VLSI導論跟AIC導論等等，但是一般而言我們助教都會教，所以不用過於擔心"
+        },
+        {
+          "question": " 修習教授專題是否有成績要求?",
+          "answer": "無"
+        },
+        {
+          "question": " 實驗室的畢業生通常會去哪幾家企業?工作型態為何(如撰寫Verilog、調整參數等)?",
+          "answer": "聯發科、瑞昱、立錡、聯詠…等叫得出名字的design house幾乎都有。"
+        }
+      ],
+      "link": [
+        {
+          "linkName": "投影片",
+          "link": "https://youtu.be/n8e8OcaRJyE"
+        },
+        {
+          "linkName": "介紹影片",
+          "link": "https://youtu.be/aWnf8bEYr18"
+        },
+        {
+          "linkName": "教授QA",
+          "link": null
+        }
+      ],
+      "hidden": true
+    },
+    {
+      "id": 209,
+      "state": "未詢問",
+      "name": "巫朝陽",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "judewu13@nycu.edu.tw",
+      "photo": "professor_id209.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "CMOS SPAD : 元件設計與測試，應用系統整合，"
+        },
+        {
+          "title": "LiDAR system: 光學系統設計與分析，系統測試與驗證"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 212,
+      "state": "未詢問",
+      "name": "王世杰",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "davidwang166@gmail.com",
+      "photo": "professor_id212.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "電機馬達/致動器設計"
+        },
+        {
+          "title": "馬達控制"
+        },
+        {
+          "title": "磁路分析設計"
+        },
+        {
+          "title": "震動模態分析鑑別"
+        },
+        {
+          "title": "有限元素應力分析"
+        },
+        {
+          "title": "影像處理"
+        },
+        {
+          "title": "數值分析"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 217,
+      "state": "未詢問",
+      "name": "洪境晨",
+      "labName": "",
+      "department": [],
+      "officeLocation": "EE756",
+      "email": "charles4543@nycu.edu.tw",
+      "photo": "professor_id217.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "- Rehabilitation and sports assistance engineering"
+        },
+        {
+          "title": "- Mechatronics system development and control"
+        },
+        {
+          "title": "- Intelligent biomedical and healthcare system"
+        },
+        {
+          "title": "- Extended reality development and application"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 220,
+      "state": "未詢問",
+      "name": "魏群樹",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "cwei@nctu.edu.tw",
+      "photo": "professor_id220.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 225,
+      "state": "未詢問",
+      "name": "林進燈106.2.1退休",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "ctlin@mail.nctu.edu.tw",
+      "photo": "professor_id225.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "Computer Vision"
+        },
+        {
+          "title": "Fuzzy Neural Network"
+        },
+        {
+          "title": "Speech Processing and Control"
+        },
+        {
+          "title": "Brain-Computer Interface"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 235,
+      "state": "未詢問",
+      "name": "蘇育德",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "ytsu@mail.nctu.edu.tw",
+      "photo": "professor_id235.png",
+      "LabWebsite": "",
+      "tags": [
+        "通訊科學與系統",
+        "多媒體訊號處理",
+        "資訊通訊"
+      ],
+      "research": [
+        {
+          "title": "無線通訊"
+        },
+        {
+          "title": "通訊信號處理"
+        },
+        {
+          "title": "錯誤控制系統"
+        },
+        {
+          "title": "衛星及軍事通訊"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 239,
+      "state": "未詢問",
+      "name": "蔡中庸",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "cytsai@nycu.edu.tw",
+      "photo": "professor_id239.png",
+      "LabWebsite": "",
+      "tags": [
+        "人工智慧與計算機工程",
+        "AI機器人"
+      ],
+      "research": [
+        {
+          "title": "計算機系統"
+        },
+        {
+          "title": "程式語言"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 240,
+      "state": "未詢問",
+      "name": "周復芳(104退)",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "christ@cc.nctu.edu.tw",
+      "photo": "professor_id240.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "固態電子電路"
+        },
+        {
+          "title": "天線設計"
+        },
+        {
+          "title": "高頻元件"
+        },
+        {
+          "title": "半導體製造"
+        },
+        {
+          "title": "射頻積體電路"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 241,
+      "state": "未詢問",
+      "name": "周志成(106.8退休)",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "ccjou@mail.nctu.edu.tw",
+      "photo": "professor_id241.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "模糊學習系統"
+        },
+        {
+          "title": "類神經網路模糊化"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 242,
+      "state": "未詢問",
+      "name": "孟光森(95退)",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "ksmeng@cc.nctu.edu.tw",
+      "photo": "professor_id242.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "通訊原理"
+        },
+        {
+          "title": "光纖通訊"
+        },
+        {
+          "title": "音訊處理"
+        },
+        {
+          "title": "超聲波元件"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 243,
+      "state": "未詢問",
+      "name": "張志揚(109.2退休)",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "mhchang@cc.nctu.edu.tw",
+      "photo": "professor_id243.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "電機工程"
+        },
+        {
+          "title": "微波工程"
+        },
+        {
+          "title": "毫米波積體電路"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 244,
+      "state": "未詢問",
+      "name": "張志永(105退)",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "jycnctu@gmail.com",
+      "photo": "professor_id244.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "圖形辨識"
+        },
+        {
+          "title": "模糊類神經晶片"
+        },
+        {
+          "title": "模糊類神經網路"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 245,
+      "state": "未詢問",
+      "name": "張文鐘(101退)",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "wtchang@cc.nctu.edu.tw",
+      "photo": "professor_id245.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "數位信號處理"
+        },
+        {
+          "title": "視訊傳播"
+        },
+        {
+          "title": "通訊系統"
+        },
+        {
+          "title": "影像處理"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 246,
+      "state": "未詢問",
+      "name": "彭松村(92退)",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "stpeng@cc.nctu.edu.tw",
+      "photo": "professor_id246.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "電磁波"
+        },
+        {
+          "title": "光波波導"
+        },
+        {
+          "title": "微波與波導元件"
+        },
+        {
+          "title": "天線"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 247,
+      "state": "未詢問",
+      "name": "徐保羅(104退)",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "plhsu@cc.nctu.edu.tw",
+      "photo": "professor_id247.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "精密伺服運動控制"
+        },
+        {
+          "title": "製程監控系統"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 248,
+      "state": "未詢問",
+      "name": "林心宇(98退)",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "sylin@cc.nctu.edu.tw",
+      "photo": "professor_id248.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "半導體製程相關最佳化問題"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 249,
+      "state": "未詢問",
+      "name": "林昇甫(108.6.30退休)",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "sflin@mail.nctu.edu.tw",
+      "photo": "professor_id249.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "影像處理與辨識"
+        },
+        {
+          "title": "模糊類神經網路"
+        },
+        {
+          "title": "圖形識別"
+        },
+        {
+          "title": "智慧型系統設計"
+        },
+        {
+          "title": "電腦視覺"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 250,
+      "state": "未詢問",
+      "name": "林清安(108.2退休)",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "Calin@cc.nctu.edu.tw",
+      "photo": "professor_id250.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "多變數控制"
+        },
+        {
+          "title": "線性系統"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 251,
+      "state": "未詢問",
+      "name": "林育德(104退)",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "ydlin@cc.nctu.edu.tw",
+      "photo": "professor_id251.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "微波工程"
+        },
+        {
+          "title": "電磁理論"
+        },
+        {
+          "title": "天線設計"
+        },
+        {
+          "title": "電磁波傳播"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 252,
+      "state": "未詢問",
+      "name": "梁耀文(108.6退休)",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "ywliang@cn.nctu.edu.tw",
+      "photo": "professor_id252.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "錯誤偵測與診斷"
+        },
+        {
+          "title": "容錯控制"
+        },
+        {
+          "title": "切換式系統控制"
+        },
+        {
+          "title": "非線性控制"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 253,
+      "state": "未詢問",
+      "name": "沈文和(98退)",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "",
+      "photo": "professor_id253.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "通訊理論"
+        },
+        {
+          "title": "無線寬頻接取系統"
+        },
+        {
+          "title": "傳收機設計與IC製作"
+        },
+        {
+          "title": "無線資源管理"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 254,
+      "state": "未詢問",
+      "name": "王啟旭(108.02退休)",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "cwang@cn.nctu.edu.tw",
+      "photo": "professor_id254.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "Digital Control, Fuzzy Neural Network, Intelligent Control, adaptive control, Robotics"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 255,
+      "state": "未詢問",
+      "name": "王宜楷(99退)",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "ykwang@cn.nctu.edu.tw",
+      "photo": "professor_id255.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "Control Systems Digital Circuit"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 256,
+      "state": "未詢問",
+      "name": "莊晴光",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "",
+      "photo": "professor_id256.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "無線電通信系統設計"
+        },
+        {
+          "title": "微波場論"
+        },
+        {
+          "title": "毫米波積體電路"
+        },
+        {
+          "title": "高速積體電路"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 257,
+      "state": "未詢問",
+      "name": "郭仁財(99退)",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "jtkuo123@mail.cgu.edu.tw",
+      "photo": "professor_id257.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "微波工程與電路"
+        },
+        {
+          "title": "電磁理論"
+        },
+        {
+          "title": "高頻電子電路"
+        },
+        {
+          "title": "電磁數值分析"
+        },
+        {
+          "title": "微波電路設計"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 259,
+      "state": "未詢問",
+      "name": "鄧清政(92退)",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "",
+      "photo": "professor_id259.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 260,
+      "state": "未詢問",
+      "name": "鍾世忠",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "sjchung@nctu.edu.tw",
+      "photo": "professor_id260.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "平面天線及陣列"
+        },
+        {
+          "title": "微/毫米波電路設計"
+        },
+        {
+          "title": "電磁數值分析"
+        },
+        {
+          "title": "無線通訊網路"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 261,
+      "state": "未詢問",
+      "name": "陳君鍵(98退)",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "",
+      "photo": "professor_id261.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "電磁波散射與傳導"
+        },
+        {
+          "title": "天線工程"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 262,
+      "state": "未詢問",
+      "name": "高曜煌(95退)",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "yhkao@cc.nctu.edu.tw",
+      "photo": "professor_id262.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "光纖通訊"
+        },
+        {
+          "title": "光電元件"
+        },
+        {
+          "title": "高頻電子電路"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 263,
+      "state": "未詢問",
+      "name": "高銘盛(102退)",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "mskao@cc.nctu.edu.tw",
+      "photo": "professor_id263.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "電子電路"
+        },
+        {
+          "title": "光電"
+        },
+        {
+          "title": "通訊工程"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 265,
+      "state": "未詢問",
+      "name": "張振壹(97退)",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "cychang@cc.nctu.edu.tw",
+      "photo": "professor_id265.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "雷達信號處理"
+        },
+        {
+          "title": "展頻通訊"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 266,
+      "state": "未詢問",
+      "name": "張隆國(97退)",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "lkchang@cc.nctu.edu.tw",
+      "photo": "professor_id266.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "電腦輔助IC及PC版電路設計"
+        },
+        {
+          "title": "電力電子"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 267,
+      "state": "未詢問",
+      "name": "李福進(97退)",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "lee@cc.nctu.edu.tw",
+      "photo": "professor_id267.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "線性控制理論"
+        },
+        {
+          "title": "濾波理論"
+        },
+        {
+          "title": "系統判別"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 268,
+      "state": "未詢問",
+      "name": "謝世福",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "sfhsieh@cc.nctu.edu.tw",
+      "photo": "professor_id268.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "音訊處理"
+        },
+        {
+          "title": "適應性信號處理"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 269,
+      "state": "未詢問",
+      "name": "陳右穎",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "",
+      "photo": "professor_id269.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "神經工程"
+        },
+        {
+          "title": "醫學影像"
+        },
+        {
+          "title": "生醫微機電"
+        },
+        {
+          "title": "醫學工程"
+        },
+        {
+          "title": "無線通訊"
+        },
+        {
+          "title": "嵌入系統設計"
+        },
+        {
+          "title": "即時作業系統"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 270,
+      "state": "未詢問",
+      "name": "廖維國",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "liaoweik@cc.nctu.edu.tw",
+      "photo": "professor_id270.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [
+        {
+          "title": "即時系統工程"
+        },
+        {
+          "title": "網際網路架構分析及設計"
+        },
+        {
+          "title": "無論網路分析及控制"
+        }
+      ],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 278,
+      "state": "未詢問",
+      "name": "卜怡凌",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "puyo824@nycu.edu.tw",
+      "photo": "https://dee.nycu.edu.tw/upload_files/teacher/1661757342.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    },
+    {
+      "id": 279,
+      "state": "未詢問",
+      "name": "邱智翔",
+      "labName": "",
+      "department": [],
+      "officeLocation": "",
+      "email": "a00011@nycu.edu.tw",
+      "photo": "professor_id279.png",
+      "LabWebsite": "",
+      "tags": [],
+      "research": [],
+      "recomendedCourses": [],
+      "faqs": [],
+      "link": []
+    }
+  ]
+}

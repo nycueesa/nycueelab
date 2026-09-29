@@ -126,7 +126,7 @@ export default function ProfessorStatus() {
     <header className={styles.header}>
       <Link to="/" className={styles.brand}>NYCU · EE <span>教授資料</span></Link>
       <div className={styles.headerActions}>
-        <span className={styles.account}>{getCachedUserInfo()?.email}</span>
+        <span className={styles.account}>{getCachedUserInfo()?.username}</span>
         <button type="button" onClick={handleLogout}>登出</button>
       </div>
     </header>

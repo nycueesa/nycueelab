@@ -9,7 +9,7 @@ from threading import Lock
 from fastapi import FastAPI, HTTPException, Depends, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel, EmailStr, Field
+from pydantic import BaseModel, Field
 from database import init_database, find_user
 
 PROFESSOR_DATA_PATH = Path(os.getenv("PROFESSOR_DATA_PATH", str(Path(__file__).parent / "NewData.json")))
@@ -49,11 +49,10 @@ app.mount("/api/photo", StaticFiles(directory=Path(__file__).parent / "photo"), 
 
 # === 資料模型 ===
 class LoginRequest(BaseModel):
-    email: EmailStr = Field(max_length=254)
-    password: str = Field(min_length=1, max_length=1024)
+    username: str
+    password: str
 
 class UserResponse(BaseModel):
-    email: str
     username: str
     role: str
 
@@ -72,14 +71,14 @@ class ProfessorStateUpdate(BaseModel):
 DUMMY_PASSWORD_HASH = get_password_hash("unused-account-timing-placeholder")
 
 
-def authenticate_user(email: str, password: str):
-    user = find_user(email)
+def authenticate_user(username: str, password: str):
+    user = find_user(username)
     matches = verify_password(password, user["password_hash"] if user else DUMMY_PASSWORD_HASH)
     return user if user and matches else None
 
 
 def public_user(user):
-    return {"email": user["email"], "username": user["email"], "role": user["role"]}
+    return {"username": user["email"], "role": user["role"]}
 
 
 def get_latest_professor_data():
@@ -119,7 +118,7 @@ def login(request: LoginRequest):
     使用者登入 endpoint
 
     Args:
-        request: 包含 email 和 password 的登入請求
+        request: 包含 username 和 password 的登入請求
 
     Returns:
         LoginResponse: 包含 access_token 和過期時間
@@ -127,12 +126,12 @@ def login(request: LoginRequest):
     Raises:
         HTTPException: 如果帳號或密碼錯誤
     """
-    user = authenticate_user(str(request.email), request.password)
+    user = authenticate_user(request.username, request.password)
 
     if not user:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="電子郵件或密碼不正確",
+            detail="名稱或密碼不正確",
             headers={"WWW-Authenticate": "Bearer"},
         )
 

@@ -1,4 +1,4 @@
-# 電子郵件登入
+# 名稱登入
 
 前端登入頁：`/nycueelab/login`。首頁與專題列表均有「會員登入」入口。登入後會進入 `/nycueelab/professors/status` 教授狀態頁；直接開啟此頁也會先要求登入。
 
@@ -27,24 +27,47 @@ npm run dev
 
 ## 建立帳號
 
-啟動時建立資料表，不會自動加入任何預設帳密。從 backend 目錄執行：
+啟動時建立資料表，不會自動加入任何預設帳密。指令中的 `<名稱>` 請替換成要建立的登入名稱；執行後會依序提示輸入密碼與再次確認密碼，輸入內容不會顯示在終端。
+
+使用本機 Python 環境時，從 `backend` 目錄執行：
 
 ```bash
-../.venv/bin/python manage_users.py member@example.com
-# 輸入密碼及確認密碼；輸入不會顯示在終端。
-
-# 或產生隨機密碼（建立後僅顯示一次）
-../.venv/bin/python manage_users.py member@example.com --generate-password
+../.venv/bin/python manage_users.py <名稱>
 ```
 
-新帳號預設為一般使用者。需要管理員時明確加上 `--role admin`。電子郵件去除前後空白、統一小寫並保持唯一；密碼為 12–1024 字元。此版本由管理員建立帳號，尚未提供公開註冊或寄信重設密碼。
+使用 Docker Compose 啟動網站時，從專案根目錄執行：
+
+```bash
+docker compose -f docker-compose.dev.yml exec nycueelab-backend python manage_users.py <名稱>
+```
+
+例如，建立名稱為 `admin` 的管理員帳號：
+
+```bash
+docker compose -f docker-compose.dev.yml exec nycueelab-backend python manage_users.py admin --role admin
+```
+
+執行後輸入並確認密碼：
+
+```text
+密碼：
+再次輸入密碼：
+```
+
+若要由工具產生隨機密碼，可加上 `--generate-password`；密碼只會在建立完成時顯示一次：
+
+```bash
+docker compose -f docker-compose.dev.yml exec nycueelab-backend python manage_users.py <名稱> --generate-password
+```
+
+新帳號預設為一般使用者。需要管理員時明確加上 `--role admin`。名稱會去除前後空白並保持唯一；密碼不限制格式或字數。此版本由管理員建立帳號，尚未提供公開註冊或重設密碼。
 
 ## 儲存與 API
 
 - SQLite：`backend/storage/users.sqlite3`，可透過 `DATABASE_PATH` 指定路徑。Docker 開發設定已將 backend 掛載到主機，因此資料會保留。
-- `users` 欄位：`id`、`email`、`password_hash`、`role`、`created_at`。
+- `users` 欄位：`id`、`email`、`password_hash`、`role`、`created_at`。為相容既有資料庫，`email` 欄位目前用來儲存登入名稱。
 - 密碼：PBKDF2-HMAC-SHA256，600,000 次迭代，每筆密碼各自使用隨機 salt；不儲存明文密碼。
-- `POST /api/auth/login`：JSON `{ "email": "member@example.com", "password": "…" }`。成功回傳 JWT、有效秒數與公開使用者資訊；帳號不存在及密碼錯誤均回傳 401 與相同訊息。
+- `POST /api/auth/login`：JSON `{ "username": "member", "password": "…" }`。成功回傳 JWT、有效秒數與公開使用者資訊；名稱不存在及密碼錯誤均回傳 401 與相同訊息。
 - `GET /api/auth/me`：以 `Authorization: Bearer <token>` 讀取目前使用者；無效、過期或已刪除帳號回傳 401。
 - `GET /api/manage/professors`：登入後讀取 `backend/NewData.json` 的教授資料與狀態選項。
 - `PATCH /api/manage/professors/{id}/state`：登入後提交 `{ "state": "等待回覆" }`；僅接受 `topics.states` 中的選項，成功後寫回 `backend/NewData.json`。

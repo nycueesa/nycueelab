@@ -67,6 +67,10 @@ class LoginResponse(BaseModel):
 class ProfessorStateUpdate(BaseModel):
     state: str = Field(min_length=1, max_length=40)
 
+
+class ProfessorTopicPageVisibilityUpdate(BaseModel):
+    visible: bool
+
 # Unknown accounts also perform a password hash comparison.
 DUMMY_PASSWORD_HASH = get_password_hash("unused-account-timing-placeholder")
 
@@ -109,6 +113,30 @@ def get_latest_professor_data():
             status_code=500,
             detail=f"An unexpected error occurred: {e}"
         )
+
+
+def save_professor_data(data, failure_detail):
+    temporary_path = None
+    try:
+        original_stat = PROFESSOR_DATA_PATH.stat()
+        with tempfile.NamedTemporaryFile(
+            mode="w", encoding="utf-8", dir=PROFESSOR_DATA_PATH.parent,
+            prefix=".NewData-", suffix=".json", delete=False,
+        ) as temporary_file:
+            temporary_path = Path(temporary_file.name)
+            json.dump(data, temporary_file, ensure_ascii=False, indent=2)
+            temporary_file.write("\n")
+            temporary_file.flush()
+            os.fchmod(temporary_file.fileno(), stat.S_IMODE(original_stat.st_mode))
+            if (original_stat.st_uid, original_stat.st_gid) != (os.geteuid(), os.getegid()):
+                os.fchown(temporary_file.fileno(), original_stat.st_uid, original_stat.st_gid)
+            os.fsync(temporary_file.fileno())
+        os.replace(temporary_path, PROFESSOR_DATA_PATH)
+    except OSError:
+        raise HTTPException(status_code=500, detail=failure_detail)
+    finally:
+        if temporary_path is not None:
+            temporary_path.unlink(missing_ok=True)
     
 # === 認證相關 API ===
 
@@ -195,29 +223,30 @@ def update_professor_state(
             raise HTTPException(status_code=404, detail="找不到教授")
         professor["state"] = update.state
 
-        temporary_path = None
-        try:
-            original_stat = PROFESSOR_DATA_PATH.stat()
-            with tempfile.NamedTemporaryFile(
-                mode="w", encoding="utf-8", dir=PROFESSOR_DATA_PATH.parent,
-                prefix=".NewData-", suffix=".json", delete=False,
-            ) as temporary_file:
-                temporary_path = Path(temporary_file.name)
-                json.dump(data, temporary_file, ensure_ascii=False, indent=2)
-                temporary_file.write("\n")
-                temporary_file.flush()
-                os.fchmod(temporary_file.fileno(), stat.S_IMODE(original_stat.st_mode))
-                if (original_stat.st_uid, original_stat.st_gid) != (os.geteuid(), os.getegid()):
-                    os.fchown(temporary_file.fileno(), original_stat.st_uid, original_stat.st_gid)
-                os.fsync(temporary_file.fileno())
-            os.replace(temporary_path, PROFESSOR_DATA_PATH)
-        except OSError:
-            raise HTTPException(status_code=500, detail="儲存狀態失敗，請稍後重試")
-        finally:
-            if temporary_path is not None:
-                temporary_path.unlink(missing_ok=True)
+        save_professor_data(data, "儲存狀態失敗，請稍後重試")
 
     return {"id": professor_id, "state": update.state}
+
+
+@app.patch("/api/manage/professors/{professor_id}/topic-page-visibility")
+def update_professor_topic_page_visibility(
+    professor_id: int,
+    update: ProfessorTopicPageVisibilityUpdate,
+    user: dict = Depends(get_current_user),
+):
+    """設定單一教授是否在 topicpage 顯示，並寫回 NewData.json。"""
+    with professor_data_lock:
+        data = get_latest_professor_data()
+        professor = next(
+            (item for item in data.get("professors", []) if item.get("id") == professor_id),
+            None,
+        )
+        if professor is None:
+            raise HTTPException(status_code=404, detail="找不到教授")
+        professor["topicPageVisible"] = update.visible
+        save_professor_data(data, "儲存上線設定失敗，請稍後重試")
+
+    return {"id": professor_id, "topicPageVisible": update.visible}
 
 # === 公開 API（不需認證）===
 

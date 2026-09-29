@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { API_BASE } from '../../utils/api';
 import { fetchWithAuth, getCachedUserInfo, logout } from '../../utils/auth';
+import { isVisibleOnTopicPage } from '../../utils/professorVisibility';
 import styles from './ProfessorStatus.module.css';
 
 const labels = {
@@ -9,8 +10,22 @@ const labels = {
   email: '電子郵件', LabWebsite: '實驗室網站', tags: '研究標籤',
   research: '研究方向', recomendedCourses: '推薦課程', faqs: '常見問答',
   question: '問題', answer: '回答', title: '標題', subtitle: '內容',
-  hidden: '前台隱藏', photo: '照片',
+  photo: '照片',
 };
+
+const departmentOrder = ['電子所甲', '電子所乙', '電機所', '電控所', '生醫所'];
+const departmentRank = (department) => {
+  const rank = departmentOrder.findIndex((name) => department.includes(name));
+  return rank === -1 ? departmentOrder.length : rank;
+};
+const getDepartments = (professor) => {
+  const departments = Array.isArray(professor.department) ? professor.department : [professor.department];
+  return departments.filter((department) => typeof department === 'string' && department.trim() !== '');
+};
+const getTags = (professor) => (Array.isArray(professor.tags) ? professor.tags : [])
+  .filter((tag) => typeof tag === 'string')
+  .map((tag) => tag.replace(/^#+/, '').trim())
+  .filter(Boolean);
 
 function DetailValue({ value }) {
   if (value === null || value === undefined || value === '') return <span className={styles.muted}>未提供</span>;
@@ -34,7 +49,7 @@ function DetailValue({ value }) {
 }
 
 function ProfessorDetails({ professor }) {
-  const fields = Object.entries(professor).filter(([key]) => !['id', 'name', 'state', 'photo'].includes(key));
+  const fields = Object.entries(professor).filter(([key]) => !['id', 'name', 'state', 'photo', 'hidden', 'topicPageVisible'].includes(key));
   return <div className={styles.detailsBody}>
     {professor.photo && <img className={styles.photo} src={`${API_BASE}/photo/${encodeURIComponent(professor.photo)}`} alt={`${professor.name || '教授'}照片`} loading="lazy" />}
     <dl className={styles.detailsGrid}>{fields.map(([key, value]) => (
@@ -50,6 +65,8 @@ export default function ProfessorStatus() {
   const [error, setError] = useState('');
   const [query, setQuery] = useState('');
   const [filter, setFilter] = useState('all');
+  const [department, setDepartment] = useState(null);
+  const [fields, setFields] = useState(() => new Set());
   const [savingIds, setSavingIds] = useState(() => new Set());
 
   useEffect(() => {
@@ -77,15 +94,60 @@ export default function ProfessorStatus() {
     return name && name !== 'Prof.';
   }), [data]);
   const states = data?.topics?.states || [];
+  const departments = useMemo(() => [...new Set(professors.flatMap(getDepartments))].sort((a, b) => {
+    const rankDifference = departmentRank(a) - departmentRank(b);
+    return rankDifference || a.localeCompare(b, 'zh-Hant');
+  }), [professors]);
+  const availableFields = useMemo(() => {
+    const rankByField = new Map();
+    professors.forEach((professor) => {
+      const professorDepartments = getDepartments(professor);
+      if (department && !professorDepartments.includes(department)) return;
+      const rank = Math.min(departmentOrder.length, ...professorDepartments.map(departmentRank));
+      getTags(professor).forEach((tag) => {
+        rankByField.set(tag, Math.min(rankByField.get(tag) ?? Infinity, rank));
+      });
+    });
+    return [...rankByField.keys()].sort((a, b) =>
+      rankByField.get(a) - rankByField.get(b) || a.localeCompare(b, 'zh-Hant')
+    );
+  }, [professors, department]);
+
+  useEffect(() => {
+    setFields((current) => {
+      const available = new Set(availableFields);
+      const next = new Set([...current].filter((field) => available.has(field)));
+      return next.size === current.size ? current : next;
+    });
+  }, [availableFields]);
+
   const counts = useMemo(() => professors.reduce((result, professor) => {
     result[professor.state] = (result[professor.state] || 0) + 1;
     return result;
   }, {}), [professors]);
   const visible = useMemo(() => professors.filter((professor) => {
     const matchesState = filter === 'all' || professor.state === filter;
+    const matchesDepartment = !department || getDepartments(professor).includes(department);
+    const matchesField = fields.size === 0 || getTags(professor).some((tag) => fields.has(tag));
     const matchesQuery = `${professor.name || ''} ${professor.id}`.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase());
-    return matchesState && matchesQuery;
-  }), [professors, filter, query]);
+    return matchesState && matchesDepartment && matchesField && matchesQuery;
+  }), [professors, filter, department, fields, query]);
+
+  function toggleField(field) {
+    setFields((current) => {
+      const next = new Set(current);
+      if (next.has(field)) next.delete(field);
+      else next.add(field);
+      return next;
+    });
+  }
+
+  function clearFilters() {
+    setQuery('');
+    setFilter('all');
+    setDepartment(null);
+    setFields(new Set());
+  }
 
   async function updateState(professor, nextState) {
     if (nextState === professor.state || savingIds.has(professor.id)) return;
@@ -108,6 +170,36 @@ export default function ProfessorStatus() {
       }));
       if (cause.message.includes('登入')) navigate('/login', { replace: true, state: { from: '/professors/status' } });
       else setError(cause.message || '狀態儲存失敗，已恢復原本的選項。');
+    } finally {
+      setSavingIds((current) => {
+        const next = new Set(current);
+        next.delete(professor.id);
+        return next;
+      });
+    }
+  }
+
+  async function updateTopicPageVisibility(professor, visible) {
+    if (visible === isVisibleOnTopicPage(professor) || savingIds.has(professor.id)) return;
+    const previousVisibility = professor.topicPageVisible;
+    setError('');
+    setSavingIds((current) => new Set(current).add(professor.id));
+    setData((current) => ({
+      ...current,
+      professors: current.professors.map((item) => item.id === professor.id ? { ...item, topicPageVisible: visible } : item),
+    }));
+    try {
+      const response = await fetchWithAuth(`${API_BASE}/manage/professors/${professor.id}/topic-page-visibility`, {
+        method: 'PATCH', body: JSON.stringify({ visible }),
+      });
+      if (!response.ok) throw new Error('上線設定儲存失敗，已恢復原本的設定。');
+    } catch (cause) {
+      setData((current) => ({
+        ...current,
+        professors: current.professors.map((item) => item.id === professor.id ? { ...item, topicPageVisible: previousVisibility } : item),
+      }));
+      if (cause.message.includes('登入')) navigate('/login', { replace: true, state: { from: '/professors/status' } });
+      else setError(cause.message || '上線設定儲存失敗，已恢復原本的設定。');
     } finally {
       setSavingIds((current) => {
         const next = new Set(current);
@@ -142,25 +234,55 @@ export default function ProfessorStatus() {
         <div className={styles.overview} aria-label="狀態統計">
           {states.map((state) => <div className={styles.stat} key={state}><span>{state}</span><strong>{counts[state] || 0}</strong></div>)}
         </div>
+        <div className={styles.filterRails} aria-label="教授篩選">
+          <div className={styles.filterRow}>
+            <span className={styles.filterLabel} id="status-department-label">系所：</span>
+            <div className={styles.filterOptions} role="group" aria-labelledby="status-department-label">
+              <button type="button" className={`${styles.filterPill} ${department === null ? styles.filterPillActive : ''}`} aria-pressed={department === null} onClick={() => setDepartment(null)}>全部系所</button>
+              {departments.map((name) => <button type="button" key={name} className={`${styles.filterPill} ${department === name ? styles.filterPillActive : ''}`} aria-pressed={department === name} onClick={() => setDepartment((current) => current === name ? null : name)}>{name}</button>)}
+            </div>
+          </div>
+          <div className={styles.filterRow}>
+            <span className={styles.filterLabel} id="status-field-label">領域：</span>
+            <div className={styles.filterOptions} role="group" aria-labelledby="status-field-label">
+              <button type="button" className={`${styles.filterPill} ${fields.size === 0 ? styles.filterPillActive : ''}`} aria-pressed={fields.size === 0} onClick={() => setFields(new Set())}>全部領域</button>
+              {availableFields.map((field) => <button type="button" key={field} className={`${styles.filterPill} ${fields.has(field) ? styles.filterPillActive : ''}`} aria-pressed={fields.has(field)} onClick={() => toggleField(field)}>{field}</button>)}
+            </div>
+          </div>
+        </div>
         <div className={styles.toolbar}>
           <label>搜尋教授<input type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="輸入姓名或編號" /></label>
           <label>篩選狀態<select value={filter} onChange={(event) => setFilter(event.target.value)}><option value="all">全部狀態</option>{states.map((state) => <option key={state} value={state}>{state}</option>)}</select></label>
+          {(query || filter !== 'all' || department || fields.size > 0) && <button type="button" className={styles.clearFilters} onClick={clearFilters}>清除篩選</button>}
           <span className={styles.resultCount}>顯示 {visible.length} / {professors.length} 筆</span>
         </div>
         <div className={styles.cards}>
-          {visible.map((professor) => <article className={styles.card} key={professor.id}>
+          {visible.map((professor) => {
+            const online = isVisibleOnTopicPage(professor);
+            const saving = savingIds.has(professor.id);
+            return <article className={styles.card} key={professor.id}>
             <div className={styles.cardTop}>
               <div className={styles.identity}><span>NO. {String(professor.id).padStart(3, '0')}</span><h2>{professor.name?.trim() || '未命名教授'}</h2></div>
-              <label className={styles.stateControl} htmlFor={`state-${professor.id}`}>目前狀態
-                <select id={`state-${professor.id}`} value={professor.state || ''} disabled={savingIds.has(professor.id)} onChange={(event) => updateState(professor, event.target.value)}>
-                  {!states.includes(professor.state) && <option value={professor.state || ''}>{professor.state || '未設定'}</option>}
-                  {states.map((state) => <option key={state} value={state}>{state}</option>)}
-                </select>
-              </label>
+              <div className={styles.cardControls}>
+                <label className={styles.stateControl} htmlFor={`state-${professor.id}`}>目前狀態
+                  <select id={`state-${professor.id}`} value={professor.state || ''} disabled={saving} onChange={(event) => updateState(professor, event.target.value)}>
+                    {!states.includes(professor.state) && <option value={professor.state || ''}>{professor.state || '未設定'}</option>}
+                    {states.map((state) => <option key={state} value={state}>{state}</option>)}
+                  </select>
+                </label>
+                <div className={styles.visibilityControl}>
+                  <span className={styles.visibilityStatus}>專題頁：{online ? '已上線' : '已下線'}</span>
+                  <div className={styles.visibilityActions} role="group" aria-label={`${professor.name}的專題頁顯示設定`}>
+                    <button type="button" className={online ? styles.visibilitySelected : ''} disabled={saving || online} onClick={() => updateTopicPageVisibility(professor, true)}>上線</button>
+                    <button type="button" className={!online ? styles.visibilitySelected : ''} disabled={saving || !online} onClick={() => updateTopicPageVisibility(professor, false)}>下線</button>
+                  </div>
+                </div>
+              </div>
             </div>
             <details className={styles.details}><summary>查看詳細資料 <span aria-hidden="true">⌄</span></summary><ProfessorDetails professor={professor} /></details>
-            {savingIds.has(professor.id) && <span className={styles.saving} role="status">儲存中…</span>}
-          </article>)}
+            {saving && <span className={styles.saving} role="status">儲存中…</span>}
+          </article>;
+          })}
           {visible.length === 0 && <p className={styles.notice}>沒有符合條件的教授。</p>}
         </div>
       </>}

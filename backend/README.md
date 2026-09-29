@@ -71,6 +71,7 @@ docker compose -f docker-compose.dev.yml exec nycueelab-backend python manage_us
 - `GET /api/auth/me`：以 `Authorization: Bearer <token>` 讀取目前使用者；無效、過期或已刪除帳號回傳 401。
 - `GET /api/manage/professors`：登入後讀取 `backend/NewData.json` 的教授資料與狀態選項。
 - `PATCH /api/manage/professors/{id}/state`：登入後提交 `{ "state": "等待回覆" }`；僅接受 `topics.states` 中的選項，成功後寫回 `backend/NewData.json`。
+- `PATCH /api/manage/professors/{id}/topic-page-visibility`：登入後提交 `{ "visible": true }` 或 `{ "visible": false }`，將該教授的 `topicPageVisible` 寫回 `backend/NewData.json`。未設定時，專題頁沿用「Q&A 至少有一個回答且未標記 hidden」的顯示規則。
 - JWT 有效 30 分鐘，保存在分頁的 sessionStorage；登出會清除本機登入資訊，已簽發的 JWT 到期前仍有效。
 - `storage/` 與 SQLite 檔案已加入 `.gitignore`。開發用 JWT 金鑰隨機產生並保存在 `storage/.jwt-secret`。
 

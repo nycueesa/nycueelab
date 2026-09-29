@@ -315,8 +315,8 @@ function Professor() {
   }
 
   // If ID provided but professor not found, show error.
-  // Also short-circuit on placeholder entries marked hidden in NewData.json.
-  if (id && !loading && (!professorData || professorData.hidden)) {
+  // Explicitly published professors can be opened even if they have a legacy hidden flag.
+  if (id && !loading && (!professorData || (professorData.hidden && professorData.topicPageVisible !== true))) {
     return (
       <div className={styles.professorPage}>
         <section className={styles.heroSection}>

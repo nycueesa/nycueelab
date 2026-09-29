@@ -7,7 +7,7 @@ export default function Login() {
   const navigate = useNavigate();
   const location = useLocation();
   const destination = location.state?.from || '/professors/status';
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [visible, setVisible] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -39,7 +39,7 @@ export default function Login() {
     if (loading) return;
     setLoading(true);
     setError('');
-    const result = await login(email.trim(), password);
+    const result = await login(username.trim(), password);
     if (result.success) {
       setUser(result.data.user);
       setPassword('');
@@ -78,7 +78,7 @@ export default function Login() {
               <div className={styles.successIcon} aria-hidden="true">✓</div>
               <h2 id="login-title">登入成功</h2>
               <p className={styles.subtitle} role="status">歡迎回來，你已登入電機專題網。</p>
-              <div className={styles.account}><span>目前登入帳號</span><strong>{user.email}</strong></div>
+              <div className={styles.account}><span>目前登入帳號</span><strong>{user.username}</strong></div>
               <Link to={destination} className={styles.submit}>查看教授資料 <span aria-hidden="true">→</span></Link>
               <button type="button" className={styles.logout} onClick={handleLogout}>登出帳號</button>
             </div>
@@ -88,13 +88,13 @@ export default function Login() {
               <p className={styles.subtitle}>登入後查看教授資料並更新訪談狀態。</p>
               <form onSubmit={handleLogin} className={styles.form} aria-busy={loading || checking}>
                 <div className={styles.field}>
-                  <label htmlFor="email">電子郵件 <span>EMAIL</span></label>
-                  <input id="email" name="email" type="email" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="you@example.com" autoComplete="username" maxLength={254} required disabled={loading || checking} />
+                  <label htmlFor="username">名稱 <span>USERNAME</span></label>
+                  <input id="username" name="username" type="text" value={username} onChange={(event) => setUsername(event.target.value)} placeholder="輸入你的名稱" autoComplete="username" required disabled={loading || checking} />
                 </div>
                 <div className={styles.field}>
                   <label htmlFor="password">密碼 <span>PASSWORD</span></label>
                   <div className={styles.passwordField}>
-                    <input id="password" name="password" type={visible ? 'text' : 'password'} value={password} onChange={(event) => setPassword(event.target.value)} placeholder="輸入你的密碼" autoComplete="current-password" maxLength={1024} required disabled={loading || checking} />
+                    <input id="password" name="password" type={visible ? 'text' : 'password'} value={password} onChange={(event) => setPassword(event.target.value)} placeholder="輸入你的密碼" autoComplete="current-password" required disabled={loading || checking} />
                     <button type="button" onClick={() => setVisible(!visible)} aria-label={visible ? '隱藏密碼' : '顯示密碼'} aria-pressed={visible} disabled={loading}>{visible ? '隱藏' : '顯示'}</button>
                   </div>
                 </div>

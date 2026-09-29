@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./TopicPage.module.css";
 import { useData } from "../../hooks/useData.js";
 import { isAuthenticated } from '../../utils/auth';
+import { isVisibleOnTopicPage } from '../../utils/professorVisibility';
 
 // Strip leading "#" and surrounding whitespace from a tag string.
 const cleanTag = (t) => (typeof t === "string" ? t.replace(/^#+/, "").trim() : "");
@@ -59,11 +60,11 @@ export default function TopicPage() {
   const [query, setQuery] = useState("");
 
   // Normalize professors once: pre-clean tags and ensure department is an array.
-  // Drop placeholder/empty entries (id 0 in the JSON template).
+  // Manual online/offline settings override the default Q&A visibility rule.
   const professors = useMemo(() => {
     const raw = data?.professors ?? [];
     return raw
-      .filter((p) => p && p.name && p.name.trim() !== "" && p.name.trim() !== "Prof." && !p.hidden)
+      .filter((p) => p && p.name && p.name.trim() !== "" && p.name.trim() !== "Prof." && isVisibleOnTopicPage(p))
       .map((p) => ({
         ...p,
         department: Array.isArray(p.department)
@@ -84,13 +85,13 @@ export default function TopicPage() {
   };
   const DEPTS = useMemo(() => {
     const raw = data?.topics?.departments ?? [];
-    return [...raw].sort((a, b) => {
+    return raw.filter((d) => professors.some((p) => p.department.includes(d))).sort((a, b) => {
       const ra = deptRank(a);
       const rb = deptRank(b);
       if (ra !== rb) return ra - rb;
       return a.localeCompare(b, "zh-Hant");
     });
-  }, [data]);
+  }, [data, professors]);
   // Fields are derived from the union of professor tags (deduped, # stripped).
   // Scoped to the active dept filter so picking a department also narrows the field
   // rail to only the tags that actually exist within it. Order mirrors the department

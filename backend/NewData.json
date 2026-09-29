@@ -118,7 +118,8 @@
           "linkName": "專題影片",
           "link": "https://www.youtube.com/watch?v=ycnFKV3XhRA"
         }
-      ]
+      ],
+      "topicPageVisible": true
     },
     {
       "id": 12,
@@ -226,7 +227,8 @@
           "linkName": "專題影片",
           "link": "https://www.youtube.com/watch?v=DQOlzJ0ysWI"
         }
-      ]
+      ],
+      "topicPageVisible": true
     },
     {
       "id": 56,

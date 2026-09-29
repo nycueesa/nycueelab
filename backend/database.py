@@ -33,15 +33,15 @@ def init_database():
     DATABASE_PATH.chmod(0o600)
 
 
-def find_user(email):
+def find_user(username):
     with connect() as connection:
-        row = connection.execute("SELECT * FROM users WHERE email = ?", (email.strip().lower(),)).fetchone()
+        row = connection.execute("SELECT * FROM users WHERE email = ?", (username.strip(),)).fetchone()
     return dict(row) if row else None
 
 
-def create_user(email, password_hash, role="user"):
+def create_user(username, password_hash, role="user"):
     with connect() as connection:
         connection.execute(
             "INSERT INTO users (email, password_hash, role) VALUES (?, ?, ?)",
-            (email.strip().lower(), password_hash, role),
+            (username.strip(), password_hash, role),
         )

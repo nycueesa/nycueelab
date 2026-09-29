@@ -24,18 +24,18 @@ export function clearAuth() {
   }
 }
 
-export async function login(email, password) {
+export async function login(username, password) {
   try {
     const response = await fetch(`${API_BASE}/auth/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email.trim().toLowerCase(), password }),
+      body: JSON.stringify({ username: username.trim(), password }),
       signal: AbortSignal.timeout(15000),
     });
     if (!response.ok) {
       const messages = {
-        401: '電子郵件或密碼不正確，請再試一次。',
-        422: '請填寫有效的電子郵件與密碼。',
+        401: '名稱或密碼不正確，請再試一次。',
+        422: '請填寫名稱與密碼。',
         429: '嘗試次數過多，請稍後再試。',
       };
       return { success: false, error: messages[response.status] || '登入服務暫時無法使用，請稍後再試。' };

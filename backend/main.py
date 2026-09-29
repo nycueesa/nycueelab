@@ -9,7 +9,7 @@ from threading import Lock
 from fastapi import FastAPI, HTTPException, Depends, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel, EmailStr, Field
+from pydantic import BaseModel, Field
 from database import init_database, find_user
 
 PROFESSOR_DATA_PATH = Path(os.getenv("PROFESSOR_DATA_PATH", str(Path(__file__).parent / "NewData.json")))
@@ -49,11 +49,10 @@ app.mount("/api/photo", StaticFiles(directory=Path(__file__).parent / "photo"), 
 
 # === 資料模型 ===
 class LoginRequest(BaseModel):
-    email: EmailStr = Field(max_length=254)
-    password: str = Field(min_length=1, max_length=1024)
+    username: str
+    password: str
 
 class UserResponse(BaseModel):
-    email: str
     username: str
     role: str
 
@@ -68,18 +67,22 @@ class LoginResponse(BaseModel):
 class ProfessorStateUpdate(BaseModel):
     state: str = Field(min_length=1, max_length=40)
 
+
+class ProfessorTopicPageVisibilityUpdate(BaseModel):
+    visible: bool
+
 # Unknown accounts also perform a password hash comparison.
 DUMMY_PASSWORD_HASH = get_password_hash("unused-account-timing-placeholder")
 
 
-def authenticate_user(email: str, password: str):
-    user = find_user(email)
+def authenticate_user(username: str, password: str):
+    user = find_user(username)
     matches = verify_password(password, user["password_hash"] if user else DUMMY_PASSWORD_HASH)
     return user if user and matches else None
 
 
 def public_user(user):
-    return {"email": user["email"], "username": user["email"], "role": user["role"]}
+    return {"username": user["email"], "role": user["role"]}
 
 
 def get_latest_professor_data():
@@ -110,6 +113,30 @@ def get_latest_professor_data():
             status_code=500,
             detail=f"An unexpected error occurred: {e}"
         )
+
+
+def save_professor_data(data, failure_detail):
+    temporary_path = None
+    try:
+        original_stat = PROFESSOR_DATA_PATH.stat()
+        with tempfile.NamedTemporaryFile(
+            mode="w", encoding="utf-8", dir=PROFESSOR_DATA_PATH.parent,
+            prefix=".NewData-", suffix=".json", delete=False,
+        ) as temporary_file:
+            temporary_path = Path(temporary_file.name)
+            json.dump(data, temporary_file, ensure_ascii=False, indent=2)
+            temporary_file.write("\n")
+            temporary_file.flush()
+            os.fchmod(temporary_file.fileno(), stat.S_IMODE(original_stat.st_mode))
+            if (original_stat.st_uid, original_stat.st_gid) != (os.geteuid(), os.getegid()):
+                os.fchown(temporary_file.fileno(), original_stat.st_uid, original_stat.st_gid)
+            os.fsync(temporary_file.fileno())
+        os.replace(temporary_path, PROFESSOR_DATA_PATH)
+    except OSError:
+        raise HTTPException(status_code=500, detail=failure_detail)
+    finally:
+        if temporary_path is not None:
+            temporary_path.unlink(missing_ok=True)
     
 # === 認證相關 API ===
 
@@ -119,7 +146,7 @@ def login(request: LoginRequest):
     使用者登入 endpoint
 
     Args:
-        request: 包含 email 和 password 的登入請求
+        request: 包含 username 和 password 的登入請求
 
     Returns:
         LoginResponse: 包含 access_token 和過期時間
@@ -127,12 +154,12 @@ def login(request: LoginRequest):
     Raises:
         HTTPException: 如果帳號或密碼錯誤
     """
-    user = authenticate_user(str(request.email), request.password)
+    user = authenticate_user(request.username, request.password)
 
     if not user:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="電子郵件或密碼不正確",
+            detail="名稱或密碼不正確",
             headers={"WWW-Authenticate": "Bearer"},
         )
 
@@ -196,29 +223,30 @@ def update_professor_state(
             raise HTTPException(status_code=404, detail="找不到教授")
         professor["state"] = update.state
 
-        temporary_path = None
-        try:
-            original_stat = PROFESSOR_DATA_PATH.stat()
-            with tempfile.NamedTemporaryFile(
-                mode="w", encoding="utf-8", dir=PROFESSOR_DATA_PATH.parent,
-                prefix=".NewData-", suffix=".json", delete=False,
-            ) as temporary_file:
-                temporary_path = Path(temporary_file.name)
-                json.dump(data, temporary_file, ensure_ascii=False, indent=2)
-                temporary_file.write("\n")
-                temporary_file.flush()
-                os.fchmod(temporary_file.fileno(), stat.S_IMODE(original_stat.st_mode))
-                if (original_stat.st_uid, original_stat.st_gid) != (os.geteuid(), os.getegid()):
-                    os.fchown(temporary_file.fileno(), original_stat.st_uid, original_stat.st_gid)
-                os.fsync(temporary_file.fileno())
-            os.replace(temporary_path, PROFESSOR_DATA_PATH)
-        except OSError:
-            raise HTTPException(status_code=500, detail="儲存狀態失敗，請稍後重試")
-        finally:
-            if temporary_path is not None:
-                temporary_path.unlink(missing_ok=True)
+        save_professor_data(data, "儲存狀態失敗，請稍後重試")
 
     return {"id": professor_id, "state": update.state}
+
+
+@app.patch("/api/manage/professors/{professor_id}/topic-page-visibility")
+def update_professor_topic_page_visibility(
+    professor_id: int,
+    update: ProfessorTopicPageVisibilityUpdate,
+    user: dict = Depends(get_current_user),
+):
+    """設定單一教授是否在 topicpage 顯示，並寫回 NewData.json。"""
+    with professor_data_lock:
+        data = get_latest_professor_data()
+        professor = next(
+            (item for item in data.get("professors", []) if item.get("id") == professor_id),
+            None,
+        )
+        if professor is None:
+            raise HTTPException(status_code=404, detail="找不到教授")
+        professor["topicPageVisible"] = update.visible
+        save_professor_data(data, "儲存上線設定失敗，請稍後重試")
+
+    return {"id": professor_id, "topicPageVisible": update.visible}
 
 # === 公開 API（不需認證）===
 

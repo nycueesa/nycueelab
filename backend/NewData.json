@@ -2,23 +2,16 @@
   "topics": {
     "departments": [
       "醫電",
-      "電信 跨組電機乙",
+      "電信",
       "電信乙",
       "電信所",
-      "電信所系統組",
       "電信甲",
       "電子",
       "電子乙",
       "電子甲",
       "電控",
-      "電控 跨組電機乙",
-      "電控 跨組電機甲",
-      "電控跨電機乙",
-      "電控跨電機甲",
       "電機",
       "電機乙",
-      "電機乙 跨電控",
-      "電機乙 跨電機甲",
       "電機甲"
     ],
     "fields": [
@@ -337,7 +330,7 @@
       "name": "吳卓諭",
       "labName": "無線感測與通訊實驗室",
       "department": [
-        "電信 跨組電機乙"
+        "電信"
       ],
       "officeLocation": "ED900",
       "email": "jywu@nycu.edu.tw",
@@ -990,7 +983,7 @@
       "name": "趙昌博",
       "labName": "低功率混合系統信號晶片設計實驗室",
       "department": [
-        "電控 跨組電機甲"
+        "電控"
       ],
       "officeLocation": "EE733",
       "email": "pchao@nycu.edu.tw",
@@ -1186,7 +1179,7 @@
       "name": "陳科宏",
       "labName": "低功率混合系統信號晶片設計實驗室",
       "department": [
-        "電控跨電機甲"
+        "電控"
       ],
       "officeLocation": "EE706",
       "email": "khchen@nycu.edu.tw",
@@ -3531,7 +3524,7 @@
       "name": "歐陽盟",
       "labName": "電機與生醫整合實驗室與網宇實體系統實驗室(EBIL & CPSL )",
       "department": [
-        "電控 跨組電機乙"
+        "電控"
       ],
       "officeLocation": "EE740",
       "email": "oym@nycu.edu.tw",
@@ -3841,7 +3834,7 @@
       "name": "王傑智",
       "labName": "機器人感知與學習實驗室",
       "department": [
-        "電控跨電機乙"
+        "電控"
       ],
       "officeLocation": "EE766",
       "email": "bobwang@ieee.org",
@@ -4865,7 +4858,7 @@
       "name": "黃紹華",
       "labName": "",
       "department": [
-        "電信 跨組電機乙"
+        "電信"
       ],
       "officeLocation": "ED705",
       "email": "hsf@nycu.edu.tw",
@@ -5850,7 +5843,7 @@
       "name": "林俊廷",
       "labName": "",
       "department": [
-        "電信所系統組"
+        "電信所"
       ],
       "officeLocation": "ED702A",
       "email": "jinting@nycu.edu.tw",
@@ -6405,7 +6398,7 @@
       "name": "王學誠",
       "labName": "機器人與輔助科技實驗室",
       "department": [
-        "電控 跨組電機乙"
+        "電控"
       ],
       "officeLocation": "EE759",
       "email": "hchengwang@gmail.com",
@@ -6898,7 +6891,7 @@
       "name": "黃聖傑",
       "labName": "",
       "department": [
-        "電控 跨組電機甲"
+        "電控"
       ],
       "officeLocation": "EE720",
       "email": "shengchiehhuang@nycu.edu.tw",
@@ -6937,7 +6930,7 @@
       "name": "黃育綸",
       "labName": "",
       "department": [
-        "電機乙 跨電控"
+        "電機乙"
       ],
       "officeLocation": "EE719",
       "email": "ylhuang@nycu.edu.tw",
@@ -8123,7 +8116,7 @@
       "name": "陳柏志",
       "labName": "",
       "department": [
-        "電信所系統組"
+        "電信所"
       ],
       "officeLocation": "ED702B",
       "email": "pochih@nycu.edu.tw",
@@ -8156,7 +8149,7 @@
       "name": "粘儆夫",
       "labName": "",
       "department": [
-        "電機乙 跨電機甲"
+        "電機乙"
       ],
       "officeLocation": "ED528-1",
       "email": "watchmannien@nycu.edu.tw",

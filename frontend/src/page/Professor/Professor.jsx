@@ -52,6 +52,23 @@ function Professor() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  useEffect(() => {
+    const previousTitle = document.title;
+    const isVisible = professorData &&
+      (!professorData.hidden || professorData.topicPageVisible === true);
+    const name = !loading && !error && isVisible
+      ? professorData.name?.trim()
+      : "";
+
+    document.title = name
+      ? `${name}教授｜研究領域與專題介紹｜陽明交大電機專題網`
+      : "教授介紹｜陽明交大電機專題網";
+
+    return () => {
+      document.title = previousTitle;
+    };
+  }, [professorData, loading, error]);
+
   // Back button slide visibility — show on scroll-up, hide on scroll-down
   const [backButtonVisible, setBackButtonVisible] = useState(true);
   const lastScrollY = useRef(0);
